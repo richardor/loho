@@ -16,6 +16,8 @@ usage:
 #define KEY_ASCII    '@'
 
 
+#define DATE 20100624
+
 static void usage()
 {
  printf("Usage: main xml(file name)\n"); 
