@@ -1,0 +1,6 @@
+2010-7-2 zhoumin dcdcmin@yahoo.com.cn
+	* 增加build.sh脚本,同时编绎库文件和测试程序.
+
+2010-7-1 zhoumin dcdcmin@yahoo.com.cn
+	* 完成最初的日志调试模块.
+
