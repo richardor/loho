@@ -1,6 +1,7 @@
+2010-7-4 zhoumin dcdcmin@yahoo.com.cn
+	* 实现从log.conf中读取日志级别和日志保存方式.
 2010-7-2 zhoumin dcdcmin@yahoo.com.cn
 	* 增加build.sh脚本,同时编绎库文件和测试程序.
-
 2010-7-1 zhoumin dcdcmin@yahoo.com.cn
 	* 完成最初的日志调试模块.
 
