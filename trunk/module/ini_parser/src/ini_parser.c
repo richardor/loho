@@ -349,7 +349,7 @@ int ini_parser_create(char *file_name)
 
 
 	
-int UninitGetLanguageString()
+int ini_parser_destory()
 {	
 	section_node_t *cur_section_node = NULL;
 	section_node_t *p_section_node = NULL;
@@ -389,7 +389,7 @@ int UninitGetLanguageString()
 
 
 
-char *GetLanguageString(char *section, char * id_value)
+char *ini_parser_get_string(char *section, char * id_value)
 {	
 	if((!section)|| (!id_value))
 	{
