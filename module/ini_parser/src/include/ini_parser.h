@@ -7,8 +7,8 @@
 
 
 int ini_parser_create(char *file_name);
-char *GetLanguageString(char *section, char * id_value);
-int UninitGetLanguageString();
+char *ini_parser_get_string(char *section, char * id_value);
+int ini_parser_destory();
 void PrintIniDataBase();
 
 
