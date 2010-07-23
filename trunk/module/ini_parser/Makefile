@@ -1,23 +1,22 @@
-CC:=g++
-GCC:=gcc
-AR:=ar
+CROSS_COMPILER:=
+CC:=$(CROSS_COMPILER)g++
+GCC:=$(CROSS_COMPILER)gcc
+AR:=$(CROSS_COMPILER)ar
 
-LIB_NAME:=./release/libfunlog.a
+LIB_NAME:=./release/ini_parser.a
 PROJECT_ROOT:=$(shell pwd)/src
 
-INCLUDE_DIR+=-I$(PROJECT_ROOT)/	
+INCLUDE_DIR+=-I$(PROJECT_ROOT)/include
 
-
+#CFLAGS+=-Wall  -Werror
 
 CFLAGS+=$(INCLUDE_DIR)
 
 all:$(LIB_NAME)
-$(LIB_NAME):fun_log.o
-	$(AR) -r $(LIB_NAME) fun_log.o
-	@echo "ok"
-	@rm -f *.bak *.o
-fun_log.o:$(PROJECT_ROOT)/fun_log.c
-	$(GCC) $(CFLAGS) -c $(PROJECT_ROOT)/fun_log.c 
+$(LIB_NAME):ini_parser.o
+	$(AR) -rsv -o $(LIB_NAME) ini_parser.o
+ini_parser.o:$(PROJECT_ROOT)/ini_parser.c
+	$(CC) $(CFLAGS) -c $(PROJECT_ROOT)/ini_parser.c
  
 clean:
 	rm -f $(LIB_NAME)

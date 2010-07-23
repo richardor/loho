@@ -357,7 +357,7 @@ int ini_parser_destory()
 	data_node_t *p_data_node = NULL;
 	if(m_ini_database)
 	{
-		FREE_MEMORY(m_ini_database->file_name);
+		free(m_ini_database->file_name);
 		cur_section_node = m_ini_database->section_node;
 		while(cur_section_node)
 		{	
@@ -368,19 +368,19 @@ int ini_parser_destory()
 				p_data_node = cur_data_node;
 				if(cur_data_node->data)
 				{
-					FREE_MEMORY(cur_data_node->data->id_value);
-					FREE_MEMORY(cur_data_node->data->string_value);
+					free(cur_data_node->data->id_value);
+					free(cur_data_node->data->string_value);
 				}
 				cur_data_node = cur_data_node->data_node_next;
-				FREE_MEMORY(p_data_node);
+				free(p_data_node);
 			}
-			FREE_MEMORY(cur_section_node->section_value);
-			FREE_MEMORY(cur_section_node->data_node);
+			free(cur_section_node->section_value);
+			free(cur_section_node->data_node);
 			cur_section_node = cur_section_node->section_node_next;
-			FREE_MEMORY(p_section_node);
+			free(p_section_node);
 		}
 		
-		FREE_MEMORY(m_ini_database);
+		free(m_ini_database);
 		return 0;
 	}
 

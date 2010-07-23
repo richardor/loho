@@ -2,7 +2,7 @@
 #define __GET_LAN_STRING_H__
 
 #include<stdio.h>
-#include "get_lan_string_typedef.h"
+#include "ini_parser_typedef.h"
 
 
 
