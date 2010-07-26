@@ -1,0 +1,57 @@
+	一个linux下的ini文件解析模块。
+	因为工作需要， 需要在linux环境去解析ini配置文件。
+	个人写了一个委简单ini解析模块.
+	
+	先记录下ini文件的格式
+	ini文件的格式为
+	 [section1]
+	 id1=value1
+	 id2=value2
+
+	 [section1]
+	 id1=value1
+	 id2=value2
+
+	
+	程序的大致设计思想如下。
+	依次读取文件中一行，当读到行中字符串包括有[和]这两个字符， 则说明该行为section行，解析获得section字符串。当读取到该行中有=时，则说明该行为数据区data，解析获得id和value字符串。
+	
+	data_t 结构体保存id和value
+	typedef struct _data_{
+		char *id_value;
+		char *string_value;
+	}data_t;
+
+
+	每一个setcion数据结点下data数据构成一个数据链表
+	struct _data_node_t{
+		data_t *data;
+		data_node_t *data_node_next;
+	};
+
+	setcion数据结点构成一个数据链表
+	struct _section_node_{
+		char *section_value;
+		data_node_t *data_node;
+		data_node_t *currrent_data_node;
+		section_node_t *section_node_next;
+	};
+
+	typedef struct _ini_database_{
+		char *file_name;	/*ini 文件名，根据语言的不同进行选 择。*/
+		section_node_t *section_node;
+		section_node_t *currrent_section_node;
+	}ini_database_t;
+
+	查找时，首先找到setion结点，再去查找id结点，最后返回value。
+
+	
+	代码所在SVN地址。
+
+
+	
+
+
+
+	
+		
