@@ -3,7 +3,6 @@ author:zhoumin
 date:2010-4-14
 usage: 
 **************************************/ 
-
 #include <stdio.h>
 #include<sys/types.h>
 #include<dirent.h>
