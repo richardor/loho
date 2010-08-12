@@ -1,0 +1,14 @@
+1 下载 arm-linux-gcc-3.4.1.tar.bz2
+
+2 解压
+  tar jxvf arm-linux-gcc-3.4.1.tar.bz2
+
+3 设置环境变量
+  vi /etc/profile
+  添加arm-linux-gcc的路径。
+  export PATH=$PATH:/home/zhoumin/arm/usr/local/arm/3.4.1/bin/ 
+
+4 使设置的环境变量生效。
+  source /etc/profile
+
+
