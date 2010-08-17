@@ -3,6 +3,38 @@
 
 
 
+
+static DlistNode *dlist_get_node(Dlist *dlist, size_t index, int fail_return_last)
+{
+	DlistNode *iter = dlist->list_node;
+	while(iter != NULL && iter->next != NULL && index > 0)
+	{
+		iter = iter->next;
+		index--;
+	}
+	/*faile_return_last : 0 当没有找到时， 直接返回NULL
+					  1  当没有找到时，返回最后一个iter*/
+	if(!fail_return_last)
+	{
+		return index > 0?NULL:iter;
+	}
+	return iter;
+}
+
+static DlistNode *dlist_node_create(void *data)
+{
+	DlistNode *node = (DlistNode *)malloc(sizeof(DlistNode));
+
+	if(node != NULL)
+	{
+		node->prev = NULL;
+		node->next = NULL;
+		node->data = data;
+	}
+	return node;
+}
+
+
 Dlist *dlist_create()
 {
 	Dlist *dlist = NULL;
@@ -12,60 +44,52 @@ Dlist *dlist_create()
 	
 	return dlist;
 }
+
+
 RetDlist dlist_insert(Dlist *dlist, size_t index, void *data)
 {
-#if 0
-	printf("dlist_insert aaaaaaaaaaaaaa\n");
-	return_val_if_fail(dlist != NULL && data != NULL, RET_INVALIDPARAMETER);
+	return_val_if_fail(dlist != NULL && data != NULL , RET_INVALIDPARAMETER);
 	
-	DlistNode *data_node_temp = NULL;
-	DlistNode *data_node_pre = NULL;
+	DlistNode *iter = NULL;
+	DlistNode *cursor = NULL;
+	int i = 0;
 	
-	printf("dlist_insert bbbbbbbbbbbbbbbbbbbbbb\n");
-	data_node_temp = dlist->list_node;
-	data_node_pre = dlist->list_node;
-	while(data_node_temp)
+	/*1 create a data node*/
+	iter = dlist_node_create(data);
+
+	
+	/*2 insert the data node to list!*/
+	if(dlist->list_node == NULL)
 	{
-		printf("dlist_insert cccccccccccccccccc\n");
-		data_node_pre = data_node_temp;
-		data_node_temp = data_node_temp->next;
+		dlist->list_node = iter;
+		return RET_OK;
 	}
-	printf("dlist_insert ddddddddddddddddddd\n"); 
-	dlist->list_node = (DlistNode *)malloc(sizeof(DlistNode));
-	dlist->list_node->prev = data_node_pre;
-	dlist->list_node->next = NULL;
-	dlist->list_node->data = data;
-#endif
-#if 1
-	return_val_if_fail(dlist != NULL && data != NULL, RET_INVALIDPARAMETER);
-	static int a = 0;
-	if(a == 0)
+
+	/*3 find the cursor node */
+	cursor = dlist_get_node( dlist, index, 1);
+
+	if(dlist->list_node == cursor)
 	{
-		printf("a(%d)\n",a);
-		dlist->list_node = (DlistNode *)malloc(sizeof(DlistNode));
-		
-		dlist->list_node->data = data;
-		dlist->list_node->prev = NULL;
-		dlist->list_node->next = NULL;
-		++a;
+		dlist->list_node = iter;
 	}
 	else
 	{
-		printf("data(%d)ggggggggggggggggggggggggggggggggggg a(%d) dlist->list_node->data(%d)\n",(int *)data, a, (int *)dlist->list_node->data);
-		DlistNode *iter = NULL;
-//		iter = dlist->list_node->next;
-		iter = (DlistNode *)malloc(sizeof(DlistNode));
-		iter->data = data;
-		iter->prev = NULL;
-		iter->next = NULL;
-		dlist->list_node->next = iter;
-		printf("ggggggggggggggggggggggggggggggggggg a(%d) dlist->list_node->data(%d) next->data(%d)\n", \
-		a, (int *)dlist->list_node->data,(int *)dlist->list_node->next->data);
+		cursor->prev->next = iter;
+		iter->prev = cursor->prev;
 	}
+	iter->next = cursor;
+	cursor->prev = iter;
 
-#endif
 	return RET_OK;
 }
+
+
+RetDlist dlist_header_insert(Dlist *dlist, void *data)
+{
+	
+	return dlist_insert(dlist, 0, data);
+}
+
 
 RetDlist dlist_append(Dlist *dlist, void *data)
 {
@@ -75,21 +99,35 @@ RetDlist dlist_append(Dlist *dlist, void *data)
 
 RetDlist dlist_print(Dlist *dlist, DlistDataPrintFunc print)
 {
-	printf("dlist_print aaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n");
 	return_val_if_fail(dlist != NULL, RET_INVALIDPARAMETER);
 	
 	DlistNode *iter = NULL;
 
 	iter = dlist->list_node;
-	printf("dlist_print bbbbbbbbbbbbbbbbbbbbbb\n");
 	while(iter)
 	{
-		printf("dlist_print cccccccccccccccccccc\n");
 		if(iter->data)
 		{
-			printf("dlist_print ddddddddddddddddddddd\n");
 			print(iter->data, NULL);	
 		}
+		iter = iter->next;
+	}
+	return RET_OK;
+}
+
+RetDlist dlist_foreach(Dlist *dlist, DlistDataVisitFunc visit, void *ctx)
+{
+	return_val_if_fail(dlist != NULL, RET_INVALIDPARAMETER);
+
+	DlistNode *iter = NULL;
+
+	iter = dlist->list_node;
+	while(iter)
+	{
+		if(iter->data)
+		{
+			visit(ctx, iter->data);	
+		}	
 		iter = iter->next;
 	}
 	return RET_OK;

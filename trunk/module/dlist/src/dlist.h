@@ -40,12 +40,17 @@ typedef struct _Dlist{
 
 typedef RetDlist (*DlistDataPrintFunc)(void *ctx, void *data);
 
+typedef RetDlist (*DlistDataVisitFunc)(void *ctx, void *data);
+
+
 
 Dlist *dlist_create();
 
+RetDlist dlist_header_insert(Dlist *dlist, void *data);
 RetDlist dlist_append(Dlist *dlist, void *data);
 RetDlist dlist_insert(Dlist *dlist, size_t index, void *data);
 RetDlist dlist_print(Dlist *dlist, DlistDataPrintFunc print);
+RetDlist dlist_foreach(Dlist *dlist, DlistDataVisitFunc visit, void *ctx);
 
 RetDlist dlist_destory(Dlist *dlist);
 
