@@ -1,0 +1,51 @@
+嵌入式Linux通过帧缓存截图
+  早前在李先静在blog上看到一篇关于通过帧缓存截图工具--gsnap。
+  该工具通过读取帧缓存里的位图数据，再进一步转换成jpg数据， 依赖一开源软件libjpeg（jpegsrc.v7.tar.gz）。
+  下面写写编绎该工具的过程。
+一 编绎libjpeg
+  1 下载jpegsrc.v7.tar.gz 工具包。 
+  
+  2 拷贝到linux下的工作目录(我是基于虚拟机开发的， jpegsrc.v7.tar.gz 是在windows下下载的。)
+    注：工作目录最好为linux与windows之间的samba目录， 用虚拟机与windows的共享目录会存在创建符号链接失败的问题存在。
+
+  3 解压jpegsrc.v7.tar.gz
+   $tar -xvzf jpegsrc.v7.tar.gz
+
+  4 进入解压后的目录，设置交叉编绎器,编绎后的安装路径
+   $./configure --host=arm-hismall-linux
+    设置编绎后生成的静态库和动态库的路径,我设置的路径为/home/zhoumin/cross/usr
+    $./configure --prefix=/home/zhoumin/cross/usr
+  
+  5 执行make后，会在/home/zhoumin/cross/usr 下生成bin，include, lib, share这四个目录， 
+    include 下放的是头文件。
+    lib 下为编绎后生成静态库和动态库。
+
+    libjpeg的编绎工作已完成。接下来编绎gsnap
+
+二 编绎gsnap
+   1  下载gsnap 源码。
+      http://www.limodev.cn/download/gsnap.tar.gz
+
+   2 解压gsnap源码。
+		
+
+   3 编绎gsnap 
+     将libjpg的/home/zhoumin/cross/usr/include下的头文件全部拷贝到当gsnap解压后的目录下。
+     将libjpg的/home/zhoumin/cross/usr/libg下的静态库文件也拷贝到gsnap目录下。 
+     修改makefile 将编绎命令修改为
+     arm-hismall-linux-gcc -o gsnap gsnap.c  -static libjpeg.a
+
+   4 执行make
+     
+     ok 全部的编结工作已完成， 拷贝生成的可执行文件gsnap到开发板下,便可以进行屏幕截图了。 
+     用法如下：
+     ./gsnap [jpeg] [framebuffer]
+
+     jpeg 生成的图片名
+     framebuffer - framebuffer的设备节点， 一般形如/dev/fb0  /dev/fb/0
+   
+
+  
+
+
+
