@@ -1,0 +1,145 @@
+ 关于图片的解码输出。 
+
+ 图片的解码输出的主要流程处理在于将图片的中每一个像素的argb值提取出来。不同的图片的解码方式是不一样。这里我们统一了一个图片解码函数。
+ FtkBitmap* ftk_bitmap_factory_load(FtkBitmapFactory* thiz, const char* filename);
+ 函数返回FtkBitmap 结构体，保存了每珍上像素中的rgb值。
+ 
+ 
+
+FtkBitmapFactory* ftk_bitmap_factory_create(void);
+FtkBitmap* ftk_bitmap_factory_load(FtkBitmapFactory* thiz, const char* filename);
+Ret        ftk_bitmap_factory_add_decoder(FtkBitmapFactory* thiz, FtkImageDecoder* decoder);
+void       ftk_bitmap_factory_destroy(FtkBitmapFactory* thiz);
+
+
+FtkBitmapFactory* ftk_bitmap_factory_create(void) 接口函数，创建FtkBitmapFactory 对象，用于外部调用。
+FtkBitmap* ftk_bitmap_factory_load(FtkBitmapFactory* thiz, const char* filename) 刚刚提到的了图片解码库函数。
+Ret        ftk_bitmap_factory_add_decoder(FtkBitmapFactory* thiz, FtkImageDecoder* decoder) 增加能支持解码处理，
+void       ftk_bitmap_factory_destroy(FtkBitmapFactory* thiz) 销毁FtkBitmapFactory 对象。
+
+
+重点来看看ftk_bitmap_factory_create的处理过程。
+FtkBitmapFactory* ftk_bitmap_factory_create(void)
+{
+	FtkBitmapFactory* thiz = (FtkBitmapFactory*)FTK_ZALLOC(sizeof(FtkBitmapFactory));
+
+	if(thiz != NULL)
+	{
+#ifdef HAS_BMP
+		ftk_bitmap_factory_add_decoder(thiz, ftk_image_bmp_decoder_create());	
+#endif
+
+#ifdef HAS_JPEG
+		ftk_bitmap_factory_add_decoder(thiz, ftk_image_jpeg_decoder_create());	
+#endif
+
+#ifdef HAS_PNG
+		ftk_bitmap_factory_add_decoder(thiz, ftk_image_png_decoder_create());
+#endif
+
+#ifdef WIN32
+		ftk_bitmap_factory_add_decoder(thiz, ftk_image_win32_decoder_create());
+#endif
+	}
+
+	return thiz;
+}
+
+实现对新的图片的解码支持。
+ftk_bitmap_factory_add_decoder(thiz, ftk_image_bmp_decoder_create());
+
+
+
+用一个指针数组保存解码图片解码实现对象, FtkImageDecoder* decoders[FTK_MAX_IMAGE_DECODERS]
+
+Ret	ftk_bitmap_factory_add_decoder(FtkBitmapFactory* thiz, FtkImageDecoder* decoder)
+{
+	return_val_if_fail(thiz != NULL && decoder != NULL, RET_FAIL);
+	return_val_if_fail(thiz->nr < FTK_MAX_IMAGE_DECODERS, RET_FAIL);
+
+	thiz->decoders[thiz->nr++] = decoder;
+
+	return RET_OK;
+}
+
+解码对象
+FtkImageDecoder* decoder
+
+struct _FtkImageDecoder
+{
+	FtkImageDecoderMatch   match;
+	FtkImageDecoderDecode  decode;
+	FtkImageDecoderDestroy destroy;
+
+	char priv[1];
+};
+
+解码提供以下三个接口函数，
+static inline Ret ftk_image_decoder_match(FtkImageDecoder* thiz, const char* filename)
+{
+	return_val_if_fail(thiz != NULL && thiz->match != NULL, RET_FAIL);
+
+	return thiz->match(thiz, filename);
+}
+
+static inline FtkBitmap* ftk_image_decoder_decode(FtkImageDecoder* thiz, const char* filename)
+{
+	return_val_if_fail(thiz != NULL && thiz->decode != NULL, NULL);
+
+	return thiz->decode(thiz, filename);
+}
+
+static inline void ftk_image_decoder_destroy(FtkImageDecoder* thiz)
+{
+	if(thiz != NULL && thiz->destroy != NULL)
+	{
+		thiz->destroy(thiz);
+	}
+
+	return;
+}
+
+不同的图片解码对象在创建时实现各自对应的	FtkImageDecoderMatch   match; FtkImageDecoderDecode  decode; FtkImageDecoderDestroy destroy;
+
+例如png解码库的创建
+FtkImageDecoder* ftk_image_png_decoder_create(void)
+{
+	FtkImageDecoder* thiz = (FtkImageDecoder*)FTK_ZALLOC(sizeof(FtkImageDecoder));
+
+	if(thiz != NULL)
+	{
+		thiz->match   = ftk_image_png_decoder_match;
+		thiz->decode  = ftk_image_png_decoder_decode;
+		thiz->destroy = ftk_image_png_decoder_destroy;
+	}
+
+	return thiz;
+}
+
+
+
+
+
+
+
+
+
+
+struct _FtkBitmapFactory
+{
+	int nr;		
+	FtkImageDecoder* decoders[FTK_MAX_IMAGE_DECODERS];
+};
+
+
+
+
+
+struct _FtkBitmap
+{
+	int w;
+	int h;
+	int ref;
+	int length;
+	FtkColor bits[1];
+};
