@@ -1,0 +1,44 @@
+配置vim插件遇到下面的错误
+
+处理 /root/.vim/plugin/cscope_map.vim 时发生错误:
+第    1 行:
+E474: 无效的参数: fileformat=unix^M
+第    2 行:
+E492: 不是编辑器的命令: ^M
+第   26 行:
+E492: 不是编辑器的命令: ^M
+第   27 行:
+E492: 不是编辑器的命令: ^M
+第   30 行:
+E15: 无效的表达式: has("cscope")^M
+第 166 行:
+E171: 缺少 :endif
+
+解决办法
+
+插件内的回车符，使用了^M——这是windows系统下专用的'\r\n'中的'\r'
+
+解决方法：
+用vim打开该插件
+:set ff=unix
+:w
+重启vim即可。
+
+:set fileformat=unix
+
+使用vim是出现了下面的错误
+
+处理 /root/.vim/plugin/cscope_map.vim 时发生错误:
+第   42 行:
+E568: 重复的 cscope 数据库未被加入
+
+解决办法：
+
+在
+
+.vimrc中加上
+:set nocscopeverbose
+
+原因是/etc/vimrc中已经将cscope.out读入，在plugin中也读了一遍，这样就有两遍
+
+<C+\>c 表示：先按ctrl+\，松开然后按c
