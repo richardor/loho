@@ -1,0 +1,67 @@
+   最近对andriod产生了兴趣，决定先下载源码看看。 这时才发现andriod的源码下载并不是一件简单的事情， git,repo 都得有所了解。现特记录此笔记。
+   1 安装curl ,curl是linux下的一个下载工具。 
+     我的linux 系统的版本为fedora-9,超级用户使用如下命令安装（此时的linux系统是能连接到网络的）
+     #curl yum -y install curl 
+   2 安装git
+     2.1 下载最新的git源码包 选择高版本（1.5.4 以上版本。）
+	  http://download.chinaunix.net/download/0002000/1943.shtml 
+     2.2  解压安装
+	tar -xjvf git-1.6.1.tar.gz  
+	cd git-1.6.1
+	./configure --prefix=/usr/local
+	make
+	make install
+
+
+   3 安装Repo
+     首先确保在当前用户的主目录下创建一个/bin目录（如果没有的话），然后把它(~/bin)加到PATH环境变量中
+     接下来通过cURL来下载Repo脚本，保存到~/bin/repo文件中
+     curl http://android.git.kernel.org/repo >~/bin/repo
+     别忘了给repo可执行权限
+     chmod a+x ~/bin/repo
+   4 下载源码， 
+     建立一个目录，命名为andriod
+     进入该目录，执行如下命令
+     #repo init -u git://android.git.kernel.org/platform/manifest.git
+     中间需要你输入你的用户名和邮箱，如果你有计划提交代码时， 用你在google 上注册的邮箱和密码（我是随手乱填的，反正不打算上传patch,执行repo init命令可以更新你的用户名和邮箱）。
+     更新代码
+     #repo sync
+     下载的时间可能会比较长，视网络情况而定。
+
+
+常见错误：
+1 fatal: git 1.5.4 or later required
+  原因：git 版本太低。
+2 执行命令repo sync 更新源码时出现如下错误
+  error: git checkout-index: unable to write file sdk/4/android.jar86)
+error: git checkout-index: unable to write file sdk/4/framework.aidl
+error: git checkout-index: unable to write file sdk/5/Android.mk
+error: git checkout-index: unable to write file sdk/5/android.jar
+error: git checkout-index: unable to write file sdk/5/framework.aidl
+error: git checkout-index: unable to write file sdk/6/Android.mk
+error: git checkout-index: unable to write file sdk/6/android.jar
+error: git checkout-index: unable to write file sdk/6/framework.aidl
+error: git checkout-index: unable to write file sdk/7/Android.mk
+error: git checkout-index: unable to write file sdk/7/android.jar
+error: git checkout-index: unable to write file sdk/7/framework.aidl
+fatal: cannot create directory at 'sdk/8': No space left on device
+Traceback (most recent call last):
+  File "/home/zhoumin/android/.repo/repo/main.py", line 235, in <module>
+    _Main(sys.argv[1:])
+  File "/home/zhoumin/android/.repo/repo/main.py", line 217, in _Main
+    repo._Run(argv)
+  File "/home/zhoumin/android/.repo/repo/main.py", line 123, in _Run
+    cmd.Execute(copts, cargs)
+  File "/home/zhoumin/android/.repo/repo/subcmds/sync.py", line 338, in Execute
+    project.Sync_LocalHalf(syncbuf)
+  File "/home/zhoumin/android/.repo/repo/project.py", line 684, in Sync_LocalHal
+    self._InitWorkTree()
+  File "/home/zhoumin/android/.repo/repo/project.py", line 1201, in _InitWorkTre
+    raise GitError("cannot initialize work tree")
+error.GitError: cannot initialize work tree
+
+原因：andriod源码较大， 安装时出现硬盘空间不足。
+
+参考文档
+1 Git和Repo扫盲——如何取得Android源代码
+  http://www.cnblogs.com/goodloop/archive/2009/05/09/1453145.html

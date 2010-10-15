@@ -1,0 +1,88 @@
+移植wifi无线网卡到mini2440上全过程  
+前段时间移植了U-boot和linux2.6.27.9到mini2440上，最近有点空，手头有一个usb接口的zd1211b芯片的wifi无线网卡（PSP和NDSL玩家都知道的神卡），于是决定进行wifi无线网卡在嵌入式中的移植。要在内核中加入此无线网卡的驱动。我是在我移植的linux2.6.27.9内核上移植的。关于内核移植，请看我的这篇文章。http://blog.chinaunix.net/u2/75270/showart.php?id=1796658
+
+新版的linux2.6.27.9已自带zd1211b的驱动。此驱动在rat-linux-2.6.27.9/drivers/net/wireless/zd1211rw/中。
+要让此驱动生效，得修改内核配置。
+选中
+networking support-->wireless-->Generic IEEE 802.11 Networking Stack (mac80211)
+选中
+device drivers-->netword device support-->wirelss lan-->ZyDAS ZD1211/ZD1211B USB-wireless support
+重新编译内核。下载到板子中，重启。加入无线网卡。出现
+usb 1-1: USB disconnect, address 2
+usb 1-1: new full speed USB device using s3c2410-ohci and address 3
+usb 1-1: configuration #1 chosen from 1 choice
+usb 1-1: reset full speed USB device using s3c2410-ohci and address 3
+zd1211rw 1-1:1.0: phy1
+表示无线网卡已被识别。使用cat /proc/net/wireless 命令，可以查看到系统中多了个wlan0网卡。此时，网卡还没工作。使用命
+令ifconfig wlan0 up则出现firmware:requesting zd1211，然后没反应了，这是因为没有firmware的原因，从这里 
+http://downloads.sourceforge.net/zd1211/zd1211-firmware-1.4.tar.bz2?modtime=1191498990&big_mirror=0
+下载到zd1211 firmware 1.4后，根据firmware的说明，将其中的zd1211_*文件拷贝到根文件系统/lib/firmware/zd1211目录中。这
+里再执行ifconfig wlan0 up命令，则出现
+firmware: requesting zd1211/zd1211b_ub
+firmware: requesting zd1211/zd1211b_uphr
+zd1211rw 1-1:1.0: firmware version 4725
+zd1211rw 1-1:1.0: zd1211b chip 0ace:1215 v4810 full 00-02-72 AL2230_RF pa0 g--N
+网卡硬件开始正常工作了。其中，0ace:1215是网卡的ID，可以用主机linux系统命令lsusb查看到。
+但此时，网卡还没被正确配置，还不能正常使用。
+要正常使用无线网卡，还要正确配置。linux下的配置工具是wireless-tools，可以在这里下载到它的最新版。
+http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html
+下载后，将源代码解压。再修改其中的makefile文件，将其中的
+CC = gcc
+AR = ar
+RANLIB = ranlib
+改为
+CC = arm-linux-gcc
+AR = arm-linux-ar
+RANLIB = arm-linux-ranlib
+再执行make，编译完成后，将生成的iwconfig，iwlist文件拷贝到rat-linux for mini2440的根文件系统中的/bin目录下，将
+libiw.so.29拷贝到/lib目录下。
+启动mini2440开发板，进入linux命令行后，执行ifconfig wlan0 up，启动无线网卡。再执行iwlist scanning，此命令可以搜索到
+可用的无线网络接入点。我的无线接入点是一台无线路由器，ESSID是"rat-linux"，执行此命令后就会下列输出
+wlan0     Scan completed :
+          Cell 01 - Address: 00:19:C6:53:B9:CE
+                    ESSID:"rat-linux"
+                    Mode:Master
+                    Channel:2
+                    Frequency:2.417 GHz (Channel 2)
+                    Quality=11/100  Signal level:66/100
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:tsf=000000056306469f
+                    Extra: Last beacon: 1065ms ago
+
+其中可以看到我的无线接入点是需要密码的。假设密码是123456。使用如下的命令设置密码。
+  iwconfig wlan0 key 123456
+为了能接无线网，还要使用下面的命令设置ESSID
+  iwconfig wlan0 essid "rat-linux"
+其它的参数可以都采用默认的，不用再设了。可以使用下面的命令加入无线网了。
+  
+  iwconfig wlan0 ap auto
+再执行iwconfig wlan0，就可以看到下面的信息。
+wlan0     IEEE 802.11bg  ESSID:"rat-linux"
+          Mode:Managed  Frequency:2.417 GHz  Access Point: 00:19:C6:53:B9:CE
+          Bit Rate=1 Mb/s   Tx-Power=27 dBm
+          Retry min limit:7   RTS thr:off   Fragment thr=2352 B
+          Encryption key:1234-56   Security mode:open
+          Power Management:off
+          Link Quality=100/100  Signal level:66/100
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+这就表示已接入无线网。
+最后，为无线网卡指定IP地址。命令如下
+  ifconfig wlan0 192.168.1.30 netmask 255.255.255.0
+我的开发主机和无线网卡处于同一网段，因此是可以相互PING通的。因此可以用从开发主机上PING无线网卡的IP地址的方法来确网
+卡是否工作正常。从主机上执行ping 192.168.1.30，正常PING通。
+至此，无线网卡安装全部完成。
+最后，为了方便配置，可以将上述的配置命令写入linux脚本文件，以后，只要执行此脚本，即可完成上述步骤的配置。脚本文件内
+容如下。
+#! /bin/sh
+ifconfig wlan0 up
+iwconfig wlan0 key 123456
+iwconfig wlan0 essid "rat-linux"
+iwconfig wlan0 ap auto
+ifconfig wlan0 192.168.1.30 netmask 255.255.255.0 
+ 
+ 
+ 

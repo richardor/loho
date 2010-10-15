@@ -1,0 +1,295 @@
+看FTK的源码也有些时日了，也该写篇笔记了。
+任意一个GUI系统， 所做事情无非是，响应用户事件处理（例如用户按下按键，移动鼠标等事件），做出相应的处理（包括自身控件的重绘，调用其它线程处理相应的业务),ftk也不例外，
+此文档主要是记录整个事件处理流程。以用户在按界面的上的按下隐藏按钮键为例
+。
+事件：用户按下按钮，响应:界面上的另外一个按钮消失。这其中到底经历怎么 的过程， 这也是我看了ftk源码想要求解一个的问题。以ftk_demo_button.c源码为例，详细说明此过程。
+1 fkt初始化，   
+     ftk_init(argc, argv);
+     初始化g_globals.sources_manager ，g_globals.main_loop
+
+     创建默认的窗体事件管理
+     ftk_set_wnd_manager(ftk_wnd_manager_default_create(ftk_default_main_loop()));
+
+     在ftk_wnd_manager_default_create（）函数里，创建g_globals.primary_source，g_globals.primary_source是ftk最初级的事件处理源，
+     ftk_wnd_manager_default_dispatch_event作为最初级事件处理源的事件处理函数， 处理窗体事件响应。
+     ftk_set_primary_source(ftk_source_primary_create((FtkOnEvent)ftk_wnd_manager_default_dispatch_event, thiz));
+    
+    平台初始化，根据编绎时不同选项，编绎不同的头件，编绎运行于framerbuffer平台时的软件时。
+
+    ftk_backend_init(argc, argv);
+
+    编绎运行于framerbuffer平台时的软件。
+	Ret ftk_backend_init(int argc, char* argv[])
+	{
+		ftk_init_input();
+		ftk_set_display(ftk_display_fb_create(getenv("FTK_FB_NAME") ? getenv("FTK_FB_NAME") : FTK_FB_NAME));
+		if(ftk_default_display() == NULL)
+		{
+			ftk_loge("open display failed.\n");
+			exit(0);
+		}
+
+		return RET_OK;
+	}
+	ftk_init_input()此函数向系统注册外部输入事件处理源。
+
+	source = ftk_source_input_create(filename, 
+				(FtkOnEvent)ftk_wnd_manager_queue_event, ftk_default_wnd_manager());
+
+	FtkSource* ftk_source_input_create(const char* filename, FtkOnEvent on_event, void* user_data)
+	{
+
+		priv->on_event = on_event;
+		priv->user_data = user_data;
+
+	}
+
+
+
+
+
+2 创建窗体,button.
+	win = ftk_app_window_create();
+	width = ftk_widget_width(win);
+	height = ftk_widget_height(win);
+
+
+	width = width/3 - 10;
+	button = ftk_button_create(win, 0, 30, width, 50);
+	ftk_widget_set_text(button, "show");
+	ftk_button_set_clicked_listener(button, button_show_clicked, win);
+
+	
+	
+3	ftk_run();
+	ftk的主循环处理采用的select侦听模式，当事件源的描述符可读时，读敢一个event事件，调用该事件的处理函数。
+	
+
+
+
+	当source读到的事件时，首先进行事件信息转换， 转换为事件能识别到的事件内容。
+
+	static Ret ftk_source_input_dispatch(FtkSource* thiz)
+	{
+	int ret = 0;
+	DECL_PRIV(thiz, priv);
+	struct input_event ievent;
+	return_val_if_fail(priv->fd > 0, RET_FAIL);	
+	ret = read(priv->fd, &ievent, sizeof(ievent));
+	return_val_if_fail(ret == sizeof(ievent), RET_FAIL);
+
+	处理事件响应时调用此函数priv->on_event(priv->user_data, &priv->event);
+	switch(ievent.type)
+	{
+		case EV_KEY:
+		{
+			if(ievent.code == BTN_LEFT || ievent.code == BTN_RIGHT 
+				|| ievent.code == BTN_MIDDLE || ievent.code == BTN_TOUCH)
+			{
+				priv->event.type = ievent.value ? FTK_EVT_MOUSE_DOWN : FTK_EVT_MOUSE_UP;
+			}
+			else
+			{
+				priv->event.type = ievent.value ? FTK_EVT_KEY_DOWN : FTK_EVT_KEY_UP;
+				priv->event.u.key.code = ftk_key_map(thiz, ievent.code);
+				if(priv->on_event != NULL && priv->event.type != FTK_EVT_NOP)
+				{
+					priv->on_event(priv->user_data, &priv->event);
+					priv->event.type = FTK_EVT_NOP;
+				}
+			}
+
+			break;
+
+	}
+
+	也就是ftk_wnd_manager_queue_event（），调用g_globals.wnd_manager的事件处理函数thiz->queue_event(thiz, event）;
+	static inline Ret  ftk_wnd_manager_queue_event(FtkWndManager* thiz, FtkEvent* event)
+	{
+		return_val_if_fail(thiz != NULL && thiz->queue_event != NULL, RET_FAIL);
+
+		return thiz->queue_event(thiz, event);
+	}
+	
+        指针来，指针去，最后可以定位到调用也就是下面的函数。
+	static Ret  ftk_wnd_manager_default_queue_event(FtkWndManager* thiz, FtkEvent* event)
+	{
+		return_val_if_fail(thiz != NULL && event != NULL, RET_FAIL);
+		return_val_if_fail(ftk_default_main_loop() != NULL, RET_FAIL);
+
+		if(event->time == 0)
+		{
+			event->time = ftk_get_relative_time();
+		}
+
+		return ftk_source_queue_event(ftk_primary_source(), event);
+	}
+
+	还没有结束呀， 此函数的处理，就是向最初级的source写入事件， 
+	Ret ftk_source_queue_event(FtkSource* thiz, FtkEvent* event)
+	{
+		int ret = 0;
+		DECL_PRIV(thiz, priv);
+		return_val_if_fail(thiz != NULL && event != NULL, RET_FAIL);
+
+		ret = ftk_pipe_write(priv->pipe, event, sizeof(FtkEvent));
+
+		return ret == sizeof(FtkEvent) ? RET_OK : RET_FAIL;
+	}
+
+	此时primary_source的描述符变为可读， 所以在下一个mainloop里，primary_source处理相应的事件。
+   
+static Ret ftk_source_primary_dispatch(FtkSource* thiz)
+{
+	FtkEvent event = {0};
+	DECL_PRIV(thiz, priv);
+	int ret = ftk_pipe_read(priv->pipe, &event, sizeof(FtkEvent));
+	return_val_if_fail(ret == sizeof(FtkEvent), RET_REMOVE);
+
+	switch(event.type)
+	{
+		case FTK_EVT_NOP:
+		{
+			break;
+		}
+		case FTK_EVT_ADD_SOURCE:
+		{
+			ftk_sources_manager_add(ftk_default_sources_manager(), event.u.extra);
+			break;
+		}
+		case FTK_EVT_REMOVE_SOURCE:
+		{
+			ftk_sources_manager_remove(ftk_default_sources_manager(), event.u.extra);
+			break;
+		}
+		default:
+		{
+			if(priv->on_event != NULL)
+			{
+				priv->on_event(priv->user_data, &event);
+			}
+		}
+	}
+
+	return RET_OK;
+}
+	primary_source处理相应的事件，会根据event.type来进行不同的操作，当event.type为FTK_EVT_ADD_SOURCE， FTK_EVT_REMOVE_SOURCE，用于管理事件源。
+	当event.type为其它时，会调用priv->on_event(priv->user_data, &event)进行事件处理。
+  
+	priv->on_event 又是什么东西呢?/:-)
+	看下面的函数，ftk_wnd_manager_default_dispatch_event 就是我们建立primary_source时，传入事件处理函数指针。
+ftk_set_primary_source(ftk_source_primary_create((FtkOnEvent)ftk_wnd_manager_default_dispatch_event, thiz));
+	
+static Ret  ftk_wnd_manager_default_dispatch_event(FtkWndManager* thiz, FtkEvent* event)
+{
+	DECL_PRIV(thiz, priv);
+	FtkWidget* target = NULL;
+	return_val_if_fail(thiz != NULL && event != NULL, RET_FAIL);
+
+	if(event->type == FTK_EVT_KEY_UP)
+	{
+		ftk_logd("%s: FTK_EVT_KEY_UP\n", __func__);
+	}
+
+	if(event->type == FTK_EVT_KEY_DOWN || event->type == FTK_EVT_KEY_UP)
+	{
+		ftk_wnd_manager_default_key_translate(thiz, event);
+	}
+
+	if(ftk_wnd_manager_dispatch_globals(thiz, event) != RET_OK)
+	{
+		return RET_REMOVE;
+	}
+
+	switch(event->type)
+	{
+		case FTK_EVT_WND_DESTROY:
+		{
+			if(priv->top_window == event->widget)
+			{
+				priv->top_window = NULL;
+			}
+			ftk_wnd_manager_default_remove(thiz, event->widget);	
+			return RET_OK;
+		}
+		case FTK_EVT_HIDE:
+		{
+			ftk_wnd_manager_default_emit_top_wnd_changed(thiz);
+			ftk_wnd_manager_update(thiz);
+			return RET_OK;
+		}
+		case FTK_EVT_SHOW:
+		{
+			ftk_wnd_manager_default_emit_top_wnd_changed(thiz);
+			return RET_OK;
+		}
+		case FTK_EVT_RELAYOUT_WND:
+		{
+			ftk_wnd_manager_default_relayout(thiz);
+			break;
+		}
+		default:break;
+	}
+
+	if(event->type == FTK_EVT_MOUSE_DOWN || event->type == FTK_EVT_KEY_DOWN)
+	{
+		priv->pressed_event = *event;
+		ftk_source_ref(priv->long_press_timer);
+		ftk_source_timer_reset(priv->long_press_timer);
+		ftk_main_loop_add_source(ftk_default_main_loop(), priv->long_press_timer);
+	}
+	
+	if(event->type == FTK_EVT_MOUSE_UP|| event->type == FTK_EVT_KEY_UP)
+	{
+		ftk_main_loop_remove_source(ftk_default_main_loop(), priv->long_press_timer);
+	}
+
+	if((event->type == FTK_EVT_MOUSE_DOWN 
+		|| event->type == FTK_EVT_MOUSE_UP
+		|| event->type == FTK_EVT_MOUSE_MOVE) && priv->grab_widget == NULL)
+	{
+		int x = event->u.mouse.x;
+		int y = event->u.mouse.y;
+		
+		target = ftk_wnd_manager_find_target(thiz, x, y);
+		if(event->type == FTK_EVT_MOUSE_DOWN)
+		{
+			priv->focus_widget = target;
+		}
+	}
+	else if(event->widget != NULL)
+	{
+		target = event->widget;
+	}
+	else if(priv->grab_widget != NULL)
+	{
+		target = priv->grab_widget;
+	}
+	else if(priv->focus_widget != NULL)
+	{
+		target = priv->focus_widget;
+	}
+	else if(priv->top > 0)
+	{
+		target = priv->windows[priv->top - 1];
+	}
+
+	if(target != NULL && !ftk_widget_is_insensitive(target))
+	{
+		ftk_widget_ref(target);
+		ftk_widget_event(target, event);
+		ftk_widget_unref(target);
+	}
+
+	return RET_OK;
+}
+  
+
+  
+  
+  
+  
+  
+
+
+
