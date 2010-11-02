@@ -11,6 +11,7 @@ struct _ListNode{
 	ListNode *next;
 };
 
+
 #define return_if_fail(p) if(!(p)) \
 	{printf("%s:%d Warning: "#p" failed.\n", \
 		__func__, __LINE__); return;}
