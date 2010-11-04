@@ -1,0 +1,2388 @@
+<html><head><!--STATUS OK-->
+
+
+<meta http-equiv="content-type" content="text/html; charset=GB2312"><title>NTP
+协议在Linux上的实现_游子问寒千里外_百度空间      </title>
+
+<style type="text/css">
+
+.error{color:#FF0000;font-size:12px}
+.shareUser,.shareLastEditor{line-height:20px;color:#666666;text-align:left}
+.shareLastEditor{margin:5px 0 8px;}
+
+
+
+
+
+	
+
+
+
+
+
+</style>
+
+<script type="text/javascript" src="69bfe026fde1cb0d4d088d72_files/global.js"></script>
+<script type="text/javascript" src="69bfe026fde1cb0d4d088d72_files/libs.js"></script>
+<script type="text/javascript" src="69bfe026fde1cb0d4d088d72_files/tangram-1.js"></script>
+
+
+<script type="text/javascript">
+var Session = {
+    isLogin: ! true,
+    isHost: "",
+    userName: "jameszhl2009",   
+    userPortrait:'fa106a616d65737a686c323030390f08',
+    spaceURL: "/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2",
+    spBasicURL:"游子问寒千里外",
+    spBasicURLEnc:"%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2",
+    visitorName:    "",
+    visitorPortrait:'00000000',
+    isActive: '',   
+    visitorURL: "/index.html",        // 
+    pageURL: "http://hi.baidu.com/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2/blog/item/69bfe026fde1cb0d4d088d72%2Ehtml",    
+    refer: "http://www.google.com.hk/search?hl=zh-CN&safe=strict&biw=1430&bih=660&q=202.72.145.44&aq=o&aqi=&aql=&oq=&gs_rfai=",
+    spToken: 'c25c8a4792625fc4abf481e3213db623', 
+    spFriendDomain: 'http://frd.baidu.com',
+    spSpaceDomain: 'http://hi.baidu.com',
+    spPortraitDomain: '',
+    spSpaceStaticDomain: 'http://hi.baidu.com' 
+
+    ,isDrag:  false  
+    ,isProfile:  false   
+    };
+</script>
+
+<script language="javascript" src="69bfe026fde1cb0d4d088d72_files/dialog.js"></script>
+
+<script type="text/javascript" src="69bfe026fde1cb0d4d088d72_files/BdEditor-mined.js"></script>
+
+<script type="text/javascript" src="69bfe026fde1cb0d4d088d72_files/antiSpam.js"></script>
+
+<script language="JavaScript" src="69bfe026fde1cb0d4d088d72_files/g_spjs.js"></script>
+
+<script language="javascript">
+
+<!--
+
+
+(function(){var A=109;function C(D){var F="nslog__"+(new Date()).getTime();var E=window[F]=new Image();E.onload=(E.onerror=function(){window[F]=null});E.src="http://nsclick.baidu.com/v.gif?pid="+A+"&url="+encodeURIComponent(D)+"&type=0&_t="+Math.random();E=null}function B(F){F=F||event;var E=F.srcElement||F.target;if(E.nodeType!=1){E=E.parentNode}while(E&&E.tagName&&E.tagName.toUpperCase()!="A"){E=E.parentNode}if(E&&E.tagName&&E.tagName.toUpperCase()=="A"){if(E.protocol.indexOf("http")==0&&!/^([\w-]+\.)*?baidu\.com/i.test(E.host)){var D=E.href;setTimeout(function(){C(D)},1)}}E=null}if(document.attachEvent){document.attachEvent("onmousedown",B);window.attachEvent("onunload",function(){document.detachEvent("onmousedown",B)})}else{document.addEventListener("mousedown",B,false);window.addEventListener("unload",function(){document.removeEventListener("mousedown",B,false)},false)}})();
+
+var allkey="";
+
+var i=0;
+
+var flag=0;
+
+function setpv(allnum)
+
+{
+
+	var num = allnum.split('_');
+
+	document.getElementById("result").innerHTML=num[0];
+
+}
+
+
+
+function checkMail(s)
+
+{
+
+  	var pattern=/\w+@\w+\.[a-z]+/;
+
+  	if(pattern.test(s))
+
+    {
+
+       return true;
+
+    }
+
+  	else
+
+   {
+
+      return false;
+
+   }
+
+}
+
+
+
+
+
+function checkeandu(eanduid)
+
+{
+
+	var eanduvalue=G(eanduid).value;
+
+	var len=bytes(eanduvalue);
+
+	if(len>128)
+
+	{
+
+		showErr(2,"您输入的网址或邮箱太长，请保持在128字节以内。");
+
+		return false;
+
+	}
+
+	else
+
+	{
+
+		 return true;
+
+	}
+
+
+
+}
+
+
+
+function cmtdel(str)
+
+{
+
+	var pop=new Popup({ contentType:3,isReloadOnClose:false,width:340,height:80});
+
+	pop.setContent("title","删除评论");
+
+	pop.setContent("confirmCon","您确定要彻底删除这条评论吗？");
+
+	pop.setContent("callBack",delCallback2);
+
+	pop.setContent("parameter",{fid:str,popup:pop});
+
+	pop.build();
+
+	pop.show();
+
+	return false;
+
+}
+
+function delCallback2(para)
+
+{
+
+	var o_pop=para["popup"];
+
+	o_pop.config.contentType=1;
+
+	o_pop.setContent("contentUrl","");
+
+	o_pop.reBuild();
+
+	G(para["fid"]).target=o_pop.iframeIdName;
+
+	eval("document."+para["fid"]).submit();
+
+}
+
+
+
+String.prototype.byteLength = function() {
+
+    return this.replace(/[^\u0000-\u007f]/g,"\u0061\u0061").length;
+
+}
+
+
+
+function checkname(strid)
+
+{
+
+	var ele=document.getElementById(strid);
+
+	var len=bytes(ele.value);
+
+	if(len>49)
+
+	{
+
+		showErr(1,"您输入的姓名太长，请保持在49字节以内。");
+
+		return false;
+
+	}
+
+	else
+
+	{
+
+		if(len==0)
+
+		{
+
+			document.getElementById(strid).value="匿名网友";
+
+		}
+
+		 return true;
+
+	}
+
+
+
+}
+
+
+
+function checktext(textid)
+
+{
+
+        var tempStr='';
+
+        var isLightFont=false;
+
+		if(editor&&textid=="spBlogCmtText"){
+
+			//document.getElementById("spBlogCmtText").value=editor.getHtml();
+
+			tempStr=editor.getHtml();
+
+			tempStr=tempStr.replace(/<span style="filter:glow\(color=#([0-9a-z]{3,6}),strength=2\);height:0px;color:#([0-9a-z]{3,6})">/ig,'');
+
+			tempStr=tempStr.replace(/<\/span>/ig,'');
+
+			document.getElementById("spBlogCmtText").value=tempStr;
+
+            isLightFont=!(tempStr==editor.getHtml());
+
+        }
+
+		document.getElementById(textid).value=trimlr(textid);
+
+		var str=trimrn(textid);
+
+		len=str.length;
+
+		if(len==0 || ((/^[\s,　]+$/gi).test(str)) )
+
+		{
+
+			showErr(3,"您必须输入评论内容，请检查。");
+
+			return false;
+
+		}
+
+		else
+
+        {
+
+                len=str.byteLength();
+
+                var maxLength=isLightFont?916:1000;
+
+				if(len > maxLength)
+
+				{
+
+					showErr(3,"您输入的评论内容太长，请保持在500字以内。");
+
+					return false;
+
+				}
+
+				if(editor&&textid=="spBlogCmtText"){
+
+					document.getElementById("spBlogCmtText").value=editor.getHtml();
+
+					document.getElementById(textid).value=trimlr(textid);
+
+				}
+
+
+
+			return true;
+
+		}
+
+}
+
+
+
+function showErr(index,str)
+
+{
+
+	G(index+"_err").style.display="";
+
+	G(index+"_err_con").innerHTML=str;
+
+}
+
+function hidErr(index)
+
+{
+
+	G(index+"_err").style.display="none";
+
+	G(index+"_err_con").innerHTML="";
+
+}
+
+
+
+function alertPop(tit,con)
+
+{
+
+	var pop=new Popup({ contentType:4,isReloadOnClose:false,width:340,height:80});
+
+	pop.setContent("title",tit);
+
+	pop.setContent("alertCon",con);
+
+	pop.build();
+
+	pop.show();
+
+}
+
+
+
+function cmtfull()
+
+{
+
+	var cnum=0;
+
+	if(cnum>=50000)
+
+	{
+
+		alertPop("发表评论","单篇日志评论数最多为50000条.");
+
+		return false;
+
+	}
+
+	else
+
+	{
+
+		return true;
+
+	}
+
+}
+
+
+
+function checkcmtform()
+
+{
+
+	if(checkname("spBlogCmtor")&&checkeandu("spBlogCmtURL")&&checktext("spBlogCmtText")&&cmtfull())
+
+	{
+
+		submitForm();
+
+		return true;
+
+	}
+
+	else
+
+	{
+
+		return false;
+
+	}
+
+}
+
+
+
+var g_pop=null;
+
+function submitForm()
+
+{
+
+	g_pop=new Popup({ contentType:1,isReloadOnClose:false,width:340,height:80});
+
+	g_pop.setContent("title","添加评论");
+
+	g_pop.setContent("contentUrl","");
+
+	g_pop.setContent("someDisabledBtn","btn_ok");
+
+	g_pop.build();
+
+	G("popFormSubmit").target=g_pop.iframeIdName;
+
+	g_pop.show();
+
+}
+
+
+
+function g_close_pop()
+
+{
+
+	g_pop.close();
+
+}
+
+
+
+function formatonlinpic()
+
+{
+
+var picobj=document.getElementsByName("onlinepic");
+
+var picnum=picobj.length;
+
+
+
+	for(var i=0;i<picnum;i++)
+
+	{
+
+		if(picobj[i].width>200)
+
+		{
+
+			picobj[i].width=200;
+
+		}
+
+		if(picobj[i].height>200)
+
+		{
+
+			picobj[i].height=200;
+
+		}
+
+	}
+
+    try{document.getElementById("btn_ok").disabled = "";}catch(e){}
+
+}
+
+
+
+function addToFavor(){
+
+var blogTitle='NTP协议在Linux上的实现'.replace(/&#39;/g,'\'');
+
+window.open('http://cang.baidu.com/do/add?it='+encodeURIComponent(blogTitle+'_百度空间')+'&iu='+encodeURIComponent(location.href)+'&fr=sp#nw=1','_s','scrollbars=no,width=600,height=450,right=75,top=20,status=no,resizable=yes');
+
+return false;
+
+}
+
+function addToiTieba(){
+    var blogTitle='NTP协议在Linux上的实现'.replace(/&#39;/g,'\'');
+    window.open('http://tieba.baidu.com/i/sys/share?link='+encodeURIComponent('http://hi.baidu.com/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2/blog/item/69bfe026fde1cb0d4d088d72.html')+'&type=text&title='+encodeURIComponent(blogTitle)+'&content=');
+}
+
+function addToShare(){
+    window.open('http://apps.hi.baidu.com/share/?url='+encodeURIComponent('http://hi.baidu.com/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2/blog/item/69bfe026fde1cb0d4d088d72.html'));
+}
+
+
+var isIE = /*@cc_on!@*/false;
+
+function tracker(did,a){
+
+	return function(){
+
+		var t=new Date().getTime();
+
+		var href=a.href;
+
+        if(isIE){
+
+            var r = /href\s*=\s*("|')?([^\s]*)\1/gi;
+
+            if(r.test(a.outerHTML))
+
+                href = RegExp.$2;
+
+        }
+
+        new Image().src = "http://hi.baidu.com/sys/statlog/1.gif?m=" + did + "&v=" + encodeURIComponent(href) + "&c=" + encodeURIComponent(location.href) + "&t="+t;
+
+	}
+
+}
+
+
+
+function tracker_init(did){
+
+	var _s=document.getElementById(did);
+
+	var as = _s.getElementsByTagName('A');
+
+	for(var i = 0, j = as.length; i < j; i ++){
+
+		var a = as[i];
+
+		if(isIE){
+
+			a.attachEvent("onclick", tracker(did,a));
+
+		}else{
+
+			a.addEventListener("click", tracker(did,a), false);
+
+		}
+
+	}
+
+}
+
+
+
+
+
+/* some functions for cmt-reply */
+        var g_cmtorInfo = [];
+        function goCmtReply(cmtPorID){
+            cmtreply(g_cmtorInfo[cmtPorID],cmtPorID);
+        }
+		function cmtreply(cmtName,cmtPorID)
+
+		{
+
+			cmtName=cmtName.replace(/<|>/g,"");
+
+			window.location.hash="#send";
+
+			var cmtForm=document.form1;
+
+			cmtForm.cm.value="3";
+
+			if(!cmtForm.spReferTarget)
+
+			{
+
+				var ipt=document.createElement("input");
+
+				ipt.type="hidden";
+
+				ipt.name="spReferTarget";
+
+				ipt.value=cmtPorID;
+
+				cmtForm.appendChild(ipt);
+
+			}else cmtForm.spReferTarget.value=cmtPorID;
+
+
+
+
+
+			 //G("reTitle").innerHTML="回复"+cmtName+"：";
+
+			 G("cancleReLink").style.display="";
+
+			 cmtForm.btn_ok.value="回复评论";
+
+
+
+
+
+			 try{
+
+				editor.window.focus();
+
+                editor.window.document.body.innerHTML="回复"+cmtName+"：";
+
+
+
+                var w = editor.window;
+
+				if(w.getSelection){
+
+					var d = w.document;
+
+					var s = w.getSelection();
+
+					var r = d.createRange();
+
+					r.setStartAfter(d.body.firstChild);
+
+					r.setEndAfter(d.body.lastChild);
+
+					s.removeAllRanges();
+
+					s.addRange(r);
+
+				}
+
+			}catch(e){
+
+			 		try{
+
+				 		cmtForm.getElementsByTagName("textarea")[0].focus();
+
+				 		cmtForm.getElementsByTagName("textarea")[0].value="回复"+cmtName+"：";
+
+				 	}catch(e){}
+
+			}
+
+		}
+
+
+
+		function canclereply()
+
+		{
+
+			var cmtForm=document.form1;
+
+			cmtForm.cm.value="1";
+
+			try{cmtForm.removeChild(cmtForm.spReferTarget);}catch(e){}
+
+			/*
+
+			try{
+
+					var cmt=cmtForm.getElementsByTagName("textarea")[0]
+
+					cmt.value="";
+
+					cmt.focus();
+
+			}catch(e){}
+
+			*/
+
+
+
+			try{
+
+					var ed=editor.window.document.body;
+
+					ed.innerHTML="";
+
+					editor.window.focus();
+
+				}catch(e){
+
+					var cmt=cmtForm.getElementsByTagName("textarea")[0];
+
+					cmt.value="";
+
+					cmt.focus();
+
+			}
+
+
+
+			G("cancleReLink").style.display="none";
+
+			cmtForm.btn_ok.value="发表评论";
+
+		}
+
+
+
+		function gotoreply()
+
+		{//to checking whether reply cmt
+
+			if( window.location.hash.indexOf("&re=1")<0) return;
+
+			var cmtID=window.location.hash.split("&")[0].replace("#","");
+
+			var cmtlinks=document.getElementsByTagName("a");
+
+			for(var i=0,n=cmtlinks.length;i<n;i++)
+
+			{
+
+				if(cmtlinks[i].name==cmtID){ var rename=cmtlinks[i].getAttribute("rename");  repid=cmtlinks[i].getAttribute("repid"); break;}
+
+			}
+
+			if(typeof(rename)!="undefined"){
+
+				cmtreply(rename, repid);
+
+			}
+
+		}
+
+
+
+//-->
+
+</script>
+
+
+<script type="text/javascript">
+
+    /*<![CDATA[*/
+
+
+
+window.onerror=function(){return true;}
+
+
+
+var RelatedDocData = null, GetAndEval = false;
+
+(function(){
+
+	var xhr = BdAjax.getXHR();
+
+	if(xhr == null){
+
+		RelatedDocData = -1;
+
+		return;
+
+	}
+
+
+
+	xhr.open("GET", "/sys/search?type=8&word=NTP%D0%AD%D2%E9%D4%DALinux%C9%CF%B5%C4%CA%B5%CF%D6&item=69bfe026fde1cb0d4d088d72&t=" + new Date().getTime(), true);
+
+	xhr.onreadystatechange = function(){
+
+		if(xhr.readyState == 4){
+
+			if(xhr.status == 0 || xhr.status == 200){
+
+				if(GetAndEval){
+
+					eval(xhr.responseText);
+
+				}else{
+
+					RelatedDocData = xhr.responseText;
+
+				}
+
+			}
+
+		}
+
+	}
+
+	xhr.send(null);
+
+})();
+
+/*]]>*/
+
+</script>
+
+
+
+<link href="69bfe026fde1cb0d4d088d72_files/ucard.css" rel="stylesheet" 
+type="text/css"><script src="69bfe026fde1cb0d4d088d72_files/ucard.js" type="text/javascript"></script><script src="69bfe026fde1cb0d4d088d72_files/check_baiduhi.js" type="text/javascript"></script></head><body
+ onload="formatonlinpic();"><iframe 
+name="_BdPopupLayer_43qjsus1h7442ckiiolquo23" style="position: absolute;
+ z-index: 65001; display: none;" 
+id="_BdPopupLayer_43qjsus1h7442ckiiolquo23" frameborder="0" 
+scrolling="no"></iframe>
+
+<center>
+
+<script type="text/javascript">
+/*<![CDATA[*/
+if(top.location != self.location){
+	top.location = self.location;
+}
+var myref = encodeURIComponent("http://hi.baidu.com/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2/blog/item/69bfe026fde1cb0d4d088d72%2Ehtml");
+/*]]>*/
+</script>
+<link rel="stylesheet" type="text/css" 
+href="69bfe026fde1cb0d4d088d72_files/mods.css">
+
+<link rel="stylesheet" type="text/css" 
+href="69bfe026fde1cb0d4d088d72_files/8e968f1a87c23db44bedbc2f.css">
+
+<link rel="stylesheet" type="text/css" 
+href="69bfe026fde1cb0d4d088d72_files/space.css">
+
+<div class="userbar">
+    <div id="nav">
+        <a class="logo" href="http://hi.baidu.com/index.htm"><img 
+src="69bfe026fde1cb0d4d088d72_files/logo.gif" alt="图片" border="0"></a>
+
+        <div class="manage">
+            <form action="https://passport.baidu.com/?login" 
+method="post">
+                用户名:<input name="username" type="text">&nbsp;&nbsp; 
+                密码:<input name="password" type="password"> 
+                <input name="mem_pass" value="on" type="hidden">
+                <input value="" style="width: 0pt; height: 0pt;" 
+type="submit">
+                <a href="#" class="loginlink" 
+onclick="this.parentNode.submit(); return false;">登录</a>  
+            </form> 
+            <a href="http://hi.baidu.com/reg/new" class="reglink">注册</a>
+        </div>
+
+    </div>
+</div>
+
+
+
+		
+
+
+<!-- 顶部气泡操作 -->
+<script type="text/javascript">
+/*<![CDATA[*/
+/*var close_tip = (function(){
+        var tip, tip_is_closed = false;
+        var is_tracker_attached = false;
+        function showTip(){
+        if(tip_is_closed){
+        BdEvent.removeEvent(window, "resize", showTip);
+        return false;
+        }
+        if(!is_tracker_attached){
+        BdUtil.hi_tracker("tip", "m_promotion_tip");
+        is_tracker_attached = true;
+        }
+        var hi_index = document.getElementById('hi_index'),
+        left_offset = 0;
+        tip = tip || document.getElementById('tip');
+        do{
+        left_offset += hi_index.offsetLeft;
+        }while(hi_index = hi_index.offsetParent);
+
+        tip.style.left = (left_offset - 160 )+ "px";
+        tip.style.top = '15px';
+        tip.style.display = 'block';
+        }
+        BdEvent.addEvent(window, "load", showTip);
+        BdEvent.addEvent(window, "resize", showTip);
+
+
+
+        return function(e){
+            // console.log(e);
+            var e = window.event || e;
+
+            // e.returnValue = false;
+            e.cancelBubble = true;
+            if(e.stopPropagation)
+                e.stopPropagation();
+
+            set_cookie_4_bdtip(1, String(parseInt("1281931486") + 10));
+            tip.style.display = 'none';
+            tip_is_closed = true;
+        }
+})();*/
+
+
+function set_cookie_4_bdtip(index/* start from one */, value){
+	var bdtip = document.cookie.match(/(^| )BDTIP=([^;]*)(;|$)/);
+	if(!bdtip){
+		bdtip=new Array(index);
+		for(var i=0,n=bdtip.length;i<n;i++)
+		{
+			if(bdtip[i]=="" || bdtip[i]==null)  bdtip[i]=0;
+			if(i == index - 1){
+				bdtip[i] = value;
+			}
+		}
+	}else{
+	bdtip = bdtip[2].split('-');
+	if(index > bdtip.length)  bdtip.length= index;
+	for(var i = 0, j = bdtip.length; i < j; i ++){
+		if(bdtip[i]=="" || bdtip[i]==null) bdtip[i]=0;
+		if(i == index - 1){
+			bdtip[i] = value;
+		}
+	}
+	}
+	bdtip = bdtip.join('-');
+	document.cookie = "BDTIP=" + bdtip+ ";expires=Wed, 28-Nov-37 01:45:46 GMT;path=/;";
+}
+
+/*]]>*/
+</script>
+
+<!-- <div id="tip" style="display:none;">
+    <img src="http://img.baidu.com/hi/img/mfu/arrow.gif" id="arrow"/>
+    <div id="container">
+        <div class="header"></div>
+        <div class="wrapper">
+            <img src="http://img.baidu.com/hi/img/mfu/close.gif" class="close" onclick="close_tip(event)"/>
+            <div class="main">
+                <div class="title">欢乐暑期，玩游戏送大礼！</div>
+                <div class="content">众多精品游戏火爆上线~<br>神秘礼品派发中，先抢先得！</div>
+                <div class="more-action">
+                    
+                    &nbsp;<a href="http://act.hi.baidu.com/appsummer10" target="_blank" onclick="close_tip(event)">赶快来抢！</a>&nbsp;
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div id="main" align="left">
+
+<!--[if IE]>
+<script>
+var objmain = document.getElementById("main");
+function updatesize(){ var bodyw = window.document.body.offsetWidth; if(bodyw <= 790) objmain.style.width="772px"; else if(bodyw >= 1016) objmain.style.width="996px"; else objmain.style.width="100%"; }
+updatesize(); window.onresize = updatesize;
+</script>
+<![endif]-->
+
+	<div id="header">
+
+	<div class="lc"><div class="rc"></div></div>
+<div class="tit"><a 
+href="http://hi.baidu.com/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2/home"
+ class="titlink" title="jameszhl2009的空间 http://hi.baidu.com/游子问寒千里外">游子问
+寒千里外</a></div>
+<div class="desc"></div>
+<div id="tabline">&nbsp;</div>
+
+	<div id="tab"><a 
+href="http://hi.baidu.com/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2/home">主
+页</a><a 
+href="http://hi.baidu.com/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2/blog"
+ class="on">博客</a><a 
+href="http://hi.baidu.com/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2/album">相
+册</a><span>|</span><a 
+href="http://hi.baidu.com/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2/profile">个
+人档案</a>
+
+	<span>|</span><a 
+href="http://hi.baidu.com/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2/friends">好
+友</a>
+
+
+
+
+
+
+
+	</div>
+
+</div>
+
+
+
+<div class="stage">
+
+<div class="stagepad">
+
+<div style="width: 100%;">
+
+
+
+
+
+	
+
+
+
+	<table class="modth" border="0" cellpadding="0" cellspacing="0" 
+width="100%">
+
+	<tbody><tr><td class="modtl" width="7">&nbsp;</td>
+
+	<td class="modtc" nowrap="nowrap"><div class="modhead"><span 
+class="modtit">查看文章</span></div></td>
+
+	<td class="modtc" align="right" nowrap="nowrap"></td>
+
+	<td class="modtr" width="7">&nbsp;</td>
+
+	</tr></tbody></table>
+
+
+
+<div id="m_blog" class="modbox" style="overflow-x: hidden;">
+
+<div class="tit">
+
+NTP协议在Linux上的实现</div>
+
+<div class="date">2010年04月17日 星期六  21:58</div>
+
+
+
+
+<table style="table-layout: fixed; width: 100%;"><tbody><tr><td><div 
+id="blog_text" class="cnt">原文转载自：http://www.eefocus.com/html/10-04
+/94667s.shtml<br>
+<br>
+<div style="margin: 16.8pt 0cm 7.2pt;"><strong><font size="5">10.4&nbsp;
+实验内容 ——NTP协议实现</font></strong></div>
+<div style="margin: 2.4pt 0cm;"><strong><font size="3">1．实验目的</font></strong></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp; 
+通过实现NTP协议的练习，进一步掌握Linux网络编程，并且提高协议的分析与实现能力，为参与完成综合性项目打下良好的基础。</div>
+<div><strong><font size="3">2．实验内容</font></strong></div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; <span style="letter-spacing: -0.3pt;">Network
+ Time Protocol</span><span style="letter-spacing: -0.3pt;">（</span><span
+ style="letter-spacing: -0.3pt;">NTP</span><span style="letter-spacing: 
+-0.3pt;">）协议是用来使计算机时间同步化 的一种协议，它可以使计算机对其服务器或时钟源（如石英钟，</span><span 
+style="letter-spacing: -0.3pt;">GPS</span><span style="letter-spacing: 
+-0.3pt;">等）做同步化，它可以提供高精确度的时间校正（</span><span style="letter-spacing: 
+-0.3pt;">LAN</span><span style="letter-spacing: -0.3pt;">上与标准时间差小于</span><span
+ style="letter-spacing: -0.3pt;">1</span><span style="letter-spacing: 
+-0.3pt;">毫秒，</span><span style="letter-spacing: -0.3pt;">WAN</span><span
+ style="letter-spacing: -0.3pt;">上几十毫秒），且可用加密确认的 方式来防止协议攻击。</span></p>
+<div>&nbsp;&nbsp;&nbsp;&nbsp; NTP提供准确时间，首先要有准确的时间来源，这一时间应该是国际标准时间UTC。  
+NTP获得UTC的时间来源可以是原子钟、天文台、卫星，也可以从Internet上获取。这样就有了准确而可靠的时间源。时间是按NTP服务器的等级传
+ 播。按照距离外部UTC  
+源的远近将所有服务器归入不同的Stratun（层）中。Stratum-1在顶层，有外部UTC接入，而Stratum-2则从Stratum-1获取
+ 
+时间，Stratum-3从Stratum-2获取时间，以此类推，但Stratum层的总数限制在15以内。所有这些服务器在逻辑上形成阶梯式的架构并
+ 相互连接，而Stratum-1的时间服务器是整个系统的基础。</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;  
+进行网络协议实现时最重要的是了解协议数据格式。NTP数据包有48个字节，其中NTP包头16字节，时间戳32个字节。其协议格式如图10.9所示。</div>
+<p style="margin-top: 6pt;" align="center"><span><img 
+src="69bfe026fde1cb0d4d088d72_files/1270450736.jpg" height="277" 
+width="554"></span></p>
+<div style="margin-top: 1.2pt;" align="center">图10.9&nbsp;NTP协议数据格式</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp; 其协议字段的含义如下所示。</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> <span>LI</span></strong>：跳跃指
+示器，警告在当月最后一天的最终时刻插入的迫近闺秒（闺秒）。</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> <span>VN</span></strong>：版本
+号。</div>
+<div>&nbsp;&nbsp;<strong> Mode：</strong>工作模式。该字段包括以下值：0－预留；1－对称行为；3－客户
+机；4－服务器；5－广播；6－NTP控制信息。NTP协议具有3种工作模式，分别为主/被动对称模式、客户/服务器模式、广播模式。在主/被动对称模式
+中，有一对一的连接，双方均可同步对方或被对方同步，先发出申请建立连接的一方工作在主动模式下，另一方工作在被动模式下； <span>客户/服务器模
+ 式与主/被动模式基本相同，惟一区别在于客户方可被服务器同步，但服务器不能被客户同步；在<span>广播模式中，有一对多的连接，服务器不论客户工
+作 在何种模式下，都会主动发出时间信息，客户根据此信息调整自己的时间。</span></span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;<strong> <span>Stratum</span></strong>：对本地时
+钟级别的整体识别。</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;<strong> <span>Poll</span></strong>：有符号整数表示
+连续信息间的最大间隔。</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;<strong> <span>Precision</span></strong>：有符
+号整数表示本地时钟精确度。</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;<strong> <span>Root Delay</span></strong>：表
+示到达主参考源的一次往复的总延迟，它是有15～16位小数部分的符号定点小 数。</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;<strong> <span>Root Dispersion</span></strong>：
+表示一次到达主参考源的标准误差，它是有15～16位小数部分的无符号 定点小数。</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp; <strong><span>Reference Identifier</span></strong>：
+识别特殊参考源。</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp; <strong><span>Originate Timestamp</span></strong>：
+这是向服务器请求分离客户机的时间，采用64位时标格式。</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp; <strong><span>Receive Timestamp</span></strong>：
+这是向服务器请求到达客户机的时间，采用64位时标格式。</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp; <strong><span>Transmit Timestamp</span></strong>：
+这是向客户机答复分离服务器的时间，采用64位时标格式。</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp; <strong><span>Authenticator</span>（Optional）</strong>：
+当实现了NTP认证模式时，主要标识符和信息数字域就 包括已定义的信息认证代码（MAC）信息。</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;  
+由于NTP协议中涉及比较多的时间相关的操作，为了简化实现过程，在本实验中，仅要求实现NTP协议客户端部分的网络通信模块，也就是构造NTP协议字段
+ 进行发送和接收，最后与时间相关的操作不需进行处理。NTP协议是作为OSI参考模型的高层协议比较适合采用UDP传输协议进行数据传输，专用端口号为
+ 123。在实验中，以国家授时中心服务器（IP地址为 202.72.145.44）作为NTP（网络时间）服务器。&nbsp;</div>
+<div><strong><font size="3">3．实验步骤</font></strong></div>
+<div>（1）画出流程图。</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp; 简易NTP客户端的实现流程如图10.10所示。</div>
+<p align="center"><span><img 
+src="69bfe026fde1cb0d4d088d72_files/1270450760.jpg" height="191" 
+width="216"></span></p>
+<div align="center">图10.10&nbsp;简易NTP客户端流程图</div>
+<br>
+<div>（2）编写程序。</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp; 具体代码如下：</div>
+<div>&nbsp;</div>
+<div><strong>/* ntp.c */</strong></div>
+<div>#include &lt;sys/socket.h&gt;</div>
+<div>#include &lt;sys/wait.h&gt;</div>
+<div>#include &lt;stdio.h&gt;</div>
+<div>#include &lt;stdlib.h&gt;</div>
+<div>#include &lt;errno.h&gt;</div>
+<div>#include &lt;string.h&gt;</div>
+<div>#include &lt;sys/un.h&gt;</div>
+<div>#include &lt;sys/time.h&gt;</div>
+<div>#include &lt;sys/ioctl.h&gt;</div>
+<div>#include &lt;unistd.h&gt;</div>
+<div>#include &lt;netinet/in.h&gt;</div>
+<div>#include &lt;string.h&gt;</div>
+<div>#include &lt;netdb.h&gt;</div>
+<div>&nbsp;</div>
+<div>#define NTP_PORT<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+123&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ /*NTP</span>专 用端口号字符串*/</div>
+<div>#define TIME_PORT<span>&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;37&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ /* TIME/UDP</span>端 口号 */</div>
+<div>#define NTP_SERVER_IP<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+"210.72.145.44"&nbsp;/*</span>国家授时中心 IP*/</div>
+<div>#define NTP_PORT_STR<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ "123"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*NTP</span>专
+用端口号字 符串*/</div>
+<div>#define NTPV1<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ "NTP/V1"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*</span>协议及其版本号*/</div>
+<div>#define NTPV2<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ "NTP/V2"</span></div>
+<div>#define NTPV3<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ "NTP/V3"</span></div>
+<div>#define NTPV4<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ "NTP/V4"</span></div>
+<div>#define TIME<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ "TIME/UDP"</span></div>
+<div>&nbsp;</div>
+<div>#define NTP_PCK_LEN 48</div>
+<div>#define LI 0</div>
+<div>#define VN 3</div>
+<div>#define MODE 3</div>
+<div>#define STRATUM 0</div>
+<div>#define POLL 4</div>
+<div>#define PREC -6</div>
+<div>&nbsp;</div>
+<div>#define JAN_1970&nbsp;0x83aa7e80&nbsp;/* 1900年～1970年之间的时间秒数 */</div>
+<div>#define NTPFRAC(x)<span>&nbsp;&nbsp;&nbsp;&nbsp; (4294 * (x) + 
+((1981 * (x)) &gt;&gt;  11))</span></div>
+<p>#define USEC(x)<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ (((x) &gt;&gt; 12) - 759 * ((((x)  &gt;&gt; 10) + 32768) &gt;&gt; 16))</span></p>
+<div>&nbsp;</div>
+<div><strong>typedef struct _ntp_time </strong></div>
+<div><strong>{</strong></div>
+<p><strong><span><span>&nbsp;&nbsp;&nbsp; </span>unsigned int coarse;</span></strong></p>
+<p><strong><span><span>&nbsp;&nbsp;&nbsp; </span>unsigned int fine;</span></strong></p>
+<div><strong>} ntp_time;</strong></div>
+<div><strong>&nbsp;</strong></div>
+<div><strong>struct ntp_packet</strong></div>
+<div><strong>{</strong></div>
+<p><strong><span>&nbsp;&nbsp;&nbsp;&nbsp; unsigned char leap_ver_mode;</span></strong></p>
+<p><strong><span>&nbsp;&nbsp;&nbsp;&nbsp; unsigned char startum; </span></strong></p>
+<p><strong><span>&nbsp;&nbsp;&nbsp;&nbsp; char poll;</span></strong></p>
+<p><strong><span>&nbsp;&nbsp;&nbsp;&nbsp; char precision;</span></strong></p>
+<div><strong><span>&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;root_delay;</span></strong></div>
+<div><strong><span>&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;root_dispersion;</span></strong></div>
+<p><strong><span>&nbsp;&nbsp;&nbsp;&nbsp; int reference_identifier;</span></strong></p>
+<p><strong><span>&nbsp;&nbsp;&nbsp;&nbsp; ntp_time reference_timestamp;</span></strong></p>
+<p><strong><span>&nbsp;&nbsp;&nbsp;&nbsp; ntp_time originage_timestamp;</span></strong></p>
+<p><strong><span>&nbsp;&nbsp;&nbsp;&nbsp; ntp_time receive_timestamp;</span></strong></p>
+<p><strong><span>&nbsp;&nbsp;&nbsp;&nbsp; ntp_time transmit_timestamp;</span></strong></p>
+<div><strong>};</strong></div>
+<div><strong>&nbsp;</strong></div>
+<div>char protocol[32];</div>
+<div>/*构建NTP协议包*/</div>
+<div>int construct_packet(char *packet)</div>
+<div>{</div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; char version = 1;</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; long tmp_wrd;</span></p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; </span>int port;</div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; time_t timer;</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; strcpy(protocol, NTPV3);</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; /*</span>判断协议版本*/</div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; if(!strcmp(protocol, 
+NTPV1)||!strcmp(protocol, NTPV2)</span></p>
+<p style="text-indent: 20.05pt;"><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span>||!strcmp(protocol,  NTPV3)||!strcmp(protocol, NTPV4))</span></p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; {</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+memset(packet, 0, NTP_PCK_LEN);</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; port =
+ NTP_PORT;</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*</span>设
+置16字节的包头*/</div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+version = protocol[6] - 0x30;</span></div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tmp_wrd =
+ htonl((LI &lt;&lt; 30)|(version &lt;&lt;  27)</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ |(MODE &lt;&lt; 24)|(STRATUM &lt;&lt; 16)|(POLL  &lt;&lt; 8)|(PREC 
+&amp; 0xff));</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>memcpy(packet,
+ &amp;tmp_wrd,  sizeof(tmp_wrd));</span></p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*</span>设
+置Root Delay、Root Dispersion和Reference  Indentifier */</div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tmp_wrd =
+ <strong>htonl</strong>(1&lt;&lt;16);</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+memcpy(&amp;packet[4], &amp;tmp_wrd,  sizeof(tmp_wrd));</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+memcpy(&amp;packet[8], &amp;tmp_wrd,  sizeof(tmp_wrd));</span></p>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+/*设置Timestamp部分*/</div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+time(&amp;timer);</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*</span>设
+置Transmit Timestamp coarse*/</div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tmp_wrd =
+ <strong>htonl</strong>(JAN_1970 +  (long)timer);</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+memcpy(&amp;packet[40], &amp;tmp_wrd,  sizeof(tmp_wrd)); </span></p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*</span>设
+置Transmit Timestamp fine*/</div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tmp_wrd =
+ <strong>htonl</strong>((long)NTPFRAC(timer));</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+memcpy(&amp;packet[44], &amp;tmp_wrd,  sizeof(tmp_wrd)); </span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+NTP_PCK_LEN;</span></p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; }</span></div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; else if (!strcmp(protocol, TIME))/* 
+"TIME/UDP" */</span></p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; </span>{</div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; port =
+ TIME_PORT;</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+memset(packet, 0, 4);</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return
+ 4;</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; }</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; return 0;</span></div>
+<div>}</div>
+<div>&nbsp;</div>
+<div>/*获取NTP时间*/</div>
+<p><span style="letter-spacing: -0.3pt;">int<strong> get_ntp_time</strong>(int
+  sk, struct addrinfo *addr, struct ntp_packet *ret_time)</span></p>
+<div>{</div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; fd_set pending_data;</span></div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; </span><span>struct timeval 
+block_time;</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; char data[NTP_PCK_LEN * 8];</span></p>
+<p><span>&nbsp;&nbsp; <span style="letter-spacing: -0.2pt;">&nbsp;&nbsp;int&nbsp;packet_len,
+  data_len = addr-&gt;ai_addrlen, count = 0, result, i, re;</span></span></p>
+<div>&nbsp;</div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; if (!(packet_len = 
+construct_packet(data)))</span></p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; {</span></div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+0;</span></p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; }</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; /*</span>客户端给服务器端发送NTP协议数据包*/</div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; if ((result = <strong>sendto(sk, data,
+ </strong></span></p>
+<p><strong><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span>packet_len, 0,  addr-&gt;ai_addr, data_len)</span></strong><span>)
+ &lt; 0)</span></p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; {</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+perror("sendto");</span></div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+0;</span></p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; }</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; </span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; /*</span>调用select()函数，并设定超时时间为1s*/</div>
+<div><span>&nbsp;&nbsp;&nbsp; <strong>&nbsp;FD_ZERO(&amp;pending_data);</strong></span></div>
+<p><strong><span>&nbsp;&nbsp;&nbsp;&nbsp; FD_SET(sk, &amp;pending_data);</span></strong></p>
+<div><strong><span>&nbsp;&nbsp;&nbsp;&nbsp; block_time.tv_sec=10;</span></strong></div>
+<div><strong><span>&nbsp;&nbsp;&nbsp;&nbsp; block_time.tv_usec=0;</span></strong></div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; if <strong>(select(sk + 1, 
+&amp;pending_data, NULL, NULL,  &amp;block_time)</strong> &gt; 0)</span></p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; {</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*</span>接
+收服务器端的信息*/</div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if 
+((count = <strong>recvfrom(sk, data, </strong></span></p>
+<p><strong><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ NTP_PCK_LEN * 8, 0,  addr-&gt;ai_addr, &amp;data_len)</span></strong>) 
+&lt; 0)</p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></div>
+<p><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span>perror("recvfrom");</span></p>
+<p><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span>return 0;</span></p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if 
+(protocol == TIME)</span></p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></div>
+<p><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span>memcpy(&amp;ret_time-&gt;transmit_timestamp,  data, 4);</span></p>
+<p><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span>return 1;</span></p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(count &lt; NTP_PCK_LEN)</span></p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></div>
+<p><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span>return 0;</span></p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></div>
+/* 设置接收NTP包的数据结构 */
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>ret_time-&gt;leap_ver_mode
+ = ntohl(data[0]);</strong></span></p>
+<div><strong><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;ret_time-&gt;startum = ntohl(data[1]);</span></strong></div>
+<p><strong><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span>ret_time-&gt;poll =  ntohl(data[2]);</span></strong></p>
+<p><strong><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span>ret_time-&gt;precision =  ntohl(data[3]);</span></strong></p>
+<p><strong><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span>ret_time-&gt;root_delay =  ntohl(*(int*)&amp;(data[4]));</span></strong></p>
+<p><strong><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span>ret_time-&gt;root_dispersion =  ntohl(*(int*)&amp;(data[8]));</span></strong></p>
+<p><strong>&nbsp;<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ret_time-&gt;reference_identifier
+ =  ntohl(*(int*)&amp;(data[12]));</span></strong></p>
+<p><strong><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span><span style="letter-spacing: -0.3pt;">ret_time-&gt;reference_timestamp.coarse
+ = ntohl  *(int*)&amp;(data[16]));</span></span></strong></p>
+<p><strong><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span>ret_time-&gt;reference_timestamp.fine  = 
+ntohl(*(int*)&amp;(data[20]));</span></strong></p>
+<p><strong><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span><span style="letter-spacing: -0.3pt;">ret_time-&gt;originage_timestamp.coarse
+ =  ntohl(*(int*)&amp;(data[24]));</span></span></strong></p>
+<p><strong><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span>ret_time-&gt;originage_timestamp.fine  = 
+ntohl(*(int*)&amp;(data[28]));</span></strong></p>
+<p><strong><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span>ret_time-&gt;receive_timestamp.coarse  = 
+ntohl(*(int*)&amp;(data[32]));</span></strong></p>
+<p><strong><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span>ret_time-&gt;receive_timestamp.fine  = 
+ntohl(*(int*)&amp;(data[36]));</span></strong></p>
+<p><strong><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span><span style="letter-spacing: -0.3pt;">ret_time-&gt;transmit_timestamp.coarse
+ =  ntohl(*(int*)&amp;(data[40]));</span></span></strong></p>
+<p><strong><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span>ret_time-&gt;transmit_timestamp.fine  = 
+ntohl(*(int*)&amp;(data[44]))</span></strong>;</p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+1;</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; } /* end of if select */</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; return 0;</span></p>
+<div>}</div>
+<div>&nbsp;</div>
+<div>/* 修改本地时间 */</div>
+<p><span>int set_local_time(struct ntp_packet * pnew_time_packet)</span></p>
+<div>{</div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; struct timeval tv;</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; <strong>tv.tv_sec =  
+pnew_time_packet-&gt;transmit_timestamp.coarse - JAN_1970;</strong></span></p>
+<p><strong><span>&nbsp;&nbsp;&nbsp;&nbsp; tv.tv_usec =  
+USEC(pnew_time_packet-&gt;transmit_timestamp.fine);</span></strong></p>
+<p><strong><span>&nbsp;&nbsp;&nbsp;&nbsp; return settimeofday(&amp;tv, 
+NULL);</span></strong></p>
+<div>}</div>
+<div>&nbsp;</div>
+<div>int main()</div>
+<div>{</div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; int sockfd, rc;</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; struct addrinfo hints, *res = NULL;</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; struct ntp_packet new_time_packet;</span></p>
+<div>&nbsp;</div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; memset(&amp;hints, 0, sizeof(hints));</span></p>
+<div><span>&nbsp;&nbsp;&nbsp; <strong>&nbsp;hints.ai_family = AF_UNSPEC;</strong></span></div>
+<p><strong><span>&nbsp;&nbsp;&nbsp;&nbsp; hints.ai_socktype = 
+SOCK_DGRAM;</span></strong></p>
+<div><strong><span>&nbsp;&nbsp;&nbsp;&nbsp; </span></strong><strong>hints.ai_protocol
+ =  IPPROTO_UDP;</strong></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; /*</span>调用getaddrinfo()函数，获取地址信息*/</div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; rc = <strong>getaddrinfo(NTP_SERVER_IP,
+ NTP_PORT_STR,  &amp;hints, &amp;res);</strong></span></p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; if (rc != 0) </span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; {</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+perror("getaddrinfo");</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return
+ 1;</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; }</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; /* </span>创建套接字 */</div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; sockfd =<strong> 
+socket(res-&gt;ai_family,  res-&gt;ai_socktype, res-&gt;ai_protocol);</strong></span></p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; if (sockfd &lt;0 ) </span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; {</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+perror("socket");</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return
+ 1;</span></div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; }<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span></span></p>
+<div>/*调用取得NTP时间的函数*/</div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; if <strong>(get_ntp_time(sockfd, res, 
+ &amp;new_time_packet))</strong></span></p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; {</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*</span>调
+整本地时间*/</div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if <strong>(!set_local_time(&amp;new_time_packet))</strong></span></div>
+<div><span>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>{</div>
+<p><span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span>printf("NTP client success!\n");</span></p>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp;&nbsp; </span></div>
+<div><span>&nbsp;&nbsp;&nbsp;&nbsp; close(sockfd);</span></div>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp; return 0;</span></p>
+<div>}</div>
+<div>&nbsp;</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;  
+为了更好地观察程序的效果，先用date命令修改一下系统时间，再运行实例程序。运行完了之后再查看系统时间，可以发现已经恢复准确的系统时间了。具体运
+ 行结果如下所示。</div>
+<div>&nbsp;</div>
+<div>$ <strong>date -s "2001-01-01 1:00:00"</strong></div>
+<div>2001年 01月 01日 星期一 01:00:00 EST</div>
+<div>$ <strong>date</strong></div>
+<div>2001年 01月 01日 星期一 01:00:00 EST</div>
+<div>$ ./<strong>ntp</strong></div>
+<div>NTP client success!</div>
+<div>$ <strong>date</strong></div>
+<strong>能够显示当前准确的日期和时间了！<br>
+</strong></div></td></tr></tbody></table>
+
+<br>
+
+<div class="opt">
+
+<a 
+href="http://hi.baidu.com/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2/blog/category/%D6%AA%CA%B6%B1%A6%B2%D8"
+ title="查看该分类中所有文章">类别：知识宝藏</a>
+
+| <a href="#" onclick="addToShare(); return false;" target="_blank"><img
+ src="69bfe026fde1cb0d4d088d72_files/share.gif" align="absbottom" 
+border="0"></a>
+
+
+
+
+	
+
+	| <a title="将此文章添加到百度搜藏" href="http://cang.baidu.com/do/add" 
+onclick="return addToFavor();" target="_blank">添加到搜藏</a>
+
+	
+    | <a title="将此文章分享到i贴吧" href="#" onclick="addToiTieba(); return 
+false;" target="_blank">分享到i贴吧</a>
+
+
+    | 浏览(<span id="result">494</span>)
+
+	| <a href="#send">评论</a>&nbsp;(0)
+
+
+
+<script language="javascript">
+
+/*<![CDATA[*/
+
+var pre = [true,'修改Host文件解决Avira小红伞免费版升级慢的方法', '修改Host文件解决Avira小红伞免...','/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2/blog/item/abdb5f4c441a8805b3de0584.html'];
+
+var post = [true,'传统文化中的仁爱精神','传统文化中的仁爱精神', '/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2/blog/item/d24d741c3b367bf81bd576af.html'];
+
+if(pre[0] || post[0]){
+
+	document.write('<div style="height:5px;line-height:5px;">&nbsp;</div><div id="in_nav">');
+
+	if(pre[0]){
+
+		document.write('上一篇：<a href="' + pre[3] + '" title="' + pre[1] + '">' +  pre[2] + '</a>&nbsp;&nbsp;&nbsp;&nbsp;');
+
+	}
+
+	if(post[0]){
+
+		document.write('下一篇：<a href="' + post[3] + '" title="' + post[1] + '">' +  post[2] + '</a>');
+
+	}
+
+	document.write('</div>');
+
+}
+
+/*]]>*/
+
+</script><div style="height: 5px; line-height: 5px;">&nbsp;</div><div 
+id="in_nav">上一篇：<a 
+href="http://hi.baidu.com/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2/blog/item/abdb5f4c441a8805b3de0584.html"
+ title="修改Host文件解决Avira小红伞免费版升级慢的方法">修改Host文件解决Avira小红伞免...</a>&nbsp;&nbsp;&nbsp;&nbsp;
+下一篇：<a 
+href="http://hi.baidu.com/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2/blog/item/d24d741c3b367bf81bd576af.html"
+ title="传统文化中的仁爱精神">传统文化中的仁爱精神</a></div>
+
+
+
+</div>
+
+
+
+<div class="line">&nbsp;</div>
+
+
+
+
+
+
+
+    
+<style type="text/css">
+
+/*<![CDATA[*/
+
+#in_related_doc a { text-decoration:none; }
+
+/*]]>*/
+
+</style>
+
+<div id="in_related_doc"><div class="tit">相关文章：</div><table border="0" 
+cellpadding="0" cellspacing="3"><tbody><tr><td width="15px"><a 
+style="font-size: 25px;">&#8226;</a></td><td><a 
+href="http://hi.baidu.com/yifan1018/blog/item/ebe2a438a5cc20cdd462251c.html"
+ target="_blank" title="linux NTP server + 常见交换机ntp 配置">linux NTP server
+ + 常见交换机n...</a>　　　　　　　　　</td><td width="15px"><a style="font-size: 
+25px;">&#8226;</a></td><td><a 
+href="http://hi.baidu.com/tingtaozhao/blog/item/b33dfd1ed9d84212413417ab.html"
+ target="_blank" title="linux操作系统下NTP服务器配置">linux操作系统下NTP服务器配置</a></td></tr><tr><td
+ width="15px"><a style="font-size: 25px;">&#8226;</a></td><td><a 
+href="http://hi.baidu.com/hw19850907/blog/item/7b4ccd3280962f94a8018e53.html"
+ target="_blank" title="Linux下配置NTP 架设本地时间服务器">Linux下配置NTP 架设本地时间服...</a>　
+　　　　　　　　</td><td width="15px"><a style="font-size: 25px;">&#8226;</a></td><td><a
+ 
+href="http://hi.baidu.com/weijiateng/blog/item/bf7a287a4b977ae02e73b3f7.html"
+ target="_blank" title="Linux下NTP服务器的配置">Linux下NTP服务器的配置</a></td></tr><tr><td
+ width="15px"><a style="font-size: 25px;">&#8226;</a></td><td><a 
+href="http://hi.baidu.com/ylinuxs/blog/item/bf8b53105adfc42fdd5401b1.html"
+ target="_blank" title="linux安装完毕时区时间问题ntp">linux安装完毕时区时间问题ntp</a>　　　　　　
+　　　</td><td width="15px"><a style="font-size: 25px;">&#8226;</a></td><td><a 
+href="http://hi.baidu.com/strongpig/blog/item/a6d0baec32b8d12b62d09fac.html"
+ target="_blank" title="ntp linux实现2">ntp linux实现2</a></td></tr><tr><td 
+width="15px"><a style="font-size: 25px;">&#8226;</a></td><td><a 
+href="http://hi.baidu.com/solveyou/blog/item/bd9d1120025a5ca84623e8cf.html"
+ target="_blank" title="Linux的时间设置与同步 (NTP)">Linux的时间设置与同步 (NTP)</a>　　　　
+　　　　　</td><td width="15px"><a style="font-size: 25px;">&#8226;</a></td><td><a 
+href="http://hi.baidu.com/zhenghui1988/blog/item/50a0084f94aff93aaec3ab55.html"
+ target="_blank" title="Linux和Windows下设置时间服务(NTP服务)">Linux和Windows下设置时间服
+务(N...</a></td></tr><tr><td width="15px"><a style="font-size: 25px;">&#8226;</a></td><td><a
+ 
+href="http://hi.baidu.com/netwrom/blog/item/2a11d9b5a56a257f8ad4b264.html"
+ target="_blank" title="NTP服务器在Linux下设置问题">NTP服务器在Linux下设置问题</a>　　　　　　　　
+　</td><td width="15px"><a style="font-size: 25px;">&#8226;</a></td><td><a 
+href="http://hi.baidu.com/liheng%5F2009/blog/item/bd5500d202829383a1ec9c67.html"
+ target="_blank" title="linux 下的时间同步服务器NTP">linux 下的时间同步服务器NTP</a></td></tr><tr><td
+ colspan="4"><a target="_blank" 
+href="http://hi.baidu.com/sys/search?pageno=1&amp;type=7&amp;sort=1&amp;word=NTP%D0%AD%D2%E9%D4%DALinux%C9%CF%B5%C4%CA%B5%CF%D6&amp;item=69bfe026fde1cb0d4d088d72">更
+多&gt;&gt;</a></td></tr></tbody></table></div><div class="line">&nbsp;</div>
+
+<script language="javascript" type="text/javascript">
+
+/*<![CDATA[*/
+
+function HI_MOD_IN_RELATED_DOC_CALLBACK(arg){
+
+    if(arg.length <= 1) return false;
+
+    var hasMore = arg[0];
+
+    var D=function(A,B){A[A.length]=B;}
+
+    if(arg.length % 2 == 0) D(arg, ["","","",""]);
+
+
+
+    var html = ['<div id="in_related_doc"><div class="tit">相关文章：</div>'];
+
+    D(html, '<table cellpadding="0" cellspacing="3" border="0">');
+
+    for(var i = 1, j = arg.length; i < j; i += 2){
+
+        D(html, '<tr>');
+
+        D(html, '<td width="15px"><a style="font-size:25px" >&#8226;</a></td><td><a href="http://hi.baidu.com/' + arg[i][3] + '/blog/item/' + arg[i][2] + '.html" target="_blank" title="' + arg[i][0] + '">' + arg[i][1] + '</a>');
+
+        D(html, new Array(10).join('\u3000'));
+
+        D(html, '</td>');
+
+        if(arg[i + 1][0] != "")
+
+            D(html, '<td width="15px"><a style="font-size:25px" >&#8226;</a></td><td><a href="http://hi.baidu.com/' + arg[i + 1][3] + '/blog/item/' + arg[i + 1][2] + '.html" target="_blank" title="' + arg[i + 1][0] + '">' + arg[i + 1][1] + '</a></td>');
+
+        else
+
+            D(html, '<td>&nbsp;</td><td>&nbsp;</td>');
+
+        D(html, '</tr>');
+
+    }
+
+    if(hasMore) D(html, '<tr><td colspan="4"><a target="_blank" href="/sys/search?pageno=1&type=7&sort=1&word=NTP%D0%AD%D2%E9%D4%DALinux%C9%CF%B5%C4%CA%B5%CF%D6&item=69bfe026fde1cb0d4d088d72">更多&gt;&gt;</a></td></tr>');
+
+    D(html, '</table></div><div class="line">&nbsp;</div>');
+
+
+
+    var div = document.getElementById('in_related_tmp');
+
+    if(div){
+
+        div.innerHTML = html.join('');
+
+        while(div.firstChild){
+
+            div.parentNode.insertBefore(div.firstChild, div);
+
+        }
+
+        div.parentNode.removeChild(div);
+
+    }
+
+	window.setTimeout("tracker_init('in_related_doc')",100);
+
+}
+
+
+
+if(RelatedDocData == -1){	// not supported xhr
+
+    var script = document.createElement('script');
+
+    script.type = 'text/javascript';
+
+    script.src = '/sys/search?type=8&word=NTP%D0%AD%D2%E9%D4%DALinux%C9%CF%B5%C4%CA%B5%CF%D6&item=69bfe026fde1cb0d4d088d72&t=' + new Date().getTime();
+
+    document.getElementsByTagName('HEAD')[0].appendChild(script);
+
+}else if(RelatedDocData == null){
+
+	GetAndEval = true;
+
+}else{
+
+	eval(RelatedDocData);
+
+}
+
+
+
+/*]]>*/
+
+</script>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="in_reader">
+
+<div class="tit">最近读者：</div>
+
+
+
+<script>
+
+
+
+	var g_spAnnony=true;
+
+
+
+
+
+var g_read=[
+
+
+
+["wjianjiao","726f776a69616e6a69616f490b","wjianjiao"],
+
+
+
+["jielove2003","9be66a69656c6f766532303033b90a","jielove2003"],
+
+
+
+["chinaqqvip","bd246368696e6171717669703604","chinaqqvip"],
+
+
+
+["buaa%5Fckz","3bf1627561615f636b7a8a08","buaa_ckz"],
+
+
+
+["%B9%C3%CB%D5%C4%BD%C8%DD11","d5c7b9c3cbd5c4bdc8dd3131260a","姑苏慕容11"],
+
+
+
+["%B1%CC%C2%DC%C3%CE","2a51b1ccc2dcc3ceb506","碧萝梦"],
+
+
+
+["tpp331","499e6368616e6767756f78696e67c201","changguoxing"],
+
+
+
+["%C4%CF%B9%CF%D0%A1%D2%BB","f54fc4cfb9cfd0a1d2bb1602","南瓜小一"],
+
+
+
+{}
+
+];
+
+g_read.length=g_read.length-1;
+
+
+
+var _rh1="";
+
+var _rh2="";
+
+
+
+function wrreader(){
+
+	_rh1 += '<table width="100%" ><tr>';
+
+	_rh2+='<tr>';
+
+	if(g_spAnnony){
+
+		_rh1+='<td align="center" width="10%" ><img border="0" width="55" height="55" src="http://img.baidu.com/hi/img/portraitn.jpg"></td>';
+
+		_rh2+='<td>&nbsp;</td>';
+
+		if(g_read.length>0){
+
+			_rh1+='<td align="left" width="12%">';
+
+		}else{
+
+			_rh1+='<td align="left" width="100%">';
+
+		}
+
+		_rh1+='<a href="https://passport.baidu.com/?login&tpl=sp&tpl_reg=sp&u='+myref+'" target="_self" onclick="BdUtil.relogin(); return false;">登录</a>后，您就出现在这里。</td>';
+
+		_rh2+='<td>&nbsp;</td>'
+
+	}
+
+	if(g_read.length==0){
+
+		if(!g_spAnnony){
+
+			_rh1+='<td align=left width="100%">最近还没有登录用户看过这篇文章……</td>';
+
+			_rh2+='<td>&nbsp;</td>';
+
+		}
+
+	}else{
+
+		for(i=0,len=g_read.length;i<len;i++){
+
+			_rh1+='<td align="center" valign="bottom" width="10%" class="user"><a href="/'+g_read[i][0]+'" target="_blank" class="ucard" pid='+g_read[i][1]+'><img border="0" src="http://tx.bdimg.com/sys/portraitn/item/'+g_read[i][1]+'.jpg"></a></td>';
+
+			_rh2+='<td align="center" valign="top" class="user"><a href="/'+g_read[i][0]+'" target="_blank" class="ucard" pid="'+g_read[i][1]+'">'+g_read[i][2]+'</a></td>';
+
+		}
+
+	}
+
+	_rh1+='<td width="100%"></td></tr>';
+
+	_rh2+='<td></td></tr></table>';
+
+	document.write(_rh1+_rh2);
+
+}
+
+
+
+wrreader();
+
+</script><table width="100%"><tbody><tr><td align="center" width="10%"><img
+ src="69bfe026fde1cb0d4d088d72_files/portraitn.jpg" border="0" 
+height="55" width="55"></td><td align="left" width="12%"><a 
+href="https://passport.baidu.com/?login&amp;tpl=sp&amp;tpl_reg=sp&amp;u=http%3A%2F%2Fhi.baidu.com%2F%25D3%25CE%25D7%25D3%25CE%25CA%25BA%25AE%25C7%25A7%25C0%25EF%25CD%25E2%2Fblog%2Fitem%2F69bfe026fde1cb0d4d088d72%252Ehtml"
+ target="_self" onclick="BdUtil.relogin(); return false;">登录</a>后，您就出现在这
+里。</td><td class="user" align="center" valign="bottom" width="10%"><a 
+href="http://hi.baidu.com/wjianjiao" target="_blank" class="ucard" 
+pid="726f776a69616e6a69616f490b"><img 
+src="69bfe026fde1cb0d4d088d72_files/726f776a69616e6a69616f490b.jpg" 
+border="0"></a></td><td class="user" align="center" valign="bottom" 
+width="10%"><a href="http://hi.baidu.com/jielove2003" target="_blank" 
+class="ucard" pid="9be66a69656c6f766532303033b90a"><img 
+src="69bfe026fde1cb0d4d088d72_files/9be66a69656c6f766532303033b90a.jpg" 
+border="0"></a></td><td class="user" align="center" valign="bottom" 
+width="10%"><a href="http://hi.baidu.com/chinaqqvip" target="_blank" 
+class="ucard" pid="bd246368696e6171717669703604"><img 
+src="69bfe026fde1cb0d4d088d72_files/bd246368696e6171717669703604.jpg" 
+border="0"></a></td><td class="user" align="center" valign="bottom" 
+width="10%"><a href="http://hi.baidu.com/buaa%5Fckz" target="_blank" 
+class="ucard" pid="3bf1627561615f636b7a8a08"><img 
+src="69bfe026fde1cb0d4d088d72_files/3bf1627561615f636b7a8a08.jpg" 
+border="0"></a></td><td class="user" align="center" valign="bottom" 
+width="10%"><a href="http://hi.baidu.com/%B9%C3%CB%D5%C4%BD%C8%DD11" 
+target="_blank" class="ucard" pid="d5c7b9c3cbd5c4bdc8dd3131260a"><img 
+src="69bfe026fde1cb0d4d088d72_files/d5c7b9c3cbd5c4bdc8dd3131260a.jpg" 
+border="0"></a></td><td class="user" align="center" valign="bottom" 
+width="10%"><a href="http://hi.baidu.com/%B1%CC%C2%DC%C3%CE" 
+target="_blank" class="ucard" pid="2a51b1ccc2dcc3ceb506"><img 
+src="69bfe026fde1cb0d4d088d72_files/2a51b1ccc2dcc3ceb506.jpg" border="0"></a></td><td
+ class="user" align="center" valign="bottom" width="10%"><a 
+href="http://hi.baidu.com/tpp331" target="_blank" class="ucard" 
+pid="499e6368616e6767756f78696e67c201"><img 
+src="69bfe026fde1cb0d4d088d72_files/499e6368616e6767756f78696e67c201.jpg"
+ border="0"></a></td><td class="user" align="center" valign="bottom" 
+width="10%"><a href="http://hi.baidu.com/%C4%CF%B9%CF%D0%A1%D2%BB" 
+target="_blank" class="ucard" pid="f54fc4cfb9cfd0a1d2bb1602"><img 
+src="69bfe026fde1cb0d4d088d72_files/f54fc4cfb9cfd0a1d2bb1602.jpg" 
+border="0"></a></td><td width="100%"></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td
+ class="user" align="center" valign="top"><a 
+href="http://hi.baidu.com/wjianjiao" target="_blank" class="ucard" 
+pid="726f776a69616e6a69616f490b">wjianjiao</a></td><td class="user" 
+align="center" valign="top"><a href="http://hi.baidu.com/jielove2003" 
+target="_blank" class="ucard" pid="9be66a69656c6f766532303033b90a">jielove2003</a></td><td
+ class="user" align="center" valign="top"><a 
+href="http://hi.baidu.com/chinaqqvip" target="_blank" class="ucard" 
+pid="bd246368696e6171717669703604">chinaqqvip</a></td><td class="user" 
+align="center" valign="top"><a href="http://hi.baidu.com/buaa%5Fckz" 
+target="_blank" class="ucard" pid="3bf1627561615f636b7a8a08">buaa_ckz</a></td><td
+ class="user" align="center" valign="top"><a 
+href="http://hi.baidu.com/%B9%C3%CB%D5%C4%BD%C8%DD11" target="_blank" 
+class="ucard" pid="d5c7b9c3cbd5c4bdc8dd3131260a">姑苏慕容11</a></td><td 
+class="user" align="center" valign="top"><a 
+href="http://hi.baidu.com/%B1%CC%C2%DC%C3%CE" target="_blank" 
+class="ucard" pid="2a51b1ccc2dcc3ceb506">碧萝梦</a></td><td class="user" 
+align="center" valign="top"><a href="http://hi.baidu.com/tpp331" 
+target="_blank" class="ucard" pid="499e6368616e6767756f78696e67c201">changguoxing</a></td><td
+ class="user" align="center" valign="top"><a 
+href="http://hi.baidu.com/%C4%CF%B9%CF%D0%A1%D2%BB" target="_blank" 
+class="ucard" pid="f54fc4cfb9cfd0a1d2bb1602">南瓜小一</a></td><td></td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+
+
+<div class="line">&nbsp;</div>
+
+
+
+
+
+
+
+<script language="JavaScript">
+
+allkey=allkey+"3d74f2efddeb0a4d79f05546_69bfe026fde1cb0d4d088d72_";
+
+</script>
+
+
+
+<div id="in_comment">
+
+<a name="comment"></a>
+
+<div class="tit">网友评论：</div>
+
+<script>
+
+function writecmt(type,id,cmtname,cmturl,portraitId){
+
+	var html1="";
+
+	cmturl=cmturl.replace("https://","http://");
+
+	if(type==1){
+
+			html1="<a href='"+cmturl+"' target='_blank' class='ucard' pid="+portraitId+"><img  border='0' src='http://tx.bdimg.com/sys/portraitn/item/"+portraitId+".jpg'><br>"+cmtname+"</a>";
+
+	}else{
+
+		if(cmtname=="" || cmtname=="匿名网友"){
+
+			if(cmturl==""){
+
+				html1="<a>匿名网友</a>";
+
+			}else{
+
+				html1="<a href='"+cmturl+"' target='_blank' title='"+cmturl+"'>"+cmtname+"</a>";
+
+			}
+
+		}else{
+
+			if(cmturl==""){
+
+				html1="<div class='f14' style='display:inline'>网友:<a>"+cmtname+"</a></div>";
+
+			}else{
+
+				html1="<div class='f14' style='display:inline'>网友:<a href='"+cmturl+"' target='_blank' title='"+cmturl+"'>"+cmtname+"</a></div>";
+
+			}
+
+		}
+
+	}
+
+	document.write(html1);
+
+}
+
+function filterCmtContent(n){
+
+	if(!BdBrowser.isIE){
+
+		var defaultfilter1='<span style="filter:glow(color=#000000,strength=2);height:0px;color:#000000">';
+
+		var defaultfilter2='<span style="height: 0px; color: rgb(0, 0, 0);">';
+
+		var commentDiv=document.getElementById(n);
+
+		var divs=commentDiv.getElementsByTagName('div');
+
+		var d,tmp;
+
+		for( var i=0,len=divs.length;i<len;i++){
+
+			d=divs[i];
+
+			if(d.getAttribute('name')=='cmtcontent'){
+
+				tmp=d.innerHTML;
+
+				tmp=tmp.replace(/<span style="filter:glow\(color=#([0-9a-z]{3,6}),strength=2\);height:0px;color:#([0-9a-z]{3,6})">/ig,defaultfilter1);
+
+				tmp=tmp.replace('<span style="height: 0px; color: rgb(255, 255, 255);">',defaultfilter2);
+
+				d.innerHTML=tmp;
+
+			}
+
+		}
+
+	}
+
+}
+
+
+
+</script>
+
+
+
+
+<div id="page"></div>
+
+
+
+</div>
+
+<script>filterCmtContent('in_comment');</script>
+
+
+
+
+
+
+<div id="in_send">
+
+<a name="send"></a>
+
+<form name="form1" id="popFormSubmit" 
+action="/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2/commit" 
+method="post" onsubmit="return checkcmtform()">
+
+<input name="bdstoken" value="c25c8a4792625fc4abf481e3213db623" 
+type="hidden">
+
+<input name="ct" value="8" type="hidden">
+
+<input name="cm" value="1" type="hidden">
+
+<input name="spBlogID" value="69bfe026fde1cb0d4d088d72" type="hidden">
+
+<input 
+value="http://hi.baidu.com/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2/blog/item/69bfe026fde1cb0d4d088d72.html"
+ name="spRefURL" id="spRefURL" type="hidden">
+
+<script>
+
+    document.getElementById("spRefURL").value = window.location.href;
+
+</script>
+
+<div class="tit">发表评论：</div>
+
+<table border="0" cellpadding="0" cellspacing="5" width="620">
+
+
+
+
+<tbody><tr id="2_err" style="display: none;">
+
+<td>&nbsp;</td>
+
+<td><div class="error" id="2_err_con"></div></td>
+
+</tr>
+
+
+
+<tr>
+
+<td class="f14" id="reTitle" valign="top">内　容：</td>
+
+<td>
+	<textarea name="spBlogCmtText" id="spBlogCmtText" style="width: 520px; 
+height: 155px;" tabindex="3" onfocus="hidErr(3);" 
+onclick="BdUtil.relogin(); return false;"></textarea>
+</td>
+
+</tr>
+
+<tr id="3_err" style="display: none;">
+
+<td>&nbsp;</td>
+
+<td><div class="error" id="3_err_con"></div></td>
+
+</tr>
+ 
+
+
+
+<tr>
+
+<td class="f14" valign="top">&nbsp;</td>
+
+<td class="f14" valign="top"><input id="btn_ok" name="btn_ok" 
+onclick="BdUtil.relogin(); return false;" value="发表评论" tabindex="5" 
+type="submit">&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="cancleReLink" 
+onclick="canclereply(); return false;" style="display: none; font-size: 
+12px; color: rgb(102, 102, 102);">取消回复</a></td>
+
+</tr>
+
+</tbody></table>
+
+</form>
+
+</div>
+
+
+
+
+
+
+
+
+
+<br>
+
+</div>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" height="8" 
+width="100%">
+
+<tbody><tr><td class="modbl" width="7">&nbsp;</td>
+
+<td class="modbc">&nbsp;</td>
+
+<td class="modbr" width="7">&nbsp;</td>
+
+</tr></tbody></table>
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+<script src="69bfe026fde1cb0d4d088d72_files/swf.js"></script>
+<script src="69bfe026fde1cb0d4d088d72_files/fck_music_auto.js"></script>
+
+<script src="69bfe026fde1cb0d4d088d72_files/bgmusic.js" language="javascript"></script>
+<script language="javascript">
+function initBlogTextForFCK(){
+	//fck init music
+	if(window.Node){Node.prototype.replaceNode=function(Node){this.parentNode.replaceChild(Node,this);}}
+	var imgBox=document.getElementsByName('musicName');
+	var isAutoPlay=true;
+	for(var i=0,n=imgBox.length;i<n;i++){
+		var img=imgBox[i];
+		if(img.getAttribute('rel')){
+			var musicSrc=img.getAttribute('rel');
+			var musicDiv = document.createElement("SPAN");
+			var tmp=musicSrc.substr (musicSrc.indexOf('#')+1, 1);
+			var tmpAutoPlay=(tmp=='1');
+			if(isAutoPlay&&tmpAutoPlay){
+				isAutoPlay=false;
+				tmpAutoPlay=true;
+			}else{
+				tmpAutoPlay=false;
+			}
+			var shtml=creatbgmusic(musicSrc.substr(0,musicSrc.indexOf('#')).replace(/[\s><()'"]+/g,''),1,true,false,tmpAutoPlay,tmpAutoPlay,'FckMusicHelper');
+			shtml=shtml.replace('width=100%','width=200').replace('width="100%"','width=200 height=45');			img.replaceNode(musicDiv);
+			musicDiv.innerHTML=shtml;
+			i--;n--;
+		}
+	}
+		//fck init vote
+	!function(){
+		var vote = document.getElementsByName('FCK_VOTE');
+		for(var i=0,len=vote.length,item,rel=0,cdiv;i<len;i++){
+			item = vote[0];
+			rel = item.getAttribute('rel')|0;
+			if(rel){
+				cdiv = document.createElement('span');
+				item.parentNode.replaceChild(cdiv,item);
+				baidu.swf.create({
+					"id": "VOTE_FLASH_"+i,
+					"width" : "585",
+					"height": "100",
+					"ver"   : "9.0.0",
+					"wmode" : document.all ? "opaque" : "window",
+					"allowscriptaccess" : "always",
+					"url"   : "http://hi.bdimg.com/apps/appvote/spaceVote.swf?vote_id="+rel
+				},cdiv)
+
+			}
+		}
+	}()
+	//document.getElementById('blog_text').style.display='';
+}
+
+</script>
+
+<script language="javascript">
+
+<!--
+
+var hstr="/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2/brwstat?key1=1";
+
+document.write("<script src='"+hstr+"&key2="+allkey+"'><\/script>");
+
+//-->
+
+</script><script src="69bfe026fde1cb0d4d088d72_files/brwstat.htm"></script>
+
+<br><center><div id="ft">&#169;2010 Baidu</div></center>
+
+
+
+<script>
+
+if(document.getElementById("m_blog"))
+
+{
+
+	var imgarray = document.getElementById("m_blog").getElementsByTagName('img');
+
+	var imgw = document.getElementById("m_blog").offsetWidth;
+
+	imgw =imgw-40;
+
+    for(var i=0; i<imgarray.length; i++){
+    	if(imgarray[i].className=="blogimg" && imgarray[i].width>=imgw) {
+	    	imgarray[i].width=imgw;
+        }
+    }
+}
+
+
+
+// Fix ff bugs
+
+var blog_text = document.getElementById('blog_text');
+/**
+
+blog_text.innerHTML = blog_text.innerHTML.replace(/href\s*=\s*("|')?(\.\.\/\.\.\/)/gi,"href=$1../$2");
+*/
+/*modify by poker, to fix the flashalbum's static domain*/
+var _blog_trans = blog_text.innerHTML.replace(/href\s*=\s*("|')?(\.\.\/\.\.\/)/gi,"href=$1../$2");
+_blog_trans = _blog_trans.replace(/http:\/\/hi\.baidu\.com\/static\/album\/album\.swf/g,"http://hi.bdimg.com/static/album/album.swf");
+blog_text.innerHTML = _blog_trans;
+initBlogTextForFCK();
+gotoreply();
+
+</script>
+
+</center>
+
+
+
+<!--inc_getmsgnum.html-->
+<img src="69bfe026fde1cb0d4d088d72_files/c.htm" style="display: none;">
+<iframe id="submitiframe" name="submitiframe" 
+src="69bfe026fde1cb0d4d088d72_files/blank.htm" style="display: none;"></iframe>
+
+			
+
+
+<script type="text/javascript">
+/*<![CDATA[*/
+
+var SP = SP || {};
+if(!SP.mycard){
+    SP.mycard = new (function(){
+        var me = this;
+        var _cancleAction = Session.isDrag;  
+        var _list = [];
+        var _sourceLoaded = false;    
+        me.bind = function (_id){
+            if(_cancleAction){  //abort
+                return;
+            }
+            if(!_sourceLoaded){
+                _list.push(_id);
+            } else {
+                baidu.space.mycard.bind(_id);
+            }
+        }
+        me.init = function (_config){
+            _cancleAction = !!_config.cancle;
+        }
+        me.onSourceLoaded = function (){
+            _sourceLoaded = true;
+            baidu.space.mycard.init({portrait: Session.visitorPortrait});
+            for(var i=0,len=_list.length; i<len; i++){
+                baidu.space.mycard.bind(_list[i]);
+            }
+        }
+    })();
+    baidu.dom.ready(function(){
+        BdAjax.loadCSS('/ui/css/ucard/ucard.css?v=020507100.css');
+        BdAjax.loadJS('/ui/scripts/ucard/ucard.js?v=020507100.js');
+    });
+}
+SP.mycard.bind('m_blog');  
+/*]]>*/
+</script>
+
+
+	
+    
+<link rel="stylesheet" type="text/css" 
+href="69bfe026fde1cb0d4d088d72_files/userset.css">
+<link rel="stylesheet" type="text/css" 
+href="69bfe026fde1cb0d4d088d72_files/widget.css">
+
+<script type="text/javascript" src="69bfe026fde1cb0d4d088d72_files/default_user_suit.js"></script>
+
+<script type="text/javascript">
+//页面状态变量
+var Session = Session || {
+    spaceURL: "/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2",
+    pageURL: "http://hi.baidu.com/%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2/blog/item/69bfe026fde1cb0d4d088d72%2Ehtml",    //当前访问的url
+    isHost: "",         // 是否是空间主人
+    userName: "jameszhl2009",   // 空间主人用户名
+    userNameEnc:    "jameszhl2009", 
+    visitorName:    "",
+    visitorURL: "/index.html",        // 
+    refer: "http://www.google.com.hk/search?hl=zh-CN&safe=strict&biw=1430&bih=660&q=202.72.145.44&aq=o&aqi=&aql=&oq=&gs_rfai=",
+    spBasicURL:"游子问寒千里外",
+    spBasicURLEnc:"%D3%CE%D7%D3%CE%CA%BA%AE%C7%A7%C0%EF%CD%E2"
+};
+</script>
+<script src="69bfe026fde1cb0d4d088d72_files/render.js" type="text/javascript"></script>
+<script type="text/javascript">
+baidu.dom.ready(function(){
+    if(typeof spBeautifyConfigData != 'undefined'){
+        var _installList = spBeautifyConfigData.list;
+    } else {
+        spBeautifyConfigData = {};
+        _installList = [];
+    }
+    spBeautifyConfigData.currentDate  = Math.round((new Date('2010/11/04')).getTime() / 1000);    
+    BeautifyWidget.init({timeStamp: spBeautifyConfigData.currentDate, env: 'sys'});
+    BeautifyWidget.render(_installList);
+	if(Space && Space.ActiveTip){
+		if(baidu.g("active_space")){
+			window.active_tip=new Space.ActiveTip("tary_space_name",function(){
+				active_tip.hidden();
+				//activeSpace("pop_tip");
+				if(BdUtil && BdUtil.ns_trackerLink){
+					BdUtil.ns_trackerLink('nm_20101018_activeBlank',''); 
+				}
+				window.open('http://hi.baidu.com/reg/preihome?pageDomain=pop_tip');
+			//	window.location.href="http://hi.baidu.com/reg/preihome?pageDomain=pop_tip";
+				setTimeout(function(){
+					window.location.reload();
+				},1000);
+				
+			
+			});
+		}
+		window.succTip=function(spaceUrl){
+			active_dia.close();
+			//var tiphtml="<div><div class='setBlackcon'>恭喜您，激活成功！欢迎入驻百度空间！</div><div class='setBlackpanel'><div class='blackConfirmbtn' onclick=\"goIhome('"+spaceUrl+"')\">确认</div></div></div>";
+			BdDialog.Alert("恭喜您，激活成功！欢迎入驻百度空间！");
+			baidu.g("dialogYES").onclick=function(){
+				window.location.reload();
+			};	
+		};
+	}
+	
+});
+</script>
+
+
+
+<script type="text/javascript" src="69bfe026fde1cb0d4d088d72_files/auto.js"></script>
+<script>try{SCD.init("http://www.google.com.hk/search?hl=zh-CN&safe=strict&biw=1430&bih=660&q=202.72.145.44&aq=o&aqi=&aql=&oq=&gs_rfai=")}catch(e){}</script>
+
+
+
+
+<div style="position: absolute; display: none; z-index: 9999;" 
+id="livemargins_control"><img 
+src="69bfe026fde1cb0d4d088d72_files/monitor-background-horizontal.png" 
+style="position: absolute; left: -77px; top: -5px;" height="5" 
+width="77">	<img 
+src="69bfe026fde1cb0d4d088d72_files/monitor-background-vertical.png" 
+style="position: absolute; left: 0pt; top: -5px;">	<img 
+id="monitor-play-button" 
+src="69bfe026fde1cb0d4d088d72_files/monitor-play-button.png" 
+onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.5" 
+style="position: absolute; left: 1px; top: 0pt; opacity: 0.5; cursor: 
+pointer;"></div><iframe style="display: none; position: absolute; 
+border-width: 0px;" class="tangram_ucardsd"></iframe><div 
+style="position: absolute; display: none;" id="tangram_ucard"></div></body></html>

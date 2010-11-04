@@ -1,0 +1,273 @@
+/*筱桥素材站制作.禁止盗用/修改*/
+/*http://hi.baidu.com/%F3%E3%C7%C5%CB%D8%B2%C4%D5%BE*/
+
+body{ background:/*url(http://imgsrc.baidu.com/css/pic/item/6e3d8b4e7c7c21e2d1c86aa0.jpg)*/ #BFCDDA;overflow-x:hidden;scrollbar-base-color: #fff; scrollbar-track-color: #fff; overflow-y:auto;height:1000px; filter: chroma(color=#fff)}
+a:hover {position:relative; left:1px; top:1px; clip:rect()} 
+body a:link,body a:visited,body a:hover,body a:active{color:#053EAF;font-family:"Arial",Courier,monospace;text-decoration:none}
+body a:hover{color:#053EAF;}
+body div.line{border-top:1px dashed #999;}
+td,div{color:#000}
+body{CURSOR:url('http://www.google.com/myfile/zidou/ani/999.cur');}
+BODY {
+SCROLLBAR-HIGHLIGHT-COLOR: #ffffff;
+ SCROLLBAR-SHADOW-COLOR: #ffffff;
+ SCROLLBAR-3DLIGHT-COLOR: #ffffff;
+ SCROLLBAR-ARROW-COLOR: #ffffff;
+ SCROLLBAR-TRACK-COLOR: #ffffff;
+ SCROLLBAR-DARKSHADOW-COLOR:#ffffff;
+ SCROLLBAR-BASE-COLOR: #EEEDEA;
+}
+
+#header{height:450px;background:url(http://hiphotos.baidu.com/%C7%C5%B0%E5%D7%D3/pic/item/95112db4061193e637d3ca34.jpeg) no-repeat #ffffff}
+/*#header DIV.lc {BACKGROUND: url(http://imgsrc.baidu.com/css/pic/item/6e3d8b4e7c7c21e2d1c86aa0.jpg) repeat;left:100px;width:800px;line-height:180px;filter:Alpha(opacity=15)}*/
+/*#header div.rc{BACKGROUND: url(http://imgsrc.baidu.com/css/pic/item/300acbcf59a42b15f8dc61a0.jpg) repeat;RIGHT:500px;width:800px;line-height:180px;filter:Alpha(opacity=100)}*/
+
+#header div.tit{top:360px;left:240px;line-height:30px;font-size:30px;  font-family:楷体;font-weight:bold;color:#000}
+#header div.tit a.titlink{color:#000;text-decoration:none}
+#header div.tit a.titlink:visited{color:#4c4126;text-decoration:none}
+#header div.desc{top:0px;left:0px;color:#fff;font-size:0px}
+
+#tabline{top:89px;background-color:#BBBBBB;display:none}
+#tab{top:420px;left:600px;font-weight:bold;text-indent:-5px}
+#tab a.on,#tab a.on:link,#tab a.on:visited{margin-top:2px;line-height:20px;color:#4c4126;font-size:14px}
+#tab span{color:#4c4126;font-size:14px;display:none}
+#tab a:link{color:#4c4126;text-decoration:none;font-size:14px}
+#tab a:visited{color:#4c4126;text-decoration:none;font-size:14px}
+#tab a:hover{color:#666}
+#tab2{margin-top:35px;background-color:none}
+#tab2 span{color:#9CC3ED;font-size:12px;font-weight:bold}
+#tab2 a{font-size:12px;color:10257F}
+#tab2 a:link{color:#10257F}
+#tab2 a:visited{color:#10257F}
+
+.stage{margin-right:16px;background:#fff}
+#layout{
+  table-layout:fixed;
+  width:980px;
+  margin:0 auto;
+}
+#comm_info div.line{margin-top;20px;line-height:50px;border-top:5px;background:url(http://s29.sitemeter.com/meter.asp?site=s29yzwhqlw) no-repeat 50% 30%;}
+/*http://imgsrc.baidu.com/css/pic/item/28ff1c869474cb1667096ea0.jpg*/
+/*line-height:320px*/
+#comm_info a image{filter: gray}
+
+#comm_info{color:#333333;font-family:Arial;text-align:left}
+
+#comm_info a{color:#666;text-decoration:none}
+#pvshow{font-family:Georgia;font-size:11pt;}
+
+#page{height:30px;font-size:12px;font-family:Arial;text-align:center}
+#page span{padding:3px;color:#999;font-size:12px;font-weight:bold}
+#page a.pc{color:#4c4126;font-size:12px;font-weight:bold;text-decoration:none}
+#page a.pc:visited{color:#4c4126}
+#page a.pc:hover{color:#4c4126;text-decoration:underline}
+#page a.pi{padding:3px;color:#4c4126;font-size:12px;text-decoration:none}
+#page a.pi:visited{color:#4c4126}
+#page a.pi:visited{color:#4c4126;text-decoration:underline}
+
+.mod{border-style:solid;border-width:0px;border-color:#DDDDDD;margin-bottom:10px}
+.modhandle{cursor:move}
+.modth{background-color:#9CC3ED;height:24px}
+.modhead{padding:4px 4px 0 4px}
+.modopt{padding:4px 4px 0 0}
+.modtit{color:#10257F;font-size:12px;font-weight:bold}a.modtit{color:#FFFFFF}a.modtit:visited{color:#FFFFFF}
+.modtitlink{color:#FFFFFF;font-size:12px;font-weight:bold}a.modtitlink{color:#FFFFFF;text-decoration:none}a.modtitlink:visited{color:#FFFFFF;text-decoration:none}a.modtitlink:hover{color:#FF5100;text-decoration:underline}
+.modact{color:#000;font-size:12px}a.modact:link{color:#000}a.modact:visited{color:#000}
+.modbox{padding:10px 10px 0 10px;background-color:#F0F8FF;border-bottom: 1px solid #88B0E4;border-left: 1px solid #88B0E4;border-right: 1px solid #88B0E4}
+.modtl{}
+.modtc{}
+.modtr{}
+.modbl{background-color:#FFFFFF;line-height:0px}
+.modbc{background-color:#FFFFFF;line-height:0px}
+.modbr{background-color:#FFFFFF;line-height:0px}
+.modlabel{color:#000;font-size:14px;font-weight:bold}
+#m_blog div.tit a{color:#4c4126;font-size:16px;font-weight:bold;text-decoration:none}
+#m_blog div.tit a:visited{color:#4c4126}
+#m_blog div.tit a:hover{color:#a91c12;text-decoration:underline}
+#m_blog div.date{margin:5px 0 8px 0;color:#999999;font-size:11px}
+#m_blog div.cnt{margin-bottom:10px;color:#000;line-height:22px;font-size:15px;}
+#m_blog div.cnt *{text-indent:2em;}
+/*#m_blog div.cnt{margin-bottom:10px;color:#000;line-height:20px;font-size:14px}*/
+#m_blog div.cnt div{font-size:14px}
+#m_blog div.cnt a:hover{text-decoration:underline;}
+#m_blog div.more{margin:14px 0 14px 0}
+#m_blog div.more a{color:#666;font-size:14px;text-decoration:none}
+#m_blog div.more a:visited{color:#660033;filter:alpha(opacity=0)}
+#m_blog div.more a:hover{color:#053EAF;text-decoration:underline}
+#m_blog div.opt{text-indent:20px;background:url(http://imgsrc.baidu.com/css/pic/item/3020c43e386a7d1570cf6ca0.jpg) no-repeat center left;border-top-width:1px;border-top-style:solid;border-top-color:#E3E3E3;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E3E3E3;background-color:#F6F6F6;font-size:12px;height:25px;padding:5px}
+#m_blog div.opt a{color:#666666;font-size:12px;text-decoration:none}
+#m_blog div.opt a:visited{color:#666666}
+#m_blog div.opt a:hover{color:#333333;text-decoration:underline}
+
+#m_blog div.none{padding:100px 0 100px 0;color:#333333;font-size:14px}
+#m_blog div.tit{background: url(http://imgsrc.baidu.com/css/pic/item/9e3e723d11ac8fef9f3d62a0.jpg) no-repeat;line-height:50px;height:50px;font-size:16px;font-weight:bold;text-indent:100}
+
+#m_pro a{color:#4c4126}
+#m_pro a:visited{color:#4c4126}
+#m_pro div.image{text-align:center}
+#m_pro div.act{margin-top:10px}
+#m_pro div.user{margin-top:10px;color:#333333;font-size:12px;font-weight:bold}
+#m_pro div.desc{color:#333333;font-size:12px}
+#m_pro div.line{margin-top:17px;line-height:17px;border-top:1px solid #DDD}
+#m_pro td{color:#333333;line-height:24px;font-size:14px}
+#m_pro .photo{background:#FFF;border:1px solid #DDD}
+#m_pro .photo td{font-size:12px}
+#m_pro .photo .image{padding:20px 0 10px 0}
+#m_pro .photo .line{width:90%;line-height:0;border-top:1px dashed #DDD;font-size:1px}
+#m_pro .ref{margin-top:10px;border:1px solid #DDD}
+#m_pro .ref .tit{padding-left:10px;background:#EEE;border-bottom:1px solid #DDD}
+#m_pro .ref .cnt{padding:10px;background:#FFF}
+#m_pro .basic td{color:#666;font-size:14px}
+#m_pro .basic .tit{font-weight:bold}
+#m_pro .basic a:hover{padding:1px;background:#EFF9D0;color:#4c4126;text-decoration:underline}
+#m_pro .basic a.nlk:hover{padding:0px;background-color:#EFF9D0;color:#1F990;text-decoration:underline}
+#m_pro .pline{margin-left:5px;margin-top:10px;line-height:10px;border-top:1px dashed #A6A6A6}
+#m_pro .pitem{margin-left:5px;line-height:22px;font-size:14px}
+#m_pro .pitem .tit{color:#666}
+#m_pro .pitem a:hover{padding:1px;background:#EFF9D0;text-decoration:none}
+
+#m_album div.image{text-align:center}
+#m_album div.page{color:#666666;font-size:12px;text-align:center}
+#m_album div.page a{color:#000;font-size:12px}
+#m_album div.page a:visited{color:#000}
+#m_album .phpage{margin-top:10px;padding-bottom:5px;text-align:center}
+
+#m_links div.item{text-indent:20px;background:url(http://imgsrc.baidu.com/css/pic/item/01eb6a00dcc27939728b65a0.jpg) no-repeat top left;color:#4c4126;font-size:12px}
+#m_links div.item a{color:#4c4126;font-size:16px;text-decoration:none}
+#m_links div.item a:visited{color:#4c4126}
+#m_links div.item a:hover{color:#4c4126;text-decoration:underline}
+#m_links div.line{margin-top:5px;line-height:8px;border-top:1px solid #EEE}
+
+#m_mylink1 div.item{text-indent:25px;background:url(http://imgsrc.baidu.com/css/pic/item/01eb6a00dcc27939728b65a0.jpg) no-repeat top left;color:#4c4126;font-size:12.5px}
+#m_mylink1 div.item a{color:#660033;font-size:16px;font-family:"黑体";text-decoration:none}
+#m_mylink1 div.item a:visited{color:#CC6600}
+#m_mylink1 div.item a:hover{color:#660033;text-decoration:underline}
+#m_mylink1 div.line{margin-top:5px;line-height:8px;border-top:1px solid #CCC}
+
+#m_mylink2 div.item{color:#333333;font-size:12px}
+#m_mylink2 div.item a{color:#3399CC;font-size:12px;text-decoration:none}
+#m_mylink2 div.item a:visited{color:#3399CC}
+#m_mylink2 div.line{margin-top:5px;line-height:8px;border-top:1px solid #D2E9F4}
+
+#m_mylink3 div.item{color:#333333;font-size:12px}
+#m_mylink3 div.item a{color:#3399CC;font-size:12px;text-decoration:none}
+#m_mylink3 div.item a:visited{color:#3399CC}
+#m_mylink3 div.line{margin-top:5px;line-height:8px;border-top:1px solid #D2E9F4}
+
+#m_mylink4 div.item{color:#333333;font-size:12px}
+#m_mylink4 div.item a{color:#3399CC;font-size:12px;text-decoration:none}
+#m_mylink4 div.item a:visited{color:#3399CC}
+#m_mylink4 div.line{margin-top:5px;line-height:8px;border-top:1px solid #D2E9F4}
+
+#m_artclg div.item{text-indent:20px;background:url(http://imgsrc.baidu.com/css/pic/item/01eb6a00dcc27939728b65a0.jpg) no-repeat top left;color:#666666;font-size:12px}
+#m_artclg div.item a{color:#4c4126;font-size:12px}
+#m_artclg div.item a:visited{color:#4c4126}
+#m_artclg div.item a:hover{background-color:#EFF9D0}
+#m_artclg div.line{margin-top:5px;line-height:8px;border-top:1px solid #EEE}
+
+#m_filed div.item{color:#666666;font-size:12px}
+#m_filed div.item a{color:#4c4126;font-size:12px;text-decoration:none}
+#m_filed div.item a:visited{color:#4c4126}
+#m_filed div.item a:hover{color:#4c4126;text-decoration:underline}
+#m_filed div.line{margin-top:5px;line-height:8px;border-top:1px solid #EEE}
+
+#m_comment div.item{text-indent:20px;background:url(http://imgsrc.baidu.com/css/pic/item/01eb6a00dcc27939728b65a0.jpg) no-repeat top left;color:#333333;font-size:12px}
+#m_comment div.item a{color:#4c4126;font-size:12px;text-decoration:none}
+#m_comment div.item a:visited{color:#4c4126}
+#m_comment div.item a:hover{color:#4c4126;text-decoration:underline}
+#m_comment div.item a.cnt{color:#666;font-size:12px;text-decoration:none}
+#m_comment div.item a.cnt:visited{color:#666;text-decoration:none}
+#m_comment div.item a.cnt:hover{color:#666;text-decoration:underline}
+#m_comment div.line{margin-top:5px;line-height:8px;border-top:1px solid #EEE}
+
+#m_albumlist div.note{color:#333333;font-size:14px}
+#m_albumlist div.desc{margin-bottom:12px;padding:3px 10px 3px 10px;line-height:22px;background-color:#F2F2F2;font-size:14px}
+#m_albumlist div.none{padding:100px 0 100px 0;color:#333333;font-size:14px}
+#m_albumlist div.line{margin-top:10px;line-height:16px;border-top:1px solid #D2E9F4}
+#m_albumlist div.tit{margin:6px 0 7px 0;color:#333333;font-size:14px}
+#m_albumlist div.tit a{color:#000;font-size:14px}
+#m_albumlist div.tit a:visited{color:#000}
+#m_albumlist span.count{color:#666666;font-size:12px;font-weight:bold}
+#m_albumlist span.size{color:#999999;font-size:12px;font-family:Arial}
+#m_albumlist a.act{color:#000;font-size:12px}
+#m_albumlist a.act:visited{color:#000}
+#m_albumlist a.page{color:#0000CC;font-size:14px}
+#m_albumlist a.page:visited{color:#0000CC}
+#m_albumlist td.image{padding:5px;border:1px solid #999999;background:#FFFFFF}
+#m_albumlist .phbox{margin-top:15px;margin-left:15px}
+#m_albumlist .phbox .phpage{color:#636363;font-size:14px}
+#m_albumlist .phbox .phinfo{margin:6px 0 2px 0;color:#636363;font-size:12px}
+#m_albumlist .phbox .phimg{margin-bottom:10px}
+
+#m_friend div.filter{margin-bottom:10px;padding-left:10px;padding-top:10px;height:27px;line-height:27px}
+#m_friend div.catalog{margin-bottom:10px;padding-left:10px;height:27px;line-height:27px;background-color:#F2F2F2;font-size:14px}
+#m_friend div.user{margin-top:4px;color:#333333;font-size:12px}
+#m_friend div.user a{color:#4c4126;font-size:12px;text-decoration:none}
+#m_friend div.user a:visited{color:#4c4126}
+#m_friend div.user a:hover{color:#4c4126;text-decoration:underline}
+#m_friend div.line{margin-top:10px;line-height:16px;border-top:1px solid #EEE}
+
+#m_setting a{color:#000}
+#m_setting a:visited{color:#000}
+#m_setting{line-height:22px;color:#333333;font-size:14px}
+#m_setting img.sel{border:4px solid #FFDB7B}
+#m_setting img.unsel{border:1px solid #D2D2D2}
+#m_setting span.tit{font-size:14px}
+#m_setting span.usr{color:#666666}
+#m_setting div.sel{padding-top:6px;font-size:14px;font-weight:bold}
+#m_setting div.line{margin-top:20px;line-height:16px;border-top:1px solid #EEE}
+
+#m_sysinfo a{color:#000}
+#m_sysinfo a:visited{color:#000}
+#m_sysinfo{line-height:22px;color:#333333;font-size:14px}
+#m_sysinfo span.new{color:#FF0000;font-size:10px;font-family:Arial}
+#m_sysinfo span.date{color:#666666;font-size:14px}
+
+#m_setbase{color:#333333;font-size:14px}
+#m_setbase td{color:#333333;font-size:14px}
+#m_setbase div.line{margin-top:5px;line-height:8px;border-top:1px solid #EEE}
+
+#in_comment{}
+#in_comment div.tit{margin-bottom:12px;color:#333333;font-size:14px;font-weight:bold}
+#in_comment div.user{margin-bottom:6px;color:#333333;font-size:12px}
+#in_comment div.user a{color:#4c4126;font-size:12px}
+#in_comment div.user a:visited{color:#4c4126}
+#in_comment div.user span.date{color:#666666;font-size:11px}
+#in_comment div.desc{color:#333333;font-size:12px}
+#in_comment div.line{margin-top:17px;line-height:17px;border-top:1px solid #EEE}
+
+#m_track {color:#333333;font-size:12px}
+#m_track a{color:#666;font-size:12px;text-decoration:none}
+#m_track a:visited{color:#666}
+#m_track a:hover{color:#333;text-decoration:underline}
+#m_track a:hover img{filter:gray(enabled=1);}
+#m_friblog a img{border:1px solid #fff;filter:alpha(opacity=50);} 
+#m_friblog a:hover img{border:1px solid #fff;filter:alpha(opacity=100);}
+#in_msg div.user a img{border:1px solid #fff;filter:alpha(opacity=50);} 
+#in_msg div.user a:hover img{border:1px solid #fff;filter:alpha(opacity=100);}
+#m_track a img{border:1px solid #fff;filter:alpha(opacity=50);} 
+#m_track a:hover img{border:1px solid #fff;filter:alpha(opacity=100);} 
+#in_comment div.user a img{border:1px solid #fff;filter:alpha(opacity=50);} 
+#in_comment div.user a:hover img{border:1px solid #fff;filter:alpha(opacity=100);}
+#in_reader td.user a img{border:1px solid #fff;filter:alpha(opacity=50);} 
+#in_reader td.user a:hover img{border:1px solid #fff;filter:alpha(opacity=100);}
+#m_albumlist div.phimg a img{border:1px solid #fff;filter:alpha(opacity=50);}  /*图片*/ 
+#m_albumlist div.phimg a :hover img{border:1px solid #fff;filter:alpha(opacity=100);} /*图片*/ 
+#m_albumlist a img{border:1px solid #fff;filter:alpha(opacity=50);} /*小相册的封面图*/ 
+#m_albumlist a:hover img{border:1px solid #fff;filter:alpha(opacity=100);} /*悬停效果*/ 
+/*日历模块*/
+
+#m_cals {height:240px important;background:transparent;  no-repeat top right }
+#m_cals div{background:      no-repeat top center}
+#mod_cals .modbox{color:#808080} 
+#mod_cals .modbox td{color:#808080}
+div#cals .today{color:#222;padding:2px;border:0px dashed #B3B3B3;background:url(http://imgsrc.baidu.com/css/pic/item/89f880c7fc5e4cf4d10060a0.jpg) no-repeat ;line-hight:20px;font-weight:bold;}/*今日*/
+#in_send div.tit{margin:10px 0 10px 0;color:#333333;font-size:14px;font-weight:bold}
+/*背景音乐*/
+#phx{FILTER: Alpha(Opacity=100, FinishOpacity=10, Style=2, StartX=20, StartY=40, FinishX=0, FinishY=0) gray; WIDTH: 175px; HEIGHT: 32px}  
+#spBlogCmtText {border:1px solid #BBBBBB;background:      no-repeat top center;}/*评论框图*/ 
+
+input.#spVerifyKey{color:#}
+.EditorContainer{color:#;border:solid 1px #!important;background:       no-repeat right bottom;important;}
+.EditorContainer iframe{filter:alpha(opacity=50)!important;background-color:#!important}  
+ 

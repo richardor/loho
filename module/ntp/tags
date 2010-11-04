@@ -1,0 +1,12 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+NtpClient	./src/ntp.h	/^typedef _NtpClient NtpClient;$/;"	t
+_NtpClient	./src/ntp.c	/^struct _NtpClient{$/;"	s	file:
+__NTP_H__	./src/ntp.h	2;"	d
+ntp_client_creat	./src/ntp.c	/^NtpClient *ntp_client_creat(char *server_name)$/;"	f
+ntp_client_get_date_time	./src/ntp.c	/^RetNtp ntp_client_get_date_time()$/;"	f
+ntp_client_set_server_ip	./src/ntp.c	/^RetNtp ntp_client_set_server_ip(char *server_name)$/;"	f
