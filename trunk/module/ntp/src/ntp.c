@@ -3,7 +3,6 @@
 #include "ntp.h"
 
 
-
 #define NTP_DEFAULT_IP  	""
 #define NTP_DEFAULT_PORT	
 
@@ -11,10 +10,9 @@
 struct _NtpClient{
 	char *ntp_server_ip;
 	int  ntp_server_port;
-	char *ntp_port_str;
 	int connect_socket;
-
 };
+
 /*
 * create the ntp client.
 */
@@ -33,15 +31,17 @@ NtpClient *ntp_client_create(char *ntp_server_ip, int ntp_server_port)
 	{
 		client->ntp_server_ip = strdup(NTP_DEFAULT_IP);	
 	}
-	if(port > 0)
+
+    if(ntp_server_port > 0)
 	{
-		client->ntp_server_port = port;
+        client->ntp_server_port = ntp_server_port;
 	}
 	else
 	{
-		client->ntp_sever_port = NTP_DEFAULT_PORT;
+        client->ntp_server_port = NTP_DEFAULT_PORT;
 	}
-
+    
+    client->connect_socket = -1;
 
 	return client;
 }
@@ -49,13 +49,11 @@ NtpClient *ntp_client_create(char *ntp_server_ip, int ntp_server_port)
 
 RetNtp ntp_client_set_server_ip(char *server_ip)
 {
-
 		
 }
 
 RetNtp ntp_client_get_date_time()
 {
-
 
 
 }
@@ -68,7 +66,7 @@ void ntp_client_destor(NtpClient *ntp_client);
 {
 	if(ntp_client)
 	{
-
+        if(ntp_client->ntp_g)   
 	}
 }
 

@@ -13,12 +13,9 @@ typedef _Ret{
 
 typedef _NtpClient NtpClient;
 
-NtpClient *ntp_client_create(char *server_name);
-
+NtpClient *ntp_client_create(char *ntp_server_ip, int ntp_server_port);
 RetNtp ntp_client_set_server_ip();
-
 RetNtp ntp_client_get_date_time();
-
 void ntp_client_destroy(NtpClient *ntp_client);
 
 
