@@ -3,8 +3,8 @@
 #include "ntp.h"
 
 
-#define NTP_DEFAULT_IP  	""
-#define NTP_DEFAULT_PORT	
+#define NTP_DEFAULT_IP				""
+#define NTP_DEFAULT_PORT				
 
 
 struct _NtpClient{
@@ -12,6 +12,7 @@ struct _NtpClient{
 	int  ntp_server_port;
 	int connect_socket;
 };
+
 
 /*
 * create the ntp client.
