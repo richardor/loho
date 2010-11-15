@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	ini_parser_init(parser, INI_XML_FILENAME);
 	ini_tree = ini_parser_get_ini_tree(parser);
 //	assert(ini_tree != NULL);
-	//ini_tree_printf(ini_tree);	
+//ini_tree_printf(ini_tree);	
 	
 	return 0;
 }

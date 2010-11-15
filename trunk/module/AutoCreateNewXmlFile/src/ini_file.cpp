@@ -129,7 +129,6 @@ static inline int GetSectionString(char *line,char *section, int len)
 	return -1;
 }
 
-
 static inline int InSertSectionNode(char *section_value)
 {
 	section_node_t *section_node_temp = NULL;

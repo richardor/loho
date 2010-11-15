@@ -12,7 +12,6 @@ int main(int argc, char *argv[])
 	TagNode tag_node;
 	memset(&tag_node, 0, sizeof(TagNode));
 	char *string = NULL;	
-//	char *xml_file = strdup("2_36574E_4.xml");	
 	char xml_file[] = "2_36574E_4.xml";	
 	
 
@@ -26,6 +25,25 @@ int main(int argc, char *argv[])
 	{
 		printf("get the string(%s)\n", string);	
 	}	
-	
+
+#if 1
+	tag_node.tag_type = TAG_CONTENT;
+	tag_node.tag_name = strdup("UserSelDDL");
+	tag_node.key = strdup("INI_CON_UserSelDDL1");
+	tag_node.is_ddl = 1;
+	tag_node.ddl_id = 2;
+	string = xml_parser_get_string(xml_parser, &tag_node);
+	printf("get the string(%s)\n", string);	
+#endif
+
+#if 1
+	tag_node.tag_type = TAG_CONTENT;
+	tag_node.tag_name = strdup("VolumeSetST");
+	tag_node.key = strdup("INI_CON_VolumeSetST");
+	tag_node.is_ddl = 0;
+	tag_node.ddl_id = 2;
+	string = xml_parser_get_string(xml_parser, &tag_node);
+	printf("get the string(%s)\n", string);	
+#endif
 	return 0;
 }

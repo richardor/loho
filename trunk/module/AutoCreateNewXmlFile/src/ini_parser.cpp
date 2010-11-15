@@ -3,6 +3,7 @@
 #include<string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <ctype.h>
 #include"ini_parser.h"
 
 
@@ -42,7 +43,7 @@ static char *read_file(char *filename)
 		struct stat st = {0};
 		if(stat(filename, &st) == 0)
 		{
-			buffer = malloc(st.st_size + 1);
+			buffer = (char *)malloc(st.st_size + 1);
 			fp = fopen(filename, "r");
 			if(fp)
 			{
