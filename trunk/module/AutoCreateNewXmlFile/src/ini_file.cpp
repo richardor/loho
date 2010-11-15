@@ -303,6 +303,7 @@ int InitGetLanguageString(char *filename)
 		printf("DataBaseCreate failed!\n");
 		return -1;
 	}
+
 	m_ini_database->file_name = strdup(filename);
 
 	LoadIniFile();
