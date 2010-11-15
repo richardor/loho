@@ -40,8 +40,6 @@ typedef struct _ini_database_{
 
 
 
-#define CHINESE_SIMPLE_INI	"./language/chinese_simple.ini"
-#define ENGLISH_INIT		"./language/english.ini"
 
 #define FREE_MEMORY(p)		if(p)\
 							{\

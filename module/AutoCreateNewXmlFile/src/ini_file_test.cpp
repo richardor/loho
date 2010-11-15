@@ -56,7 +56,6 @@ int main(int argc , char *argv[])
 	assert(database != NULL);
 	ini_database_print(database);	
 
-
 	return 0;
 }
 	
