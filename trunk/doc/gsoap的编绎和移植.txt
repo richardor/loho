@@ -1,0 +1,142 @@
+	这些时间在玩黑莓，黑莓上有一款天气预报的小软件。个人出于好奇，想要研究一下该功能的实现过程。
+	网络方面的程序一直很少接触，算是一个盲点。所以刚开始， 理所当然的认为该功能的实现过程与ntp协议相似，都是客户端，创建socket,与服务器建立连接， 客户端
+发送带有地点信息的数据到服务器，服务器返回包括该城市天气信息的数据到客户端， 客户解析数据，得到天气信息。
+	真正开始着手查询相关的资料时，才知道网络对些查询服务协议已有明确的名字名义--webservice，以前似乎好像有听过此概念。啥叫webservice,字面上可以理解为网络服务。
+一个很简单的例子来说明一下，什么是webservice。计算1+1等于几？客户端与webservice服务器建立连接， 告诉服务器端我想要得到1+1 的结果， 服务器进行运算，返回计算结果给客户端。
+这不就是目前很火，引无数it巨头竟腰的云计算吗？目前，在网络上这样的服务器很多，有查询股票信息的， 有查询天气的，五花八门。
+	写到webservice ,不得不提到gsoap。gsoap 更像是一个代码生成器的工具，我们完全可以不利用gsoap，按照webservice的协义，个人编写全部的代码。有了gsoap 工具一切都好办，
+gsoap客户端和服务器的开发工作大为简化。下面重点写写如何用gsoap 完成一个天气预报客户端的开发全过程。
+	1 下载gsoap，并解压到linux目录下(/home/code/ )，下载地址为http://sourceforge.net/projects/gsoap2/files/
+	  #cd /home/code
+	  #unzip gsoap_2.8.0.zip  
+
+	2 解压后，生成gsoap-2.8。一般情况下， 从网络上下载开发包，在本地怎么都得先./configure 再 make一下，但是gsoap更像是一个工具包，解压后，可以直接使用包里面的工具，也就是soapcpp2和wsdl2h这两个工具，
+	　不同的平台对应的工具是不一样，当前ｇｓｏａｐ支持的平台有linux386，macosx ，win32，我所使用主机环境为ｆｅｄｏｒａ－９，所以应使用linux386下的工具。
+	　#cd /home/code/gsoap-2.8/gsoap／bin／linux386
+	　
+	3 建立一个新的目录，命名为weather
+	  #mkdir weather
+	4 利用gsoap 工具生成webserice 协义代码，wsdl2h从服务器下载头文件，soapcpp2相当于代码生成品，根据头文件生成相应的.c文件和.nsmap文件。
+	  #../wsdl2h -c -o weather.h http://www.ayandy.com/Service.asmx?WSDL
+	  注 -c 生成.c文件，相对于C++,个人还是一直偏好于C语言。
+	  #../soapcpp2 -x -C -c weather.h
+	  -x  不生成xml文件
+	  -C 只生成客户端相关代码
+
+	5 拷贝/home/code/gsoap-2.8/gsoap目录下的stdsoap2.h stdsoap2.c 两个文件到 weather目录下。
+	  #cp /home/code/gsoap-2.8/gsoap/stdsoap2.h ./
+	  #cp /home/code/gsoap-2.8/gsoap/stdsoap2.c  ./
+	6 编写客户端程序，也就是调用刚刚生成代码中接口函数。
+	  #vim weather.c
+	   
+
+#include<stdio.h>
+#include"soapH.h"
+#include"ServiceSoap.nsmap"
+
+#define CITY_NAME "北京"
+
+int main(int argc, char *argv[])
+{
+	struct soap soap;
+	int ret = 0;
+	int element = 0;
+	int i = 0;
+
+	soap_init(&soap);
+	soap_set_mode(&soap, SOAP_C_UTFSTRING);
+	soap.mode |= SOAP_C_UTFSTRING;
+
+	struct _ns1__getWeatherbyCityName  cityname;
+	struct _ns1__getWeatherbyCityNameResponse response;
+
+	cityname.theCityName = CITY_NAME;
+	cityname.theDayFlag = 0;
+	
+	if(soap_call___ns3__getWeatherbyCityName(&soap, NULL, NULL, &cityname, &response) == SOAP_OK)
+	{
+		printf("get weather ok !\n");
+		element = response.getWeatherbyCityNameResult->__sizestring;
+		for(i = 0; i < element; i++)
+		{
+			printf("i(%d), string(%s)\n", i, response.getWeatherbyCityNameResult->string[i]);
+		}
+	}
+	else
+	{
+		printf("soap_call___ns3__getWeatherbyCityName failed!\n");		
+
+	}
+
+	soap_destroy(&soap);
+	soap_end(&soap);
+	soap_done(&soap);
+	return 0;
+}
+
+	  
+
+	  6 编写Makefile 
+	  
+#CROSS_COMPILER:=
+CC:=$(CROSS_COMPILER)gcc
+GCC:=$(CROSS_COMPILER)g++
+
+all:
+	$(CC)  -o weather weather.c soapC.c soapClient.c stdsoap2.c
+
+clean:
+	rm -f weather
+
+	
+	7 make , 执行程序 
+	如果一切正常的话会出现有关天气的信息。
+	#./weather
+	get weather ok !
+	i(0), string((null))
+	i(1), string(北京)
+	i(2), string(晴)
+	i(3), string(7 ~ -4 ℃)
+	i(4), string(北风4-5级转微风)
+	i(5), string(今天)
+	i(6), string(http://www.ayandy.com/images/晴.gif)
+	i(7), string((null))
+
+
+
+
+常见问题：
+1 程序编绎通过，但是运行./weather是失败，打印soap_call___ns3__getWeatherbyCityName failed
+答：可能是你的linux主机的网络有问题，试试ping 一下其它网络地址http://www.ayandy.com是否成功。
+如何失败，则可能的原因有：一， 网络没有连接到公网 二  dns 没有设置。
+
+2 我运行./weather后出现的打印为乱码，如下
+get weather ok !
+i(0), string((null))
+i(1), string(?漪)
+i(2), string(??
+i(3), string(7 ~ -4 ??
+i(4), string(??4-5蝥扯蓮敺桅?)
+i(5), string(隞予)
+i(6), string(http://www.ayandy.com/images/??gif)
+i(7), string((null))
+答：这种情况是编码格式不正确，服务器返回的是utf-8的字符品， 所以要求你的终端的设置的编码格式也为utf-8.
+(pietty的设置方法，option->Encoding->Unicode utf-8)
+
+
+3 修改makefile 交叉编绎无法通过,出现打印stdsoap2.c:(.text+0x1b04c): undefined reference to `isnan'的错误。
+答：将stdsoap.h里1067行 #  define soap_isnan(n) isnan(0) 修改为 #  define soap_isnan(n) (0)
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
