@@ -1,0 +1,623 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+Accept	src/tinyxml/tinyxml.cpp	/^bool TiXmlComment::Accept( TiXmlVisitor* visitor ) const$/;"	f	class:TiXmlComment
+Accept	src/tinyxml/tinyxml.cpp	/^bool TiXmlDeclaration::Accept( TiXmlVisitor* visitor ) const$/;"	f	class:TiXmlDeclaration
+Accept	src/tinyxml/tinyxml.cpp	/^bool TiXmlDocument::Accept( TiXmlVisitor* visitor ) const$/;"	f	class:TiXmlDocument
+Accept	src/tinyxml/tinyxml.cpp	/^bool TiXmlElement::Accept( TiXmlVisitor* visitor ) const$/;"	f	class:TiXmlElement
+Accept	src/tinyxml/tinyxml.cpp	/^bool TiXmlText::Accept( TiXmlVisitor* visitor ) const$/;"	f	class:TiXmlText
+Accept	src/tinyxml/tinyxml.cpp	/^bool TiXmlUnknown::Accept( TiXmlVisitor* visitor ) const$/;"	f	class:TiXmlUnknown
+Add	src/tinyxml/tinyxml.cpp	/^void TiXmlAttributeSet::Add( TiXmlAttribute* addMe )$/;"	f	class:TiXmlAttributeSet
+Attribute	src/tinyxml/tinyxml.cpp	/^const char* TiXmlElement::Attribute( const char* name ) const$/;"	f	class:TiXmlElement
+Attribute	src/tinyxml/tinyxml.cpp	/^const char* TiXmlElement::Attribute( const char* name, double* d ) const$/;"	f	class:TiXmlElement
+Attribute	src/tinyxml/tinyxml.cpp	/^const char* TiXmlElement::Attribute( const char* name, int* i ) const$/;"	f	class:TiXmlElement
+Attribute	src/tinyxml/tinyxml.cpp	/^const std::string* TiXmlElement::Attribute( const std::string& name ) const$/;"	f	class:TiXmlElement
+Attribute	src/tinyxml/tinyxml.cpp	/^const std::string* TiXmlElement::Attribute( const std::string& name, double* d ) const$/;"	f	class:TiXmlElement
+Attribute	src/tinyxml/tinyxml.cpp	/^const std::string* TiXmlElement::Attribute( const std::string& name, int* i ) const$/;"	f	class:TiXmlElement
+Blank	src/tinyxml/tinyxmlparser.cpp	/^bool TiXmlText::Blank() const$/;"	f	class:TiXmlText
+CDATA	src/tinyxml/tinyxml.h	/^	bool CDATA() const				{ return cdata; }$/;"	f	class:TiXmlText
+CHINESE_SIMPLE_INI	src/ini_file.h	43;"	d
+CStr	src/tinyxml/tinyxml.h	/^	const char* CStr()								{ return buffer.c_str(); }$/;"	f	class:TiXmlPrinter
+ChangeLanguageString	src/ini_file.cpp	/^int ChangeLanguageString(char *section, char * id_value, char *string)$/;"	f
+Child	src/tinyxml/tinyxml.cpp	/^TiXmlHandle TiXmlHandle::Child( const char* value, int count ) const$/;"	f	class:TiXmlHandle
+Child	src/tinyxml/tinyxml.cpp	/^TiXmlHandle TiXmlHandle::Child( int count ) const$/;"	f	class:TiXmlHandle
+Child	src/tinyxml/tinyxml.h	/^	TiXmlHandle Child( const std::string& _value, int index ) const			{ return Child( _value.c_str(), index ); }$/;"	f	class:TiXmlHandle
+ChildElement	src/tinyxml/tinyxml.cpp	/^TiXmlHandle TiXmlHandle::ChildElement( const char* value, int count ) const$/;"	f	class:TiXmlHandle
+ChildElement	src/tinyxml/tinyxml.cpp	/^TiXmlHandle TiXmlHandle::ChildElement( int count ) const$/;"	f	class:TiXmlHandle
+ChildElement	src/tinyxml/tinyxml.h	/^	TiXmlHandle ChildElement( const std::string& _value, int index ) const	{ return ChildElement( _value.c_str(), index ); }$/;"	f	class:TiXmlHandle
+Clear	src/tinyxml/tinyxml.cpp	/^void TiXmlNode::Clear()$/;"	f	class:TiXmlNode
+Clear	src/tinyxml/tinyxml.h	/^	void Clear()		{ row = col = -1; }$/;"	f	struct:TiXmlCursor
+ClearError	src/tinyxml/tinyxml.h	/^	void ClearError()						{	error = false; $/;"	f	class:TiXmlDocument
+ClearThis	src/tinyxml/tinyxml.cpp	/^void TiXmlElement::ClearThis()$/;"	f	class:TiXmlElement
+Clone	src/tinyxml/tinyxml.cpp	/^TiXmlNode* TiXmlComment::Clone() const$/;"	f	class:TiXmlComment
+Clone	src/tinyxml/tinyxml.cpp	/^TiXmlNode* TiXmlDeclaration::Clone() const$/;"	f	class:TiXmlDeclaration
+Clone	src/tinyxml/tinyxml.cpp	/^TiXmlNode* TiXmlDocument::Clone() const$/;"	f	class:TiXmlDocument
+Clone	src/tinyxml/tinyxml.cpp	/^TiXmlNode* TiXmlElement::Clone() const$/;"	f	class:TiXmlElement
+Clone	src/tinyxml/tinyxml.cpp	/^TiXmlNode* TiXmlText::Clone() const$/;"	f	class:TiXmlText
+Clone	src/tinyxml/tinyxml.cpp	/^TiXmlNode* TiXmlUnknown::Clone() const$/;"	f	class:TiXmlUnknown
+Column	src/tinyxml/tinyxml.h	/^	int Column() const		{ return location.col + 1; }	\/\/\/< See Row()$/;"	f	class:TiXmlBase
+ConvertUTF32ToUTF8	src/tinyxml/tinyxmlparser.cpp	/^void TiXmlBase::ConvertUTF32ToUTF8( unsigned long input, char* output, int* length )$/;"	f	class:TiXmlBase
+CopyTo	src/tinyxml/tinyxml.cpp	/^void TiXmlComment::CopyTo( TiXmlComment* target ) const$/;"	f	class:TiXmlComment
+CopyTo	src/tinyxml/tinyxml.cpp	/^void TiXmlDeclaration::CopyTo( TiXmlDeclaration* target ) const$/;"	f	class:TiXmlDeclaration
+CopyTo	src/tinyxml/tinyxml.cpp	/^void TiXmlDocument::CopyTo( TiXmlDocument* target ) const$/;"	f	class:TiXmlDocument
+CopyTo	src/tinyxml/tinyxml.cpp	/^void TiXmlElement::CopyTo( TiXmlElement* target ) const$/;"	f	class:TiXmlElement
+CopyTo	src/tinyxml/tinyxml.cpp	/^void TiXmlNode::CopyTo( TiXmlNode* target ) const$/;"	f	class:TiXmlNode
+CopyTo	src/tinyxml/tinyxml.cpp	/^void TiXmlText::CopyTo( TiXmlText* target ) const$/;"	f	class:TiXmlText
+CopyTo	src/tinyxml/tinyxml.cpp	/^void TiXmlUnknown::CopyTo( TiXmlUnknown* target ) const$/;"	f	class:TiXmlUnknown
+Cursor	src/tinyxml/tinyxmlparser.cpp	/^	const TiXmlCursor& Cursor()	{ return cursor; }$/;"	f	class:TiXmlParsingData
+DEBUG	src/tinyxml/tinyxml.h	43;"	d
+DataBaseCreate	src/ini_file.cpp	/^static int DataBaseCreate()$/;"	f	file:
+DoIndent	src/tinyxml/tinyxml.h	/^	void DoIndent()	{$/;"	f	class:TiXmlPrinter
+DoLineBreak	src/tinyxml/tinyxml.h	/^	void DoLineBreak() {$/;"	f	class:TiXmlPrinter
+DoubleValue	src/tinyxml/tinyxml.cpp	/^double  TiXmlAttribute::DoubleValue() const$/;"	f	class:TiXmlAttribute
+ENGLISH_INIT	src/ini_file.h	44;"	d
+Element	src/tinyxml/tinyxml.h	/^	TiXmlElement* Element() const	{ return ToElement(); }$/;"	f	class:TiXmlHandle
+EncodeString	src/tinyxml/tinyxml.cpp	/^void TiXmlBase::EncodeString( const TIXML_STRING& str, TIXML_STRING* outString )$/;"	f	class:TiXmlBase
+Encoding	src/tinyxml/tinyxml.h	/^	const char *Encoding() const		{ return encoding.c_str (); }$/;"	f	class:TiXmlDeclaration
+Entity	src/tinyxml/tinyxml.h	/^	struct Entity$/;"	s	class:TiXmlBase
+Error	src/tinyxml/tinyxml.h	/^	bool Error() const						{ return error; }$/;"	f	class:TiXmlDocument
+ErrorCol	src/tinyxml/tinyxml.h	/^	int ErrorCol() const	{ return errorLocation.col+1; }	\/\/\/< The column where the error occured. See ErrorRow()$/;"	f	class:TiXmlDocument
+ErrorDesc	src/tinyxml/tinyxml.h	/^	const char * ErrorDesc() const	{ return errorDesc.c_str (); }$/;"	f	class:TiXmlDocument
+ErrorId	src/tinyxml/tinyxml.h	/^	int ErrorId()	const				{ return errorId; }$/;"	f	class:TiXmlDocument
+ErrorRow	src/tinyxml/tinyxml.h	/^	int ErrorRow() const	{ return errorLocation.row+1; }$/;"	f	class:TiXmlDocument
+FREE_MEMORY	src/ini_file.h	46;"	d
+Find	src/tinyxml/tinyxml.cpp	/^TiXmlAttribute* TiXmlAttributeSet::Find( const char* name ) const$/;"	f	class:TiXmlAttributeSet
+Find	src/tinyxml/tinyxml.cpp	/^TiXmlAttribute* TiXmlAttributeSet::Find( const std::string& name ) const$/;"	f	class:TiXmlAttributeSet
+FindOrCreate	src/tinyxml/tinyxml.cpp	/^TiXmlAttribute* TiXmlAttributeSet::FindOrCreate( const char* _name )$/;"	f	class:TiXmlAttributeSet
+FindOrCreate	src/tinyxml/tinyxml.cpp	/^TiXmlAttribute* TiXmlAttributeSet::FindOrCreate( const std::string& _name )$/;"	f	class:TiXmlAttributeSet
+First	src/tinyxml/tinyxml.h	/^	TiXmlAttribute* First()					{ return ( sentinel.next == &sentinel ) ? 0 : sentinel.next; }$/;"	f	class:TiXmlAttributeSet
+First	src/tinyxml/tinyxml.h	/^	const TiXmlAttribute* First()	const	{ return ( sentinel.next == &sentinel ) ? 0 : sentinel.next; }$/;"	f	class:TiXmlAttributeSet
+FirstAttribute	src/tinyxml/tinyxml.h	/^	TiXmlAttribute* FirstAttribute() 				{ return attributeSet.First(); }$/;"	f	class:TiXmlElement
+FirstAttribute	src/tinyxml/tinyxml.h	/^	const TiXmlAttribute* FirstAttribute() const	{ return attributeSet.First(); }		\/\/\/< Access the first attribute in this element.$/;"	f	class:TiXmlElement
+FirstChild	src/tinyxml/tinyxml.cpp	/^TiXmlHandle TiXmlHandle::FirstChild( const char * value ) const$/;"	f	class:TiXmlHandle
+FirstChild	src/tinyxml/tinyxml.cpp	/^TiXmlHandle TiXmlHandle::FirstChild() const$/;"	f	class:TiXmlHandle
+FirstChild	src/tinyxml/tinyxml.cpp	/^const TiXmlNode* TiXmlNode::FirstChild( const char * _value ) const$/;"	f	class:TiXmlNode
+FirstChild	src/tinyxml/tinyxml.h	/^	TiXmlHandle FirstChild( const std::string& _value ) const				{ return FirstChild( _value.c_str() ); }$/;"	f	class:TiXmlHandle
+FirstChild	src/tinyxml/tinyxml.h	/^	TiXmlNode* FirstChild( const char * _value ) {$/;"	f	class:TiXmlNode
+FirstChild	src/tinyxml/tinyxml.h	/^	TiXmlNode* FirstChild( const std::string& _value )				{	return FirstChild (_value.c_str ());	}	\/\/\/< STL std::string form.$/;"	f	class:TiXmlNode
+FirstChild	src/tinyxml/tinyxml.h	/^	TiXmlNode* FirstChild()						{ return firstChild; }$/;"	f	class:TiXmlNode
+FirstChild	src/tinyxml/tinyxml.h	/^	const TiXmlNode* FirstChild( const std::string& _value ) const	{	return FirstChild (_value.c_str ());	}	\/\/\/< STL std::string form.$/;"	f	class:TiXmlNode
+FirstChild	src/tinyxml/tinyxml.h	/^	const TiXmlNode* FirstChild()	const		{ return firstChild; }	\/\/\/< The first child of this node. Will be null if there are no children.$/;"	f	class:TiXmlNode
+FirstChildElement	src/tinyxml/tinyxml.cpp	/^TiXmlHandle TiXmlHandle::FirstChildElement( const char * value ) const$/;"	f	class:TiXmlHandle
+FirstChildElement	src/tinyxml/tinyxml.cpp	/^TiXmlHandle TiXmlHandle::FirstChildElement() const$/;"	f	class:TiXmlHandle
+FirstChildElement	src/tinyxml/tinyxml.cpp	/^const TiXmlElement* TiXmlNode::FirstChildElement( const char * _value ) const$/;"	f	class:TiXmlNode
+FirstChildElement	src/tinyxml/tinyxml.cpp	/^const TiXmlElement* TiXmlNode::FirstChildElement() const$/;"	f	class:TiXmlNode
+FirstChildElement	src/tinyxml/tinyxml.h	/^	TiXmlElement* FirstChildElement( const char * _value ) {$/;"	f	class:TiXmlNode
+FirstChildElement	src/tinyxml/tinyxml.h	/^	TiXmlElement* FirstChildElement( const std::string& _value )				{	return FirstChildElement (_value.c_str ());	}	\/\/\/< STL std::string form.$/;"	f	class:TiXmlNode
+FirstChildElement	src/tinyxml/tinyxml.h	/^	TiXmlElement* FirstChildElement() {$/;"	f	class:TiXmlNode
+FirstChildElement	src/tinyxml/tinyxml.h	/^	TiXmlHandle FirstChildElement( const std::string& _value ) const		{ return FirstChildElement( _value.c_str() ); }$/;"	f	class:TiXmlHandle
+FirstChildElement	src/tinyxml/tinyxml.h	/^	const TiXmlElement* FirstChildElement( const std::string& _value ) const	{	return FirstChildElement (_value.c_str ());	}	\/\/\/< STL std::string form.$/;"	f	class:TiXmlNode
+GXKW_EVENTLIST_TAG	src/xml_parser.cpp	13;"	d	file:
+GXKW_ROOT_TAG	src/xml_parser.cpp	12;"	d	file:
+GetChar	src/tinyxml/tinyxml.h	/^	inline static const char* GetChar( const char* p, char* _value, int* length, TiXmlEncoding encoding )$/;"	f	class:TiXmlBase
+GetDocument	src/tinyxml/tinyxml.cpp	/^const TiXmlDocument* TiXmlNode::GetDocument() const$/;"	f	class:TiXmlNode
+GetDocument	src/tinyxml/tinyxml.h	/^	TiXmlDocument* GetDocument() {$/;"	f	class:TiXmlNode
+GetEntity	src/tinyxml/tinyxmlparser.cpp	/^const char* TiXmlBase::GetEntity( const char* p, char* value, int* length, TiXmlEncoding encoding )$/;"	f	class:TiXmlBase
+GetIdAndString	src/ini_file.cpp	/^static inline int GetIdAndString(char *line, char *id_value, char *string_value)$/;"	f	file:
+GetIniDatabase	src/ini_file.cpp	/^ini_database_t *GetIniDatabase()$/;"	f
+GetLanguageString	src/ini_file.cpp	/^char *GetLanguageString(char *section, char * id_value, char *default_str)$/;"	f
+GetSectionString	src/ini_file.cpp	/^static inline int GetSectionString(char *line,char *section, int len)$/;"	f	file:
+GetText	src/tinyxml/tinyxml.cpp	/^const char* TiXmlElement::GetText() const$/;"	f	class:TiXmlElement
+GetUserData	src/tinyxml/tinyxml.h	/^	const void* GetUserData() const 		{ return userData; }	\/\/\/< Get a pointer to arbitrary user data.$/;"	f	class:TiXmlBase
+GetUserData	src/tinyxml/tinyxml.h	/^	void* GetUserData()						{ return userData; }	\/\/\/< Get a pointer to arbitrary user data.$/;"	f	class:TiXmlBase
+INI_FILENAME	src/ini_file_test.cpp	47;"	d	file:
+INI_XML_FILENAME	src/ini_parser_test.cpp	6;"	d	file:
+Identify	src/tinyxml/tinyxmlparser.cpp	/^TiXmlNode* TiXmlNode::Identify( const char* p, TiXmlEncoding encoding )$/;"	f	class:TiXmlNode
+InSertDataNode	src/ini_file.cpp	/^static inline int InSertDataNode(char *id_value, char *string_value)$/;"	f	file:
+InSertSectionNode	src/ini_file.cpp	/^static inline int InSertSectionNode(char *section_value)$/;"	f	file:
+Indent	src/tinyxml/tinyxml.h	/^	const char* Indent()							{ return indent.c_str(); }$/;"	f	class:TiXmlPrinter
+IniParserTagNode	src/ini_parser.h	/^typedef int (*IniParserTagNode)(void *ctx, void *data);$/;"	t
+IniTree	src/ini_parser.h	/^typedef struct _IniTree IniTree;$/;"	t	typeref:struct:_IniTree
+InitGetLanguageString	src/ini_file.cpp	/^int InitGetLanguageString(char *filename)$/;"	f
+InsertAfterChild	src/tinyxml/tinyxml.cpp	/^TiXmlNode* TiXmlNode::InsertAfterChild( TiXmlNode* afterThis, const TiXmlNode& addThis )$/;"	f	class:TiXmlNode
+InsertBeforeChild	src/tinyxml/tinyxml.cpp	/^TiXmlNode* TiXmlNode::InsertBeforeChild( TiXmlNode* beforeThis, const TiXmlNode& addThis )$/;"	f	class:TiXmlNode
+InsertEndChild	src/tinyxml/tinyxml.cpp	/^TiXmlNode* TiXmlNode::InsertEndChild( const TiXmlNode& addThis )$/;"	f	class:TiXmlNode
+IntValue	src/tinyxml/tinyxml.cpp	/^int TiXmlAttribute::IntValue() const$/;"	f	class:TiXmlAttribute
+IsAlpha	src/tinyxml/tinyxmlparser.cpp	/^\/*static*\/ int TiXmlBase::IsAlpha( unsigned char anyByte, TiXmlEncoding \/*encoding*\/ )$/;"	f	class:TiXmlBase
+IsAlphaNum	src/tinyxml/tinyxmlparser.cpp	/^\/*static*\/ int TiXmlBase::IsAlphaNum( unsigned char anyByte, TiXmlEncoding \/*encoding*\/ )$/;"	f	class:TiXmlBase
+IsSectionLine	src/ini_file.cpp	/^static inline int IsSectionLine(char *line)$/;"	f	file:
+IsWhiteSpace	src/tinyxml/tinyxml.h	/^	inline static bool IsWhiteSpace( char c )		$/;"	f	class:TiXmlBase
+IsWhiteSpace	src/tinyxml/tinyxml.h	/^	inline static bool IsWhiteSpace( int c )$/;"	f	class:TiXmlBase
+IsWhiteSpaceCondensed	src/tinyxml/tinyxml.h	/^	static bool IsWhiteSpaceCondensed()						{ return condenseWhiteSpace; }$/;"	f	class:TiXmlBase
+IterateChildren	src/tinyxml/tinyxml.cpp	/^const TiXmlNode* TiXmlNode::IterateChildren( const TiXmlNode* previous ) const$/;"	f	class:TiXmlNode
+IterateChildren	src/tinyxml/tinyxml.cpp	/^const TiXmlNode* TiXmlNode::IterateChildren( const char * val, const TiXmlNode* previous ) const$/;"	f	class:TiXmlNode
+IterateChildren	src/tinyxml/tinyxml.h	/^	TiXmlNode* IterateChildren( const TiXmlNode* previous ) {$/;"	f	class:TiXmlNode
+IterateChildren	src/tinyxml/tinyxml.h	/^	TiXmlNode* IterateChildren( const char * _value, const TiXmlNode* previous ) {$/;"	f	class:TiXmlNode
+IterateChildren	src/tinyxml/tinyxml.h	/^	TiXmlNode* IterateChildren( const std::string& _value, const TiXmlNode* previous ) {	return IterateChildren (_value.c_str (), previous);	}	\/\/\/< STL std::string form.$/;"	f	class:TiXmlNode
+IterateChildren	src/tinyxml/tinyxml.h	/^	const TiXmlNode* IterateChildren( const std::string& _value, const TiXmlNode* previous ) const	{	return IterateChildren (_value.c_str (), previous);	}	\/\/\/< STL std::string form.$/;"	f	class:TiXmlNode
+Last	src/tinyxml/tinyxml.h	/^	TiXmlAttribute* Last()					{ return ( sentinel.prev == &sentinel ) ? 0 : sentinel.prev; }$/;"	f	class:TiXmlAttributeSet
+Last	src/tinyxml/tinyxml.h	/^	const TiXmlAttribute* Last() const		{ return ( sentinel.prev == &sentinel ) ? 0 : sentinel.prev; }$/;"	f	class:TiXmlAttributeSet
+LastAttribute	src/tinyxml/tinyxml.h	/^	TiXmlAttribute* LastAttribute()					{ return attributeSet.Last(); }$/;"	f	class:TiXmlElement
+LastAttribute	src/tinyxml/tinyxml.h	/^	const TiXmlAttribute* LastAttribute()	const 	{ return attributeSet.Last(); }		\/\/\/< Access the last attribute in this element.$/;"	f	class:TiXmlElement
+LastChild	src/tinyxml/tinyxml.cpp	/^const TiXmlNode* TiXmlNode::LastChild( const char * _value ) const$/;"	f	class:TiXmlNode
+LastChild	src/tinyxml/tinyxml.h	/^	TiXmlNode* LastChild( const char * _value ) {$/;"	f	class:TiXmlNode
+LastChild	src/tinyxml/tinyxml.h	/^	TiXmlNode* LastChild( const std::string& _value )				{	return LastChild (_value.c_str ());	}	\/\/\/< STL std::string form.$/;"	f	class:TiXmlNode
+LastChild	src/tinyxml/tinyxml.h	/^	TiXmlNode* LastChild()	{ return lastChild; }$/;"	f	class:TiXmlNode
+LastChild	src/tinyxml/tinyxml.h	/^	const TiXmlNode* LastChild( const std::string& _value ) const	{	return LastChild (_value.c_str ());	}	\/\/\/< STL std::string form.$/;"	f	class:TiXmlNode
+LastChild	src/tinyxml/tinyxml.h	/^	const TiXmlNode* LastChild() const	{ return lastChild; }		\/\/\/ The last child of this node. Will be null if there are no children.$/;"	f	class:TiXmlNode
+LineBreak	src/tinyxml/tinyxml.h	/^	const char* LineBreak()							{ return lineBreak.c_str(); }$/;"	f	class:TiXmlPrinter
+LinkEndChild	src/tinyxml/tinyxml.cpp	/^TiXmlNode* TiXmlNode::LinkEndChild( TiXmlNode* node )$/;"	f	class:TiXmlNode
+LoadFile	src/tinyxml/tinyxml.cpp	/^bool TiXmlDocument::LoadFile( FILE* file, TiXmlEncoding encoding )$/;"	f	class:TiXmlDocument
+LoadFile	src/tinyxml/tinyxml.cpp	/^bool TiXmlDocument::LoadFile( TiXmlEncoding encoding )$/;"	f	class:TiXmlDocument
+LoadFile	src/tinyxml/tinyxml.cpp	/^bool TiXmlDocument::LoadFile( const char* _filename, TiXmlEncoding encoding )$/;"	f	class:TiXmlDocument
+LoadFile	src/tinyxml/tinyxml.h	/^	bool LoadFile( const std::string& filename, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING )			\/\/\/< STL std::string version.$/;"	f	class:TiXmlDocument
+LoadIniFile	src/ini_file.cpp	/^static int LoadIniFile()$/;"	f	file:
+MAX_ENTITY_LENGTH	src/tinyxml/tinyxml.h	/^		MAX_ENTITY_LENGTH = 6$/;"	e	enum:TiXmlBase::__anon3
+MEMORY_FREE	src/ini_parser.cpp	20;"	d	file:
+MEMORY_MALLOC_CHECK	src/ini_parser.cpp	15;"	d	file:
+NUM_ENTITY	src/tinyxml/tinyxml.h	/^		NUM_ENTITY = 5,$/;"	e	enum:TiXmlBase::__anon3
+Name	src/tinyxml/tinyxml.h	/^	const char*		Name()  const		{ return name.c_str(); }		\/\/\/< Return the name of this attribute.$/;"	f	class:TiXmlAttribute
+NameTStr	src/tinyxml/tinyxml.h	/^	const TIXML_STRING& NameTStr() const { return name; }$/;"	f	class:TiXmlAttribute
+Next	src/tinyxml/tinyxml.cpp	/^const TiXmlAttribute* TiXmlAttribute::Next() const$/;"	f	class:TiXmlAttribute
+Next	src/tinyxml/tinyxml.h	/^	TiXmlAttribute* Next() {$/;"	f	class:TiXmlAttribute
+NextSibling	src/tinyxml/tinyxml.cpp	/^const TiXmlNode* TiXmlNode::NextSibling( const char * _value ) const $/;"	f	class:TiXmlNode
+NextSibling	src/tinyxml/tinyxml.h	/^	TiXmlNode* NextSibling( const char* _next ) {$/;"	f	class:TiXmlNode
+NextSibling	src/tinyxml/tinyxml.h	/^	TiXmlNode* NextSibling( const std::string& _value) 					{	return NextSibling (_value.c_str ());	}	\/\/\/< STL std::string form.$/;"	f	class:TiXmlNode
+NextSibling	src/tinyxml/tinyxml.h	/^	TiXmlNode* NextSibling()							{ return next; }$/;"	f	class:TiXmlNode
+NextSibling	src/tinyxml/tinyxml.h	/^	const TiXmlNode* NextSibling( const std::string& _value) const		{	return NextSibling (_value.c_str ());	}	\/\/\/< STL std::string form.$/;"	f	class:TiXmlNode
+NextSibling	src/tinyxml/tinyxml.h	/^	const TiXmlNode* NextSibling() const				{ return next; }$/;"	f	class:TiXmlNode
+NextSiblingElement	src/tinyxml/tinyxml.cpp	/^const TiXmlElement* TiXmlNode::NextSiblingElement( const char * _value ) const$/;"	f	class:TiXmlNode
+NextSiblingElement	src/tinyxml/tinyxml.cpp	/^const TiXmlElement* TiXmlNode::NextSiblingElement() const$/;"	f	class:TiXmlNode
+NextSiblingElement	src/tinyxml/tinyxml.h	/^	TiXmlElement* NextSiblingElement( const char *_next ) {$/;"	f	class:TiXmlNode
+NextSiblingElement	src/tinyxml/tinyxml.h	/^	TiXmlElement* NextSiblingElement( const std::string& _value)				{	return NextSiblingElement (_value.c_str ());	}	\/\/\/< STL std::string form.$/;"	f	class:TiXmlNode
+NextSiblingElement	src/tinyxml/tinyxml.h	/^	TiXmlElement* NextSiblingElement() {$/;"	f	class:TiXmlNode
+NextSiblingElement	src/tinyxml/tinyxml.h	/^	const TiXmlElement* NextSiblingElement( const std::string& _value) const	{	return NextSiblingElement (_value.c_str ());	}	\/\/\/< STL std::string form.$/;"	f	class:TiXmlNode
+NoChildren	src/tinyxml/tinyxml.h	/^	bool NoChildren() const						{ return !firstChild; }$/;"	f	class:TiXmlNode
+Node	src/tinyxml/tinyxml.h	/^	TiXmlNode* Node() const			{ return ToNode(); } $/;"	f	class:TiXmlHandle
+NodeType	src/tinyxml/tinyxml.h	/^	enum NodeType$/;"	g	class:TiXmlNode
+PRINTF	src/ini_parser.cpp	14;"	d	file:
+Parent	src/tinyxml/tinyxml.h	/^	TiXmlNode* Parent()							{ return parent; }$/;"	f	class:TiXmlNode
+Parent	src/tinyxml/tinyxml.h	/^	const TiXmlNode* Parent() const				{ return parent; }$/;"	f	class:TiXmlNode
+Parse	src/tinyxml/tinyxmlparser.cpp	/^const char* TiXmlAttribute::Parse( const char* p, TiXmlParsingData* data, TiXmlEncoding encoding )$/;"	f	class:TiXmlAttribute
+Parse	src/tinyxml/tinyxmlparser.cpp	/^const char* TiXmlComment::Parse( const char* p, TiXmlParsingData* data, TiXmlEncoding encoding )$/;"	f	class:TiXmlComment
+Parse	src/tinyxml/tinyxmlparser.cpp	/^const char* TiXmlDeclaration::Parse( const char* p, TiXmlParsingData* data, TiXmlEncoding _encoding )$/;"	f	class:TiXmlDeclaration
+Parse	src/tinyxml/tinyxmlparser.cpp	/^const char* TiXmlDocument::Parse( const char* p, TiXmlParsingData* prevData, TiXmlEncoding encoding )$/;"	f	class:TiXmlDocument
+Parse	src/tinyxml/tinyxmlparser.cpp	/^const char* TiXmlElement::Parse( const char* p, TiXmlParsingData* data, TiXmlEncoding encoding )$/;"	f	class:TiXmlElement
+Parse	src/tinyxml/tinyxmlparser.cpp	/^const char* TiXmlText::Parse( const char* p, TiXmlParsingData* data, TiXmlEncoding encoding )$/;"	f	class:TiXmlText
+Parse	src/tinyxml/tinyxmlparser.cpp	/^const char* TiXmlUnknown::Parse( const char* p, TiXmlParsingData* data, TiXmlEncoding encoding )$/;"	f	class:TiXmlUnknown
+Parser	src/ini_parser.h	/^typedef struct _Parser Parser;$/;"	t	typeref:struct:_Parser
+Previous	src/tinyxml/tinyxml.cpp	/^const TiXmlAttribute* TiXmlAttribute::Previous() const$/;"	f	class:TiXmlAttribute
+Previous	src/tinyxml/tinyxml.h	/^	TiXmlAttribute* Previous() {$/;"	f	class:TiXmlAttribute
+PreviousSibling	src/tinyxml/tinyxml.cpp	/^const TiXmlNode* TiXmlNode::PreviousSibling( const char * _value ) const$/;"	f	class:TiXmlNode
+PreviousSibling	src/tinyxml/tinyxml.h	/^	TiXmlNode* PreviousSibling( const char *_prev ) {$/;"	f	class:TiXmlNode
+PreviousSibling	src/tinyxml/tinyxml.h	/^	TiXmlNode* PreviousSibling( const std::string& _value ) 			{	return PreviousSibling (_value.c_str ());	}	\/\/\/< STL std::string form.$/;"	f	class:TiXmlNode
+PreviousSibling	src/tinyxml/tinyxml.h	/^	TiXmlNode* PreviousSibling()						{ return prev; }$/;"	f	class:TiXmlNode
+PreviousSibling	src/tinyxml/tinyxml.h	/^	const TiXmlNode* PreviousSibling( const std::string& _value ) const	{	return PreviousSibling (_value.c_str ());	}	\/\/\/< STL std::string form.$/;"	f	class:TiXmlNode
+PreviousSibling	src/tinyxml/tinyxml.h	/^	const TiXmlNode* PreviousSibling() const			{ return prev; }$/;"	f	class:TiXmlNode
+Print	src/tinyxml/tinyxml.cpp	/^void TiXmlAttribute::Print( FILE* cfile, int \/*depth*\/, TIXML_STRING* str ) const$/;"	f	class:TiXmlAttribute
+Print	src/tinyxml/tinyxml.cpp	/^void TiXmlComment::Print( FILE* cfile, int depth ) const$/;"	f	class:TiXmlComment
+Print	src/tinyxml/tinyxml.cpp	/^void TiXmlDeclaration::Print( FILE* cfile, int \/*depth*\/, TIXML_STRING* str ) const$/;"	f	class:TiXmlDeclaration
+Print	src/tinyxml/tinyxml.cpp	/^void TiXmlDocument::Print( FILE* cfile, int depth ) const$/;"	f	class:TiXmlDocument
+Print	src/tinyxml/tinyxml.cpp	/^void TiXmlElement::Print( FILE* cfile, int depth ) const$/;"	f	class:TiXmlElement
+Print	src/tinyxml/tinyxml.cpp	/^void TiXmlText::Print( FILE* cfile, int depth ) const$/;"	f	class:TiXmlText
+Print	src/tinyxml/tinyxml.cpp	/^void TiXmlUnknown::Print( FILE* cfile, int depth ) const$/;"	f	class:TiXmlUnknown
+Print	src/tinyxml/tinyxml.h	/^	virtual void Print( FILE* cfile, int depth ) const {$/;"	f	class:TiXmlAttribute
+Print	src/tinyxml/tinyxml.h	/^	virtual void Print( FILE* cfile, int depth ) const {$/;"	f	class:TiXmlDeclaration
+Print	src/tinyxml/tinyxml.h	/^	void Print() const						{ Print( stdout, 0 ); }$/;"	f	class:TiXmlDocument
+PrintIniDataBase	src/ini_file.cpp	/^void PrintIniDataBase()$/;"	f
+QueryDoubleAttribute	src/tinyxml/tinyxml.cpp	/^int TiXmlElement::QueryDoubleAttribute( const char* name, double* dval ) const$/;"	f	class:TiXmlElement
+QueryDoubleAttribute	src/tinyxml/tinyxml.cpp	/^int TiXmlElement::QueryDoubleAttribute( const std::string& name, double* dval ) const$/;"	f	class:TiXmlElement
+QueryDoubleValue	src/tinyxml/tinyxml.cpp	/^int TiXmlAttribute::QueryDoubleValue( double* dval ) const$/;"	f	class:TiXmlAttribute
+QueryFloatAttribute	src/tinyxml/tinyxml.h	/^	int QueryFloatAttribute( const char* name, float* _value ) const {$/;"	f	class:TiXmlElement
+QueryIntAttribute	src/tinyxml/tinyxml.cpp	/^int TiXmlElement::QueryIntAttribute( const char* name, int* ival ) const$/;"	f	class:TiXmlElement
+QueryIntAttribute	src/tinyxml/tinyxml.cpp	/^int TiXmlElement::QueryIntAttribute( const std::string& name, int* ival ) const$/;"	f	class:TiXmlElement
+QueryIntValue	src/tinyxml/tinyxml.cpp	/^int TiXmlAttribute::QueryIntValue( int* ival ) const$/;"	f	class:TiXmlAttribute
+QueryStringAttribute	src/tinyxml/tinyxml.h	/^	int QueryStringAttribute( const char* name, std::string* _value ) const {$/;"	f	class:TiXmlElement
+QueryValueAttribute	src/tinyxml/tinyxml.h	/^	int QueryValueAttribute( const std::string& name, std::string* outValue ) const$/;"	f	class:TiXmlElement
+QueryValueAttribute	src/tinyxml/tinyxml.h	/^	template< typename T > int QueryValueAttribute( const std::string& name, T* outValue ) const$/;"	f	class:TiXmlElement
+ReadLine	src/ini_file.cpp	/^static char *ReadLine(char *line,   int	n,	 FILE	*stream) $/;"	f	file:
+ReadName	src/tinyxml/tinyxmlparser.cpp	/^const char* TiXmlBase::ReadName( const char* p, TIXML_STRING * name, TiXmlEncoding encoding )$/;"	f	class:TiXmlBase
+ReadText	src/tinyxml/tinyxmlparser.cpp	/^const char* TiXmlBase::ReadText(	const char* p, $/;"	f	class:TiXmlBase
+ReadValue	src/tinyxml/tinyxmlparser.cpp	/^const char* TiXmlElement::ReadValue( const char* p, TiXmlParsingData* data, TiXmlEncoding encoding )$/;"	f	class:TiXmlElement
+Remove	src/tinyxml/tinyxml.cpp	/^void TiXmlAttributeSet::Remove( TiXmlAttribute* removeMe )$/;"	f	class:TiXmlAttributeSet
+RemoveAttribute	src/tinyxml/tinyxml.cpp	/^void TiXmlElement::RemoveAttribute( const char * name )$/;"	f	class:TiXmlElement
+RemoveAttribute	src/tinyxml/tinyxml.h	/^	void RemoveAttribute( const std::string& name )	{	RemoveAttribute (name.c_str ());	}	\/\/\/< STL std::string form.$/;"	f	class:TiXmlElement
+RemoveChild	src/tinyxml/tinyxml.cpp	/^bool TiXmlNode::RemoveChild( TiXmlNode* removeThis )$/;"	f	class:TiXmlNode
+Rep	src/tinyxml/tinystr.h	/^	struct Rep$/;"	s	class:TiXmlString
+ReplaceChild	src/tinyxml/tinyxml.cpp	/^TiXmlNode* TiXmlNode::ReplaceChild( TiXmlNode* replaceThis, const TiXmlNode& withThis )$/;"	f	class:TiXmlNode
+RootElement	src/tinyxml/tinyxml.h	/^	TiXmlElement* RootElement()					{ return FirstChildElement(); }$/;"	f	class:TiXmlDocument
+RootElement	src/tinyxml/tinyxml.h	/^	const TiXmlElement* RootElement() const		{ return FirstChildElement(); }$/;"	f	class:TiXmlDocument
+Row	src/tinyxml/tinyxml.h	/^	int Row() const			{ return location.row + 1; }$/;"	f	class:TiXmlBase
+SaveFile	src/tinyxml/tinyxml.cpp	/^bool TiXmlDocument::SaveFile( FILE* fp ) const$/;"	f	class:TiXmlDocument
+SaveFile	src/tinyxml/tinyxml.cpp	/^bool TiXmlDocument::SaveFile( const char * filename ) const$/;"	f	class:TiXmlDocument
+SaveFile	src/tinyxml/tinyxml.cpp	/^bool TiXmlDocument::SaveFile() const$/;"	f	class:TiXmlDocument
+SaveFile	src/tinyxml/tinyxml.h	/^	bool SaveFile( const std::string& filename ) const		\/\/\/< STL std::string version.$/;"	f	class:TiXmlDocument
+SetAttribute	src/tinyxml/tinyxml.cpp	/^void TiXmlElement::SetAttribute( const char * cname, const char * cvalue )$/;"	f	class:TiXmlElement
+SetAttribute	src/tinyxml/tinyxml.cpp	/^void TiXmlElement::SetAttribute( const char * name, int val )$/;"	f	class:TiXmlElement
+SetAttribute	src/tinyxml/tinyxml.cpp	/^void TiXmlElement::SetAttribute( const std::string& _name, const std::string& _value )$/;"	f	class:TiXmlElement
+SetAttribute	src/tinyxml/tinyxml.cpp	/^void TiXmlElement::SetAttribute( const std::string& name, int val )$/;"	f	class:TiXmlElement
+SetCDATA	src/tinyxml/tinyxml.h	/^	void SetCDATA( bool _cdata )	{ cdata = _cdata; }$/;"	f	class:TiXmlText
+SetCondenseWhiteSpace	src/tinyxml/tinyxml.h	/^	static void SetCondenseWhiteSpace( bool condense )		{ condenseWhiteSpace = condense; }$/;"	f	class:TiXmlBase
+SetDocument	src/tinyxml/tinyxml.h	/^	void SetDocument( TiXmlDocument* doc )	{ document = doc; }$/;"	f	class:TiXmlAttribute
+SetDoubleAttribute	src/tinyxml/tinyxml.cpp	/^void TiXmlElement::SetDoubleAttribute( const char * name, double val )$/;"	f	class:TiXmlElement
+SetDoubleAttribute	src/tinyxml/tinyxml.cpp	/^void TiXmlElement::SetDoubleAttribute( const std::string& name, double val )$/;"	f	class:TiXmlElement
+SetDoubleValue	src/tinyxml/tinyxml.cpp	/^void TiXmlAttribute::SetDoubleValue( double _value )$/;"	f	class:TiXmlAttribute
+SetError	src/tinyxml/tinyxmlparser.cpp	/^void TiXmlDocument::SetError( int err, const char* pError, TiXmlParsingData* data, TiXmlEncoding encoding )$/;"	f	class:TiXmlDocument
+SetIndent	src/tinyxml/tinyxml.h	/^	void SetIndent( const char* _indent )			{ indent = _indent ? _indent : "" ; }$/;"	f	class:TiXmlPrinter
+SetIntValue	src/tinyxml/tinyxml.cpp	/^void TiXmlAttribute::SetIntValue( int _value )$/;"	f	class:TiXmlAttribute
+SetLineBreak	src/tinyxml/tinyxml.h	/^	void SetLineBreak( const char* _lineBreak )		{ lineBreak = _lineBreak ? _lineBreak : ""; }$/;"	f	class:TiXmlPrinter
+SetName	src/tinyxml/tinyxml.h	/^	void SetName( const char* _name )	{ name = _name; }				\/\/\/< Set the name of this attribute.$/;"	f	class:TiXmlAttribute
+SetName	src/tinyxml/tinyxml.h	/^	void SetName( const std::string& _name )	{ name = _name; }	$/;"	f	class:TiXmlAttribute
+SetStreamPrinting	src/tinyxml/tinyxml.h	/^	void SetStreamPrinting()						{ indent = "";$/;"	f	class:TiXmlPrinter
+SetTabSize	src/tinyxml/tinyxml.h	/^	void SetTabSize( int _tabsize )		{ tabsize = _tabsize; }$/;"	f	class:TiXmlDocument
+SetUserData	src/tinyxml/tinyxml.h	/^	void  SetUserData( void* user )			{ userData = user; }	\/\/\/< Set a pointer to arbitrary user data.$/;"	f	class:TiXmlBase
+SetValue	src/tinyxml/tinyxml.h	/^	void SetValue( const char* _value )	{ value = _value; }				\/\/\/< Set the value.$/;"	f	class:TiXmlAttribute
+SetValue	src/tinyxml/tinyxml.h	/^	void SetValue( const std::string& _value )	{ value = _value; }$/;"	f	class:TiXmlAttribute
+SetValue	src/tinyxml/tinyxml.h	/^	void SetValue( const std::string& _value )	{ value = _value; }$/;"	f	class:TiXmlNode
+SetValue	src/tinyxml/tinyxml.h	/^	void SetValue(const char * _value) { value = _value;}$/;"	f	class:TiXmlNode
+Size	src/tinyxml/tinyxml.h	/^	size_t Size()									{ return buffer.size(); }$/;"	f	class:TiXmlPrinter
+SkipWhiteSpace	src/tinyxml/tinyxmlparser.cpp	/^const char* TiXmlBase::SkipWhiteSpace( const char* p, TiXmlEncoding encoding )$/;"	f	class:TiXmlBase
+Stamp	src/tinyxml/tinyxmlparser.cpp	/^void TiXmlParsingData::Stamp( const char* now, TiXmlEncoding encoding )$/;"	f	class:TiXmlParsingData
+Standalone	src/tinyxml/tinyxml.h	/^	const char *Standalone() const		{ return standalone.c_str (); }$/;"	f	class:TiXmlDeclaration
+Str	src/tinyxml/tinyxml.h	/^	const std::string& Str()						{ return buffer; }$/;"	f	class:TiXmlPrinter
+StreamIn	src/tinyxml/tinyxmlparser.cpp	/^void TiXmlComment::StreamIn( std::istream * in, TIXML_STRING * tag )$/;"	f	class:TiXmlComment
+StreamIn	src/tinyxml/tinyxmlparser.cpp	/^void TiXmlDeclaration::StreamIn( std::istream * in, TIXML_STRING * tag )$/;"	f	class:TiXmlDeclaration
+StreamIn	src/tinyxml/tinyxmlparser.cpp	/^void TiXmlDocument::StreamIn( std::istream * in, TIXML_STRING * tag )$/;"	f	class:TiXmlDocument
+StreamIn	src/tinyxml/tinyxmlparser.cpp	/^void TiXmlElement::StreamIn (std::istream * in, TIXML_STRING * tag)$/;"	f	class:TiXmlElement
+StreamIn	src/tinyxml/tinyxmlparser.cpp	/^void TiXmlText::StreamIn( std::istream * in, TIXML_STRING * tag )$/;"	f	class:TiXmlText
+StreamIn	src/tinyxml/tinyxmlparser.cpp	/^void TiXmlUnknown::StreamIn( std::istream * in, TIXML_STRING * tag )$/;"	f	class:TiXmlUnknown
+StreamTo	src/tinyxml/tinyxmlparser.cpp	/^\/*static*\/ bool TiXmlBase::StreamTo( std::istream * in, int character, TIXML_STRING * tag )$/;"	f	class:TiXmlBase
+StreamWhiteSpace	src/tinyxml/tinyxmlparser.cpp	/^\/*static*\/ bool TiXmlBase::StreamWhiteSpace( std::istream * in, TIXML_STRING * tag )$/;"	f	class:TiXmlBase
+StringEqual	src/tinyxml/tinyxmlparser.cpp	/^bool TiXmlBase::StringEqual( const char* p,$/;"	f	class:TiXmlBase
+TAG_COMMENT	src/ini_parser.h	/^	TAG_COMMENT,$/;"	e	enum:_TagType
+TAG_CONTENT	src/ini_parser.h	/^	TAG_CONTENT,$/;"	e	enum:_TagType
+TAG_HEAD	src/ini_parser.h	/^	TAG_HEAD,$/;"	e	enum:_TagType
+TINYXML_COMMENT	src/tinyxml/tinyxml.h	/^		TINYXML_COMMENT,$/;"	e	enum:TiXmlNode::NodeType
+TINYXML_DECLARATION	src/tinyxml/tinyxml.h	/^		TINYXML_DECLARATION,$/;"	e	enum:TiXmlNode::NodeType
+TINYXML_DOCUMENT	src/tinyxml/tinyxml.h	/^		TINYXML_DOCUMENT,$/;"	e	enum:TiXmlNode::NodeType
+TINYXML_ELEMENT	src/tinyxml/tinyxml.h	/^		TINYXML_ELEMENT,$/;"	e	enum:TiXmlNode::NodeType
+TINYXML_INCLUDED	src/tinyxml/tinyxml.h	27;"	d
+TINYXML_TEXT	src/tinyxml/tinyxml.h	/^		TINYXML_TEXT,$/;"	e	enum:TiXmlNode::NodeType
+TINYXML_TYPECOUNT	src/tinyxml/tinyxml.h	/^		TINYXML_TYPECOUNT$/;"	e	enum:TiXmlNode::NodeType
+TINYXML_UNKNOWN	src/tinyxml/tinyxml.h	/^		TINYXML_UNKNOWN,$/;"	e	enum:TiXmlNode::NodeType
+TIXML_DEFAULT_ENCODING	src/tinyxml/tinyxml.h	/^const TiXmlEncoding TIXML_DEFAULT_ENCODING = TIXML_ENCODING_UNKNOWN;$/;"	v
+TIXML_ENCODING_LEGACY	src/tinyxml/tinyxml.h	/^	TIXML_ENCODING_LEGACY$/;"	e	enum:TiXmlEncoding
+TIXML_ENCODING_UNKNOWN	src/tinyxml/tinyxml.h	/^	TIXML_ENCODING_UNKNOWN,$/;"	e	enum:TiXmlEncoding
+TIXML_ENCODING_UTF8	src/tinyxml/tinyxml.h	/^	TIXML_ENCODING_UTF8,$/;"	e	enum:TiXmlEncoding
+TIXML_ERROR	src/tinyxml/tinyxml.h	/^		TIXML_ERROR,$/;"	e	enum:TiXmlBase::__anon2
+TIXML_ERROR_DOCUMENT_EMPTY	src/tinyxml/tinyxml.h	/^		TIXML_ERROR_DOCUMENT_EMPTY,$/;"	e	enum:TiXmlBase::__anon2
+TIXML_ERROR_DOCUMENT_TOP_ONLY	src/tinyxml/tinyxml.h	/^		TIXML_ERROR_DOCUMENT_TOP_ONLY,$/;"	e	enum:TiXmlBase::__anon2
+TIXML_ERROR_EMBEDDED_NULL	src/tinyxml/tinyxml.h	/^		TIXML_ERROR_EMBEDDED_NULL,$/;"	e	enum:TiXmlBase::__anon2
+TIXML_ERROR_FAILED_TO_READ_ELEMENT_NAME	src/tinyxml/tinyxml.h	/^		TIXML_ERROR_FAILED_TO_READ_ELEMENT_NAME,$/;"	e	enum:TiXmlBase::__anon2
+TIXML_ERROR_OPENING_FILE	src/tinyxml/tinyxml.h	/^		TIXML_ERROR_OPENING_FILE,$/;"	e	enum:TiXmlBase::__anon2
+TIXML_ERROR_PARSING_CDATA	src/tinyxml/tinyxml.h	/^		TIXML_ERROR_PARSING_CDATA,$/;"	e	enum:TiXmlBase::__anon2
+TIXML_ERROR_PARSING_COMMENT	src/tinyxml/tinyxml.h	/^		TIXML_ERROR_PARSING_COMMENT,$/;"	e	enum:TiXmlBase::__anon2
+TIXML_ERROR_PARSING_DECLARATION	src/tinyxml/tinyxml.h	/^		TIXML_ERROR_PARSING_DECLARATION,$/;"	e	enum:TiXmlBase::__anon2
+TIXML_ERROR_PARSING_ELEMENT	src/tinyxml/tinyxml.h	/^		TIXML_ERROR_PARSING_ELEMENT,$/;"	e	enum:TiXmlBase::__anon2
+TIXML_ERROR_PARSING_EMPTY	src/tinyxml/tinyxml.h	/^		TIXML_ERROR_PARSING_EMPTY,$/;"	e	enum:TiXmlBase::__anon2
+TIXML_ERROR_PARSING_UNKNOWN	src/tinyxml/tinyxml.h	/^		TIXML_ERROR_PARSING_UNKNOWN,$/;"	e	enum:TiXmlBase::__anon2
+TIXML_ERROR_READING_ATTRIBUTES	src/tinyxml/tinyxml.h	/^		TIXML_ERROR_READING_ATTRIBUTES,$/;"	e	enum:TiXmlBase::__anon2
+TIXML_ERROR_READING_ELEMENT_VALUE	src/tinyxml/tinyxml.h	/^		TIXML_ERROR_READING_ELEMENT_VALUE,$/;"	e	enum:TiXmlBase::__anon2
+TIXML_ERROR_READING_END_TAG	src/tinyxml/tinyxml.h	/^		TIXML_ERROR_READING_END_TAG,$/;"	e	enum:TiXmlBase::__anon2
+TIXML_ERROR_STRING_COUNT	src/tinyxml/tinyxml.h	/^		TIXML_ERROR_STRING_COUNT$/;"	e	enum:TiXmlBase::__anon2
+TIXML_EXPLICIT	src/tinyxml/tinystr.h	51;"	d
+TIXML_EXPLICIT	src/tinyxml/tinystr.h	54;"	d
+TIXML_EXPLICIT	src/tinyxml/tinystr.h	56;"	d
+TIXML_LOG	src/tinyxml/tinyxmlparser.cpp	34;"	d	file:
+TIXML_LOG	src/tinyxml/tinyxmlparser.cpp	36;"	d	file:
+TIXML_MAJOR_VERSION	src/tinyxml/tinyxml.h	/^const int TIXML_MAJOR_VERSION = 2;$/;"	v
+TIXML_MINOR_VERSION	src/tinyxml/tinyxml.h	/^const int TIXML_MINOR_VERSION = 6;$/;"	v
+TIXML_NO_ATTRIBUTE	src/tinyxml/tinyxml.h	/^	TIXML_NO_ATTRIBUTE,$/;"	e	enum:__anon1
+TIXML_NO_ERROR	src/tinyxml/tinyxml.h	/^		TIXML_NO_ERROR = 0,$/;"	e	enum:TiXmlBase::__anon2
+TIXML_PATCH_VERSION	src/tinyxml/tinyxml.h	/^const int TIXML_PATCH_VERSION = 1;$/;"	v
+TIXML_SAFE	src/tinyxml/tinyxml.h	60;"	d
+TIXML_SNPRINTF	src/tinyxml/tinyxml.h	65;"	d
+TIXML_SNPRINTF	src/tinyxml/tinyxml.h	70;"	d
+TIXML_SNPRINTF	src/tinyxml/tinyxml.h	75;"	d
+TIXML_SNPRINTF	src/tinyxml/tinyxml.h	78;"	d
+TIXML_SSCANF	src/tinyxml/tinyxml.h	66;"	d
+TIXML_SSCANF	src/tinyxml/tinyxml.h	71;"	d
+TIXML_SSCANF	src/tinyxml/tinyxml.h	76;"	d
+TIXML_SSCANF	src/tinyxml/tinyxml.h	79;"	d
+TIXML_STRING	src/tinyxml/tinyxml.h	50;"	d
+TIXML_STRING	src/tinyxml/tinyxml.h	53;"	d
+TIXML_STRING_INCLUDED	src/tinyxml/tinystr.h	40;"	d
+TIXML_SUCCESS	src/tinyxml/tinyxml.h	/^	TIXML_SUCCESS,$/;"	e	enum:__anon1
+TIXML_UTF_LEAD_0	src/tinyxml/tinyxmlparser.cpp	/^const unsigned char TIXML_UTF_LEAD_0 = 0xefU;$/;"	v
+TIXML_UTF_LEAD_1	src/tinyxml/tinyxmlparser.cpp	/^const unsigned char TIXML_UTF_LEAD_1 = 0xbbU;$/;"	v
+TIXML_UTF_LEAD_2	src/tinyxml/tinyxmlparser.cpp	/^const unsigned char TIXML_UTF_LEAD_2 = 0xbfU;$/;"	v
+TIXML_WRONG_TYPE	src/tinyxml/tinyxml.h	/^	TIXML_WRONG_TYPE$/;"	e	enum:__anon1
+TabSize	src/tinyxml/tinyxml.h	/^	int TabSize() const	{ return tabsize; }$/;"	f	class:TiXmlDocument
+TagNode	src/ini_parser.h	/^}TagNode;$/;"	t	typeref:struct:_TagNode
+TagType	src/ini_parser.h	/^}TagType;$/;"	t	typeref:enum:_TagType
+Text	src/tinyxml/tinyxml.h	/^	TiXmlText* Text() const			{ return ToText(); }$/;"	f	class:TiXmlHandle
+TiXmlAttribute	src/tinyxml/tinyxml.h	/^	TiXmlAttribute( const char * _name, const char * _value )$/;"	f	class:TiXmlAttribute
+TiXmlAttribute	src/tinyxml/tinyxml.h	/^	TiXmlAttribute( const std::string& _name, const std::string& _value )$/;"	f	class:TiXmlAttribute
+TiXmlAttribute	src/tinyxml/tinyxml.h	/^	TiXmlAttribute() : TiXmlBase()$/;"	f	class:TiXmlAttribute
+TiXmlAttribute	src/tinyxml/tinyxml.h	/^class TiXmlAttribute : public TiXmlBase$/;"	c
+TiXmlAttributeSet	src/tinyxml/tinyxml.cpp	/^TiXmlAttributeSet::TiXmlAttributeSet()$/;"	f	class:TiXmlAttributeSet
+TiXmlAttributeSet	src/tinyxml/tinyxml.h	/^class TiXmlAttributeSet$/;"	c
+TiXmlBase	src/tinyxml/tinyxml.h	/^	TiXmlBase()	:	userData(0)		{}$/;"	f	class:TiXmlBase
+TiXmlBase	src/tinyxml/tinyxml.h	/^class TiXmlBase$/;"	c
+TiXmlComment	src/tinyxml/tinyxml.cpp	/^TiXmlComment::TiXmlComment( const TiXmlComment& copy ) : TiXmlNode( TiXmlNode::TINYXML_COMMENT )$/;"	f	class:TiXmlComment
+TiXmlComment	src/tinyxml/tinyxml.h	/^	TiXmlComment( const char* _value ) : TiXmlNode( TiXmlNode::TINYXML_COMMENT ) {$/;"	f	class:TiXmlComment
+TiXmlComment	src/tinyxml/tinyxml.h	/^	TiXmlComment() : TiXmlNode( TiXmlNode::TINYXML_COMMENT ) {}$/;"	f	class:TiXmlComment
+TiXmlComment	src/tinyxml/tinyxml.h	/^class TiXmlComment : public TiXmlNode$/;"	c
+TiXmlCursor	src/tinyxml/tinyxml.h	/^	TiXmlCursor()		{ Clear(); }$/;"	f	struct:TiXmlCursor
+TiXmlCursor	src/tinyxml/tinyxml.h	/^struct TiXmlCursor$/;"	s
+TiXmlDeclaration	src/tinyxml/tinyxml.cpp	/^TiXmlDeclaration::TiXmlDeclaration(	const std::string& _version,$/;"	f	class:TiXmlDeclaration
+TiXmlDeclaration	src/tinyxml/tinyxml.cpp	/^TiXmlDeclaration::TiXmlDeclaration( const TiXmlDeclaration& copy )$/;"	f	class:TiXmlDeclaration
+TiXmlDeclaration	src/tinyxml/tinyxml.cpp	/^TiXmlDeclaration::TiXmlDeclaration( const char * _version,$/;"	f	class:TiXmlDeclaration
+TiXmlDeclaration	src/tinyxml/tinyxml.h	/^	TiXmlDeclaration()   : TiXmlNode( TiXmlNode::TINYXML_DECLARATION ) {}$/;"	f	class:TiXmlDeclaration
+TiXmlDeclaration	src/tinyxml/tinyxml.h	/^class TiXmlDeclaration : public TiXmlNode$/;"	c
+TiXmlDocument	src/tinyxml/tinyxml.cpp	/^TiXmlDocument::TiXmlDocument( const TiXmlDocument& copy ) : TiXmlNode( TiXmlNode::TINYXML_DOCUMENT )$/;"	f	class:TiXmlDocument
+TiXmlDocument	src/tinyxml/tinyxml.cpp	/^TiXmlDocument::TiXmlDocument( const char * documentName ) : TiXmlNode( TiXmlNode::TINYXML_DOCUMENT )$/;"	f	class:TiXmlDocument
+TiXmlDocument	src/tinyxml/tinyxml.cpp	/^TiXmlDocument::TiXmlDocument( const std::string& documentName ) : TiXmlNode( TiXmlNode::TINYXML_DOCUMENT )$/;"	f	class:TiXmlDocument
+TiXmlDocument	src/tinyxml/tinyxml.cpp	/^TiXmlDocument::TiXmlDocument() : TiXmlNode( TiXmlNode::TINYXML_DOCUMENT )$/;"	f	class:TiXmlDocument
+TiXmlDocument	src/tinyxml/tinyxml.h	/^class TiXmlDocument : public TiXmlNode$/;"	c
+TiXmlElement	src/tinyxml/tinyxml.cpp	/^TiXmlElement::TiXmlElement (const char * _value)$/;"	f	class:TiXmlElement
+TiXmlElement	src/tinyxml/tinyxml.cpp	/^TiXmlElement::TiXmlElement( const TiXmlElement& copy)$/;"	f	class:TiXmlElement
+TiXmlElement	src/tinyxml/tinyxml.cpp	/^TiXmlElement::TiXmlElement( const std::string& _value ) $/;"	f	class:TiXmlElement
+TiXmlElement	src/tinyxml/tinyxml.h	/^class TiXmlElement : public TiXmlNode$/;"	c
+TiXmlEncoding	src/tinyxml/tinyxml.h	/^enum TiXmlEncoding$/;"	g
+TiXmlFOpen	src/tinyxml/tinyxml.cpp	/^FILE* TiXmlFOpen( const char* filename, const char* mode )$/;"	f
+TiXmlHandle	src/tinyxml/tinyxml.h	/^	TiXmlHandle( TiXmlNode* _node )					{ this->node = _node; }$/;"	f	class:TiXmlHandle
+TiXmlHandle	src/tinyxml/tinyxml.h	/^	TiXmlHandle( const TiXmlHandle& ref )			{ this->node = ref.node; }$/;"	f	class:TiXmlHandle
+TiXmlHandle	src/tinyxml/tinyxml.h	/^class TiXmlHandle$/;"	c
+TiXmlNode	src/tinyxml/tinyxml.cpp	/^TiXmlNode::TiXmlNode( NodeType _type ) : TiXmlBase()$/;"	f	class:TiXmlNode
+TiXmlNode	src/tinyxml/tinyxml.h	/^class TiXmlNode : public TiXmlBase$/;"	c
+TiXmlOutStream	src/tinyxml/tinystr.h	/^class TiXmlOutStream : public TiXmlString$/;"	c
+TiXmlParsingData	src/tinyxml/tinyxmlparser.cpp	/^	TiXmlParsingData( const char* start, int _tabsize, int row, int col )$/;"	f	class:TiXmlParsingData	file:
+TiXmlParsingData	src/tinyxml/tinyxmlparser.cpp	/^class TiXmlParsingData$/;"	c	file:
+TiXmlPrinter	src/tinyxml/tinyxml.h	/^	TiXmlPrinter() : depth( 0 ), simpleTextPrint( false ),$/;"	f	class:TiXmlPrinter
+TiXmlPrinter	src/tinyxml/tinyxml.h	/^class TiXmlPrinter : public TiXmlVisitor$/;"	c
+TiXmlString	src/tinyxml/tinystr.h	/^	TIXML_EXPLICIT TiXmlString ( const char * copy) : rep_(0)$/;"	f	class:TiXmlString
+TiXmlString	src/tinyxml/tinystr.h	/^	TIXML_EXPLICIT TiXmlString ( const char * str, size_type len) : rep_(0)$/;"	f	class:TiXmlString
+TiXmlString	src/tinyxml/tinystr.h	/^	TiXmlString ( const TiXmlString & copy) : rep_(0)$/;"	f	class:TiXmlString
+TiXmlString	src/tinyxml/tinystr.h	/^	TiXmlString () : rep_(&nullrep_)$/;"	f	class:TiXmlString
+TiXmlString	src/tinyxml/tinystr.h	/^class TiXmlString$/;"	c
+TiXmlText	src/tinyxml/tinyxml.h	/^	TiXmlText (const char * initValue ) : TiXmlNode (TiXmlNode::TINYXML_TEXT)$/;"	f	class:TiXmlText
+TiXmlText	src/tinyxml/tinyxml.h	/^	TiXmlText( const TiXmlText& copy ) : TiXmlNode( TiXmlNode::TINYXML_TEXT )	{ copy.CopyTo( this ); }$/;"	f	class:TiXmlText
+TiXmlText	src/tinyxml/tinyxml.h	/^	TiXmlText( const std::string& initValue ) : TiXmlNode (TiXmlNode::TINYXML_TEXT)$/;"	f	class:TiXmlText
+TiXmlText	src/tinyxml/tinyxml.h	/^class TiXmlText : public TiXmlNode$/;"	c
+TiXmlUnknown	src/tinyxml/tinyxml.h	/^	TiXmlUnknown( const TiXmlUnknown& copy ) : TiXmlNode( TiXmlNode::TINYXML_UNKNOWN )		{ copy.CopyTo( this ); }$/;"	f	class:TiXmlUnknown
+TiXmlUnknown	src/tinyxml/tinyxml.h	/^	TiXmlUnknown() : TiXmlNode( TiXmlNode::TINYXML_UNKNOWN )	{}$/;"	f	class:TiXmlUnknown
+TiXmlUnknown	src/tinyxml/tinyxml.h	/^class TiXmlUnknown : public TiXmlNode$/;"	c
+TiXmlVisitor	src/tinyxml/tinyxml.h	/^class TiXmlVisitor$/;"	c
+ToComment	src/tinyxml/tinyxml.h	/^	virtual TiXmlComment*           ToComment()     { return 0; } \/\/\/< Cast to a more defined type. Will return null if not of the requested type.$/;"	f	class:TiXmlNode
+ToComment	src/tinyxml/tinyxml.h	/^	virtual TiXmlComment*  ToComment() { return this; } \/\/\/< Cast to a more defined type. Will return null not of the requested type.$/;"	f	class:TiXmlComment
+ToComment	src/tinyxml/tinyxml.h	/^	virtual const TiXmlComment*     ToComment()     const { return 0; } \/\/\/< Cast to a more defined type. Will return null if not of the requested type.$/;"	f	class:TiXmlNode
+ToComment	src/tinyxml/tinyxml.h	/^	virtual const TiXmlComment*  ToComment() const { return this; } \/\/\/< Cast to a more defined type. Will return null not of the requested type.$/;"	f	class:TiXmlComment
+ToDeclaration	src/tinyxml/tinyxml.h	/^	virtual TiXmlDeclaration*       ToDeclaration()       { return this; } \/\/\/< Cast to a more defined type. Will return null not of the requested type.$/;"	f	class:TiXmlDeclaration
+ToDeclaration	src/tinyxml/tinyxml.h	/^	virtual TiXmlDeclaration*       ToDeclaration() { return 0; } \/\/\/< Cast to a more defined type. Will return null if not of the requested type.$/;"	f	class:TiXmlNode
+ToDeclaration	src/tinyxml/tinyxml.h	/^	virtual const TiXmlDeclaration* ToDeclaration() const { return 0; } \/\/\/< Cast to a more defined type. Will return null if not of the requested type.$/;"	f	class:TiXmlNode
+ToDeclaration	src/tinyxml/tinyxml.h	/^	virtual const TiXmlDeclaration* ToDeclaration() const { return this; } \/\/\/< Cast to a more defined type. Will return null not of the requested type.$/;"	f	class:TiXmlDeclaration
+ToDocument	src/tinyxml/tinyxml.h	/^	virtual TiXmlDocument*          ToDocument()          { return this; } \/\/\/< Cast to a more defined type. Will return null not of the requested type.$/;"	f	class:TiXmlDocument
+ToDocument	src/tinyxml/tinyxml.h	/^	virtual TiXmlDocument*          ToDocument()    { return 0; } \/\/\/< Cast to a more defined type. Will return null if not of the requested type.$/;"	f	class:TiXmlNode
+ToDocument	src/tinyxml/tinyxml.h	/^	virtual const TiXmlDocument*    ToDocument()    const { return 0; } \/\/\/< Cast to a more defined type. Will return null if not of the requested type.$/;"	f	class:TiXmlNode
+ToDocument	src/tinyxml/tinyxml.h	/^	virtual const TiXmlDocument*    ToDocument()    const { return this; } \/\/\/< Cast to a more defined type. Will return null not of the requested type.$/;"	f	class:TiXmlDocument
+ToElement	src/tinyxml/tinyxml.h	/^	TiXmlElement* ToElement() const		{ return ( ( node && node->ToElement() ) ? node->ToElement() : 0 ); }$/;"	f	class:TiXmlHandle
+ToElement	src/tinyxml/tinyxml.h	/^	virtual TiXmlElement*           ToElement()	          { return this; } \/\/\/< Cast to a more defined type. Will return null not of the requested type.$/;"	f	class:TiXmlElement
+ToElement	src/tinyxml/tinyxml.h	/^	virtual TiXmlElement*           ToElement()	    { return 0; } \/\/\/< Cast to a more defined type. Will return null if not of the requested type.$/;"	f	class:TiXmlNode
+ToElement	src/tinyxml/tinyxml.h	/^	virtual const TiXmlElement*     ToElement()     const { return 0; } \/\/\/< Cast to a more defined type. Will return null if not of the requested type.$/;"	f	class:TiXmlNode
+ToElement	src/tinyxml/tinyxml.h	/^	virtual const TiXmlElement*     ToElement()     const { return this; } \/\/\/< Cast to a more defined type. Will return null not of the requested type.$/;"	f	class:TiXmlElement
+ToLower	src/tinyxml/tinyxml.h	/^	inline static int ToLower( int v, TiXmlEncoding encoding )$/;"	f	class:TiXmlBase
+ToNode	src/tinyxml/tinyxml.h	/^	TiXmlNode* ToNode() const			{ return node; } $/;"	f	class:TiXmlHandle
+ToText	src/tinyxml/tinyxml.h	/^	TiXmlText* ToText() const			{ return ( ( node && node->ToText() ) ? node->ToText() : 0 ); }$/;"	f	class:TiXmlHandle
+ToText	src/tinyxml/tinyxml.h	/^	virtual TiXmlText*	            ToText()        { return 0; } \/\/\/< Cast to a more defined type. Will return null if not of the requested type.$/;"	f	class:TiXmlNode
+ToText	src/tinyxml/tinyxml.h	/^	virtual TiXmlText*       ToText()       { return this; } \/\/\/< Cast to a more defined type. Will return null not of the requested type.$/;"	f	class:TiXmlText
+ToText	src/tinyxml/tinyxml.h	/^	virtual const TiXmlText*        ToText()        const { return 0; } \/\/\/< Cast to a more defined type. Will return null if not of the requested type.$/;"	f	class:TiXmlNode
+ToText	src/tinyxml/tinyxml.h	/^	virtual const TiXmlText* ToText() const { return this; } \/\/\/< Cast to a more defined type. Will return null not of the requested type.$/;"	f	class:TiXmlText
+ToUnknown	src/tinyxml/tinyxml.h	/^	TiXmlUnknown* ToUnknown() const		{ return ( ( node && node->ToUnknown() ) ? node->ToUnknown() : 0 ); }$/;"	f	class:TiXmlHandle
+ToUnknown	src/tinyxml/tinyxml.h	/^	virtual TiXmlUnknown*           ToUnknown()	    { return 0; } \/\/\/< Cast to a more defined type. Will return null if not of the requested type.$/;"	f	class:TiXmlNode
+ToUnknown	src/tinyxml/tinyxml.h	/^	virtual TiXmlUnknown*           ToUnknown()	    { return this; } \/\/\/< Cast to a more defined type. Will return null not of the requested type.$/;"	f	class:TiXmlUnknown
+ToUnknown	src/tinyxml/tinyxml.h	/^	virtual const TiXmlUnknown*     ToUnknown()     const { return 0; } \/\/\/< Cast to a more defined type. Will return null if not of the requested type.$/;"	f	class:TiXmlNode
+ToUnknown	src/tinyxml/tinyxml.h	/^	virtual const TiXmlUnknown*     ToUnknown()     const { return this; } \/\/\/< Cast to a more defined type. Will return null not of the requested type.$/;"	f	class:TiXmlUnknown
+Type	src/tinyxml/tinyxml.h	/^	int Type() const	{ return type; }$/;"	f	class:TiXmlNode
+UninitGetLanguageString	src/ini_file.cpp	/^int UninitGetLanguageString()$/;"	f
+Unknown	src/tinyxml/tinyxml.h	/^	TiXmlUnknown* Unknown() const	{ return ToUnknown(); }$/;"	f	class:TiXmlHandle
+Value	src/tinyxml/tinyxml.h	/^	const char *Value() const { return value.c_str (); }$/;"	f	class:TiXmlNode
+Value	src/tinyxml/tinyxml.h	/^	const char*		Value() const		{ return value.c_str(); }		\/\/\/< Return the value of this attribute.$/;"	f	class:TiXmlAttribute
+ValueStr	src/tinyxml/tinyxml.h	/^	const std::string& ValueStr() const	{ return value; }				\/\/\/< Return the value of this attribute.$/;"	f	class:TiXmlAttribute
+ValueStr	src/tinyxml/tinyxml.h	/^	const std::string& ValueStr() const { return value; }$/;"	f	class:TiXmlNode
+ValueTStr	src/tinyxml/tinyxml.h	/^	const TIXML_STRING& ValueTStr() const { return value; }$/;"	f	class:TiXmlNode
+Version	src/tinyxml/tinyxml.h	/^	const char *Version() const			{ return version.c_str (); }$/;"	f	class:TiXmlDeclaration
+Visit	src/tinyxml/tinyxml.cpp	/^bool TiXmlPrinter::Visit( const TiXmlComment& comment )$/;"	f	class:TiXmlPrinter
+Visit	src/tinyxml/tinyxml.cpp	/^bool TiXmlPrinter::Visit( const TiXmlDeclaration& declaration )$/;"	f	class:TiXmlPrinter
+Visit	src/tinyxml/tinyxml.cpp	/^bool TiXmlPrinter::Visit( const TiXmlText& text )$/;"	f	class:TiXmlPrinter
+Visit	src/tinyxml/tinyxml.cpp	/^bool TiXmlPrinter::Visit( const TiXmlUnknown& unknown )$/;"	f	class:TiXmlPrinter
+Visit	src/tinyxml/tinyxml.h	/^	virtual bool Visit( const TiXmlComment& \/*comment*\/ )			{ return true; }$/;"	f	class:TiXmlVisitor
+Visit	src/tinyxml/tinyxml.h	/^	virtual bool Visit( const TiXmlDeclaration& \/*declaration*\/ )	{ return true; }$/;"	f	class:TiXmlVisitor
+Visit	src/tinyxml/tinyxml.h	/^	virtual bool Visit( const TiXmlText& \/*text*\/ )					{ return true; }$/;"	f	class:TiXmlVisitor
+Visit	src/tinyxml/tinyxml.h	/^	virtual bool Visit( const TiXmlUnknown& \/*unknown*\/ )			{ return true; }$/;"	f	class:TiXmlVisitor
+VisitEnter	src/tinyxml/tinyxml.cpp	/^bool TiXmlPrinter::VisitEnter( const TiXmlDocument& )$/;"	f	class:TiXmlPrinter
+VisitEnter	src/tinyxml/tinyxml.cpp	/^bool TiXmlPrinter::VisitEnter( const TiXmlElement& element, const TiXmlAttribute* firstAttribute )$/;"	f	class:TiXmlPrinter
+VisitEnter	src/tinyxml/tinyxml.h	/^	virtual bool VisitEnter( const TiXmlDocument& \/*doc*\/ )			{ return true; }$/;"	f	class:TiXmlVisitor
+VisitEnter	src/tinyxml/tinyxml.h	/^	virtual bool VisitEnter( const TiXmlElement& \/*element*\/, const TiXmlAttribute* \/*firstAttribute*\/ )	{ return true; }$/;"	f	class:TiXmlVisitor
+VisitExit	src/tinyxml/tinyxml.cpp	/^bool TiXmlPrinter::VisitExit( const TiXmlDocument& )$/;"	f	class:TiXmlPrinter
+VisitExit	src/tinyxml/tinyxml.cpp	/^bool TiXmlPrinter::VisitExit( const TiXmlElement& element )$/;"	f	class:TiXmlPrinter
+VisitExit	src/tinyxml/tinyxml.h	/^	virtual bool VisitExit( const TiXmlDocument& \/*doc*\/ )			{ return true; }$/;"	f	class:TiXmlVisitor
+VisitExit	src/tinyxml/tinyxml.h	/^	virtual bool VisitExit( const TiXmlElement& \/*element*\/ )		{ return true; }$/;"	f	class:TiXmlVisitor
+XML_FILE_NAME	src/xml_parser_test.cpp	7;"	d	file:
+XmlParser	src/xml_parser.h	/^typedef struct _XmlParser XmlParser;$/;"	t	typeref:struct:_XmlParser
+_IniTree	src/ini_parser.h	/^struct _IniTree{$/;"	s
+_Parser	src/ini_parser.cpp	/^struct _Parser{$/;"	s	file:
+_TagNode	src/ini_parser.h	/^typedef struct  _TagNode{$/;"	s
+_TagType	src/ini_parser.h	/^typedef enum _TagType{$/;"	g
+_XmlParser	src/xml_parser.cpp	/^struct _XmlParser{$/;"	s	file:
+__INI_FILE_H__	src/ini_file.h	2;"	d
+__INI_PARSER_H__	src/ini_parser.h	9;"	d
+__XML_PARSER_H__	src/xml_parser.h	2;"	d
+_data_	src/ini_file.h	/^typedef struct _data_{$/;"	s
+_data_node_t	src/ini_file.h	/^struct _data_node_t{$/;"	s
+_ini_database_	src/ini_file.h	/^typedef struct _ini_database_{$/;"	s
+_section_node_	src/ini_file.h	/^struct _section_node_{$/;"	s
+append	src/tinyxml/tinystr.cpp	/^TiXmlString& TiXmlString::append(const char* str, size_type len)$/;"	f	class:TiXmlString
+assign	src/tinyxml/tinystr.cpp	/^TiXmlString& TiXmlString::assign(const char* str, size_type len)$/;"	f	class:TiXmlString
+at	src/tinyxml/tinystr.h	/^	const char& at (size_type index) const$/;"	f	class:TiXmlString
+attributeSet	src/tinyxml/tinyxml.h	/^	TiXmlAttributeSet attributeSet;$/;"	m	class:TiXmlElement
+buffer	src/tinyxml/tinyxml.h	/^	TIXML_STRING buffer;$/;"	m	class:TiXmlPrinter
+c_str	src/tinyxml/tinystr.h	/^	const char * c_str () const { return rep_->str; }$/;"	f	class:TiXmlString
+capacity	src/tinyxml/tinystr.h	/^		size_type size, capacity;$/;"	m	struct:TiXmlString::Rep
+capacity	src/tinyxml/tinystr.h	/^	size_type capacity () const { return rep_->capacity; }$/;"	f	class:TiXmlString
+cdata	src/tinyxml/tinyxml.h	/^	bool cdata;			\/\/ true if this should be input and output as a CDATA style text element$/;"	m	class:TiXmlText
+chr	src/tinyxml/tinyxml.h	/^		char		    chr;$/;"	m	struct:TiXmlBase::Entity
+clear	src/tinyxml/tinystr.h	/^	void clear ()$/;"	f	class:TiXmlString
+col	src/tinyxml/tinyxml.h	/^	int col;	\/\/ 0 based.$/;"	m	struct:TiXmlCursor
+condenseWhiteSpace	src/tinyxml/tinyxml.cpp	/^bool TiXmlBase::condenseWhiteSpace = true;$/;"	m	class:TiXmlBase	file:
+condenseWhiteSpace	src/tinyxml/tinyxml.h	/^	static bool condenseWhiteSpace;$/;"	m	class:TiXmlBase
+create_tree_node	src/ini_parser.cpp	/^static TagNode *create_tree_node(TagType type, char *name, int is_ddl, int ddl_id, char *key)$/;"	f	file:
+currrent_data_node	src/ini_file.h	/^	data_node_t *currrent_data_node;$/;"	m	struct:_section_node_
+currrent_section_node	src/ini_file.h	/^	section_node_t *currrent_section_node;$/;"	m	struct:_ini_database_
+cursor	src/tinyxml/tinyxmlparser.cpp	/^	TiXmlCursor		cursor;$/;"	m	class:TiXmlParsingData	file:
+data	src/ini_file.h	/^	data_t *data;$/;"	m	struct:_data_node_t
+data	src/tinyxml/tinystr.h	/^	const char * data () const { return rep_->str; }$/;"	f	class:TiXmlString
+data_node	src/ini_file.h	/^	data_node_t *data_node;$/;"	m	struct:_section_node_
+data_node_next	src/ini_file.h	/^	data_node_t *data_node_next;$/;"	m	struct:_data_node_t
+data_node_t	src/ini_file.h	/^typedef struct _data_node_t data_node_t;$/;"	t	typeref:struct:_data_node_t
+data_t	src/ini_file.h	/^}data_t;$/;"	t	typeref:struct:_data_
+ddl_id	src/ini_parser.h	/^	int ddl_id;\/*first ddl is 0*\/$/;"	m	struct:_TagNode
+depth	src/tinyxml/tinyxml.h	/^	int depth;$/;"	m	class:TiXmlPrinter
+doc	src/xml_parser.cpp	/^	TiXmlDocument *doc;$/;"	m	struct:_XmlParser	file:
+document	src/tinyxml/tinyxml.h	/^	TiXmlDocument*	document;	\/\/ A pointer back to a document, for error reporting.$/;"	m	class:TiXmlAttribute
+empty	src/tinyxml/tinystr.h	/^	bool empty () const { return rep_->size == 0; }$/;"	f	class:TiXmlString
+encoding	src/tinyxml/tinyxml.h	/^	TIXML_STRING encoding;$/;"	m	class:TiXmlDeclaration
+entity	src/tinyxml/tinyxml.h	/^	static Entity entity[ NUM_ENTITY ];$/;"	m	class:TiXmlBase
+entity	src/tinyxml/tinyxmlparser.cpp	/^TiXmlBase::Entity TiXmlBase::entity[ NUM_ENTITY ] = $/;"	m	class:TiXmlBase	file:
+error	src/tinyxml/tinyxml.h	/^	bool error;$/;"	m	class:TiXmlDocument
+errorDesc	src/tinyxml/tinyxml.h	/^	TIXML_STRING errorDesc;$/;"	m	class:TiXmlDocument
+errorId	src/tinyxml/tinyxml.h	/^	int  errorId;$/;"	m	class:TiXmlDocument
+errorLocation	src/tinyxml/tinyxml.h	/^	TiXmlCursor errorLocation;$/;"	m	class:TiXmlDocument
+errorString	src/tinyxml/tinyxml.h	/^	static const char* errorString[ TIXML_ERROR_STRING_COUNT ];$/;"	m	class:TiXmlBase
+errorString	src/tinyxml/tinyxmlerror.cpp	/^const char* TiXmlBase::errorString[ TIXML_ERROR_STRING_COUNT ] =$/;"	m	class:TiXmlBase	file:
+file_name	src/ini_file.h	/^	char *file_name;	\/*ini ÎÄ¼þÃû£¬¸ù¾ÝÓïÑÔµÄ²»Í¬½øÐÐÑ¡ Ôñ¡£*\/$/;"	m	struct:_ini_database_
+find	src/tinyxml/tinystr.h	/^	size_type find (char lookup) const$/;"	f	class:TiXmlString
+find	src/tinyxml/tinystr.h	/^	size_type find (char tofind, size_type offset) const$/;"	f	class:TiXmlString
+finish	src/tinyxml/tinystr.h	/^	char* finish() const { return rep_->str + rep_->size; }$/;"	f	class:TiXmlString
+firstChild	src/tinyxml/tinyxml.h	/^	TiXmlNode*		firstChild;$/;"	m	class:TiXmlNode
+free_tag_node	src/ini_parser.cpp	/^static void free_tag_node(TagNode *tag_node)$/;"	f	file:
+get_conntent_comment	src/xml_parser.cpp	/^static const char *get_conntent_comment(TiXmlElement *widget, TagNode *tag_node)$/;"	f	file:
+get_node_attr_value	src/xml_parser.cpp	/^static const char *get_node_attr_value(TiXmlElement *node, const char *attr)$/;"	f	file:
+id_value	src/ini_file.h	/^	char *id_value;$/;"	m	struct:_data_
+indent	src/tinyxml/tinyxml.h	/^	TIXML_STRING indent;$/;"	m	class:TiXmlPrinter
+ini_database_print	src/ini_file_test.cpp	/^void ini_database_print(ini_database_t *database)$/;"	f
+ini_database_t	src/ini_file.h	/^}ini_database_t;$/;"	t	typeref:struct:_ini_database_
+ini_filename	src/ini_parser.cpp	/^	char *ini_filename;$/;"	m	struct:_Parser	file:
+ini_parse	src/ini_parser.cpp	/^static int ini_parse(Parser *parser, char *buffer)$/;"	f	file:
+ini_parser_create	src/ini_parser.cpp	/^Parser *ini_parser_create()$/;"	f
+ini_parser_destroy	src/ini_parser.cpp	/^void ini_parser_destroy(Parser *parser)$/;"	f
+ini_parser_foreach	src/ini_parser.cpp	/^int ini_parser_foreach(Parser *parser, IniParserTagNode visit, void *ctx)$/;"	f
+ini_parser_get_ini_tree	src/ini_parser.cpp	/^IniTree *ini_parser_get_ini_tree(Parser *parser)$/;"	f
+ini_parser_init	src/ini_parser.cpp	/^int ini_parser_init(Parser *parser, char *ini_filename)$/;"	f
+ini_tree	src/ini_parser.cpp	/^	IniTree *ini_tree;$/;"	m	struct:_Parser	file:
+ini_tree_printf	src/ini_parser_test.cpp	/^static void ini_tree_printf(IniTree *ini_tree)$/;"	f	file:
+init	src/tinyxml/tinystr.h	/^	void init(size_type sz) { init(sz, sz); }$/;"	f	class:TiXmlString
+init	src/tinyxml/tinystr.h	/^	void init(size_type sz, size_type cap)$/;"	f	class:TiXmlString
+is_ddl	src/ini_parser.h	/^	int is_ddl;	$/;"	m	struct:_TagNode
+key	src/ini_parser.h	/^	char *key;$/;"	m	struct:_TagNode
+lastChild	src/tinyxml/tinyxml.h	/^	TiXmlNode*		lastChild;$/;"	m	class:TiXmlNode
+length	src/tinyxml/tinystr.h	/^	size_type length () const { return rep_->size; }$/;"	f	class:TiXmlString
+lineBreak	src/tinyxml/tinyxml.h	/^	TIXML_STRING lineBreak;$/;"	m	class:TiXmlPrinter
+location	src/tinyxml/tinyxml.h	/^	TiXmlCursor location;$/;"	m	class:TiXmlBase
+m_ini_database	src/ini_file.cpp	/^ini_database_t *m_ini_database = NULL;$/;"	v
+main	src/ini_file_test.cpp	/^int main(int argc , char *argv[])$/;"	f
+main	src/ini_parser_test.cpp	/^int main(int argc, char *argv[])$/;"	f
+main	src/main.c	/^int main(int argc ,char *argv[])$/;"	f
+main	src/main.cpp	/^int main(int argc, char *argv[])$/;"	f
+main	src/xml_parser_test.cpp	/^int main(int argc, char *argv[])$/;"	f
+name	src/tinyxml/tinyxml.h	/^	TIXML_STRING name;$/;"	m	class:TiXmlAttribute
+next	src/ini_parser.h	/^	IniTree *next;$/;"	m	struct:_IniTree
+next	src/tinyxml/tinyxml.h	/^	TiXmlAttribute*	next;$/;"	m	class:TiXmlAttribute
+next	src/tinyxml/tinyxml.h	/^	TiXmlNode*		next;$/;"	m	class:TiXmlNode
+node	src/tinyxml/tinyxml.h	/^	TiXmlNode* node;$/;"	m	class:TiXmlHandle
+npos	src/tinyxml/tinystr.cpp	/^const TiXmlString::size_type TiXmlString::npos = static_cast< TiXmlString::size_type >(-1);$/;"	m	class:TiXmlString	file:
+npos	src/tinyxml/tinystr.h	/^	static const size_type npos; \/\/ = -1;$/;"	m	class:TiXmlString
+nullrep_	src/tinyxml/tinystr.cpp	/^TiXmlString::Rep TiXmlString::nullrep_ = { 0, 0, { '\\0' } };$/;"	m	class:TiXmlString	file:
+nullrep_	src/tinyxml/tinystr.h	/^	static Rep nullrep_;$/;"	m	class:TiXmlString
+operator !=	src/tinyxml/tinystr.h	/^inline bool operator != (const TiXmlString & a, const TiXmlString & b) { return !(a == b); }$/;"	f
+operator !=	src/tinyxml/tinystr.h	/^inline bool operator != (const TiXmlString & a, const char* b) { return !(a == b); }$/;"	f
+operator !=	src/tinyxml/tinystr.h	/^inline bool operator != (const char* a, const TiXmlString & b) { return !(b == a); }$/;"	f
+operator +	src/tinyxml/tinystr.cpp	/^TiXmlString operator + (const TiXmlString & a, const TiXmlString & b)$/;"	f
+operator +	src/tinyxml/tinystr.cpp	/^TiXmlString operator + (const TiXmlString & a, const char* b)$/;"	f
+operator +	src/tinyxml/tinystr.cpp	/^TiXmlString operator + (const char* a, const TiXmlString & b)$/;"	f
+operator +=	src/tinyxml/tinystr.h	/^	TiXmlString& operator += (char single)$/;"	f	class:TiXmlString
+operator +=	src/tinyxml/tinystr.h	/^	TiXmlString& operator += (const TiXmlString & suffix)$/;"	f	class:TiXmlString
+operator +=	src/tinyxml/tinystr.h	/^	TiXmlString& operator += (const char * suffix)$/;"	f	class:TiXmlString
+operator <	src/tinyxml/tinystr.h	/^inline bool operator < (const TiXmlString & a, const TiXmlString & b)$/;"	f
+operator <	src/tinyxml/tinyxml.h	/^	bool operator<( const TiXmlAttribute& rhs )	 const { return name < rhs.name; }$/;"	f	class:TiXmlAttribute
+operator <<	src/tinyxml/tinystr.h	/^	TiXmlOutStream & operator << (const TiXmlString & in)$/;"	f	class:TiXmlOutStream
+operator <<	src/tinyxml/tinystr.h	/^	TiXmlOutStream & operator << (const char * in)$/;"	f	class:TiXmlOutStream
+operator <<	src/tinyxml/tinyxml.cpp	/^std::ostream& operator<< (std::ostream & out, const TiXmlNode & base)$/;"	f
+operator <<	src/tinyxml/tinyxml.cpp	/^std::string& operator<< (std::string& out, const TiXmlNode& base )$/;"	f
+operator <=	src/tinyxml/tinystr.h	/^inline bool operator <= (const TiXmlString & a, const TiXmlString & b) { return !(b < a); }$/;"	f
+operator =	src/tinyxml/tinystr.h	/^	TiXmlString& operator = (const TiXmlString & copy)$/;"	f	class:TiXmlString
+operator =	src/tinyxml/tinystr.h	/^	TiXmlString& operator = (const char * copy)$/;"	f	class:TiXmlString
+operator =	src/tinyxml/tinyxml.cpp	/^void TiXmlComment::operator=( const TiXmlComment& base )$/;"	f	class:TiXmlComment
+operator =	src/tinyxml/tinyxml.cpp	/^void TiXmlDeclaration::operator=( const TiXmlDeclaration& copy )$/;"	f	class:TiXmlDeclaration
+operator =	src/tinyxml/tinyxml.cpp	/^void TiXmlDocument::operator=( const TiXmlDocument& copy )$/;"	f	class:TiXmlDocument
+operator =	src/tinyxml/tinyxml.cpp	/^void TiXmlElement::operator=( const TiXmlElement& base )$/;"	f	class:TiXmlElement
+operator =	src/tinyxml/tinyxml.h	/^	TiXmlHandle operator=( const TiXmlHandle& ref ) { this->node = ref.node; return *this; }$/;"	f	class:TiXmlHandle
+operator =	src/tinyxml/tinyxml.h	/^	void operator=( const TiXmlText& base )							 	{ base.CopyTo( this ); }$/;"	f	class:TiXmlText
+operator =	src/tinyxml/tinyxml.h	/^	void operator=( const TiXmlUnknown& copy )										{ copy.CopyTo( this ); }$/;"	f	class:TiXmlUnknown
+operator ==	src/tinyxml/tinystr.h	/^inline bool operator == (const TiXmlString & a, const TiXmlString & b)$/;"	f
+operator ==	src/tinyxml/tinystr.h	/^inline bool operator == (const TiXmlString & a, const char* b) { return strcmp(a.c_str(), b) == 0; }$/;"	f
+operator ==	src/tinyxml/tinystr.h	/^inline bool operator == (const char* a, const TiXmlString & b) { return b == a; }$/;"	f
+operator ==	src/tinyxml/tinyxml.h	/^	bool operator==( const TiXmlAttribute& rhs ) const { return rhs.name == name; }$/;"	f	class:TiXmlAttribute
+operator >	src/tinyxml/tinystr.h	/^inline bool operator >  (const TiXmlString & a, const TiXmlString & b) { return b < a; }$/;"	f
+operator >	src/tinyxml/tinyxml.h	/^	bool operator>( const TiXmlAttribute& rhs )  const { return name > rhs.name; }$/;"	f	class:TiXmlAttribute
+operator >=	src/tinyxml/tinystr.h	/^inline bool operator >= (const TiXmlString & a, const TiXmlString & b) { return !(a < b); }$/;"	f
+operator >>	src/tinyxml/tinyxml.cpp	/^std::istream& operator>> (std::istream & in, TiXmlNode & base)$/;"	f
+operator []	src/tinyxml/tinystr.h	/^	char& operator [] (size_type index) const$/;"	f	class:TiXmlString
+parent	src/tinyxml/tinyxml.h	/^	TiXmlNode*		parent;$/;"	m	class:TiXmlNode
+parse_key	src/ini_parser.cpp	/^static void parse_key(char *key, char **widget_name, TagType *type, int *is_ddl, int *ddl_id)$/;"	f	file:
+parser_get_comment_content	src/xml_parser.cpp	/^static const char *parser_get_comment_content(TiXmlElement *page_node, TagNode *tag_node)$/;"	f	file:
+parser_get_string	src/xml_parser.cpp	/^static const char *parser_get_string(TiXmlElement *page_node, TagNode *tag_node)$/;"	f	file:
+parser_insert_node	src/ini_parser.cpp	/^static int parser_insert_node(Parser *parser, char *key, char *value)$/;"	f	file:
+parser_tree_insert_node	src/ini_parser.cpp	/^static int parser_tree_insert_node(Parser *parser, TagNode *tag_node)$/;"	f	file:
+prev	src/tinyxml/tinyxml.h	/^	TiXmlAttribute*	prev;$/;"	m	class:TiXmlAttribute
+prev	src/tinyxml/tinyxml.h	/^	TiXmlNode*		prev;$/;"	m	class:TiXmlNode
+quit	src/tinyxml/tinystr.h	/^	void quit()$/;"	f	class:TiXmlString
+read_file	src/ini_parser.cpp	/^static char *read_file(char *filename)$/;"	f	file:
+rep_	src/tinyxml/tinystr.h	/^	Rep * rep_;$/;"	m	class:TiXmlString
+reserve	src/tinyxml/tinystr.cpp	/^void TiXmlString::reserve (size_type cap)$/;"	f	class:TiXmlString
+row	src/tinyxml/tinyxml.h	/^	int row;	\/\/ 0 based.$/;"	m	struct:TiXmlCursor
+section_node	src/ini_file.h	/^	section_node_t *section_node;$/;"	m	struct:_ini_database_
+section_node_next	src/ini_file.h	/^	section_node_t *section_node_next;$/;"	m	struct:_section_node_
+section_node_t	src/ini_file.h	/^typedef struct _section_node_ section_node_t;$/;"	t	typeref:struct:_section_node_
+section_value	src/ini_file.h	/^	char *section_value;$/;"	m	struct:_section_node_
+sentinel	src/tinyxml/tinyxml.h	/^	TiXmlAttribute sentinel;$/;"	m	class:TiXmlAttributeSet
+set_size	src/tinyxml/tinystr.h	/^	void set_size(size_type sz) { rep_->str[ rep_->size = sz ] = '\\0'; }$/;"	f	class:TiXmlString
+simpleTextPrint	src/tinyxml/tinyxml.h	/^	bool simpleTextPrint;$/;"	m	class:TiXmlPrinter
+size	src/tinyxml/tinystr.h	/^		size_type size, capacity;$/;"	m	struct:TiXmlString::Rep
+size	src/tinyxml/tinystr.h	/^	size_type size () const { return rep_->size; }$/;"	f	class:TiXmlString
+size_type	src/tinyxml/tinystr.h	/^  	typedef size_t size_type;$/;"	t	class:TiXmlString
+stamp	src/tinyxml/tinyxmlparser.cpp	/^	const char*		stamp;$/;"	m	class:TiXmlParsingData	file:
+standalone	src/tinyxml/tinyxml.h	/^	TIXML_STRING standalone;$/;"	m	class:TiXmlDeclaration
+start	src/tinyxml/tinystr.h	/^	char* start() const { return rep_->str; }$/;"	f	class:TiXmlString
+str	src/tinyxml/tinystr.h	/^		char str[1];$/;"	m	struct:TiXmlString::Rep
+str	src/tinyxml/tinyxml.h	/^		const char*     str;$/;"	m	struct:TiXmlBase::Entity
+strLength	src/tinyxml/tinyxml.h	/^		unsigned int	strLength;$/;"	m	struct:TiXmlBase::Entity
+string_value	src/ini_file.h	/^	char *string_value;$/;"	m	struct:_data_
+swap	src/tinyxml/tinystr.h	/^	void swap (TiXmlString& other)$/;"	f	class:TiXmlString
+tabsize	src/tinyxml/tinyxml.h	/^	int tabsize;$/;"	m	class:TiXmlDocument
+tabsize	src/tinyxml/tinyxmlparser.cpp	/^	int				tabsize;$/;"	m	class:TiXmlParsingData	file:
+tag_name	src/ini_parser.h	/^	char *tag_name;$/;"	m	struct:_TagNode
+tag_node	src/ini_parser.h	/^	TagNode *tag_node;$/;"	m	struct:_IniTree
+tag_type	src/ini_parser.h	/^	TagType tag_type;$/;"	m	struct:_TagNode
+tree_printf	src/ini_parser.cpp	/^static void tree_printf(Parser *parser)$/;"	f	file:
+type	src/tinyxml/tinyxml.h	/^	NodeType		type;$/;"	m	class:TiXmlNode
+useMicrosoftBOM	src/tinyxml/tinyxml.h	/^	bool useMicrosoftBOM;		\/\/ the UTF-8 BOM were found when read. Note this, and try to write.$/;"	m	class:TiXmlDocument
+userData	src/tinyxml/tinyxml.h	/^	void*			userData;$/;"	m	class:TiXmlBase
+utf8ByteTable	src/tinyxml/tinyxml.h	/^	static const int utf8ByteTable[256];$/;"	m	class:TiXmlBase
+utf8ByteTable	src/tinyxml/tinyxmlparser.cpp	/^const int TiXmlBase::utf8ByteTable[256] = $/;"	m	class:TiXmlBase	file:
+value	src/tinyxml/tinyxml.h	/^	TIXML_STRING	value;$/;"	m	class:TiXmlNode
+value	src/tinyxml/tinyxml.h	/^	TIXML_STRING value;$/;"	m	class:TiXmlAttribute
+version	src/tinyxml/tinyxml.h	/^	TIXML_STRING version;$/;"	m	class:TiXmlDeclaration
+xml_filename	src/xml_parser.cpp	/^	char *xml_filename;$/;"	m	struct:_XmlParser	file:
+xml_parser_create	src/xml_parser.cpp	/^XmlParser *xml_parser_create(const char *xml_filename)$/;"	f
+xml_parser_destroy	src/xml_parser.cpp	/^void xml_parser_destroy(XmlParser *xml_parser)$/;"	f
+xml_parser_get_string	src/xml_parser.cpp	/^char *xml_parser_get_string(XmlParser *xml_parser, TagNode *tag_node)$/;"	f
+~TiXmlAttributeSet	src/tinyxml/tinyxml.cpp	/^TiXmlAttributeSet::~TiXmlAttributeSet()$/;"	f	class:TiXmlAttributeSet
+~TiXmlBase	src/tinyxml/tinyxml.h	/^	virtual ~TiXmlBase()			{}$/;"	f	class:TiXmlBase
+~TiXmlComment	src/tinyxml/tinyxml.h	/^	virtual ~TiXmlComment()	{}$/;"	f	class:TiXmlComment
+~TiXmlDeclaration	src/tinyxml/tinyxml.h	/^	virtual ~TiXmlDeclaration()	{}$/;"	f	class:TiXmlDeclaration
+~TiXmlDocument	src/tinyxml/tinyxml.h	/^	virtual ~TiXmlDocument() {}$/;"	f	class:TiXmlDocument
+~TiXmlElement	src/tinyxml/tinyxml.cpp	/^TiXmlElement::~TiXmlElement()$/;"	f	class:TiXmlElement
+~TiXmlNode	src/tinyxml/tinyxml.cpp	/^TiXmlNode::~TiXmlNode()$/;"	f	class:TiXmlNode
+~TiXmlString	src/tinyxml/tinystr.h	/^	~TiXmlString ()$/;"	f	class:TiXmlString
+~TiXmlText	src/tinyxml/tinyxml.h	/^	virtual ~TiXmlText() {}$/;"	f	class:TiXmlText
+~TiXmlUnknown	src/tinyxml/tinyxml.h	/^	virtual ~TiXmlUnknown() {}$/;"	f	class:TiXmlUnknown
+~TiXmlVisitor	src/tinyxml/tinyxml.h	/^	virtual ~TiXmlVisitor() {}$/;"	f	class:TiXmlVisitor

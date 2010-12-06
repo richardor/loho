@@ -3,7 +3,7 @@
 
 #include<stdio.h> 
 
-typedef _Ret{
+typedef enum _RetNtp{
 	RET_OK,
 	RET_FAILED,
 	RET_CONNECT_FAILED,
@@ -11,14 +11,19 @@ typedef _Ret{
 	RET_BUTT,
 }RetNtp;
 
-typedef _NtpClient NtpClient;
+typedef struct _NtpClient NtpClient;
+
+#ifdef	__cplusplus
+extern "C" {
+#endif
 
 NtpClient *ntp_client_create(char *ntp_server_ip, int ntp_server_port);
-RetNtp ntp_client_set_server_ip();
-RetNtp ntp_client_get_date_time();
+RetNtp ntp_client_get_date_time(NtpClient *ntp_client, struct timeval *ntp_time);
 void ntp_client_destroy(NtpClient *ntp_client);
 
-
+#ifdef	__cplusplus
+}
+#endif
 
 
 
