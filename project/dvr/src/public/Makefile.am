@@ -1,0 +1,6 @@
+noinst_LIBRARIES=libpublic.a
+libpublic_a_SOURCES=public_function.c
+
+noinst_PROGRAMS=public_function_test
+public_function_test_LDADD=./libpublic.a
+public_function_test_LDFLAGS=-lpthread

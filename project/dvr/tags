@@ -1,0 +1,2324 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+AC31_SET_11_025K_SAMPLERATE	driver/tlv320aic31/tlv320aic31.h	71;"	d
+AC31_SET_16BIT_WIDTH	driver/tlv320aic31/tlv320aic31.h	78;"	d
+AC31_SET_16K_SAMPLERATE	driver/tlv320aic31/tlv320aic31.h	66;"	d
+AC31_SET_20BIT_WIDTH	driver/tlv320aic31/tlv320aic31.h	79;"	d
+AC31_SET_22_05K_SAMPLERATE	driver/tlv320aic31/tlv320aic31.h	72;"	d
+AC31_SET_24BIT_WIDTH	driver/tlv320aic31/tlv320aic31.h	80;"	d
+AC31_SET_24K_SAMPLERATE	driver/tlv320aic31/tlv320aic31.h	67;"	d
+AC31_SET_32BIT_WIDTH	driver/tlv320aic31/tlv320aic31.h	81;"	d
+AC31_SET_32K_SAMPLERATE	driver/tlv320aic31/tlv320aic31.h	68;"	d
+AC31_SET_44_1K_SAMPLERATE	driver/tlv320aic31/tlv320aic31.h	73;"	d
+AC31_SET_48K_SAMPLERATE	driver/tlv320aic31/tlv320aic31.h	69;"	d
+AC31_SET_8K_SAMPLERATE	driver/tlv320aic31/tlv320aic31.h	65;"	d
+AC31_SET_MASTER_MODE	driver/tlv320aic31/tlv320aic31.h	76;"	d
+AC31_SET_SLAVE_MODE	driver/tlv320aic31/tlv320aic31.h	75;"	d
+ACLOCAL	Makefile	/^ACLOCAL = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run aclocal-1.10$/;"	m
+ACLOCAL	src/Makefile	/^ACLOCAL = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run aclocal-1.10$/;"	m
+ACLOCAL	src/cores/Makefile	/^ACLOCAL = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run aclocal-1.10$/;"	m
+ACLOCAL	src/cores/test/Makefile	/^ACLOCAL = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run aclocal-1.10$/;"	m
+ACLOCAL	src/public/Makefile	/^ACLOCAL = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run aclocal-1.10$/;"	m
+ACLOCAL_M4	Makefile	/^ACLOCAL_M4 = $(top_srcdir)\/aclocal.m4$/;"	m
+ACLOCAL_M4	src/Makefile	/^ACLOCAL_M4 = $(top_srcdir)\/aclocal.m4$/;"	m
+ACLOCAL_M4	src/cores/Makefile	/^ACLOCAL_M4 = $(top_srcdir)\/aclocal.m4$/;"	m
+ACLOCAL_M4	src/cores/test/Makefile	/^ACLOCAL_M4 = $(top_srcdir)\/aclocal.m4$/;"	m
+ACLOCAL_M4	src/public/Makefile	/^ACLOCAL_M4 = $(top_srcdir)\/aclocal.m4$/;"	m
+ADC_POWER_CONTROL	driver/adv7441/adv7441.h	77;"	d
+ADV7441_READ_REG	driver/adv7441/adv7441.h	10;"	d
+ADV7441_SET_VIDEO_FORMAT	driver/adv7441/adv7441.h	13;"	d
+ADV7441_VIDEO_FORMAT_E	driver/adv7441/adv7441.h	/^} ADV7441_VIDEO_FORMAT_E;$/;"	t	typeref:enum:_tagADV7441_VIDEO_FORMAT_E
+ADV7441_WRITE_REG	driver/adv7441/adv7441.h	11;"	d
+ADV7441_read	driver/adv7441/adv7441.c	/^int ADV7441_read(unsigned char MAP_ADDR,unsigned char sub_add)$/;"	f
+ADV7441_write	driver/adv7441/adv7441.c	/^void ADV7441_write(unsigned char MAP_ADDR,unsigned char sub_add,unsigned char data_para)$/;"	f
+ALARM_IN_DEV	driver/hal/devhal.c	56;"	d	file:
+ALARM_IN_DEV	driver/hal/devhal.c	58;"	d	file:
+ALARM_OUT_DEV	driver/hal/devhal.c	63;"	d	file:
+AMTAR	Makefile	/^AMTAR = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run tar$/;"	m
+AMTAR	src/Makefile	/^AMTAR = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run tar$/;"	m
+AMTAR	src/cores/Makefile	/^AMTAR = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run tar$/;"	m
+AMTAR	src/cores/test/Makefile	/^AMTAR = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run tar$/;"	m
+AMTAR	src/public/Makefile	/^AMTAR = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run tar$/;"	m
+AR	src/cores/Makefile	/^AR = ar$/;"	m
+AR	src/public/Makefile	/^AR = ar$/;"	m
+ARFLAGS	src/cores/Makefile	/^ARFLAGS = cru$/;"	m
+ARFLAGS	src/public/Makefile	/^ARFLAGS = cru$/;"	m
+ASC2NUM	driver/gpio-i2c/strfunc.c	136;"	d	file:
+AUTOCONF	Makefile	/^AUTOCONF = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run autoconf$/;"	m
+AUTOCONF	src/Makefile	/^AUTOCONF = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run autoconf$/;"	m
+AUTOCONF	src/cores/Makefile	/^AUTOCONF = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run autoconf$/;"	m
+AUTOCONF	src/cores/test/Makefile	/^AUTOCONF = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run autoconf$/;"	m
+AUTOCONF	src/public/Makefile	/^AUTOCONF = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run autoconf$/;"	m
+AUTOHEADER	Makefile	/^AUTOHEADER = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run autoheader$/;"	m
+AUTOHEADER	src/Makefile	/^AUTOHEADER = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run autoheader$/;"	m
+AUTOHEADER	src/cores/Makefile	/^AUTOHEADER = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run autoheader$/;"	m
+AUTOHEADER	src/cores/test/Makefile	/^AUTOHEADER = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run autoheader$/;"	m
+AUTOHEADER	src/public/Makefile	/^AUTOHEADER = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run autoheader$/;"	m
+AUTOMAKE	Makefile	/^AUTOMAKE = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run automake-1.10$/;"	m
+AUTOMAKE	src/Makefile	/^AUTOMAKE = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run automake-1.10$/;"	m
+AUTOMAKE	src/cores/Makefile	/^AUTOMAKE = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run automake-1.10$/;"	m
+AUTOMAKE	src/cores/test/Makefile	/^AUTOMAKE = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run automake-1.10$/;"	m
+AUTOMAKE	src/public/Makefile	/^AUTOMAKE = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run automake-1.10$/;"	m
+AV_IN	driver/adv7441/adv7441.h	/^	AV_IN,$/;"	e	enum:_tagSource
+AWK	Makefile	/^AWK = gawk$/;"	m
+AWK	src/Makefile	/^AWK = gawk$/;"	m
+AWK	src/cores/Makefile	/^AWK = gawk$/;"	m
+AWK	src/cores/test/Makefile	/^AWK = gawk$/;"	m
+AWK	src/public/Makefile	/^AWK = gawk$/;"	m
+Adc7400_Set_VgaMode	driver/adv7441/adv7441.c	/^void Adc7400_Set_VgaMode(unsigned char video_mode)$/;"	f
+Adc_Pga_Dac_Gain_Ctrl	driver/tlv320aic31/tlv320aic31_def.h	/^}Adc_Pga_Dac_Gain_Ctrl;$/;"	t	typeref:union:__anon18
+Adv7400_Set_YcbcrMode	driver/adv7441/adv7441.c	/^void Adv7400_Set_YcbcrMode(unsigned char videomode)$/;"	f
+Adv7400_blue_screen	driver/adv7441/adv7441.c	/^void Adv7400_blue_screen(unsigned char enable)$/;"	f
+Adv7400_channel	driver/adv7441/adv7441.c	/^void Adv7400_channel(unsigned char video_in)$/;"	f
+ArrayList	src/cores/array_list.h	/^typedef struct _ArrayList ArrayList;$/;"	t	typeref:struct:_ArrayList
+AudioSetup16K	driver/TW28xx/tw2865_def.h	/^unsigned char AudioSetup16K[] = {\/*0xf0--0xf5*\/$/;"	v
+AudioSetup16K	driver/tw2865-16cif/tw2865_def.h	/^unsigned char AudioSetup16K[] = {\/*0xf0--0xf5*\/$/;"	v
+AudioSetup16K	driver/tw2865-8cif/tw2865_def.h	/^unsigned char AudioSetup16K[] = {\/*0xf0--0xf5*\/$/;"	v
+AudioSetup32K	driver/TW28xx/tw2865_def.h	/^unsigned char AudioSetup32K[] = {\/*0xf0--0xf5*\/$/;"	v
+AudioSetup32K	driver/tw2865-16cif/tw2865_def.h	/^unsigned char AudioSetup32K[] = {\/*0xf0--0xf5*\/$/;"	v
+AudioSetup32K	driver/tw2865-8cif/tw2865_def.h	/^unsigned char AudioSetup32K[] = {\/*0xf0--0xf5*\/$/;"	v
+AudioSetup44_1K	driver/TW28xx/tw2865_def.h	/^unsigned char AudioSetup44_1K[] = {\/*0xf0--0xf5*\/$/;"	v
+AudioSetup44_1K	driver/tw2865-16cif/tw2865_def.h	/^unsigned char AudioSetup44_1K[] = {\/*0xf0--0xf5*\/$/;"	v
+AudioSetup44_1K	driver/tw2865-8cif/tw2865_def.h	/^unsigned char AudioSetup44_1K[] = {\/*0xf0--0xf5*\/$/;"	v
+AudioSetup48K	driver/TW28xx/tw2865_def.h	/^unsigned char AudioSetup48K[] = {\/*0xf0--0xf5*\/$/;"	v
+AudioSetup48K	driver/tw2865-16cif/tw2865_def.h	/^unsigned char AudioSetup48K[] = {\/*0xf0--0xf5*\/$/;"	v
+AudioSetup48K	driver/tw2865-8cif/tw2865_def.h	/^unsigned char AudioSetup48K[] = {\/*0xf0--0xf5*\/$/;"	v
+AudioSetup8K	driver/TW28xx/tw2865_def.h	/^unsigned char AudioSetup8K[] = {\/*0xf0--0xf5*\/$/;"	v
+AudioSetup8K	driver/tw2865-16cif/tw2865_def.h	/^unsigned char AudioSetup8K[] = {\/*0xf0--0xf5*\/$/;"	v
+AudioSetup8K	driver/tw2865-8cif/tw2865_def.h	/^unsigned char AudioSetup8K[] = {\/*0xf0--0xf5*\/$/;"	v
+Audio_Ctrl	driver/tlv320aic31/tlv320aic31.h	/^}Audio_Ctrl;$/;"	t	typeref:struct:__anon15
+Audio_In	driver/tlv320aic31/tlv320aic31.h	/^}Audio_In;$/;"	t	typeref:enum:Audio_In_
+Audio_In_	driver/tlv320aic31/tlv320aic31.h	/^typedef enum Audio_In_$/;"	g
+Audio_Out	driver/tlv320aic31/tlv320aic31.h	/^}Audio_Out;$/;"	t	typeref:enum:Audio_Out_
+Audio_Out_	driver/tlv320aic31/tlv320aic31.h	/^typedef enum Audio_Out_$/;"	g
+BL_1080I50	driver/adv7441/adv7441.h	84;"	d
+BL_1080I60	driver/adv7441/adv7441.h	85;"	d
+BL_480I	driver/adv7441/adv7441.h	79;"	d
+BL_480P	driver/adv7441/adv7441.h	81;"	d
+BL_576I	driver/adv7441/adv7441.h	80;"	d
+BL_576P	driver/adv7441/adv7441.h	82;"	d
+BL_720P	driver/adv7441/adv7441.h	83;"	d
+BL_DITHER	driver/adv7441/adv7441.h	86;"	d
+BUF_HEAD	driver/hiir/hiir.c	108;"	d	file:
+BUF_LAST	driver/hiir/hiir.c	110;"	d	file:
+BUF_TAIL	driver/hiir/hiir.c	109;"	d	file:
+BUZZER_DEV	driver/hal/devhal.c	62;"	d	file:
+CC	Makefile	/^CC = arm-hismall-linux-gcc$/;"	m
+CC	src/Makefile	/^CC = arm-hismall-linux-gcc$/;"	m
+CC	src/cores/Makefile	/^CC = arm-hismall-linux-gcc$/;"	m
+CC	src/cores/test/Makefile	/^CC = arm-hismall-linux-gcc$/;"	m
+CC	src/public/Makefile	/^CC = arm-hismall-linux-gcc$/;"	m
+CCDEPMODE	Makefile	/^CCDEPMODE = depmode=gcc3$/;"	m
+CCDEPMODE	src/Makefile	/^CCDEPMODE = depmode=gcc3$/;"	m
+CCDEPMODE	src/cores/Makefile	/^CCDEPMODE = depmode=gcc3$/;"	m
+CCDEPMODE	src/cores/test/Makefile	/^CCDEPMODE = depmode=gcc3$/;"	m
+CCDEPMODE	src/public/Makefile	/^CCDEPMODE = depmode=gcc3$/;"	m
+CCLD	src/Makefile	/^CCLD = $(CC)$/;"	m
+CCLD	src/cores/Makefile	/^CCLD = $(CC)$/;"	m
+CCLD	src/cores/test/Makefile	/^CCLD = $(CC)$/;"	m
+CCLD	src/public/Makefile	/^CCLD = $(CC)$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -g -O2$/;"	m
+CFLAGS	driver/hal/Makefile	/^CFLAGS:=-I..\/74HC165 -I..\/adv7441 -I..\/gpio -I..\/gpio-i2c -I..\/hiir -I..\/mt9d131 -I..\/rtc \\$/;"	m
+CFLAGS	src/Makefile	/^CFLAGS = -g -O2$/;"	m
+CFLAGS	src/cores/Makefile	/^CFLAGS = -g -O2$/;"	m
+CFLAGS	src/cores/test/Makefile	/^CFLAGS = -g -O2$/;"	m
+CFLAGS	src/public/Makefile	/^CFLAGS = -g -O2$/;"	m
+CHIP_NUM	driver/tlv320aic31/tlv320aic31.c	64;"	d	file:
+CNT0_B	driver/hiir/hiir.c	44;"	d	file:
+CNT1_B	driver/hiir/hiir.c	45;"	d	file:
+CNT_LEADE	driver/hiir/hiir.c	42;"	d	file:
+CNT_LEADS	driver/hiir/hiir.c	41;"	d	file:
+CNT_SLEADE	driver/hiir/hiir.c	43;"	d	file:
+COMM_ALLOC	src/public/public_typedef.h	46;"	d
+COMM_FREE	src/public/public_typedef.h	49;"	d
+COMM_REALLOC	src/public/public_typedef.h	47;"	d
+COMM_ZALLOC	src/public/public_typedef.h	48;"	d
+COMM_ZFREE	src/public/public_typedef.h	50;"	d
+COMPILE	src/Makefile	/^COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \\$/;"	m
+COMPILE	src/cores/Makefile	/^COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \\$/;"	m
+COMPILE	src/cores/test/Makefile	/^COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \\$/;"	m
+COMPILE	src/public/Makefile	/^COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \\$/;"	m
+CONFIG_CLEAN_FILES	Makefile	/^CONFIG_CLEAN_FILES =$/;"	m
+CONFIG_CLEAN_FILES	src/Makefile	/^CONFIG_CLEAN_FILES =$/;"	m
+CONFIG_CLEAN_FILES	src/cores/Makefile	/^CONFIG_CLEAN_FILES =$/;"	m
+CONFIG_CLEAN_FILES	src/cores/test/Makefile	/^CONFIG_CLEAN_FILES =$/;"	m
+CONFIG_CLEAN_FILES	src/public/Makefile	/^CONFIG_CLEAN_FILES =$/;"	m
+CONFIG_HEADER	Makefile	/^CONFIG_HEADER = config.h$/;"	m
+CONFIG_HEADER	src/Makefile	/^CONFIG_HEADER = $(top_builddir)\/config.h$/;"	m
+CONFIG_HEADER	src/cores/Makefile	/^CONFIG_HEADER = $(top_builddir)\/config.h$/;"	m
+CONFIG_HEADER	src/cores/test/Makefile	/^CONFIG_HEADER = $(top_builddir)\/config.h$/;"	m
+CONFIG_HEADER	src/public/Makefile	/^CONFIG_HEADER = $(top_builddir)\/config.h$/;"	m
+CONFIG_PROC_FS	driver/rtc/rtc_ds1339.c	60;"	d	file:
+CONFIG_PROC_FS	driver/rtc/rtc_ds1339.c	61;"	d	file:
+CONTROL	driver/adv7441/adv7441.h	/^}CONTROL;$/;"	t	typeref:struct:_tagControl
+CPPFLAGS	Makefile	/^CPPFLAGS = $/;"	m
+CPPFLAGS	src/Makefile	/^CPPFLAGS = $/;"	m
+CPPFLAGS	src/cores/Makefile	/^CPPFLAGS = $/;"	m
+CPPFLAGS	src/cores/test/Makefile	/^CPPFLAGS = $/;"	m
+CPPFLAGS	src/public/Makefile	/^CPPFLAGS = $/;"	m
+CP_DEF_COL_FORCE	driver/adv7441/adv7441.h	43;"	d
+CP_DEF_COL_MAIN_VAL	driver/adv7441/adv7441.h	44;"	d
+CP_DEF_VAL_EN	driver/adv7441/adv7441.h	65;"	d
+CTAGS	Makefile	/^CTAGS = ctags$/;"	m
+CTAGS	src/Makefile	/^CTAGS = ctags$/;"	m
+CTAGS	src/cores/Makefile	/^CTAGS = ctags$/;"	m
+CTAGS	src/cores/test/Makefile	/^CTAGS = ctags$/;"	m
+CTAGS	src/public/Makefile	/^CTAGS = ctags$/;"	m
+CVBSSYS	driver/adv7441/adv7441.h	/^}CVBSSYS;$/;"	t	typeref:enum:_tagCvbsSys
+CYGPATH_W	Makefile	/^CYGPATH_W = echo$/;"	m
+CYGPATH_W	src/Makefile	/^CYGPATH_W = echo$/;"	m
+CYGPATH_W	src/cores/Makefile	/^CYGPATH_W = echo$/;"	m
+CYGPATH_W	src/cores/test/Makefile	/^CYGPATH_W = echo$/;"	m
+CYGPATH_W	src/public/Makefile	/^CYGPATH_W = echo$/;"	m
+Clocks	src/cores/clocks.h	/^typedef struct _Clocks Clocks;$/;"	t	typeref:struct:_Clocks
+ClocksDestroyFunc	src/cores/clocks.h	/^typedef void (*ClocksDestroyFunc)(Clocks *thiz);$/;"	t
+ClocksGetTimeFunc	src/cores/clocks.h	/^typedef Ret (*ClocksGetTimeFunc)(Clocks *thiz, Datetime *date_time);$/;"	t
+ClocksInfo	src/cores/clocks.h	/^typedef struct _ClocksInfo ClocksInfo;$/;"	t	typeref:struct:_ClocksInfo
+ClocksSetTimeFunc	src/cores/clocks.h	/^typedef Ret (*ClocksSetTimeFunc)(Clocks *thiz, Datetime *date_time);$/;"	t
+Codec_Datapath_Setup_Ctrl	driver/tlv320aic31/tlv320aic31_def.h	/^}Codec_Datapath_Setup_Ctrl;$/;"	t	typeref:union:__anon28
+Ctrl_Mode	driver/tlv320aic31/tlv320aic31_def.h	/^}Ctrl_Mode;$/;"	t	typeref:union:__anon16
+D74LS165_BY_XZYANG	driver/74ls165/74ls165.c	18;"	d	file:
+DACL1_2_HPLCOM_VOL_CTRL	driver/tlv320aic31/tlv320aic31.h	22;"	d
+DACL1_2_HPLOUT_VOL_CTRL	driver/tlv320aic31/tlv320aic31.h	17;"	d
+DACL1_2_LEFT_LOP_VOL_CTRL	driver/tlv320aic31/tlv320aic31.h	32;"	d
+DACR1_2_HPLCOM_VOL_CTRL	driver/tlv320aic31/tlv320aic31.h	23;"	d
+DACR1_2_HPLOUT_VOL_CTRL	driver/tlv320aic31/tlv320aic31.h	18;"	d
+DACR1_2_HPRCOM_VOL_CTRL	driver/tlv320aic31/tlv320aic31.h	29;"	d
+DACR1_2_HPROUT_VOL_CTRL	driver/tlv320aic31/tlv320aic31.h	26;"	d
+DACR1_2_RIGHT_LOP_VOL_CTRL	driver/tlv320aic31/tlv320aic31.h	35;"	d
+DAC_OUTPUT_SWIT_CTRL	driver/tlv320aic31/tlv320aic31_def.h	/^}DAC_OUTPUT_SWIT_CTRL;$/;"	t	typeref:union:__anon32
+DAC_OUT_SWITCH_CTRL	driver/tlv320aic31/tlv320aic31.h	45;"	d
+DAC_POWER_CTRL	driver/tlv320aic31/tlv320aic31_def.h	/^}DAC_POWER_CTRL;$/;"	t	typeref:union:__anon30
+DC_SET_IMAGESIZE	driver/mt9d131/mt9d131.h	5;"	d
+DC_SET_POWERFREQ	driver/mt9d131/mt9d131.h	10;"	d
+DC_VAL_50HZ	driver/mt9d131/mt9d131.h	21;"	d
+DC_VAL_60HZ	driver/mt9d131/mt9d131.h	22;"	d
+DC_VAL_UXGA	driver/mt9d131/mt9d131.h	19;"	d
+DC_VAL_VGA	driver/mt9d131/mt9d131.h	18;"	d
+DEBUG_ADV7400	driver/adv7441/adv7441.c	42;"	d	file:
+DEBUG_LEVEL	driver/tlv320aic31/tlv320aic31.c	66;"	d	file:
+DECLS_BEGIN	src/public/public_typedef.h	37;"	d
+DECLS_BEGIN	src/public/public_typedef.h	40;"	d
+DECLS_END	src/public/public_typedef.h	38;"	d
+DECLS_END	src/public/public_typedef.h	41;"	d
+DECL_PRIV0	src/public/public_typedef.h	30;"	d
+DEFAULT_BUF_LEN	driver/hiir/hiir.c	107;"	d	file:
+DEFAULT_DELAYTIME	driver/hiir/hiir.c	104;"	d	file:
+DEFAULT_INCLUDES	src/Makefile	/^DEFAULT_INCLUDES = -I. -I$(top_builddir)$/;"	m
+DEFAULT_INCLUDES	src/cores/Makefile	/^DEFAULT_INCLUDES = -I. -I$(top_builddir)$/;"	m
+DEFAULT_INCLUDES	src/cores/test/Makefile	/^DEFAULT_INCLUDES = -I. -I$(top_builddir)$/;"	m
+DEFAULT_INCLUDES	src/public/Makefile	/^DEFAULT_INCLUDES = -I. -I$(top_builddir)$/;"	m
+DEFAULT_VALUE_Y	driver/adv7441/adv7441.h	64;"	d
+DEFS	Makefile	/^DEFS = -DHAVE_CONFIG_H$/;"	m
+DEFS	src/Makefile	/^DEFS = -DHAVE_CONFIG_H$/;"	m
+DEFS	src/cores/Makefile	/^DEFS = -DHAVE_CONFIG_H$/;"	m
+DEFS	src/cores/test/Makefile	/^DEFS = -DHAVE_CONFIG_H$/;"	m
+DEFS	src/public/Makefile	/^DEFS = -DHAVE_CONFIG_H$/;"	m
+DEF_VAL_EN	driver/adv7441/adv7441.h	42;"	d
+DELAY	driver/gpio-i2c/gpio_i2c.c	45;"	d	file:
+DEPDIR	Makefile	/^DEPDIR = .deps$/;"	m
+DEPDIR	src/Makefile	/^DEPDIR = .deps$/;"	m
+DEPDIR	src/cores/Makefile	/^DEPDIR = .deps$/;"	m
+DEPDIR	src/cores/test/Makefile	/^DEPDIR = .deps$/;"	m
+DEPDIR	src/public/Makefile	/^DEPDIR = .deps$/;"	m
+DETECT_1280_720P	driver/adv7441/adv7441.h	/^	DETECT_1280_720P,$/;"	e	enum:_tagYcbcrSys
+DETECT_1920_1080_I50	driver/adv7441/adv7441.h	/^	DETECT_1920_1080_I50,$/;"	e	enum:_tagYcbcrSys
+DETECT_1920_1080_I60	driver/adv7441/adv7441.h	/^	DETECT_1920_1080_I60$/;"	e	enum:_tagYcbcrSys
+DETECT_60SVGA	driver/adv7441/adv7441.h	/^	DETECT_60SVGA,$/;"	e	enum:_tagRGBSys
+DETECT_60VGA	driver/adv7441/adv7441.h	/^	DETECT_60VGA,$/;"	e	enum:_tagRGBSys
+DETECT_60XGA	driver/adv7441/adv7441.h	/^	DETECT_60XGA,$/;"	e	enum:_tagRGBSys
+DETECT_70XGA	driver/adv7441/adv7441.h	/^	DETECT_70XGA,$/;"	e	enum:_tagRGBSys
+DETECT_720_480_I60	driver/adv7441/adv7441.h	/^	DETECT_720_480_I60,$/;"	e	enum:_tagYcbcrSys
+DETECT_720_480_P60	driver/adv7441/adv7441.h	/^	DETECT_720_480_P60,$/;"	e	enum:_tagYcbcrSys
+DETECT_720_576_I50	driver/adv7441/adv7441.h	/^	DETECT_720_576_I50,$/;"	e	enum:_tagYcbcrSys
+DETECT_720_576_P50	driver/adv7441/adv7441.h	/^	DETECT_720_576_P50,$/;"	e	enum:_tagYcbcrSys
+DETECT_72SVGA	driver/adv7441/adv7441.h	/^	DETECT_72SVGA,$/;"	e	enum:_tagRGBSys
+DETECT_72VGA	driver/adv7441/adv7441.h	/^	DETECT_72VGA,$/;"	e	enum:_tagRGBSys
+DETECT_75SVGA	driver/adv7441/adv7441.h	/^	DETECT_75SVGA,$/;"	e	enum:_tagRGBSys
+DETECT_75VGA	driver/adv7441/adv7441.h	/^	DETECT_75VGA,$/;"	e	enum:_tagRGBSys
+DETECT_75XGA	driver/adv7441/adv7441.h	/^	DETECT_75XGA,$/;"	e	enum:_tagRGBSys
+DETECT_85SVGA	driver/adv7441/adv7441.h	/^	DETECT_85SVGA,$/;"	e	enum:_tagRGBSys
+DETECT_85VGA	driver/adv7441/adv7441.h	/^	DETECT_85VGA,$/;"	e	enum:_tagRGBSys
+DETECT_85XGA	driver/adv7441/adv7441.h	/^	DETECT_85XGA$/;"	e	enum:_tagRGBSys
+DETECT_BEGIN	driver/adv7441/adv7441.h	29;"	d
+DETECT_DOS185	driver/adv7441/adv7441.h	/^	DETECT_DOS185,$/;"	e	enum:_tagRGBSys
+DETECT_DOS285	driver/adv7441/adv7441.h	/^	DETECT_DOS285,$/;"	e	enum:_tagRGBSys
+DETECT_NONE	driver/adv7441/adv7441.h	28;"	d
+DETECT_NTSC_443	driver/adv7441/adv7441.h	/^	DETECT_NTSC_443,$/;"	e	enum:_tagCvbsSys
+DETECT_NTSC_M	driver/adv7441/adv7441.h	/^	DETECT_NTSC_M,$/;"	e	enum:_tagCvbsSys
+DETECT_PAL_60	driver/adv7441/adv7441.h	/^	DETECT_PAL_60,$/;"	e	enum:_tagCvbsSys
+DETECT_PAL_BGHID	driver/adv7441/adv7441.h	/^	DETECT_PAL_BGHID,$/;"	e	enum:_tagCvbsSys
+DETECT_PAL_M	driver/adv7441/adv7441.h	/^	DETECT_PAL_M,$/;"	e	enum:_tagCvbsSys
+DETECT_PAL_N	driver/adv7441/adv7441.h	/^	DETECT_PAL_N,$/;"	e	enum:_tagCvbsSys
+DETECT_SECAM	driver/adv7441/adv7441.h	/^	DETECT_SECAM,$/;"	e	enum:_tagCvbsSys
+DETECT_SECAM_525	driver/adv7441/adv7441.h	/^	DETECT_SECAM_525$/;"	e	enum:_tagCvbsSys
+DEV_7400	driver/adv7441/adv7441.h	32;"	d
+DEV_NAME	driver/tlv320aic31/tlv320aic31.c	65;"	d	file:
+DIGITAL_IN	driver/adv7441/adv7441.h	/^	DIGITAL_IN$/;"	e	enum:_tagSource
+DIRECTION_INPUT	driver/74HC165/74hc165.c	83;"	d	file:
+DIRECTION_INPUT	driver/74ls165/74ls165.c	85;"	d	file:
+DIRECTION_INPUT	driver/74ls165/74ls165_o.c	80;"	d	file:
+DIRECTION_OUTPUT	driver/74HC165/74hc165.c	82;"	d	file:
+DIRECTION_OUTPUT	driver/74ls165/74ls165.c	84;"	d	file:
+DIRECTION_OUTPUT	driver/74ls165/74ls165_o.c	79;"	d	file:
+DISTFILES	Makefile	/^DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)$/;"	m
+DISTFILES	src/Makefile	/^DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)$/;"	m
+DISTFILES	src/cores/Makefile	/^DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)$/;"	m
+DISTFILES	src/cores/test/Makefile	/^DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)$/;"	m
+DISTFILES	src/public/Makefile	/^DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)$/;"	m
+DIST_ARCHIVES	Makefile	/^DIST_ARCHIVES = $(distdir).tar.gz$/;"	m
+DIST_COMMON	Makefile	/^DIST_COMMON = README $(am__configure_deps) $(srcdir)\/Makefile.am \\$/;"	m
+DIST_COMMON	src/Makefile	/^DIST_COMMON = $(srcdir)\/Makefile.am $(srcdir)\/Makefile.in$/;"	m
+DIST_COMMON	src/cores/Makefile	/^DIST_COMMON = $(srcdir)\/Makefile.am $(srcdir)\/Makefile.in$/;"	m
+DIST_COMMON	src/cores/test/Makefile	/^DIST_COMMON = $(srcdir)\/Makefile.am $(srcdir)\/Makefile.in$/;"	m
+DIST_COMMON	src/public/Makefile	/^DIST_COMMON = $(srcdir)\/Makefile.am $(srcdir)\/Makefile.in$/;"	m
+DIST_SOURCES	Makefile	/^DIST_SOURCES =$/;"	m
+DIST_SOURCES	src/Makefile	/^DIST_SOURCES = $(dvr_SOURCES)$/;"	m
+DIST_SOURCES	src/cores/Makefile	/^DIST_SOURCES = $(libcores_a_SOURCES)$/;"	m
+DIST_SOURCES	src/cores/test/Makefile	/^DIST_SOURCES = $(array_list_test_SOURCES) $(clocks_rtc_test_SOURCES)$/;"	m
+DIST_SOURCES	src/public/Makefile	/^DIST_SOURCES = $(libpublic_a_SOURCES) public_function_test.c$/;"	m
+DIST_SUBDIRS	Makefile	/^DIST_SUBDIRS = $(SUBDIRS)$/;"	m
+DIST_SUBDIRS	src/Makefile	/^DIST_SUBDIRS = $(SUBDIRS)$/;"	m
+DIST_SUBDIRS	src/cores/Makefile	/^DIST_SUBDIRS = $(SUBDIRS)$/;"	m
+DPRINTK	driver/tlv320aic31/tlv320aic31.c	67;"	d	file:
+DVR_INFO	driver/hal/devhal.h	26;"	d
+DVR_KEYBOARD_EnableRepKey	driver/hal/devhal.c	/^int DVR_KEYBOARD_EnableRepKey(int bEnable)$/;"	f
+DVR_KEYBOARD_SetRepTimeout	driver/hal/devhal.c	/^int DVR_KEYBOARD_SetRepTimeout(unsigned int msec)$/;"	f
+DVR_TVSYSTEM_NTSC	driver/hal/devhal.h	/^	DVR_TVSYSTEM_NTSC,	$/;"	e	enum:__anon7
+DVR_TVSYSTEM_PAL	driver/hal/devhal.h	/^	DVR_TVSYSTEM_PAL,$/;"	e	enum:__anon7
+DateTimeConversionRtcTime	src/cores/clocks_rtc.c	32;"	d	file:
+Datetime	src/public/public_typedef.h	/^}Datetime;$/;"	t	typeref:struct:_Datetime
+ECHO_C	Makefile	/^ECHO_C = $/;"	m
+ECHO_C	src/Makefile	/^ECHO_C = $/;"	m
+ECHO_C	src/cores/Makefile	/^ECHO_C = $/;"	m
+ECHO_C	src/cores/test/Makefile	/^ECHO_C = $/;"	m
+ECHO_C	src/public/Makefile	/^ECHO_C = $/;"	m
+ECHO_N	Makefile	/^ECHO_N = -n$/;"	m
+ECHO_N	src/Makefile	/^ECHO_N = -n$/;"	m
+ECHO_N	src/cores/Makefile	/^ECHO_N = -n$/;"	m
+ECHO_N	src/cores/test/Makefile	/^ECHO_N = -n$/;"	m
+ECHO_N	src/public/Makefile	/^ECHO_N = -n$/;"	m
+ECHO_T	Makefile	/^ECHO_T = $/;"	m
+ECHO_T	src/Makefile	/^ECHO_T = $/;"	m
+ECHO_T	src/cores/Makefile	/^ECHO_T = $/;"	m
+ECHO_T	src/cores/test/Makefile	/^ECHO_T = $/;"	m
+ECHO_T	src/public/Makefile	/^ECHO_T = $/;"	m
+ETAGS	Makefile	/^ETAGS = etags$/;"	m
+ETAGS	src/Makefile	/^ETAGS = etags$/;"	m
+ETAGS	src/cores/Makefile	/^ETAGS = etags$/;"	m
+ETAGS	src/cores/test/Makefile	/^ETAGS = etags$/;"	m
+ETAGS	src/public/Makefile	/^ETAGS = etags$/;"	m
+EXEEXT	Makefile	/^EXEEXT = $/;"	m
+EXEEXT	src/Makefile	/^EXEEXT = $/;"	m
+EXEEXT	src/cores/Makefile	/^EXEEXT = $/;"	m
+EXEEXT	src/cores/test/Makefile	/^EXEEXT = $/;"	m
+EXEEXT	src/public/Makefile	/^EXEEXT = $/;"	m
+ErrorId	driver/adv7441/adv7441.h	/^unsigned char ErrorId;$/;"	v
+GET_ADV7441_REG	driver/adv7441/adv7441.h	7;"	d
+GPIO_0_BASE	driver/gpio-i2c/gpio_i2c.c	21;"	d	file:
+GPIO_0_BASE_ADDR	driver/front_board/hi_key_gpio_driver.c	40;"	d	file:
+GPIO_0_BASE_ADDR	driver/gpio/hi_gpio.c	17;"	d	file:
+GPIO_0_BASE_ADDR_VIRTUAL	driver/front_board/hi_key_gpio_driver.c	/^unsigned int GPIO_0_BASE_ADDR_VIRTUAL=0;$/;"	v
+GPIO_0_DIR	driver/gpio-i2c/gpio_i2c.c	23;"	d	file:
+GPIO_0_DIR_OFFSET	driver/front_board/hi_key_gpio_driver.c	44;"	d	file:
+GPIO_0_INTR_MASK	driver/front_board/hi_key_gpio_driver.c	45;"	d	file:
+GPIO_0_READ_DATA	driver/front_board/hi_key_gpio_driver.c	46;"	d	file:
+GPIO_1_BASE_ADDR	driver/gpio/hi_gpio.c	18;"	d	file:
+GPIO_2_BASE_ADDR	driver/front_board/hi_key_gpio_driver.c	41;"	d	file:
+GPIO_2_BASE_ADDR	driver/gpio/hi_gpio.c	19;"	d	file:
+GPIO_2_BASE_ADDR_VIRTUAL	driver/front_board/hi_key_gpio_driver.c	/^unsigned int GPIO_2_BASE_ADDR_VIRTUAL=0;$/;"	v
+GPIO_2_DIR_OFFSET	driver/front_board/hi_key_gpio_driver.c	47;"	d	file:
+GPIO_2_INTR_MASK	driver/front_board/hi_key_gpio_driver.c	48;"	d	file:
+GPIO_2_READ_DATA	driver/front_board/hi_key_gpio_driver.c	49;"	d	file:
+GPIO_3_BASE_ADDR	driver/front_board/hi_key_gpio_driver.c	42;"	d	file:
+GPIO_3_BASE_ADDR	driver/gpio/hi_gpio.c	20;"	d	file:
+GPIO_4_BASE_ADDR	driver/gpio/hi_gpio.c	21;"	d	file:
+GPIO_5_BASE_ADDR	driver/front_board/hi_key_gpio_driver.c	43;"	d	file:
+GPIO_5_BASE_ADDR	driver/gpio/hi_gpio.c	22;"	d	file:
+GPIO_5_BASE_ADDR_VIRTUAL	driver/front_board/hi_key_gpio_driver.c	/^unsigned int GPIO_5_BASE_ADDR_VIRTUAL=0;$/;"	v
+GPIO_5_DIR_OFFSET	driver/front_board/hi_key_gpio_driver.c	50;"	d	file:
+GPIO_5_INTR_MASK	driver/front_board/hi_key_gpio_driver.c	51;"	d	file:
+GPIO_5_READ_DATA	driver/front_board/hi_key_gpio_driver.c	52;"	d	file:
+GPIO_6_BASE_ADDR	driver/gpio/hi_gpio.c	23;"	d	file:
+GPIO_74HC165_CLOCK	driver/74HC165/74hc165.c	126;"	d	file:
+GPIO_74HC165_DATA	driver/74HC165/74hc165.c	125;"	d	file:
+GPIO_74HC165_GROUP2	driver/74HC165/74hc165.c	124;"	d	file:
+GPIO_74HC165_SHLD	driver/74HC165/74hc165.c	127;"	d	file:
+GPIO_74LS165_CLOCK	driver/74ls165/74ls165.c	122;"	d	file:
+GPIO_74LS165_DATA	driver/74ls165/74ls165.c	121;"	d	file:
+GPIO_74LS165_GROUP	driver/74ls165/74ls165.c	120;"	d	file:
+GPIO_74LS165_SHLD	driver/74ls165/74ls165.c	123;"	d	file:
+GPIO_7_BASE_ADDR	driver/gpio/hi_gpio.c	24;"	d	file:
+GPIO_DATA_BASE	driver/gpio/hi_gpio.c	28;"	d	file:
+GPIO_DIR	driver/74HC165/74hc165.c	81;"	d	file:
+GPIO_DIR	driver/74ls165/74ls165.c	83;"	d	file:
+GPIO_DIR	driver/74ls165/74ls165_o.c	78;"	d	file:
+GPIO_DIR	driver/front_board/hi_key_gpio_driver.c	55;"	d	file:
+GPIO_DIR_BASE	driver/gpio/hi_gpio.c	26;"	d	file:
+GPIO_DIR_IN	driver/gpio/hi_gpio.h	4;"	d
+GPIO_DIR_OUT	driver/gpio/hi_gpio.h	5;"	d
+GPIO_GET_DIR	driver/gpio/hi_gpio.h	8;"	d
+GPIO_I2C_READ	driver/gpio-i2c/gpio_i2c.h	6;"	d
+GPIO_I2C_SCLSDA_REG	driver/gpio-i2c/gpio_i2c.c	42;"	d	file:
+GPIO_I2C_SCL_REG	driver/gpio-i2c/gpio_i2c.c	31;"	d	file:
+GPIO_I2C_SCL_REG	driver/gpio-i2c/gpio_i2c.c	38;"	d	file:
+GPIO_I2C_SDA_REG	driver/gpio-i2c/gpio_i2c.c	30;"	d	file:
+GPIO_I2C_SDA_REG	driver/gpio-i2c/gpio_i2c.c	37;"	d	file:
+GPIO_I2C_WRITE	driver/gpio-i2c/gpio_i2c.h	7;"	d
+GPIO_INTR_MASK	driver/gpio/hi_gpio.c	27;"	d	file:
+GPIO_READ_BIT	driver/gpio/hi_gpio.h	9;"	d
+GPIO_SET_DIR	driver/gpio/hi_gpio.h	7;"	d
+GPIO_SPACE_SIZE	driver/74HC165/74hc165.c	80;"	d	file:
+GPIO_SPACE_SIZE	driver/74ls165/74ls165.c	82;"	d	file:
+GPIO_SPACE_SIZE	driver/74ls165/74ls165_o.c	77;"	d	file:
+GPIO_WRITE_BIT	driver/gpio/hi_gpio.h	10;"	d
+GUI_INVALID	driver/hal/keyvaluetable.h	/^	GUI_INVALID,$/;"	e	enum:_guistatetable_
+GUI_PLAYBACK	driver/hal/keyvaluetable.h	/^	GUI_PLAYBACK,$/;"	e	enum:_guistatetable_
+GUI_VIEW	driver/hal/keyvaluetable.h	/^	GUI_VIEW,$/;"	e	enum:_guistatetable_
+GZIP_ENV	Makefile	/^GZIP_ENV = --best$/;"	m
+HAL_DEV_HDMI	driver/hal/devhal.h	/^	HAL_DEV_HDMI,$/;"	e	enum:__anon8
+HAL_DEV_VGA	driver/hal/devhal.h	/^	HAL_DEV_VGA,$/;"	e	enum:__anon8
+HAL_MAX	driver/hal/devhal.h	/^    HAL_MAX =3$/;"	e	enum:__anon4
+HAL_OUTPUT_DEV_E	driver/hal/devhal.h	/^}HAL_OUTPUT_DEV_E;$/;"	t	typeref:enum:__anon4
+HAL_RTC_TIME_S	driver/hal/devhal.h	/^}HAL_RTC_TIME_S;$/;"	t	typeref:struct:__anon5
+HAL_TV_SYSTEM_E	driver/hal/devhal.h	/^}HAL_TV_SYSTEM_E;$/;"	t	typeref:enum:__anon7
+HAL_VGA	driver/hal/devhal.h	/^    HAL_VGA  =2,$/;"	e	enum:__anon4
+HAL_VGA_DEV_E	driver/hal/devhal.h	/^}HAL_VGA_DEV_E;$/;"	t	typeref:enum:__anon8
+HAL_VOUT	driver/hal/devhal.h	/^    HAL_VOUT =0,$/;"	e	enum:__anon4
+HAL_VSPOT	driver/hal/devhal.h	/^    HAL_VSPOT=1,$/;"	e	enum:__anon4
+HDDLED_DEV	driver/hal/devhal.c	64;"	d	file:
+HEXASC2NUM	driver/gpio-i2c/strfunc.c	137;"	d	file:
+HI2865_DEV	driver/hal/devhal.c	52;"	d	file:
+HIDOG_EXIT	driver/wtdg/hi_wdt.c	96;"	d	file:
+HIDOG_EXTCLR	driver/wtdg/hi_wdt.c	98;"	d	file:
+HIDOG_PFX	driver/wtdg/hi_wdt.c	64;"	d	file:
+HIDOG_SELFCLR	driver/wtdg/hi_wdt.c	97;"	d	file:
+HIDOG_TIMER_DEMULTIPLY	driver/wtdg/hi_wdt.c	70;"	d	file:
+HIDOG_TIMER_MARGIN	driver/wtdg/hi_wdt.c	68;"	d	file:
+HIDVR_HAL_485KEYBOARD_Close	driver/hal/devhal.c	/^HI_VOID HIDVR_HAL_485KEYBOARD_Close(HI_VOID)$/;"	f
+HIDVR_HAL_485KEYBOARD_Open	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_485KEYBOARD_Open(HI_VOID)$/;"	f
+HIDVR_HAL_485KEYBOARD_ReadKeyVal	driver/hal/devhal.c	/^keyvaluetable_t HIDVR_HAL_485KEYBOARD_ReadKeyVal(HI_VOID)$/;"	f
+HIDVR_HAL_485KEYBOARD_TransKeyVal	driver/hal/devhal.c	/^keyvaluetable_t HIDVR_HAL_485KEYBOARD_TransKeyVal(keyvaluetable_t key, guistatetable_t guistate)$/;"	f
+HIDVR_HAL_AAD_Close	driver/hal/devhal.c	/^HI_VOID HIDVR_HAL_AAD_Close(HI_VOID)$/;"	f
+HIDVR_HAL_AAD_Disable_ChnMute	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_AAD_Disable_ChnMute(HI_S32 s32Chn)$/;"	f
+HIDVR_HAL_AAD_Enable_ChnMute	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_AAD_Enable_ChnMute(HI_S32 s32Chn)$/;"	f
+HIDVR_HAL_AAD_Open	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_AAD_Open(HI_VOID)$/;"	f
+HIDVR_HAL_AAD_SetVolum	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_AAD_SetVolum(HI_S32 s32Chn, HI_U32 u32Vol)$/;"	f
+HIDVR_HAL_ADA_Close	driver/hal/devhal.c	/^HI_VOID HIDVR_HAL_ADA_Close(HI_VOID)$/;"	f
+HIDVR_HAL_ADA_Disable_Mute	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_ADA_Disable_Mute(HI_VOID)$/;"	f
+HIDVR_HAL_ADA_Enable_Mute	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_ADA_Enable_Mute(HI_S32 s32DevId)$/;"	f
+HIDVR_HAL_ADA_Open	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_ADA_Open(HI_VOID)$/;"	f
+HIDVR_HAL_ADA_SetVolum	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_ADA_SetVolum(HI_S32 s32Chn, HI_S32 s32DevId, HI_U32 u32Vol)$/;"	f
+HIDVR_HAL_AUDIO_PLAYBACK	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_AUDIO_PLAYBACK(HI_S32 s32Chn, HI_S32 s32DevId, HI_BOOL bLoop)$/;"	f
+HIDVR_HAL_BUZZER_Close	driver/hal/devhal.c	/^HI_VOID HIDVR_HAL_BUZZER_Close(HI_VOID)$/;"	f
+HIDVR_HAL_BUZZER_Disable	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_BUZZER_Disable(HI_VOID)$/;"	f
+HIDVR_HAL_BUZZER_Enable	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_BUZZER_Enable(HI_VOID)$/;"	f
+HIDVR_HAL_BUZZER_Open	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_BUZZER_Open(HI_VOID)$/;"	f
+HIDVR_HAL_HDDLED_Close	driver/hal/devhal.c	/^HI_VOID HIDVR_HAL_HDDLED_Close(HI_VOID)$/;"	f
+HIDVR_HAL_HDDLED_Disable	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_HDDLED_Disable(HI_VOID)$/;"	f
+HIDVR_HAL_HDDLED_Enable	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_HDDLED_Enable(HI_VOID)$/;"	f
+HIDVR_HAL_HDDLED_Open	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_HDDLED_Open(HI_VOID)$/;"	f
+HIDVR_HAL_INDEV_ALARM_Close	driver/hal/devhal.c	/^HI_VOID HIDVR_HAL_INDEV_ALARM_Close(HI_VOID)$/;"	f
+HIDVR_HAL_INDEV_ALARM_GetState	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_INDEV_ALARM_GetState(HI_S32 s32Chn, HI_S32* ps32Alarm)$/;"	f
+HIDVR_HAL_INDEV_ALARM_Open	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_INDEV_ALARM_Open(HI_VOID)$/;"	f
+HIDVR_HAL_IR_Close	driver/hal/devhal.c	/^HI_VOID HIDVR_HAL_IR_Close(HI_VOID)$/;"	f
+HIDVR_HAL_IR_Open	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_IR_Open(HI_VOID)$/;"	f
+HIDVR_HAL_IR_ReadKeyVal	driver/hal/devhal.c	/^keyvaluetable_t HIDVR_HAL_IR_ReadKeyVal(HI_VOID)$/;"	f
+HIDVR_HAL_IR_TransKeyVal	driver/hal/devhal.c	/^keyvaluetable_t HIDVR_HAL_IR_TransKeyVal(keyvaluetable_t key, guistatetable_t guistate)$/;"	f
+HIDVR_HAL_KEYBOARD_Close	driver/hal/devhal.c	/^HI_VOID HIDVR_HAL_KEYBOARD_Close(HI_VOID)$/;"	f
+HIDVR_HAL_KEYBOARD_Open	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_KEYBOARD_Open(HI_VOID)$/;"	f
+HIDVR_HAL_KEYBOARD_ReadKeyVal	driver/hal/devhal.c	/^keyvaluetable_t HIDVR_HAL_KEYBOARD_ReadKeyVal(HI_VOID)$/;"	f
+HIDVR_HAL_KEYBOARD_TransKeyVal	driver/hal/devhal.c	/^keyvaluetable_t HIDVR_HAL_KEYBOARD_TransKeyVal(keyvaluetable_t key, guistatetable_t guistate)$/;"	f
+HIDVR_HAL_OUTDEV_ALARM_Close	driver/hal/devhal.c	/^HI_VOID HIDVR_HAL_OUTDEV_ALARM_Close(HI_VOID)$/;"	f
+HIDVR_HAL_OUTDEV_ALARM_Open	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_OUTDEV_ALARM_Open(HI_VOID)$/;"	f
+HIDVR_HAL_OUTDEV_ALARM_OutData	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_OUTDEV_ALARM_OutData(HI_S32 s32Chn, HI_S32 s32Alarm)$/;"	f
+HIDVR_HAL_PTZ_Bind_Protocol	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_PTZ_Bind_Protocol(HI_S32 S32Chn, HI_U8* pu8Protocol)$/;"	f
+HIDVR_HAL_PTZ_Cfg	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_PTZ_Cfg(ptzserialconfig_t pstPara)$/;"	f
+HIDVR_HAL_PTZ_Close	driver/hal/devhal.c	/^HI_VOID HIDVR_HAL_PTZ_Close(HI_VOID)$/;"	f
+HIDVR_HAL_PTZ_Down	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_PTZ_Down(HI_S32 S32Chn, HI_U8 u8Addr,  HI_S32 s32Speed)$/;"	f
+HIDVR_HAL_PTZ_Enum_Protocol	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_PTZ_Enum_Protocol(HI_U8 protocol[16][64],HI_U32 *pProtocolCnt)$/;"	f
+HIDVR_HAL_PTZ_Focus_Dec	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_PTZ_Focus_Dec(HI_S32 S32Chn, HI_U8 u8Addr)$/;"	f
+HIDVR_HAL_PTZ_Focus_Inc	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_PTZ_Focus_Inc(HI_S32 S32Chn, HI_U8 u8Addr)$/;"	f
+HIDVR_HAL_PTZ_Iris_Dec	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_PTZ_Iris_Dec(HI_S32 S32Chn, HI_U8 u8Addr)$/;"	f
+HIDVR_HAL_PTZ_Iris_Inc	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_PTZ_Iris_Inc(HI_S32 S32Chn, HI_U8 u8Addr)$/;"	f
+HIDVR_HAL_PTZ_Left	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_PTZ_Left(HI_S32 S32Chn, HI_U8 u8Addr,  HI_S32 s32Speed)$/;"	f
+HIDVR_HAL_PTZ_Open	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_PTZ_Open(ptzserialconfig_t *pstPara)$/;"	f
+HIDVR_HAL_PTZ_Right	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_PTZ_Right(HI_S32 S32Chn, HI_U8 u8Addr,  HI_S32 s32Speed)$/;"	f
+HIDVR_HAL_PTZ_Set_Pos	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_PTZ_Set_Pos(HI_S32 S32Chn, HI_U8 u8Addr, HI_U32 u32Curpt)$/;"	f
+HIDVR_HAL_PTZ_Stop	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_PTZ_Stop(HI_S32 S32Chn, HI_U8 u8Addr)$/;"	f
+HIDVR_HAL_PTZ_To_Pos	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_PTZ_To_Pos(HI_S32 S32Chn, HI_U8 u8Addr, HI_U32 u32Curpt)$/;"	f
+HIDVR_HAL_PTZ_Up	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_PTZ_Up(HI_S32 S32Chn, HI_U8 u8Addr,  HI_S32 s32Speed)$/;"	f
+HIDVR_HAL_PTZ_Zoom_Dec	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_PTZ_Zoom_Dec(HI_S32 S32Chn, HI_U8 u8Addr)$/;"	f
+HIDVR_HAL_PTZ_Zoom_Inc	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_PTZ_Zoom_Inc(HI_S32 S32Chn, HI_U8 u8Addr)$/;"	f
+HIDVR_HAL_RTC_Close	driver/hal/devhal.c	/^HI_VOID HIDVR_HAL_RTC_Close(HI_VOID)$/;"	f
+HIDVR_HAL_RTC_GetTime	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_RTC_GetTime(HAL_RTC_TIME_S* pstTime)$/;"	f
+HIDVR_HAL_RTC_Open	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_RTC_Open(HI_VOID)$/;"	f
+HIDVR_HAL_RTC_SetTime	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_RTC_SetTime(HAL_RTC_TIME_S* pstTime)$/;"	f
+HIDVR_HAL_SYS_GetSerialCode	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_SYS_GetSerialCode()$/;"	f
+HIDVR_HAL_SendCmdToPtz	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_SendCmdToPtz(unsigned char protocol, unsigned char addr, unsigned char cmd, int speed,void *other)$/;"	f
+HIDVR_HAL_SendCmdToPtzPelco_d	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_SendCmdToPtzPelco_d(unsigned char cmd, unsigned char addr,  int speed,void *other)$/;"	f
+HIDVR_HAL_SendCmdToPtzPelco_p	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_SendCmdToPtzPelco_p(unsigned char cmd, unsigned char addr, int speed,void *other )$/;"	f
+HIDVR_HAL_VAD_Close	driver/hal/devhal.c	/^HI_VOID HIDVR_HAL_VAD_Close(HI_VOID)$/;"	f
+HIDVR_HAL_VAD_GetVideoLoss	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_VAD_GetVideoLoss(HI_S32 s32Chn ,HI_BOOL *pbLoss)$/;"	f
+HIDVR_HAL_VAD_Open	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_VAD_Open(HI_VOID)$/;"	f
+HIDVR_HAL_VAD_SetBrightness	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_VAD_SetBrightness(HI_S32 s32Chn, HI_U32 u32Brightness)$/;"	f
+HIDVR_HAL_VAD_SetContrast	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_VAD_SetContrast(HI_S32 s32Chn, HI_U32 u32Contrast)$/;"	f
+HIDVR_HAL_VAD_SetHuePlus	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_VAD_SetHuePlus(HI_S32 s32Chn, HI_U32 u32HuePlus)$/;"	f
+HIDVR_HAL_VAD_SetSaturation	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_VAD_SetSaturation(HI_S32 s32Chn, HI_U32 u32Saturation)$/;"	f
+HIDVR_HAL_VAD_SetTvSystem	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_VAD_SetTvSystem(HAL_TV_SYSTEM_E enTvsystem)$/;"	f
+HIDVR_HAL_VDA_Close	driver/hal/devhal.c	/^HI_VOID HIDVR_HAL_VDA_Close(HI_VOID)$/;"	f
+HIDVR_HAL_VDA_Open	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_VDA_Open(HI_VOID)$/;"	f
+HIDVR_HAL_VDA_SetTvSystem	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_VDA_SetTvSystem(HAL_TV_SYSTEM_E enTvsystem)$/;"	f
+HIDVR_HAL_VGA_SetDev	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_VGA_SetDev(HAL_VGA_DEV_E enVgaDev)$/;"	f
+HIDVR_HAL_WDT_Close	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_WDT_Close(HI_VOID)$/;"	f
+HIDVR_HAL_WDT_Disable	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_WDT_Disable(HI_VOID)$/;"	f
+HIDVR_HAL_WDT_Enable	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_WDT_Enable(HI_VOID)$/;"	f
+HIDVR_HAL_WDT_Feed	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_WDT_Feed(HI_VOID)$/;"	f
+HIDVR_HAL_WDT_Open	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_WDT_Open(HI_VOID)$/;"	f
+HIDVR_HAL_WDT_Reset	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_WDT_Reset(HI_VOID)$/;"	f
+HIDVR_HAL_WDT_SetTimeout	driver/hal/devhal.c	/^HI_S32 HIDVR_HAL_WDT_SetTimeout(HI_U32 u32Msec)$/;"	f
+HIIR_DEFAULT_FREQ	driver/hiir/hiir.h	68;"	d
+HIIR_DEVICE_IRQ_NO	driver/hiir/hiir.c	35;"	d	file:
+HIIR_DEVICE_NAME	driver/hiir/hiir.h	23;"	d
+HIIR_KEY_DOWN	driver/hiir/hiir.h	71;"	d
+HIIR_KEY_UP	driver/hiir/hiir.h	72;"	d
+HIIR_PFX	driver/hiir/hiir.c	72;"	d	file:
+HISILICON_SCTL_BASE	driver/wtdg/hi_wdt.c	45;"	d	file:
+HIWDT_BASE	driver/wtdg/hi_wdt.c	47;"	d	file:
+HIWDT_CTRL	driver/wtdg/hi_wdt.c	52;"	d	file:
+HIWDT_INTCLR	driver/wtdg/hi_wdt.c	53;"	d	file:
+HIWDT_LOAD	driver/wtdg/hi_wdt.c	50;"	d	file:
+HIWDT_LOCK	driver/wtdg/hi_wdt.c	56;"	d	file:
+HIWDT_MIS	driver/wtdg/hi_wdt.c	55;"	d	file:
+HIWDT_REG	driver/wtdg/hi_wdt.c	48;"	d	file:
+HIWDT_RIS	driver/wtdg/hi_wdt.c	54;"	d	file:
+HIWDT_UNLOCK_VAL	driver/wtdg/hi_wdt.c	58;"	d	file:
+HIWDT_VALUE	driver/wtdg/hi_wdt.c	51;"	d	file:
+HI_BOOL	driver/hal/hi_type.h	/^} HI_BOOL;$/;"	t	typeref:enum:__anon9
+HI_CHAR	driver/hal/hi_type.h	/^typedef char                    HI_CHAR;$/;"	t
+HI_DOUBLE	driver/hal/hi_type.h	/^typedef double                  HI_DOUBLE;$/;"	t
+HI_FAILURE	driver/hal/hi_type.h	78;"	d
+HI_FALSE	driver/hal/hi_type.h	/^    HI_FALSE    = 0,$/;"	e	enum:__anon9
+HI_FLOAT	driver/hal/hi_type.h	/^typedef float                   HI_FLOAT;$/;"	t
+HI_IR_MAX_BUF	driver/hiir/hiir.c	106;"	d	file:
+HI_LENGTH_T	driver/hal/hi_type.h	/^typedef unsigned long           HI_LENGTH_T;$/;"	t
+HI_NULL	driver/hal/hi_type.h	74;"	d
+HI_NULL_PTR	driver/hal/hi_type.h	75;"	d
+HI_PCHAR	driver/hal/hi_type.h	/^typedef char*                   HI_PCHAR;$/;"	t
+HI_S16	driver/hal/hi_type.h	/^typedef short                   HI_S16;$/;"	t
+HI_S32	driver/hal/hi_type.h	/^typedef int                     HI_S32;$/;"	t
+HI_S64	driver/hal/hi_type.h	/^typedef __int64                   HI_S64;$/;"	t
+HI_S64	driver/hal/hi_type.h	/^typedef long long               HI_S64;$/;"	t
+HI_S8	driver/hal/hi_type.h	/^typedef signed char             HI_S8;$/;"	t
+HI_SIZE_T	driver/hal/hi_type.h	/^typedef unsigned long           HI_SIZE_T;$/;"	t
+HI_SUCCESS	driver/hal/hi_type.h	77;"	d
+HI_TRUE	driver/hal/hi_type.h	/^    HI_TRUE     = 1,$/;"	e	enum:__anon9
+HI_U16	driver/hal/hi_type.h	/^typedef unsigned short          HI_U16;$/;"	t
+HI_U32	driver/hal/hi_type.h	/^typedef unsigned int            HI_U32;$/;"	t
+HI_U64	driver/hal/hi_type.h	/^typedef __int64                   HI_U64;$/;"	t
+HI_U64	driver/hal/hi_type.h	/^typedef unsigned long long      HI_U64;$/;"	t
+HI_U8	driver/hal/hi_type.h	/^typedef unsigned char           HI_U8;$/;"	t
+HI_UCHAR	driver/hal/hi_type.h	/^typedef unsigned char           HI_UCHAR;$/;"	t
+HI_VOID	driver/hal/hi_type.h	/^typedef void                    HI_VOID;$/;"	t
+HPL	driver/tlv320aic31/tlv320aic31.h	/^    HPL,$/;"	e	enum:Audio_Out_
+HPLCOM_OUTPUT_LEVEL_CTRL	driver/tlv320aic31/tlv320aic31.h	24;"	d
+HPLOUT_OUTPUT_LEVEL_CTRL	driver/tlv320aic31/tlv320aic31.h	19;"	d
+HPR	driver/tlv320aic31/tlv320aic31.h	/^    HPR,$/;"	e	enum:Audio_Out_
+HPRCOM_OUTPUT_LEVEL_CTRL	driver/tlv320aic31/tlv320aic31.h	30;"	d
+HPROUT_OUTPUT_LEVEL_CTRL	driver/tlv320aic31/tlv320aic31.h	27;"	d
+HW_REG	driver/gpio-i2c/gpio_i2c.c	44;"	d	file:
+I2C_DS1339	driver/rtc/rtc_ds1339.c	54;"	d	file:
+I2C_MT9D131	driver/mt9d131/mt9d131.c	59;"	d	file:
+IIC_device_addr	driver/tlv320aic31/tlv320aic31.c	/^unsigned int IIC_device_addr[CHIP_NUM] = {0x30};$/;"	v
+IN1L	driver/tlv320aic31/tlv320aic31.h	/^    IN1L =0,$/;"	e	enum:Audio_In_
+IN1L_2_LEFT_ADC_CTRL	driver/tlv320aic31/tlv320aic31.h	13;"	d
+IN1R	driver/tlv320aic31/tlv320aic31.h	/^    IN1R =1,$/;"	e	enum:Audio_In_
+IN1R_2_RIGHT_ADC_CTRL	driver/tlv320aic31/tlv320aic31.h	14;"	d
+IN2L	driver/tlv320aic31/tlv320aic31.h	/^    IN2L =2,$/;"	e	enum:Audio_In_
+IN2LR_2_LEFT_ADC_CTRL	driver/tlv320aic31/tlv320aic31.h	11;"	d
+IN2LR_2_RIGTH_ADC_CTRL	driver/tlv320aic31/tlv320aic31.h	12;"	d
+IN2R	driver/tlv320aic31/tlv320aic31.h	/^    IN2R =3,$/;"	e	enum:Audio_In_
+INCLUDES	Makefile	/^INCLUDES = -I$(top_srcdir)\/src\/public$/;"	m
+INCLUDES	src/Makefile	/^INCLUDES = -I$(top_srcdir)\/src\/public \\$/;"	m
+INCLUDES	src/cores/Makefile	/^INCLUDES = -I$(top_srcdir)\/src\/public -I$(top_srcdir)\/driver\/rtc$/;"	m
+INCLUDES	src/cores/test/Makefile	/^INCLUDES = -I$(top_srcdir)\/src\/cores\/ -I$(top_srcdir)\/src\/public$/;"	m
+INC_BUF	driver/hiir/hiir.c	111;"	d	file:
+INPUT	driver/front_board/hi_key_gpio_driver.c	57;"	d	file:
+INPUTMODEDETECT	driver/adv7441/adv7441.h	/^}INPUTMODEDETECT;$/;"	t	typeref:struct:_tagInputModeDetect
+INSTALL	Makefile	/^INSTALL = \/usr\/bin\/install -c$/;"	m
+INSTALL	src/Makefile	/^INSTALL = \/usr\/bin\/install -c$/;"	m
+INSTALL	src/cores/Makefile	/^INSTALL = \/usr\/bin\/install -c$/;"	m
+INSTALL	src/cores/test/Makefile	/^INSTALL = \/usr\/bin\/install -c$/;"	m
+INSTALL	src/public/Makefile	/^INSTALL = \/usr\/bin\/install -c$/;"	m
+INSTALL_DATA	Makefile	/^INSTALL_DATA = ${INSTALL} -m 644$/;"	m
+INSTALL_DATA	src/Makefile	/^INSTALL_DATA = ${INSTALL} -m 644$/;"	m
+INSTALL_DATA	src/cores/Makefile	/^INSTALL_DATA = ${INSTALL} -m 644$/;"	m
+INSTALL_DATA	src/cores/test/Makefile	/^INSTALL_DATA = ${INSTALL} -m 644$/;"	m
+INSTALL_DATA	src/public/Makefile	/^INSTALL_DATA = ${INSTALL} -m 644$/;"	m
+INSTALL_HEADER	Makefile	/^INSTALL_HEADER = $(INSTALL_DATA)$/;"	m
+INSTALL_HEADER	src/Makefile	/^INSTALL_HEADER = $(INSTALL_DATA)$/;"	m
+INSTALL_HEADER	src/cores/Makefile	/^INSTALL_HEADER = $(INSTALL_DATA)$/;"	m
+INSTALL_HEADER	src/cores/test/Makefile	/^INSTALL_HEADER = $(INSTALL_DATA)$/;"	m
+INSTALL_HEADER	src/public/Makefile	/^INSTALL_HEADER = $(INSTALL_DATA)$/;"	m
+INSTALL_PROGRAM	Makefile	/^INSTALL_PROGRAM = ${INSTALL}$/;"	m
+INSTALL_PROGRAM	src/Makefile	/^INSTALL_PROGRAM = ${INSTALL}$/;"	m
+INSTALL_PROGRAM	src/cores/Makefile	/^INSTALL_PROGRAM = ${INSTALL}$/;"	m
+INSTALL_PROGRAM	src/cores/test/Makefile	/^INSTALL_PROGRAM = ${INSTALL}$/;"	m
+INSTALL_PROGRAM	src/public/Makefile	/^INSTALL_PROGRAM = ${INSTALL}$/;"	m
+INSTALL_SCRIPT	Makefile	/^INSTALL_SCRIPT = ${INSTALL}$/;"	m
+INSTALL_SCRIPT	src/Makefile	/^INSTALL_SCRIPT = ${INSTALL}$/;"	m
+INSTALL_SCRIPT	src/cores/Makefile	/^INSTALL_SCRIPT = ${INSTALL}$/;"	m
+INSTALL_SCRIPT	src/cores/test/Makefile	/^INSTALL_SCRIPT = ${INSTALL}$/;"	m
+INSTALL_SCRIPT	src/public/Makefile	/^INSTALL_SCRIPT = ${INSTALL}$/;"	m
+INSTALL_STRIP_PROGRAM	Makefile	/^INSTALL_STRIP_PROGRAM = $(install_sh) -c -s$/;"	m
+INSTALL_STRIP_PROGRAM	src/Makefile	/^INSTALL_STRIP_PROGRAM = $(install_sh) -c -s$/;"	m
+INSTALL_STRIP_PROGRAM	src/cores/Makefile	/^INSTALL_STRIP_PROGRAM = $(install_sh) -c -s$/;"	m
+INSTALL_STRIP_PROGRAM	src/cores/test/Makefile	/^INSTALL_STRIP_PROGRAM = $(install_sh) -c -s$/;"	m
+INSTALL_STRIP_PROGRAM	src/public/Makefile	/^INSTALL_STRIP_PROGRAM = $(install_sh) -c -s$/;"	m
+INTMS_FRAMERR	driver/hiir/hiir.c	61;"	d	file:
+INTMS_OVERFLOW	driver/hiir/hiir.c	62;"	d	file:
+INTMS_RCV	driver/hiir/hiir.c	60;"	d	file:
+INTMS_RELEASE	driver/hiir/hiir.c	63;"	d	file:
+INVALID_CHNNO	driver/TW28xx/tw2865.c	82;"	d	file:
+INVALID_CHNNO	driver/tw2865-16cif/tw2865.c	77;"	d	file:
+INVALID_CHNNO	driver/tw2865-8cif/tw2865.c	82;"	d	file:
+IOCONFIG	driver/74HC165/74hc165.c	130;"	d	file:
+IOCONFIG	driver/gpio/hi_gpio.c	240;"	d	file:
+IOCONFIG	driver/hiir/hiir.c	56;"	d	file:
+IOCONFIGREG	driver/front_board/hi_key_gpio_driver.c	23;"	d	file:
+IR_BUSY	driver/hiir/hiir.c	46;"	d	file:
+IR_CONFIG	driver/hiir/hiir.c	40;"	d	file:
+IR_DATAH	driver/hiir/hiir.c	47;"	d	file:
+IR_DATAL	driver/hiir/hiir.c	48;"	d	file:
+IR_ENABLE	driver/hiir/hiir.c	39;"	d	file:
+IR_INTC	driver/hiir/hiir.c	51;"	d	file:
+IR_INTM	driver/hiir/hiir.c	49;"	d	file:
+IR_INTS	driver/hiir/hiir.c	50;"	d	file:
+IR_IOC_DISDBG	driver/hiir/hiir.h	43;"	d
+IR_IOC_ENDBG	driver/hiir/hiir.h	42;"	d
+IR_IOC_GET_CONFIG	driver/hiir/hiir.h	40;"	d
+IR_IOC_SET_BUF	driver/hiir/hiir.h	26;"	d
+IR_IOC_SET_CNT0_B	driver/hiir/hiir.h	37;"	d
+IR_IOC_SET_CNT1_B	driver/hiir/hiir.h	38;"	d
+IR_IOC_SET_CODELEN	driver/hiir/hiir.h	32;"	d
+IR_IOC_SET_ENABLE_KEYUP	driver/hiir/hiir.h	27;"	d
+IR_IOC_SET_ENABLE_REPKEY	driver/hiir/hiir.h	28;"	d
+IR_IOC_SET_FORMAT	driver/hiir/hiir.h	31;"	d
+IR_IOC_SET_FREQ	driver/hiir/hiir.h	33;"	d
+IR_IOC_SET_LEADE	driver/hiir/hiir.h	35;"	d
+IR_IOC_SET_LEADS	driver/hiir/hiir.h	34;"	d
+IR_IOC_SET_REPKEY_TIMEOUTVAL	driver/hiir/hiir.h	29;"	d
+IR_IOC_SET_SLEADE	driver/hiir/hiir.h	36;"	d
+IR_REG_BASE	driver/hiir/hiir.c	38;"	d	file:
+IR_START	driver/hiir/hiir.c	52;"	d	file:
+IS_BUF_EMPTY	driver/74HC165/74hc165.c	/^static inline int IS_BUF_EMPTY(VALUE_BUF_S *pbuf)$/;"	f	file:
+IS_BUF_EMPTY	driver/74ls165/74ls165.c	/^static inline int IS_BUF_EMPTY(VALUE_BUF_S *pbuf)$/;"	f	file:
+IS_BUF_EMPTY	driver/74ls165/74ls165_o.c	/^static inline int IS_BUF_EMPTY(VALUE_BUF_S *pbuf)$/;"	f	file:
+IS_BUF_FULL	driver/74HC165/74hc165.c	/^static inline int IS_BUF_FULL(VALUE_BUF_S *pbuf)$/;"	f	file:
+IS_BUF_FULL	driver/74ls165/74ls165.c	/^static inline int IS_BUF_FULL(VALUE_BUF_S *pbuf)$/;"	f	file:
+IS_BUF_FULL	driver/74ls165/74ls165_o.c	/^static inline int IS_BUF_FULL(VALUE_BUF_S *pbuf)$/;"	f	file:
+In1_Adc_Ctrl	driver/tlv320aic31/tlv320aic31_def.h	/^}In1_Adc_Ctrl;$/;"	t	typeref:union:__anon22
+In2_Adc_Ctrl_Sample	driver/tlv320aic31/tlv320aic31_def.h	/^}In2_Adc_Ctrl_Sample;$/;"	t	typeref:union:__anon20
+InitAudioSetup	driver/TW28xx/tw2865_def.h	/^unsigned char InitAudioSetup[] = {$/;"	v
+InitAudioSetup	driver/tw2865-16cif/tw2865_def.h	/^unsigned char InitAudioSetup[] = {$/;"	v
+InitAudioSetup	driver/tw2865-8cif/tw2865_def.h	/^unsigned char InitAudioSetup[] = {$/;"	v
+IoState	driver/74HC165/74hc165.c	/^unsigned int IoState = 0;$/;"	v
+IoState	driver/74ls165/74ls165.c	/^unsigned char IoState = 0x00;$/;"	v
+KERNEL_MAKE	driver/74HC165/Makefile	/^KERNEL_MAKE := -C ..\/..\/..\/..\/..\/release\/pub\/kbuild-FULL_REL$/;"	m
+KERNEL_MAKE	driver/74ls165/Makefile	/^KERNEL_MAKE := -C ..\/..\/..\/..\/..\/..\/linux-2.6.24$/;"	m
+KERNEL_MAKE	driver/TW28xx/Makefile	/^KERNEL_MAKE := -C \/home\/MProject\/kernel$/;"	m
+KERNEL_MAKE	driver/adv7441/Makefile	/^KERNEL_MAKE := -C ..\/..\/..\/..\/..\/release\/pub\/kbuild-FULL_REL$/;"	m
+KERNEL_MAKE	driver/front_board/Makefile	/^KERNEL_MAKE := -C ..\/..\/..\/..\/..\/release\/pub\/kbuild-FULL_REL$/;"	m
+KERNEL_MAKE	driver/gpio-i2c/Makefile	/^KERNEL_MAKE := -C ..\/..\/..\/..\/..\/release\/pub\/kbuild-FULL_REL$/;"	m
+KERNEL_MAKE	driver/gpio/Makefile	/^KERNEL_MAKE := -C ..\/..\/..\/..\/..\/release\/pub\/kbuild-FULL_REL$/;"	m
+KERNEL_MAKE	driver/hiir/Makefile	/^KERNEL_MAKE := -C ..\/..\/..\/..\/..\/release\/pub\/kbuild-FULL_REL$/;"	m
+KERNEL_MAKE	driver/mt9d131/Makefile	/^KERNEL_MAKE := -C ..\/..\/..\/..\/..\/release\/pub\/kbuild-FULL_REL$/;"	m
+KERNEL_MAKE	driver/rtc/Makefile	/^KERNEL_MAKE := -C ..\/..\/..\/..\/..\/release\/pub\/kbuild-FULL_REL$/;"	m
+KERNEL_MAKE	driver/tlv320aic31/Makefile	/^KERNEL_MAKE := -C ..\/..\/..\/..\/..\/release\/pub\/kbuild-FULL_REL$/;"	m
+KERNEL_MAKE	driver/tw2865-16cif/Makefile	/^KERNEL_MAKE := -C ..\/..\/..\/..\/..\/release\/pub\/kbuild-FULL_REL$/;"	m
+KERNEL_MAKE	driver/tw2865-8cif/Makefile	/^KERNEL_MAKE := -C ..\/..\/..\/..\/..\/release\/pub\/kbuild-FULL_REL$/;"	m
+KERNEL_MAKE	driver/wtdg/Makefile	/^KERNEL_MAKE := -C ..\/..\/..\/..\/..\/release\/pub\/kbuild-FULL_REL$/;"	m
+KEY_DEV	driver/hal/devhal.c	65;"	d	file:
+KEY_IOC_GET_KEYVALUE	driver/front_board/hi_key_gpio_driver.h	6;"	d
+KEY_IOC_SET_ENABLE_REPKEY	driver/front_board/hi_key_gpio_driver.h	4;"	d
+KEY_IOC_SET_REPKEY_TIMEOUT	driver/front_board/hi_key_gpio_driver.h	5;"	d
+KVT_1PLUS5	driver/hal/keyvaluetable.h	/^	KVT_1PLUS5,$/;"	e	enum:_keyvaluetable_
+KVT_1PLUS7	driver/hal/keyvaluetable.h	/^	KVT_1PLUS7,$/;"	e	enum:_keyvaluetable_
+KVT_2X2	driver/hal/keyvaluetable.h	/^	KVT_2X2,$/;"	e	enum:_keyvaluetable_
+KVT_3X3	driver/hal/keyvaluetable.h	/^	KVT_3X3,$/;"	e	enum:_keyvaluetable_
+KVT_4X4	driver/hal/keyvaluetable.h	/^	KVT_4X4,$/;"	e	enum:_keyvaluetable_
+KVT_ADJUST	driver/hal/keyvaluetable.h	/^	KVT_ADJUST,$/;"	e	enum:_keyvaluetable_
+KVT_AUTO	driver/hal/keyvaluetable.h	/^	KVT_AUTO,$/;"	e	enum:_keyvaluetable_
+KVT_BUTT	driver/hal/keyvaluetable.h	/^	KVT_BUTT$/;"	e	enum:_keyvaluetable_
+KVT_CHANNEL_ADD	driver/hal/keyvaluetable.h	/^	KVT_CHANNEL_ADD,$/;"	e	enum:_keyvaluetable_
+KVT_CHANNEL_DEC	driver/hal/keyvaluetable.h	/^	KVT_CHANNEL_DEC,$/;"	e	enum:_keyvaluetable_
+KVT_CHECK	driver/hal/keyvaluetable.h	/^	KVT_CHECK,$/;"	e	enum:_keyvaluetable_
+KVT_CHNPARA	driver/hal/keyvaluetable.h	/^	KVT_CHNPARA,$/;"	e	enum:_keyvaluetable_
+KVT_DEC	driver/hal/keyvaluetable.h	/^	KVT_DEC,$/;"	e	enum:_keyvaluetable_
+KVT_DOWN	driver/hal/keyvaluetable.h	/^	KVT_DOWN,$/;"	e	enum:_keyvaluetable_
+KVT_DROPDOWNLISTSCROLL	driver/hal/keyvaluetable.h	/^	KVT_DROPDOWNLISTSCROLL,$/;"	e	enum:_keyvaluetable_
+KVT_EIGHT	driver/hal/keyvaluetable.h	/^	KVT_EIGHT,$/;"	e	enum:_keyvaluetable_
+KVT_ELEVEN	driver/hal/keyvaluetable.h	/^	KVT_ELEVEN,$/;"	e	enum:_keyvaluetable_
+KVT_ENTER	driver/hal/keyvaluetable.h	/^	KVT_ENTER,$/;"	e	enum:_keyvaluetable_
+KVT_EXIT	driver/hal/keyvaluetable.h	/^	KVT_EXIT = KVT_SETUP, \/\/Ziven@100311 $/;"	e	enum:_keyvaluetable_
+KVT_FASTBACK	driver/hal/keyvaluetable.h	/^	KVT_FASTBACK,$/;"	e	enum:_keyvaluetable_
+KVT_FASTPLAY	driver/hal/keyvaluetable.h	/^	KVT_FASTPLAY,$/;"	e	enum:_keyvaluetable_
+KVT_FIFTEEN	driver/hal/keyvaluetable.h	/^	KVT_FIFTEEN,$/;"	e	enum:_keyvaluetable_
+KVT_FIVE	driver/hal/keyvaluetable.h	/^	KVT_FIVE,$/;"	e	enum:_keyvaluetable_
+KVT_FOCUSDEC	driver/hal/keyvaluetable.h	/^	KVT_FOCUSDEC,$/;"	e	enum:_keyvaluetable_
+KVT_FOCUSINC	driver/hal/keyvaluetable.h	/^	KVT_FOCUSINC,$/;"	e	enum:_keyvaluetable_
+KVT_FOUR	driver/hal/keyvaluetable.h	/^	KVT_FOUR,$/;"	e	enum:_keyvaluetable_
+KVT_FOURTEEN	driver/hal/keyvaluetable.h	/^	KVT_FOURTEEN,$/;"	e	enum:_keyvaluetable_
+KVT_INC	driver/hal/keyvaluetable.h	/^	KVT_INC,$/;"	e	enum:_keyvaluetable_
+KVT_INVALID	driver/hal/keyvaluetable.h	/^	KVT_INVALID,$/;"	e	enum:_keyvaluetable_
+KVT_IRISDEC	driver/hal/keyvaluetable.h	/^	KVT_IRISDEC,$/;"	e	enum:_keyvaluetable_
+KVT_IRISINC	driver/hal/keyvaluetable.h	/^	KVT_IRISINC,$/;"	e	enum:_keyvaluetable_
+KVT_LEFT	driver/hal/keyvaluetable.h	/^	KVT_LEFT,$/;"	e	enum:_keyvaluetable_
+KVT_LOCK	driver/hal/keyvaluetable.h	/^	KVT_LOCK,$/;"	e	enum:_keyvaluetable_
+KVT_LOGIN	driver/hal/keyvaluetable.h	/^	KVT_LOGIN,$/;"	e	enum:_keyvaluetable_
+KVT_MOUSELBD	driver/hal/keyvaluetable.h	/^	KVT_MOUSELBD,$/;"	e	enum:_keyvaluetable_
+KVT_MOUSELBU	driver/hal/keyvaluetable.h	/^	KVT_MOUSELBU,$/;"	e	enum:_keyvaluetable_
+KVT_MOUSEMV	driver/hal/keyvaluetable.h	/^	KVT_MOUSEMV,$/;"	e	enum:_keyvaluetable_
+KVT_MOUSERBD	driver/hal/keyvaluetable.h	/^	KVT_MOUSERBD,$/;"	e	enum:_keyvaluetable_
+KVT_MOUSERBU	driver/hal/keyvaluetable.h	/^	KVT_MOUSERBU,$/;"	e	enum:_keyvaluetable_
+KVT_MULTIPIC	driver/hal/keyvaluetable.h	/^	KVT_MULTIPIC,$/;"	e	enum:_keyvaluetable_
+KVT_MUTE	driver/hal/keyvaluetable.h	/^	KVT_MUTE,$/;"	e	enum:_keyvaluetable_
+KVT_NEWSECOND	driver/hal/keyvaluetable.h	/^	KVT_NEWSECOND,$/;"	e	enum:_keyvaluetable_
+KVT_NINE	driver/hal/keyvaluetable.h	/^	KVT_NINE,$/;"	e	enum:_keyvaluetable_
+KVT_NINTH	driver/hal/keyvaluetable.h	/^	KVT_NINTH,	$/;"	e	enum:_keyvaluetable_
+KVT_ONE	driver/hal/keyvaluetable.h	/^	KVT_ONE,$/;"	e	enum:_keyvaluetable_
+KVT_PAUSE	driver/hal/keyvaluetable.h	/^ 	KVT_PAUSE,   \/\/20100420$/;"	e	enum:_keyvaluetable_
+KVT_PICSWITCH	driver/hal/keyvaluetable.h	/^	KVT_PICSWITCH,$/;"	e	enum:_keyvaluetable_
+KVT_PIP	driver/hal/keyvaluetable.h	/^	KVT_PIP,$/;"	e	enum:_keyvaluetable_
+KVT_PLAY	driver/hal/keyvaluetable.h	/^	KVT_PLAY,$/;"	e	enum:_keyvaluetable_
+KVT_PLAY111	driver/hal/keyvaluetable.h	/^	KVT_PLAY111,  \/\/fengqx 20100611$/;"	e	enum:_keyvaluetable_
+KVT_POWEROFF	driver/hal/keyvaluetable.h	/^	KVT_POWEROFF,$/;"	e	enum:_keyvaluetable_
+KVT_PTZ	driver/hal/keyvaluetable.h	/^	KVT_PTZ,$/;"	e	enum:_keyvaluetable_
+KVT_QUAD	driver/hal/keyvaluetable.h	/^	KVT_QUAD,  $/;"	e	enum:_keyvaluetable_
+KVT_RESET	driver/hal/keyvaluetable.h	/^	KVT_RESET,$/;"	e	enum:_keyvaluetable_
+KVT_RIGHT	driver/hal/keyvaluetable.h	/^	KVT_RIGHT,$/;"	e	enum:_keyvaluetable_
+KVT_SEARCH	driver/hal/keyvaluetable.h	/^	KVT_SEARCH,$/;"	e	enum:_keyvaluetable_
+KVT_SETUP	driver/hal/keyvaluetable.h	/^	KVT_SETUP,	$/;"	e	enum:_keyvaluetable_
+KVT_SEVEN	driver/hal/keyvaluetable.h	/^	KVT_SEVEN,$/;"	e	enum:_keyvaluetable_
+KVT_SIX	driver/hal/keyvaluetable.h	/^	KVT_SIX,$/;"	e	enum:_keyvaluetable_
+KVT_SIXTEEN	driver/hal/keyvaluetable.h	/^	KVT_SIXTEEN,$/;"	e	enum:_keyvaluetable_
+KVT_SIXTEENTH	driver/hal/keyvaluetable.h	/^	KVT_SIXTEENTH,	$/;"	e	enum:_keyvaluetable_
+KVT_SLOWPLAY	driver/hal/keyvaluetable.h	/^	KVT_SLOWPLAY,$/;"	e	enum:_keyvaluetable_
+KVT_STARTRECORD	driver/hal/keyvaluetable.h	/^	KVT_STARTRECORD,$/;"	e	enum:_keyvaluetable_
+KVT_STOP	driver/hal/keyvaluetable.h	/^	KVT_STOP,$/;"	e	enum:_keyvaluetable_
+KVT_TEN	driver/hal/keyvaluetable.h	/^	KVT_TEN,$/;"	e	enum:_keyvaluetable_
+KVT_THIRTEEN	driver/hal/keyvaluetable.h	/^	KVT_THIRTEEN,$/;"	e	enum:_keyvaluetable_
+KVT_THREE	driver/hal/keyvaluetable.h	/^	KVT_THREE,$/;"	e	enum:_keyvaluetable_
+KVT_TWELVE	driver/hal/keyvaluetable.h	/^	KVT_TWELVE,$/;"	e	enum:_keyvaluetable_
+KVT_TWO	driver/hal/keyvaluetable.h	/^	KVT_TWO,$/;"	e	enum:_keyvaluetable_
+KVT_UP	driver/hal/keyvaluetable.h	/^	KVT_UP,$/;"	e	enum:_keyvaluetable_
+KVT_VGASEL	driver/hal/keyvaluetable.h	/^	KVT_VGASEL,$/;"	e	enum:_keyvaluetable_
+KVT_VM	driver/hal/keyvaluetable.h	/^	KVT_VM,	$/;"	e	enum:_keyvaluetable_
+KVT_ZERO	driver/hal/keyvaluetable.h	/^	KVT_ZERO,$/;"	e	enum:_keyvaluetable_
+KVT_ZOOMDEC	driver/hal/keyvaluetable.h	/^	KVT_ZOOMDEC,$/;"	e	enum:_keyvaluetable_
+KVT_ZOOMINC	driver/hal/keyvaluetable.h	/^	KVT_ZOOMINC,$/;"	e	enum:_keyvaluetable_
+LDFLAGS	Makefile	/^LDFLAGS = $/;"	m
+LDFLAGS	src/Makefile	/^LDFLAGS = $/;"	m
+LDFLAGS	src/cores/Makefile	/^LDFLAGS = $/;"	m
+LDFLAGS	src/cores/test/Makefile	/^LDFLAGS = $/;"	m
+LDFLAGS	src/public/Makefile	/^LDFLAGS = $/;"	m
+LEFT_ADC_PGA_CTRL	driver/tlv320aic31/tlv320aic31.h	46;"	d
+LEFT_DAC_POWER_SETUP	driver/tlv320aic31/tlv320aic31.h	43;"	d
+LEFT_DAC_VOL_CTRL	driver/tlv320aic31/tlv320aic31.h	41;"	d
+LEFT_LOP_OUTPUT_LEVEL_CTRL	driver/tlv320aic31/tlv320aic31.h	33;"	d
+LIBOBJS	Makefile	/^LIBOBJS = $/;"	m
+LIBOBJS	src/Makefile	/^LIBOBJS = $/;"	m
+LIBOBJS	src/cores/Makefile	/^LIBOBJS = $/;"	m
+LIBOBJS	src/cores/test/Makefile	/^LIBOBJS = $/;"	m
+LIBOBJS	src/public/Makefile	/^LIBOBJS = $/;"	m
+LIBRARIES	src/cores/Makefile	/^LIBRARIES = $(noinst_LIBRARIES)$/;"	m
+LIBRARIES	src/public/Makefile	/^LIBRARIES = $(noinst_LIBRARIES)$/;"	m
+LIBS	Makefile	/^LIBS = $/;"	m
+LIBS	src/Makefile	/^LIBS = $/;"	m
+LIBS	src/cores/Makefile	/^LIBS = $/;"	m
+LIBS	src/cores/test/Makefile	/^LIBS = $/;"	m
+LIBS	src/public/Makefile	/^LIBS = $/;"	m
+LIB_FLAG	src/cores/test/Makefile	/^LIB_FLAG = $(top_srcdir)\/src\/cores\/libcores.a$/;"	m
+LINE_OUT_L	driver/tlv320aic31/tlv320aic31.h	/^    LINE_OUT_L,$/;"	e	enum:Audio_Out_
+LINE_OUT_R	driver/tlv320aic31/tlv320aic31.h	/^    LINE_OUT_R=0,$/;"	e	enum:Audio_Out_
+LINK	src/Makefile	/^LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@$/;"	m
+LINK	src/cores/Makefile	/^LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@$/;"	m
+LINK	src/cores/test/Makefile	/^LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@$/;"	m
+LINK	src/public/Makefile	/^LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@$/;"	m
+LTLIBOBJS	Makefile	/^LTLIBOBJS = $/;"	m
+LTLIBOBJS	src/Makefile	/^LTLIBOBJS = $/;"	m
+LTLIBOBJS	src/cores/Makefile	/^LTLIBOBJS = $/;"	m
+LTLIBOBJS	src/cores/test/Makefile	/^LTLIBOBJS = $/;"	m
+LTLIBOBJS	src/public/Makefile	/^LTLIBOBJS = $/;"	m
+Line_Hpcom_Out_Ctrl	driver/tlv320aic31/tlv320aic31_def.h	/^}Line_Hpcom_Out_Ctrl;$/;"	t	typeref:union:__anon26
+List	src/cores/array_list.c	/^typedef struct _List List;$/;"	t	typeref:struct:_List	file:
+M	driver/gpio-i2c/Makefile	/^	make $(KERNEL_MAKE) M=$(PWD) clean $/;"	m
+M	driver/gpio-i2c/Makefile	/^	make $(KERNEL_MAKE) M=$(PWD) modules  $/;"	m
+MAKEINFO	Makefile	/^MAKEINFO = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run makeinfo$/;"	m
+MAKEINFO	src/Makefile	/^MAKEINFO = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run makeinfo$/;"	m
+MAKEINFO	src/cores/Makefile	/^MAKEINFO = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run makeinfo$/;"	m
+MAKEINFO	src/cores/test/Makefile	/^MAKEINFO = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run makeinfo$/;"	m
+MAKEINFO	src/public/Makefile	/^MAKEINFO = ${SHELL} \/home\/zhoumin\/luho\/project\/dvr\/missing --run makeinfo$/;"	m
+MAX_BUF_NUM	driver/74HC165/74hc165.c	28;"	d	file:
+MAX_BUF_NUM	driver/74ls165/74ls165.c	30;"	d	file:
+MAX_BUF_NUM	driver/74ls165/74ls165_o.c	27;"	d	file:
+MAX_CHN_NUM	driver/hal/devhal.h	79;"	d
+MAX_PROTOCOL_NUM	driver/hal/devhal.c	69;"	d	file:
+MAX_PROT_CHAR_SIZE	driver/hal/devhal.c	68;"	d	file:
+MAX_VIDEO_NUM	driver/hal/devhal.c	67;"	d	file:
+MKDIR_P	Makefile	/^MKDIR_P = \/bin\/mkdir -p$/;"	m
+MKDIR_P	src/Makefile	/^MKDIR_P = \/bin\/mkdir -p$/;"	m
+MKDIR_P	src/cores/Makefile	/^MKDIR_P = \/bin\/mkdir -p$/;"	m
+MKDIR_P	src/cores/test/Makefile	/^MKDIR_P = \/bin\/mkdir -p$/;"	m
+MKDIR_P	src/public/Makefile	/^MKDIR_P = \/bin\/mkdir -p$/;"	m
+MODEDETECTTB	driver/adv7441/adv7441.h	/^}MODEDETECTTB;$/;"	t	typeref:struct:_tagModeDetectTb
+NORMAL_INSTALL	Makefile	/^NORMAL_INSTALL = :$/;"	m
+NORMAL_INSTALL	src/Makefile	/^NORMAL_INSTALL = :$/;"	m
+NORMAL_INSTALL	src/cores/Makefile	/^NORMAL_INSTALL = :$/;"	m
+NORMAL_INSTALL	src/cores/test/Makefile	/^NORMAL_INSTALL = :$/;"	m
+NORMAL_INSTALL	src/public/Makefile	/^NORMAL_INSTALL = :$/;"	m
+NORMAL_UNINSTALL	Makefile	/^NORMAL_UNINSTALL = :$/;"	m
+NORMAL_UNINSTALL	src/Makefile	/^NORMAL_UNINSTALL = :$/;"	m
+NORMAL_UNINSTALL	src/cores/Makefile	/^NORMAL_UNINSTALL = :$/;"	m
+NORMAL_UNINSTALL	src/cores/test/Makefile	/^NORMAL_UNINSTALL = :$/;"	m
+NORMAL_UNINSTALL	src/public/Makefile	/^NORMAL_UNINSTALL = :$/;"	m
+NO_USE_74HC165	driver/gpio/hi_gpio.h	19;"	d
+NULL	driver/hal/hi_type.h	71;"	d
+OBJEXT	Makefile	/^OBJEXT = o$/;"	m
+OBJEXT	src/Makefile	/^OBJEXT = o$/;"	m
+OBJEXT	src/cores/Makefile	/^OBJEXT = o$/;"	m
+OBJEXT	src/cores/test/Makefile	/^OBJEXT = o$/;"	m
+OBJEXT	src/public/Makefile	/^OBJEXT = o$/;"	m
+OSDRV_MODULE_VERSION_STRING	driver/hiir/hiir.h	21;"	d
+OSDRV_MODULE_VERSION_STRING	driver/wtdg/hi_wdt.c	43;"	d	file:
+OUTPUT	driver/front_board/hi_key_gpio_driver.c	56;"	d	file:
+Observer	src/cores/observer.h	/^typedef struct _Observer Observer;$/;"	t	typeref:struct:_Observer
+ObserverDestroyFunc	src/cores/observer.h	/^typedef void (*ObserverDestroyFunc)(Observer *thiz);$/;"	t
+ObserverUpdateFunc	src/cores/observer.h	/^typedef Ret (*ObserverUpdateFunc)(Observer *thiz, void *data);$/;"	t
+Observer_destroy	src/cores/observer.h	/^static inline void Observer_destroy(Observer *thiz)$/;"	f
+Observer_update	src/cores/observer.h	/^static inline Ret Observer_update(Observer *thiz, void *data)$/;"	f
+PACKAGE	Makefile	/^PACKAGE = dvr$/;"	m
+PACKAGE	config.h	5;"	d
+PACKAGE	src/Makefile	/^PACKAGE = dvr$/;"	m
+PACKAGE	src/cores/Makefile	/^PACKAGE = dvr$/;"	m
+PACKAGE	src/cores/test/Makefile	/^PACKAGE = dvr$/;"	m
+PACKAGE	src/public/Makefile	/^PACKAGE = dvr$/;"	m
+PACKAGE_BUGREPORT	Makefile	/^PACKAGE_BUGREPORT = dcdcmin@gmail.com$/;"	m
+PACKAGE_BUGREPORT	config.h	8;"	d
+PACKAGE_BUGREPORT	src/Makefile	/^PACKAGE_BUGREPORT = dcdcmin@gmail.com$/;"	m
+PACKAGE_BUGREPORT	src/cores/Makefile	/^PACKAGE_BUGREPORT = dcdcmin@gmail.com$/;"	m
+PACKAGE_BUGREPORT	src/cores/test/Makefile	/^PACKAGE_BUGREPORT = dcdcmin@gmail.com$/;"	m
+PACKAGE_BUGREPORT	src/public/Makefile	/^PACKAGE_BUGREPORT = dcdcmin@gmail.com$/;"	m
+PACKAGE_NAME	Makefile	/^PACKAGE_NAME = dvr$/;"	m
+PACKAGE_NAME	config.h	11;"	d
+PACKAGE_NAME	src/Makefile	/^PACKAGE_NAME = dvr$/;"	m
+PACKAGE_NAME	src/cores/Makefile	/^PACKAGE_NAME = dvr$/;"	m
+PACKAGE_NAME	src/cores/test/Makefile	/^PACKAGE_NAME = dvr$/;"	m
+PACKAGE_NAME	src/public/Makefile	/^PACKAGE_NAME = dvr$/;"	m
+PACKAGE_STRING	Makefile	/^PACKAGE_STRING = dvr 0.1$/;"	m
+PACKAGE_STRING	config.h	14;"	d
+PACKAGE_STRING	src/Makefile	/^PACKAGE_STRING = dvr 0.1$/;"	m
+PACKAGE_STRING	src/cores/Makefile	/^PACKAGE_STRING = dvr 0.1$/;"	m
+PACKAGE_STRING	src/cores/test/Makefile	/^PACKAGE_STRING = dvr 0.1$/;"	m
+PACKAGE_STRING	src/public/Makefile	/^PACKAGE_STRING = dvr 0.1$/;"	m
+PACKAGE_TARNAME	Makefile	/^PACKAGE_TARNAME = dvr$/;"	m
+PACKAGE_TARNAME	config.h	17;"	d
+PACKAGE_TARNAME	src/Makefile	/^PACKAGE_TARNAME = dvr$/;"	m
+PACKAGE_TARNAME	src/cores/Makefile	/^PACKAGE_TARNAME = dvr$/;"	m
+PACKAGE_TARNAME	src/cores/test/Makefile	/^PACKAGE_TARNAME = dvr$/;"	m
+PACKAGE_TARNAME	src/public/Makefile	/^PACKAGE_TARNAME = dvr$/;"	m
+PACKAGE_VERSION	Makefile	/^PACKAGE_VERSION = 0.1$/;"	m
+PACKAGE_VERSION	config.h	20;"	d
+PACKAGE_VERSION	src/Makefile	/^PACKAGE_VERSION = 0.1$/;"	m
+PACKAGE_VERSION	src/cores/Makefile	/^PACKAGE_VERSION = 0.1$/;"	m
+PACKAGE_VERSION	src/cores/test/Makefile	/^PACKAGE_VERSION = 0.1$/;"	m
+PACKAGE_VERSION	src/public/Makefile	/^PACKAGE_VERSION = 0.1$/;"	m
+PATH_SEPARATOR	Makefile	/^PATH_SEPARATOR = :$/;"	m
+PATH_SEPARATOR	src/Makefile	/^PATH_SEPARATOR = :$/;"	m
+PATH_SEPARATOR	src/cores/Makefile	/^PATH_SEPARATOR = :$/;"	m
+PATH_SEPARATOR	src/cores/test/Makefile	/^PATH_SEPARATOR = :$/;"	m
+PATH_SEPARATOR	src/public/Makefile	/^PATH_SEPARATOR = :$/;"	m
+PCT_CALL_PRESET	driver/hal/devhal.c	/^	PCT_CALL_PRESET$/;"	e	enum:_ptzcmdtable_	file:
+PCT_CLR_PRESET	driver/hal/devhal.c	/^	PCT_CLR_PRESET,$/;"	e	enum:_ptzcmdtable_	file:
+PCT_DOWN	driver/hal/devhal.c	/^	PCT_DOWN,$/;"	e	enum:_ptzcmdtable_	file:
+PCT_FOCUS_DEC	driver/hal/devhal.c	/^	PCT_FOCUS_DEC,$/;"	e	enum:_ptzcmdtable_	file:
+PCT_FOCUS_INC	driver/hal/devhal.c	/^	PCT_FOCUS_INC,$/;"	e	enum:_ptzcmdtable_	file:
+PCT_IRIS_DEC	driver/hal/devhal.c	/^	PCT_IRIS_DEC,$/;"	e	enum:_ptzcmdtable_	file:
+PCT_IRIS_INC	driver/hal/devhal.c	/^	PCT_IRIS_INC,$/;"	e	enum:_ptzcmdtable_	file:
+PCT_LEFT	driver/hal/devhal.c	/^	PCT_LEFT,$/;"	e	enum:_ptzcmdtable_	file:
+PCT_LEFT_DOWN	driver/hal/devhal.c	/^	PCT_LEFT_DOWN,$/;"	e	enum:_ptzcmdtable_	file:
+PCT_LEFT_UP	driver/hal/devhal.c	/^	PCT_LEFT_UP,$/;"	e	enum:_ptzcmdtable_	file:
+PCT_RIGHT	driver/hal/devhal.c	/^	PCT_RIGHT,$/;"	e	enum:_ptzcmdtable_	file:
+PCT_RIGHT_DOWN	driver/hal/devhal.c	/^	PCT_RIGHT_DOWN,$/;"	e	enum:_ptzcmdtable_	file:
+PCT_RIGHT_UP	driver/hal/devhal.c	/^	PCT_RIGHT_UP,$/;"	e	enum:_ptzcmdtable_	file:
+PCT_SET_PRESET	driver/hal/devhal.c	/^	PCT_SET_PRESET,$/;"	e	enum:_ptzcmdtable_	file:
+PCT_STOP	driver/hal/devhal.c	/^	PCT_STOP,$/;"	e	enum:_ptzcmdtable_	file:
+PCT_UP	driver/hal/devhal.c	/^	PCT_UP,$/;"	e	enum:_ptzcmdtable_	file:
+PCT_ZOOM_DEC	driver/hal/devhal.c	/^	PCT_ZOOM_DEC,$/;"	e	enum:_ptzcmdtable_	file:
+PCT_ZOOM_INC	driver/hal/devhal.c	/^	PCT_ZOOM_INC,$/;"	e	enum:_ptzcmdtable_	file:
+PGAL_2_HPLCOM_VOL_CTRL	driver/tlv320aic31/tlv320aic31.h	20;"	d
+PGAL_2_HPLOUT_VOL_CTRL	driver/tlv320aic31/tlv320aic31.h	15;"	d
+PGAL_2_LEFT_LOP_VOL_CTRL	driver/tlv320aic31/tlv320aic31.h	31;"	d
+PGAR_2_HPLCOM_VOL_CTRL	driver/tlv320aic31/tlv320aic31.h	21;"	d
+PGAR_2_HPLOUT_VOL_CTRL	driver/tlv320aic31/tlv320aic31.h	16;"	d
+PGAR_2_HPRCOM_VOL_CTRL	driver/tlv320aic31/tlv320aic31.h	28;"	d
+PGAR_2_HPROUT_VOL_CTRL	driver/tlv320aic31/tlv320aic31.h	25;"	d
+PGAR_2_RIGHT_LOP_VOL_CTRL	driver/tlv320aic31/tlv320aic31.h	34;"	d
+POST_INSTALL	Makefile	/^POST_INSTALL = :$/;"	m
+POST_INSTALL	src/Makefile	/^POST_INSTALL = :$/;"	m
+POST_INSTALL	src/cores/Makefile	/^POST_INSTALL = :$/;"	m
+POST_INSTALL	src/cores/test/Makefile	/^POST_INSTALL = :$/;"	m
+POST_INSTALL	src/public/Makefile	/^POST_INSTALL = :$/;"	m
+POST_UNINSTALL	Makefile	/^POST_UNINSTALL = :$/;"	m
+POST_UNINSTALL	src/Makefile	/^POST_UNINSTALL = :$/;"	m
+POST_UNINSTALL	src/cores/Makefile	/^POST_UNINSTALL = :$/;"	m
+POST_UNINSTALL	src/cores/test/Makefile	/^POST_UNINSTALL = :$/;"	m
+POST_UNINSTALL	src/public/Makefile	/^POST_UNINSTALL = :$/;"	m
+PP_PELCO_D	driver/hal/devhal.c	/^	PP_PELCO_D,$/;"	e	enum:_ptzprotocol_	file:
+PP_PELCO_P	driver/hal/devhal.c	/^	PP_PELCO_P	$/;"	e	enum:_ptzprotocol_	file:
+PRE_INSTALL	Makefile	/^PRE_INSTALL = :$/;"	m
+PRE_INSTALL	src/Makefile	/^PRE_INSTALL = :$/;"	m
+PRE_INSTALL	src/cores/Makefile	/^PRE_INSTALL = :$/;"	m
+PRE_INSTALL	src/cores/test/Makefile	/^PRE_INSTALL = :$/;"	m
+PRE_INSTALL	src/public/Makefile	/^PRE_INSTALL = :$/;"	m
+PRE_UNINSTALL	Makefile	/^PRE_UNINSTALL = :$/;"	m
+PRE_UNINSTALL	src/Makefile	/^PRE_UNINSTALL = :$/;"	m
+PRE_UNINSTALL	src/cores/Makefile	/^PRE_UNINSTALL = :$/;"	m
+PRE_UNINSTALL	src/cores/test/Makefile	/^PRE_UNINSTALL = :$/;"	m
+PRE_UNINSTALL	src/public/Makefile	/^PRE_UNINSTALL = :$/;"	m
+PRIM_MODE	driver/adv7441/adv7441.h	75;"	d
+PROGRAMS	src/Makefile	/^PROGRAMS = $(noinst_PROGRAMS)$/;"	m
+PROGRAMS	src/cores/test/Makefile	/^PROGRAMS = $(noinst_PROGRAMS)$/;"	m
+PROGRAMS	src/public/Makefile	/^PROGRAMS = $(noinst_PROGRAMS)$/;"	m
+PTZ_DEV	driver/hal/devhal.c	61;"	d	file:
+PTZ_PROTOCOL_D	driver/hal/devhal.h	76;"	d
+PTZ_PROTOCOL_P	driver/hal/devhal.h	77;"	d
+PlaybackOrLoop	driver/TW28xx/tw2865.h	/^	unsigned char PlaybackOrLoop;   \/*0:playback; 1:loop*\/$/;"	m	struct:_tw2865_audio_output
+PlaybackOrLoop	driver/tw2865-16cif/tw2865.h	/^	unsigned char PlaybackOrLoop;   \/*0:playback; 1:loop*\/$/;"	m	struct:_tw2865_audio_output
+PlaybackOrLoop	driver/tw2865-8cif/tw2865.h	/^	unsigned char PlaybackOrLoop;   \/*0:playback; 1:loop*\/$/;"	m	struct:_tw2865_audio_output
+PrivInfo	src/cores/clocks_rtc.c	/^}PrivInfo;$/;"	t	typeref:struct:_PrivInfo	file:
+RANLIB	Makefile	/^RANLIB = arm-hismall-linux-ranlib$/;"	m
+RANLIB	src/Makefile	/^RANLIB = arm-hismall-linux-ranlib$/;"	m
+RANLIB	src/cores/Makefile	/^RANLIB = arm-hismall-linux-ranlib$/;"	m
+RANLIB	src/cores/test/Makefile	/^RANLIB = arm-hismall-linux-ranlib$/;"	m
+RANLIB	src/public/Makefile	/^RANLIB = arm-hismall-linux-ranlib$/;"	m
+RB_STANDARD_IDENTIFICATION_1	driver/adv7441/adv7441.h	70;"	d
+RB_STANDARD_IDENTIFICATION_2	driver/adv7441/adv7441.h	71;"	d
+RB_STANDARD_IDENTIFICATION_3	driver/adv7441/adv7441.h	72;"	d
+RB_STANDARD_IDENTIFICATION_4	driver/adv7441/adv7441.h	73;"	d
+READ_REG	driver/74HC165/74hc165.c	132;"	d	file:
+READ_REG	driver/74HC165/74hc165.c	25;"	d	file:
+READ_REG	driver/74ls165/74ls165.c	27;"	d	file:
+READ_REG	driver/74ls165/74ls165_o.c	25;"	d	file:
+READ_REG	driver/front_board/hi_key_gpio_driver.c	60;"	d	file:
+READ_REG	driver/gpio/hi_gpio.c	242;"	d	file:
+READ_REG	driver/gpio/hi_gpio.c	32;"	d	file:
+READ_REG	driver/hiir/hiir.c	67;"	d	file:
+RECURSIVE_CLEAN_TARGETS	Makefile	/^RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\\$/;"	m
+RECURSIVE_CLEAN_TARGETS	src/Makefile	/^RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\\$/;"	m
+RECURSIVE_CLEAN_TARGETS	src/cores/Makefile	/^RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\\$/;"	m
+RECURSIVE_TARGETS	Makefile	/^RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \\$/;"	m
+RECURSIVE_TARGETS	src/Makefile	/^RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \\$/;"	m
+RECURSIVE_TARGETS	src/cores/Makefile	/^RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \\$/;"	m
+REGTABLE	driver/adv7441/adv7441.h	/^}REGTABLE;$/;"	t	typeref:struct:_tagRegTable
+REPEAT_KEY_TIMEOUT	driver/front_board/hi_key_gpio_driver.c	38;"	d	file:
+RET_FAILED	src/public/public_typedef.h	/^	RET_FAILED, $/;"	e	enum:_Ret
+RET_INVALID_PARAMETER	src/public/public_typedef.h	/^	RET_INVALID_PARAMETER, $/;"	e	enum:_Ret
+RET_OK	src/public/public_typedef.h	/^	RET_OK,$/;"	e	enum:_Ret
+RGBSYS	driver/adv7441/adv7441.h	/^}RGBSYS;$/;"	t	typeref:enum:_tagRGBSys
+RIGHT_ADC_PGA_CTRL	driver/tlv320aic31/tlv320aic31.h	47;"	d
+RIGHT_DAC_POWER_SETUP	driver/tlv320aic31/tlv320aic31.h	44;"	d
+RIGHT_DAC_VOL_CTRL	driver/tlv320aic31/tlv320aic31.h	42;"	d
+RIGHT_LOP_OUTPUT_LEVEL_CTRL	driver/tlv320aic31/tlv320aic31.h	36;"	d
+RTC_DEV	driver/hal/devhal.c	53;"	d	file:
+RTC_DEV_NAME	src/cores/test/clocks_rtc_test.c	6;"	d	file:
+RTC_TIME_GET	driver/rtc/rtc_ds1339.h	6;"	d
+RTC_TIME_SET	driver/rtc/rtc_ds1339.h	7;"	d
+Ret	src/public/public_typedef.h	/^}Ret;$/;"	t	typeref:enum:_Ret
+RtcTimeConversionDateTime	src/cores/clocks_rtc.c	42;"	d	file:
+SAMPLE_INTERVAL	driver/74HC165/74hc165.c	21;"	d	file:
+SAMPLE_INTERVAL	driver/74ls165/74ls165.c	23;"	d	file:
+SAMPLE_INTERVAL	driver/74ls165/74ls165_o.c	21;"	d	file:
+SAMPLE_KEEP	driver/74HC165/74hc165.c	22;"	d	file:
+SAMPLE_KEEP	driver/74ls165/74ls165.c	24;"	d	file:
+SAMPLE_KEEP	driver/74ls165/74ls165_o.c	22;"	d	file:
+SCF_1080I50_1	driver/adv7441/adv7441.h	98;"	d
+SCF_1080I50_2	driver/adv7441/adv7441.h	99;"	d
+SCF_1080I60_1	driver/adv7441/adv7441.h	100;"	d
+SCF_1080I60_2	driver/adv7441/adv7441.h	101;"	d
+SCF_480I_1	driver/adv7441/adv7441.h	88;"	d
+SCF_480I_2	driver/adv7441/adv7441.h	89;"	d
+SCF_480P_1	driver/adv7441/adv7441.h	92;"	d
+SCF_480P_2	driver/adv7441/adv7441.h	93;"	d
+SCF_576I_1	driver/adv7441/adv7441.h	90;"	d
+SCF_576I_2	driver/adv7441/adv7441.h	91;"	d
+SCF_576P_1	driver/adv7441/adv7441.h	94;"	d
+SCF_576P_2	driver/adv7441/adv7441.h	95;"	d
+SCF_720P_1	driver/adv7441/adv7441.h	96;"	d
+SCF_720P_2	driver/adv7441/adv7441.h	97;"	d
+SCL	driver/gpio-i2c/gpio_i2c.c	28;"	d	file:
+SCL	driver/gpio-i2c/gpio_i2c.c	35;"	d	file:
+SDA	driver/gpio-i2c/gpio_i2c.c	29;"	d	file:
+SDA	driver/gpio-i2c/gpio_i2c.c	36;"	d	file:
+SDM_SEL	driver/adv7441/adv7441.h	76;"	d
+SDTI_DVALID	driver/adv7441/adv7441.h	60;"	d
+SET_ADC_SAMPLE	driver/tlv320aic31/tlv320aic31.h	37;"	d
+SET_ADV7441_REG	driver/adv7441/adv7441.h	6;"	d
+SET_CTRL_MODE	driver/tlv320aic31/tlv320aic31.h	40;"	d
+SET_DAC_SAMPLE	driver/tlv320aic31/tlv320aic31.h	38;"	d
+SET_DATA_LENGTH	driver/tlv320aic31/tlv320aic31.h	39;"	d
+SET_MAKE	Makefile	/^SET_MAKE = $/;"	m
+SET_MAKE	src/Makefile	/^SET_MAKE = $/;"	m
+SET_MAKE	src/cores/Makefile	/^SET_MAKE = $/;"	m
+SET_MAKE	src/cores/test/Makefile	/^SET_MAKE = $/;"	m
+SET_MAKE	src/public/Makefile	/^SET_MAKE = $/;"	m
+SET_TRANSFER_MODE	driver/tlv320aic31/tlv320aic31.h	50;"	d
+SHAKE_PROOF_TIME	driver/74HC165/74hc165.c	19;"	d	file:
+SHAKE_PROOF_TIME	driver/74ls165/74ls165.c	21;"	d	file:
+SHAKE_PROOF_TIME	driver/74ls165/74ls165_o.c	19;"	d	file:
+SHAKE_PROOF_TIME	driver/front_board/hi_key_gpio_driver.c	36;"	d	file:
+SHELL	Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	src/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	src/cores/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	src/cores/test/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	src/public/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SOFT_RESET_CTRL	driver/tlv320aic31/tlv320aic31.h	49;"	d
+SOURCE	driver/adv7441/adv7441.h	/^}SOURCE;$/;"	t	typeref:enum:_tagSource
+SOURCES	Makefile	/^SOURCES =$/;"	m
+SOURCES	src/Makefile	/^SOURCES = $(dvr_SOURCES)$/;"	m
+SOURCES	src/cores/Makefile	/^SOURCES = $(libcores_a_SOURCES)$/;"	m
+SOURCES	src/cores/test/Makefile	/^SOURCES = $(array_list_test_SOURCES) $(clocks_rtc_test_SOURCES)$/;"	m
+SOURCES	src/public/Makefile	/^SOURCES = $(libpublic_a_SOURCES) public_function_test.c$/;"	m
+STATUS1	driver/adv7441/adv7441.h	67;"	d
+STATUS1_DETECT_SYSTEM	driver/adv7441/adv7441.h	48;"	d
+STATUS1_IN_LOCK	driver/adv7441/adv7441.h	47;"	d
+STATUS1_NTSC_443	driver/adv7441/adv7441.h	50;"	d
+STATUS1_NTSC_M	driver/adv7441/adv7441.h	49;"	d
+STATUS1_PAL_60	driver/adv7441/adv7441.h	52;"	d
+STATUS1_PAL_BGHID	driver/adv7441/adv7441.h	53;"	d
+STATUS1_PAL_M	driver/adv7441/adv7441.h	51;"	d
+STATUS1_PAL_N	driver/adv7441/adv7441.h	55;"	d
+STATUS1_SECAM	driver/adv7441/adv7441.h	54;"	d
+STATUS1_SECAM_525	driver/adv7441/adv7441.h	56;"	d
+STATUS3	driver/adv7441/adv7441.h	68;"	d
+STATUS3_INST_HLOCK	driver/adv7441/adv7441.h	46;"	d
+STRFMT_ADDR32	driver/gpio-i2c/strfunc.h	30;"	d
+STRFMT_ADDR32_2	driver/gpio-i2c/strfunc.h	31;"	d
+STRIP	Makefile	/^STRIP = arm-hismall-linux-strip$/;"	m
+STRIP	src/Makefile	/^STRIP = arm-hismall-linux-strip$/;"	m
+STRIP	src/cores/Makefile	/^STRIP = arm-hismall-linux-strip$/;"	m
+STRIP	src/cores/test/Makefile	/^STRIP = arm-hismall-linux-strip$/;"	m
+STRIP	src/public/Makefile	/^STRIP = arm-hismall-linux-strip$/;"	m
+SUBDIRS	Makefile	/^SUBDIRS = .\/src\/cores .\/src$/;"	m
+SUBDIRS	src/Makefile	/^SUBDIRS = . cores public$/;"	m
+SUBDIRS	src/cores/Makefile	/^SUBDIRS = . test$/;"	m
+SVIDEO_IN	driver/adv7441/adv7441.h	/^	SVIDEO_IN,$/;"	e	enum:_tagSource
+SYS_CONTROL_REG	driver/front_board/hi_key_gpio_driver.c	21;"	d	file:
+SendCmdBySerial	driver/hal/devhal.c	/^ HI_S32 SendCmdBySerial(HI_U8 *pCmdBuffer, HI_S32 len)$/;"	f
+Serial_Int_Ctrl	driver/tlv320aic31/tlv320aic31_def.h	/^}Serial_Int_Ctrl;$/;"	t	typeref:union:__anon24
+StrToNumber	driver/gpio-i2c/strfunc.c	/^int StrToNumber(char *str , unsigned int * pulValue)$/;"	f
+TIMER_BGLOAD_OFFSET	driver/front_board/hi_key_gpio_driver.c	32;"	d	file:
+TIMER_CONTROL_OFFSET	driver/front_board/hi_key_gpio_driver.c	28;"	d	file:
+TIMER_EXPIRES_TIME	driver/74HC165/74hc165.c	20;"	d	file:
+TIMER_EXPIRES_TIME	driver/74ls165/74ls165.c	22;"	d	file:
+TIMER_EXPIRES_TIME	driver/74ls165/74ls165_o.c	20;"	d	file:
+TIMER_EXPIRES_TIME	driver/front_board/hi_key_gpio_driver.c	37;"	d	file:
+TIMER_GROUP2_IRQ_NUM	driver/front_board/hi_key_gpio_driver.c	25;"	d	file:
+TIMER_GROUP2_REG	driver/front_board/hi_key_gpio_driver.c	22;"	d	file:
+TIMER_INTCLR_OFFSET	driver/front_board/hi_key_gpio_driver.c	29;"	d	file:
+TIMER_LOAD_OFFSET	driver/front_board/hi_key_gpio_driver.c	26;"	d	file:
+TIMER_MIS_OFFSET	driver/front_board/hi_key_gpio_driver.c	31;"	d	file:
+TIMER_RIS_OFFSET	driver/front_board/hi_key_gpio_driver.c	30;"	d	file:
+TIMER_VALUE_OFFSET	driver/front_board/hi_key_gpio_driver.c	27;"	d	file:
+TLV320AIC31_REG_DUMP	driver/tlv320aic31/tlv320aic31.h	48;"	d
+TW2865A_I2C_ADDR	driver/TW28xx/tw2865.c	66;"	d	file:
+TW2865A_I2C_ADDR	driver/tw2865-16cif/tw2865.c	66;"	d	file:
+TW2865A_I2C_ADDR	driver/tw2865-8cif/tw2865.c	66;"	d	file:
+TW2865B_I2C_ADDR	driver/TW28xx/tw2865.c	67;"	d	file:
+TW2865B_I2C_ADDR	driver/tw2865-16cif/tw2865.c	67;"	d	file:
+TW2865B_I2C_ADDR	driver/tw2865-8cif/tw2865.c	67;"	d	file:
+TW2865CMD_READ_REG	driver/TW28xx/tw2865.h	98;"	d
+TW2865CMD_READ_REG	driver/tw2865-16cif/tw2865.h	98;"	d
+TW2865CMD_READ_REG	driver/tw2865-8cif/tw2865.h	98;"	d
+TW2865CMD_WRITE_REG	driver/TW28xx/tw2865.h	99;"	d
+TW2865CMD_WRITE_REG	driver/tw2865-16cif/tw2865.h	99;"	d
+TW2865CMD_WRITE_REG	driver/tw2865-8cif/tw2865.h	99;"	d
+TW2865C_I2C_ADDR	driver/TW28xx/tw2865.c	68;"	d	file:
+TW2865C_I2C_ADDR	driver/tw2865-16cif/tw2865.c	68;"	d	file:
+TW2865C_I2C_ADDR	driver/tw2865-8cif/tw2865.c	68;"	d	file:
+TW2865D_I2C_ADDR	driver/TW28xx/tw2865.c	69;"	d	file:
+TW2865D_I2C_ADDR	driver/tw2865-16cif/tw2865.c	69;"	d	file:
+TW2865D_I2C_ADDR	driver/tw2865-8cif/tw2865.c	69;"	d	file:
+TW2865_1D1_MODE	driver/TW28xx/tw2865.h	40;"	d
+TW2865_1D1_MODE	driver/tw2865-16cif/tw2865.h	40;"	d
+TW2865_1D1_MODE	driver/tw2865-8cif/tw2865.h	40;"	d
+TW2865_2D1_MODE	driver/TW28xx/tw2865.h	41;"	d
+TW2865_2D1_MODE	driver/tw2865-16cif/tw2865.h	41;"	d
+TW2865_2D1_MODE	driver/tw2865-8cif/tw2865.h	41;"	d
+TW2865_4CIF_MODE	driver/TW28xx/tw2865.h	42;"	d
+TW2865_4CIF_MODE	driver/tw2865-16cif/tw2865.h	42;"	d
+TW2865_4CIF_MODE	driver/tw2865-8cif/tw2865.h	42;"	d
+TW2865_4D1_MODE	driver/TW28xx/tw2865.h	43;"	d
+TW2865_4D1_MODE	driver/tw2865-16cif/tw2865.h	43;"	d
+TW2865_4D1_MODE	driver/tw2865-8cif/tw2865.h	43;"	d
+TW2865_AUTO	driver/TW28xx/tw2865.h	11;"	d
+TW2865_AUTO	driver/tw2865-16cif/tw2865.h	11;"	d
+TW2865_AUTO	driver/tw2865-8cif/tw2865.h	11;"	d
+TW2865_CHIP_NUM	driver/TW28xx/tw2865.c	64;"	d	file:
+TW2865_CHIP_NUM	driver/hal/devhal.c	49;"	d	file:
+TW2865_CHIP_NUM	driver/tw2865-16cif/tw2865.c	64;"	d	file:
+TW2865_CHIP_NUM	driver/tw2865-8cif/tw2865.c	64;"	d	file:
+TW2865_FIRST_STAGE_CHIP	driver/TW28xx/tw2865.h	13;"	d
+TW2865_FIRST_STAGE_CHIP	driver/tw2865-16cif/tw2865.h	13;"	d
+TW2865_FIRST_STAGE_CHIP	driver/tw2865-8cif/tw2865.h	13;"	d
+TW2865_GET_IMAGE_ADJUST	driver/TW28xx/tw2865.h	102;"	d
+TW2865_GET_IMAGE_ADJUST	driver/tw2865-16cif/tw2865.h	102;"	d
+TW2865_GET_IMAGE_ADJUST	driver/tw2865-8cif/tw2865.h	102;"	d
+TW2865_GET_VIDEO_LOSS	driver/TW28xx/tw2865.h	100;"	d
+TW2865_GET_VIDEO_LOSS	driver/tw2865-16cif/tw2865.h	100;"	d
+TW2865_GET_VIDEO_LOSS	driver/tw2865-8cif/tw2865.h	100;"	d
+TW2865_GET_VIDEO_NORM	driver/TW28xx/tw2865.h	104;"	d
+TW2865_GET_VIDEO_NORM	driver/tw2865-16cif/tw2865.h	104;"	d
+TW2865_GET_VIDEO_NORM	driver/tw2865-8cif/tw2865.h	104;"	d
+TW2865_I2C_ADDR	driver/TW28xx/tw2865.c	80;"	d	file:
+TW2865_I2C_ADDR	driver/tw2865-16cif/tw2865.c	75;"	d	file:
+TW2865_I2C_ADDR	driver/tw2865-8cif/tw2865.c	80;"	d	file:
+TW2865_INVALID_CHN	driver/TW28xx/tw2865.h	14;"	d
+TW2865_INVALID_CHN	driver/tw2865-16cif/tw2865.h	14;"	d
+TW2865_INVALID_CHN	driver/tw2865-8cif/tw2865.h	14;"	d
+TW2865_INVALID_MODE	driver/TW28xx/tw2865.h	12;"	d
+TW2865_INVALID_MODE	driver/tw2865-16cif/tw2865.h	12;"	d
+TW2865_INVALID_MODE	driver/tw2865-8cif/tw2865.h	12;"	d
+TW2865_IOC_MAGIC	driver/TW28xx/tw2865.h	96;"	d
+TW2865_IOC_MAGIC	driver/tw2865-16cif/tw2865.h	96;"	d
+TW2865_IOC_MAGIC	driver/tw2865-8cif/tw2865.h	96;"	d
+TW2865_NTSC	driver/TW28xx/tw2865.h	9;"	d
+TW2865_NTSC	driver/tw2865-16cif/tw2865.h	9;"	d
+TW2865_NTSC	driver/tw2865-8cif/tw2865.h	9;"	d
+TW2865_PAL	driver/TW28xx/tw2865.h	10;"	d
+TW2865_PAL	driver/tw2865-16cif/tw2865.h	10;"	d
+TW2865_PAL	driver/tw2865-8cif/tw2865.h	10;"	d
+TW2865_SAMPLE_RATE_16000	driver/TW28xx/tw2865.h	/^	TW2865_SAMPLE_RATE_16000,$/;"	e	enum:_tw2865_audio_samplerate
+TW2865_SAMPLE_RATE_16000	driver/tw2865-16cif/tw2865.h	/^	TW2865_SAMPLE_RATE_16000,$/;"	e	enum:_tw2865_audio_samplerate
+TW2865_SAMPLE_RATE_16000	driver/tw2865-8cif/tw2865.h	/^	TW2865_SAMPLE_RATE_16000,$/;"	e	enum:_tw2865_audio_samplerate
+TW2865_SAMPLE_RATE_32000	driver/TW28xx/tw2865.h	/^	TW2865_SAMPLE_RATE_32000,$/;"	e	enum:_tw2865_audio_samplerate
+TW2865_SAMPLE_RATE_32000	driver/tw2865-16cif/tw2865.h	/^	TW2865_SAMPLE_RATE_32000,$/;"	e	enum:_tw2865_audio_samplerate
+TW2865_SAMPLE_RATE_32000	driver/tw2865-8cif/tw2865.h	/^	TW2865_SAMPLE_RATE_32000,$/;"	e	enum:_tw2865_audio_samplerate
+TW2865_SAMPLE_RATE_44100	driver/TW28xx/tw2865.h	/^	TW2865_SAMPLE_RATE_44100,$/;"	e	enum:_tw2865_audio_samplerate
+TW2865_SAMPLE_RATE_44100	driver/tw2865-16cif/tw2865.h	/^	TW2865_SAMPLE_RATE_44100,$/;"	e	enum:_tw2865_audio_samplerate
+TW2865_SAMPLE_RATE_44100	driver/tw2865-8cif/tw2865.h	/^	TW2865_SAMPLE_RATE_44100,$/;"	e	enum:_tw2865_audio_samplerate
+TW2865_SAMPLE_RATE_48000	driver/TW28xx/tw2865.h	/^	TW2865_SAMPLE_RATE_48000,$/;"	e	enum:_tw2865_audio_samplerate
+TW2865_SAMPLE_RATE_48000	driver/tw2865-16cif/tw2865.h	/^	TW2865_SAMPLE_RATE_48000,$/;"	e	enum:_tw2865_audio_samplerate
+TW2865_SAMPLE_RATE_48000	driver/tw2865-8cif/tw2865.h	/^	TW2865_SAMPLE_RATE_48000,$/;"	e	enum:_tw2865_audio_samplerate
+TW2865_SAMPLE_RATE_8000	driver/TW28xx/tw2865.h	/^	TW2865_SAMPLE_RATE_8000,$/;"	e	enum:_tw2865_audio_samplerate
+TW2865_SAMPLE_RATE_8000	driver/tw2865-16cif/tw2865.h	/^	TW2865_SAMPLE_RATE_8000,$/;"	e	enum:_tw2865_audio_samplerate
+TW2865_SAMPLE_RATE_8000	driver/tw2865-8cif/tw2865.h	/^	TW2865_SAMPLE_RATE_8000,$/;"	e	enum:_tw2865_audio_samplerate
+TW2865_SAMPLE_RATE_BUTT	driver/TW28xx/tw2865.h	/^	TW2865_SAMPLE_RATE_BUTT$/;"	e	enum:_tw2865_audio_samplerate
+TW2865_SAMPLE_RATE_BUTT	driver/tw2865-16cif/tw2865.h	/^	TW2865_SAMPLE_RATE_BUTT$/;"	e	enum:_tw2865_audio_samplerate
+TW2865_SAMPLE_RATE_BUTT	driver/tw2865-8cif/tw2865.h	/^	TW2865_SAMPLE_RATE_BUTT$/;"	e	enum:_tw2865_audio_samplerate
+TW2865_SET_AUDIO_DA_MUTE	driver/TW28xx/tw2865.h	108;"	d
+TW2865_SET_AUDIO_DA_MUTE	driver/tw2865-16cif/tw2865.h	108;"	d
+TW2865_SET_AUDIO_DA_MUTE	driver/tw2865-8cif/tw2865.h	108;"	d
+TW2865_SET_AUDIO_DA_VOLUME	driver/TW28xx/tw2865.h	109;"	d
+TW2865_SET_AUDIO_DA_VOLUME	driver/tw2865-16cif/tw2865.h	109;"	d
+TW2865_SET_AUDIO_DA_VOLUME	driver/tw2865-8cif/tw2865.h	109;"	d
+TW2865_SET_AUDIO_PLAYBACK	driver/TW28xx/tw2865.h	107;"	d
+TW2865_SET_AUDIO_PLAYBACK	driver/tw2865-16cif/tw2865.h	107;"	d
+TW2865_SET_AUDIO_PLAYBACK	driver/tw2865-8cif/tw2865.h	107;"	d
+TW2865_SET_BRIGHT	driver/TW28xx/tw2865.h	62;"	d
+TW2865_SET_BRIGHT	driver/tw2865-16cif/tw2865.h	62;"	d
+TW2865_SET_BRIGHT	driver/tw2865-8cif/tw2865.h	62;"	d
+TW2865_SET_CONTRAST	driver/TW28xx/tw2865.h	61;"	d
+TW2865_SET_CONTRAST	driver/tw2865-16cif/tw2865.h	61;"	d
+TW2865_SET_CONTRAST	driver/tw2865-8cif/tw2865.h	61;"	d
+TW2865_SET_HUE	driver/TW28xx/tw2865.h	60;"	d
+TW2865_SET_HUE	driver/tw2865-16cif/tw2865.h	60;"	d
+TW2865_SET_HUE	driver/tw2865-8cif/tw2865.h	60;"	d
+TW2865_SET_IMAGE_ADJUST	driver/TW28xx/tw2865.h	101;"	d
+TW2865_SET_IMAGE_ADJUST	driver/tw2865-16cif/tw2865.h	101;"	d
+TW2865_SET_IMAGE_ADJUST	driver/tw2865-8cif/tw2865.h	101;"	d
+TW2865_SET_SAMPLE_RATE	driver/TW28xx/tw2865.h	106;"	d
+TW2865_SET_SAMPLE_RATE	driver/tw2865-16cif/tw2865.h	106;"	d
+TW2865_SET_SAMPLE_RATE	driver/tw2865-8cif/tw2865.h	106;"	d
+TW2865_SET_SATURATION	driver/TW28xx/tw2865.h	63;"	d
+TW2865_SET_SATURATION	driver/tw2865-16cif/tw2865.h	63;"	d
+TW2865_SET_SATURATION	driver/tw2865-8cif/tw2865.h	63;"	d
+TW2865_SET_VIDEO_NORM	driver/TW28xx/tw2865.h	103;"	d
+TW2865_SET_VIDEO_NORM	driver/tw2865-16cif/tw2865.h	103;"	d
+TW2865_SET_VIDEO_NORM	driver/tw2865-8cif/tw2865.h	103;"	d
+TW2865_SET_WORK_MODE	driver/TW28xx/tw2865.h	105;"	d
+TW2865_SET_WORK_MODE	driver/tw2865-16cif/tw2865.h	105;"	d
+TW2865_SET_WORK_MODE	driver/tw2865-8cif/tw2865.h	105;"	d
+TW2866_DEV	driver/hal/devhal.c	70;"	d	file:
+ThreadFunction	src/public/public_function.h	/^typedef void *(*ThreadFunction)(void *para);$/;"	t
+UPDATE_READ	driver/74HC165/74hc165.c	/^static inline void UPDATE_READ(VALUE_BUF_S *pbuf)$/;"	f	file:
+UPDATE_READ	driver/74ls165/74ls165.c	/^static inline void UPDATE_READ(VALUE_BUF_S *pbuf)$/;"	f	file:
+UPDATE_READ	driver/74ls165/74ls165_o.c	/^static inline void UPDATE_READ(VALUE_BUF_S *pbuf)$/;"	f	file:
+UPDATE_WRITE	driver/74HC165/74hc165.c	/^static inline void UPDATE_WRITE(VALUE_BUF_S *pbuf)$/;"	f	file:
+UPDATE_WRITE	driver/74ls165/74ls165.c	/^static inline void UPDATE_WRITE(VALUE_BUF_S *pbuf)$/;"	f	file:
+UPDATE_WRITE	driver/74ls165/74ls165_o.c	/^static inline void UPDATE_WRITE(VALUE_BUF_S *pbuf)$/;"	f	file:
+USE_PTZ_HAL	driver/hal/devhal.h	74;"	d
+USE_SENSOR_HAL	driver/hal/devhal.h	73;"	d
+VALUE_BUF_S	driver/74HC165/74hc165.c	/^}VALUE_BUF_S;$/;"	t	typeref:struct:__anon14	file:
+VALUE_BUF_S	driver/74ls165/74ls165.c	/^}VALUE_BUF_S;$/;"	t	typeref:struct:__anon12	file:
+VALUE_BUF_S	driver/74ls165/74ls165_o.c	/^}VALUE_BUF_S;$/;"	t	typeref:struct:__anon13	file:
+VERSION	Makefile	/^VERSION = 1.0$/;"	m
+VERSION	config.h	23;"	d
+VERSION	src/Makefile	/^VERSION = 1.0$/;"	m
+VERSION	src/cores/Makefile	/^VERSION = 1.0$/;"	m
+VERSION	src/cores/test/Makefile	/^VERSION = 1.0$/;"	m
+VERSION	src/public/Makefile	/^VERSION = 1.0$/;"	m
+VGA_HDMI_GPIO_BIT	driver/hal/devhal.c	2489;"	d	file:
+VGA_HDMI_GPIO_GROUP	driver/hal/devhal.c	2488;"	d	file:
+VGA_IN	driver/adv7441/adv7441.h	/^	VGA_IN,$/;"	e	enum:_tagSource
+VIDEO_FORMAT_1080I_60HZ	driver/adv7441/adv7441.h	/^    VIDEO_FORMAT_1080I_60HZ,    $/;"	e	enum:_tagADV7441_VIDEO_FORMAT_E
+VIDEO_FORMAT_720P_60HZ	driver/adv7441/adv7441.h	/^	VIDEO_FORMAT_720P_60HZ,$/;"	e	enum:_tagADV7441_VIDEO_FORMAT_E
+VIDEO_MODE_AUTO	driver/adv7441/video_def.h	21;"	d
+VIDEO_MODE_CCIR601	driver/adv7441/video_def.h	14;"	d
+VIDEO_MODE_CCIR656	driver/adv7441/video_def.h	13;"	d
+VIDEO_MODE_LCD	driver/adv7441/video_def.h	15;"	d
+VIDEO_MODE_MASTER	driver/adv7441/video_def.h	23;"	d
+VIDEO_MODE_SECAM	driver/adv7441/video_def.h	20;"	d
+VIDEO_MODE_SLAVER	driver/adv7441/video_def.h	24;"	d
+VIDEO_NORM_NTSC	driver/adv7441/video_def.h	18;"	d
+VIDEO_NORM_PAL	driver/adv7441/video_def.h	17;"	d
+VIDEO_NORM_SUPPORT	driver/adv7441/video_def.h	19;"	d
+WATCHDOG_IOCTL_BASE	driver/wtdg/watchdog.h	15;"	d
+WATCHDOG_MINOR	driver/wtdg/hi_wdt.c	/^MODULE_ALIAS_MISCDEV(WATCHDOG_MINOR);$/;"	v
+WATCHDOG_NOWAYOUT	driver/wtdg/watchdog.h	57;"	d
+WATCHDOG_NOWAYOUT	driver/wtdg/watchdog.h	59;"	d
+WDIOC_GETBOOTSTATUS	driver/wtdg/watchdog.h	25;"	d
+WDIOC_GETPRETIMEOUT	driver/wtdg/watchdog.h	32;"	d
+WDIOC_GETSTATUS	driver/wtdg/watchdog.h	24;"	d
+WDIOC_GETSUPPORT	driver/wtdg/watchdog.h	23;"	d
+WDIOC_GETTEMP	driver/wtdg/watchdog.h	26;"	d
+WDIOC_GETTIMELEFT	driver/wtdg/watchdog.h	33;"	d
+WDIOC_GETTIMEOUT	driver/wtdg/watchdog.h	30;"	d
+WDIOC_KEEPALIVE	driver/wtdg/watchdog.h	28;"	d
+WDIOC_SETOPTIONS	driver/wtdg/watchdog.h	27;"	d
+WDIOC_SETPRETIMEOUT	driver/wtdg/watchdog.h	31;"	d
+WDIOC_SETTIMEOUT	driver/wtdg/watchdog.h	29;"	d
+WDIOF_CARDRESET	driver/wtdg/watchdog.h	43;"	d
+WDIOF_EXTERN1	driver/wtdg/watchdog.h	40;"	d
+WDIOF_EXTERN2	driver/wtdg/watchdog.h	41;"	d
+WDIOF_FANFAULT	driver/wtdg/watchdog.h	39;"	d
+WDIOF_KEEPALIVEPING	driver/wtdg/watchdog.h	48;"	d
+WDIOF_MAGICCLOSE	driver/wtdg/watchdog.h	46;"	d
+WDIOF_OVERHEAT	driver/wtdg/watchdog.h	38;"	d
+WDIOF_POWEROVER	driver/wtdg/watchdog.h	44;"	d
+WDIOF_POWERUNDER	driver/wtdg/watchdog.h	42;"	d
+WDIOF_PRETIMEOUT	driver/wtdg/watchdog.h	47;"	d
+WDIOF_SETTIMEOUT	driver/wtdg/watchdog.h	45;"	d
+WDIOF_UNKNOWN	driver/wtdg/watchdog.h	35;"	d
+WDIOS_DISABLECARD	driver/wtdg/watchdog.h	50;"	d
+WDIOS_ENABLECARD	driver/wtdg/watchdog.h	51;"	d
+WDIOS_TEMPPANIC	driver/wtdg/watchdog.h	52;"	d
+WDIOS_UNKNOWN	driver/wtdg/watchdog.h	36;"	d
+WDT_DEV	driver/hal/devhal.c	51;"	d	file:
+WK_FRIDAY	src/public/public_typedef.h	/^    WK_FRIDAY,$/;"	e	enum:_Week
+WK_MONDAY	src/public/public_typedef.h	/^    WK_MONDAY,$/;"	e	enum:_Week
+WK_SATURDAY	src/public/public_typedef.h	/^    WK_SATURDAY$/;"	e	enum:_Week
+WK_SUNDAY	src/public/public_typedef.h	/^    WK_SUNDAY,$/;"	e	enum:_Week
+WK_THURSDAY	src/public/public_typedef.h	/^    WK_THURSDAY,$/;"	e	enum:_Week
+WK_TUESDAY	src/public/public_typedef.h	/^    WK_TUESDAY,$/;"	e	enum:_Week
+WK_WEDNESDAY	src/public/public_typedef.h	/^    WK_WEDNESDAY,$/;"	e	enum:_Week
+WRITE_REG	driver/74HC165/74hc165.c	131;"	d	file:
+WRITE_REG	driver/74HC165/74hc165.c	24;"	d	file:
+WRITE_REG	driver/74ls165/74ls165.c	26;"	d	file:
+WRITE_REG	driver/74ls165/74ls165_o.c	24;"	d	file:
+WRITE_REG	driver/front_board/hi_key_gpio_driver.c	59;"	d	file:
+WRITE_REG	driver/gpio/hi_gpio.c	241;"	d	file:
+WRITE_REG	driver/gpio/hi_gpio.c	31;"	d	file:
+WRITE_REG	driver/hiir/hiir.c	66;"	d	file:
+Week	src/public/public_typedef.h	/^}Week;$/;"	t	typeref:enum:_Week
+YCBCRSYS	driver/adv7441/adv7441.h	/^}YCBCRSYS;$/;"	t	typeref:enum:_tagYcbcrSys
+YCBCR_IN	driver/adv7441/adv7441.h	/^	YCBCR_IN,$/;"	e	enum:_tagSource
+_74HC165_GPIO	driver/74HC165/74hc165.c	78;"	d	file:
+_74LS165_GPIO	driver/74ls165/74ls165.c	80;"	d	file:
+_74LS165_GPIO	driver/74ls165/74ls165_o.c	75;"	d	file:
+_74hc165_exit	driver/74HC165/74hc165.c	/^module_exit(_74hc165_exit);$/;"	v
+_74hc165_exit	driver/74HC165/74hc165.c	/^static void __exit _74hc165_exit(void)$/;"	f	file:
+_74hc165_fops	driver/74HC165/74hc165.c	/^static struct file_operations _74hc165_fops = {$/;"	v	typeref:struct:file_operations	file:
+_74hc165_handler	driver/74HC165/74hc165.c	/^static void  _74hc165_handler(unsigned long l)$/;"	f	file:
+_74hc165_init	driver/74HC165/74hc165.c	/^module_init(_74hc165_init);$/;"	v
+_74hc165_init	driver/74HC165/74hc165.c	/^static int __init _74hc165_init(void)$/;"	f	file:
+_74hc165_ioctl	driver/74HC165/74hc165.c	/^static int _74hc165_ioctl(struct inode *inode, struct file *filp, unsigned int cmd, unsigned long arg)$/;"	f	file:
+_74hc165_open	driver/74HC165/74hc165.c	/^static int _74hc165_open(struct inode *inode, struct file *filp)$/;"	f	file:
+_74hc165_release	driver/74HC165/74hc165.c	/^static int _74hc165_release(struct inode *inode, struct file *filp)$/;"	f	file:
+_74ls165_exit	driver/74ls165/74ls165.c	/^module_exit(_74ls165_exit);$/;"	v
+_74ls165_exit	driver/74ls165/74ls165.c	/^static void __exit _74ls165_exit(void)$/;"	f	file:
+_74ls165_exit	driver/74ls165/74ls165_o.c	/^module_exit(_74ls165_exit);$/;"	v
+_74ls165_exit	driver/74ls165/74ls165_o.c	/^static void __exit _74ls165_exit(void)$/;"	f	file:
+_74ls165_fops	driver/74ls165/74ls165.c	/^static struct file_operations _74ls165_fops = {$/;"	v	typeref:struct:file_operations	file:
+_74ls165_fops	driver/74ls165/74ls165_o.c	/^static struct file_operations _74ls165_fops = {$/;"	v	typeref:struct:file_operations	file:
+_74ls165_handler	driver/74ls165/74ls165.c	/^static void  _74ls165_handler(unsigned long l)$/;"	f	file:
+_74ls165_handler	driver/74ls165/74ls165_o.c	/^static void  _74ls165_handler(unsigned long l)$/;"	f	file:
+_74ls165_init	driver/74ls165/74ls165.c	/^module_init(_74ls165_init);$/;"	v
+_74ls165_init	driver/74ls165/74ls165.c	/^static int __init _74ls165_init(void)$/;"	f	file:
+_74ls165_init	driver/74ls165/74ls165_o.c	/^module_init(_74ls165_init);$/;"	v
+_74ls165_init	driver/74ls165/74ls165_o.c	/^static int __init _74ls165_init(void)$/;"	f	file:
+_74ls165_ioctl	driver/74ls165/74ls165.c	/^static int _74ls165_ioctl(struct inode *inode, struct file *filp, unsigned int cmd, unsigned long arg)$/;"	f	file:
+_74ls165_ioctl	driver/74ls165/74ls165_o.c	/^static int _74ls165_ioctl(struct inode *inode, struct file *filp, unsigned int cmd, unsigned long arg)$/;"	f	file:
+_74ls165_open	driver/74ls165/74ls165.c	/^static int _74ls165_open(struct inode *inode, struct file *filp)$/;"	f	file:
+_74ls165_open	driver/74ls165/74ls165_o.c	/^static int _74ls165_open(struct inode *inode, struct file *filp)$/;"	f	file:
+_74ls165_release	driver/74ls165/74ls165.c	/^static int _74ls165_release(struct inode *inode, struct file *filp)$/;"	f	file:
+_74ls165_release	driver/74ls165/74ls165_o.c	/^static int _74ls165_release(struct inode *inode, struct file *filp)$/;"	f	file:
+_ArrayList	src/cores/array_list.c	/^struct _ArrayList$/;"	s	file:
+_Clocks	src/cores/clocks.h	/^struct _Clocks$/;"	s
+_ClocksInfo	src/cores/clocks.c	/^struct _ClocksInfo $/;"	s	file:
+_DEV_HAL_H	driver/hal/devhal.h	21;"	d
+_Datetime	src/public/public_typedef.h	/^typedef struct _Datetime{$/;"	s
+_GPIO_I2C_H	driver/gpio-i2c/gpio_i2c.h	3;"	d
+_HI_KEY_GPIO_DRIVER_H__	driver/front_board/hi_key_gpio_driver.h	2;"	d
+_INC_TLV320AIC31	driver/tlv320aic31/tlv320aic31.h	9;"	d
+_INC_TLV320AIC31_DEF	driver/tlv320aic31/tlv320aic31_def.h	2;"	d
+_IOC_GET_VALUE	driver/74HC165/74hc165.h	4;"	d
+_IOC_GET_VALUE	driver/74ls165/74ls165.h	4;"	d
+_LINUX_WATCHDOG_H	driver/wtdg/watchdog.h	10;"	d
+_List	src/cores/array_list.c	/^struct _List{$/;"	s	file:
+_MT9D131_LINUX	driver/mt9d131/mt9d131.h	2;"	d
+_Observer	src/cores/observer.h	/^struct _Observer$/;"	s
+_PrivInfo	src/cores/clocks_rtc.c	/^typedef struct _PrivInfo$/;"	s	file:
+_Ret	src/public/public_typedef.h	/^typedef enum _Ret{$/;"	g
+_VIDEO_DEF_H	driver/adv7441/video_def.h	11;"	d
+_Week	src/public/public_typedef.h	/^typedef  enum _Week{$/;"	g
+__74HC165_H__	driver/74HC165/74hc165.h	2;"	d
+__74LS165_H__	driver/74ls165/74ls165.h	2;"	d
+__ADV7441_H__	driver/adv7441/adv7441.h	4;"	d
+__ARRAY_LIST_H__	src/cores/array_list.h	2;"	d
+__CLOCKS_H__	src/cores/clocks.h	2;"	d
+__CLOCKS_RTC_H__	src/cores/clocks_rtc.h	2;"	d
+__HI_GPIO_H__	driver/gpio/hi_gpio.h	2;"	d
+__HI_IR_CODEDEF__	driver/hiir/hiir_codedef.c	3;"	d	file:
+__HI_IR_H__	driver/hiir/hiir.h	19;"	d
+__HI_TYPE_H__	driver/hal/hi_type.h	21;"	d
+__KEYVALUETABLE_H__	driver/hal/keyvaluetable.h	11;"	d
+__OBSERVER_H__	src/cores/observer.h	2;"	d
+__PUBLIC_FUNCTION_H__	src/public/public_function.h	2;"	d
+__PUBLIC_TYPEDEF_H__	src/public/public_typedef.h	2;"	d
+__RTC_DS1307__	driver/rtc/rtc_ds1339.h	2;"	d
+__STRFUNC_H__	driver/gpio-i2c/strfunc.h	21;"	d
+__TW2865_H__	driver/TW28xx/tw2865.h	2;"	d
+__TW2865_H__	driver/tw2865-16cif/tw2865.h	2;"	d
+__TW2865_H__	driver/tw2865-8cif/tw2865.h	2;"	d
+__attribute_used__	driver/front_board/key_driver.mod.c	/^__attribute_used__$/;"	v	file:
+__initdata	driver/wtdg/hi_wdt.c	/^static char banner[] __initdata = KERN_INFO "Hisilicon Watchdog Timer: 0.01 initialized. default_margin=%d sec (nowayout= %d, nodeamon= %d)\\n";$/;"	v	file:
+__this_module	driver/front_board/key_driver.mod.c	/^struct module __this_module$/;"	v	typeref:struct:module
+_guistatetable_	driver/hal/keyvaluetable.h	/^typedef enum _guistatetable_{$/;"	g
+_keyvaluetable_	driver/hal/keyvaluetable.h	/^typedef enum _keyvaluetable_{$/;"	g
+_ptzcmdtable_	driver/hal/devhal.c	/^typedef enum _ptzcmdtable_{$/;"	g	file:
+_ptzprotocol_	driver/hal/devhal.c	/^typedef enum _ptzprotocol_{$/;"	g	file:
+_tagADV7441_VIDEO_FORMAT_E	driver/adv7441/adv7441.h	/^typedef	enum _tagADV7441_VIDEO_FORMAT_E$/;"	g
+_tagControl	driver/adv7441/adv7441.h	/^typedef struct _tagControl$/;"	s
+_tagCvbsSys	driver/adv7441/adv7441.h	/^typedef	enum _tagCvbsSys$/;"	g
+_tagInputModeDetect	driver/adv7441/adv7441.h	/^typedef struct _tagInputModeDetect$/;"	s
+_tagModeDetectTb	driver/adv7441/adv7441.h	/^typedef struct _tagModeDetectTb$/;"	s
+_tagRGBSys	driver/adv7441/adv7441.h	/^typedef	enum _tagRGBSys$/;"	g
+_tagRegTable	driver/adv7441/adv7441.h	/^typedef struct _tagRegTable$/;"	s
+_tagSource	driver/adv7441/adv7441.h	/^typedef enum _tagSource$/;"	g
+_tagYcbcrSys	driver/adv7441/adv7441.h	/^typedef	enum _tagYcbcrSys$/;"	g
+_ttw2865_audio_da_volume	driver/TW28xx/tw2865.h	/^typedef struct _ttw2865_audio_da_volume$/;"	s
+_ttw2865_audio_da_volume	driver/tw2865-16cif/tw2865.h	/^typedef struct _ttw2865_audio_da_volume$/;"	s
+_ttw2865_audio_da_volume	driver/tw2865-8cif/tw2865.h	/^typedef struct _ttw2865_audio_da_volume$/;"	s
+_tw2865_audio_da_mute	driver/TW28xx/tw2865.h	/^typedef struct _tw2865_audio_da_mute$/;"	s
+_tw2865_audio_da_mute	driver/tw2865-16cif/tw2865.h	/^typedef struct _tw2865_audio_da_mute$/;"	s
+_tw2865_audio_da_mute	driver/tw2865-8cif/tw2865.h	/^typedef struct _tw2865_audio_da_mute$/;"	s
+_tw2865_audio_output	driver/TW28xx/tw2865.h	/^typedef struct _tw2865_audio_output$/;"	s
+_tw2865_audio_output	driver/tw2865-16cif/tw2865.h	/^typedef struct _tw2865_audio_output$/;"	s
+_tw2865_audio_output	driver/tw2865-8cif/tw2865.h	/^typedef struct _tw2865_audio_output$/;"	s
+_tw2865_audio_playback	driver/TW28xx/tw2865.h	/^typedef struct _tw2865_audio_playback$/;"	s
+_tw2865_audio_playback	driver/tw2865-16cif/tw2865.h	/^typedef struct _tw2865_audio_playback$/;"	s
+_tw2865_audio_playback	driver/tw2865-8cif/tw2865.h	/^typedef struct _tw2865_audio_playback$/;"	s
+_tw2865_audio_samplerate	driver/TW28xx/tw2865.h	/^typedef enum _tw2865_audio_samplerate$/;"	g
+_tw2865_audio_samplerate	driver/tw2865-16cif/tw2865.h	/^typedef enum _tw2865_audio_samplerate$/;"	g
+_tw2865_audio_samplerate	driver/tw2865-8cif/tw2865.h	/^typedef enum _tw2865_audio_samplerate$/;"	g
+_tw2865_image_adjust	driver/TW28xx/tw2865.h	/^typedef struct _tw2865_image_adjust$/;"	s
+_tw2865_image_adjust	driver/tw2865-16cif/tw2865.h	/^typedef struct _tw2865_image_adjust$/;"	s
+_tw2865_image_adjust	driver/tw2865-8cif/tw2865.h	/^typedef struct _tw2865_image_adjust$/;"	s
+_tw2865_video_loss	driver/TW28xx/tw2865.h	/^typedef struct _tw2865_video_loss$/;"	s
+_tw2865_video_loss	driver/tw2865-16cif/tw2865.h	/^typedef struct _tw2865_video_loss$/;"	s
+_tw2865_video_loss	driver/tw2865-8cif/tw2865.h	/^typedef struct _tw2865_video_loss$/;"	s
+_tw2865_video_norm	driver/TW28xx/tw2865.h	/^typedef struct _tw2865_video_norm$/;"	s
+_tw2865_video_norm	driver/tw2865-16cif/tw2865.h	/^typedef struct _tw2865_video_norm$/;"	s
+_tw2865_video_norm	driver/tw2865-8cif/tw2865.h	/^typedef struct _tw2865_video_norm$/;"	s
+_tw2865_work_mode	driver/TW28xx/tw2865.h	/^typedef struct _tw2865_work_mode$/;"	s
+_tw2865_work_mode	driver/tw2865-16cif/tw2865.h	/^typedef struct _tw2865_work_mode$/;"	s
+_tw2865_work_mode	driver/tw2865-8cif/tw2865.h	/^typedef struct _tw2865_work_mode$/;"	s
+abs_builddir	Makefile	/^abs_builddir = \/home\/zhoumin\/luho\/project\/dvr$/;"	m
+abs_builddir	src/Makefile	/^abs_builddir = \/home\/zhoumin\/luho\/project\/dvr\/src$/;"	m
+abs_builddir	src/cores/Makefile	/^abs_builddir = \/home\/zhoumin\/luho\/project\/dvr\/src\/cores$/;"	m
+abs_builddir	src/cores/test/Makefile	/^abs_builddir = \/home\/zhoumin\/luho\/project\/dvr\/src\/cores\/test$/;"	m
+abs_builddir	src/public/Makefile	/^abs_builddir = \/home\/zhoumin\/luho\/project\/dvr\/src\/public$/;"	m
+abs_srcdir	Makefile	/^abs_srcdir = \/home\/zhoumin\/luho\/project\/dvr$/;"	m
+abs_srcdir	src/Makefile	/^abs_srcdir = \/home\/zhoumin\/luho\/project\/dvr\/src$/;"	m
+abs_srcdir	src/cores/Makefile	/^abs_srcdir = \/home\/zhoumin\/luho\/project\/dvr\/src\/cores$/;"	m
+abs_srcdir	src/cores/test/Makefile	/^abs_srcdir = \/home\/zhoumin\/luho\/project\/dvr\/src\/cores\/test$/;"	m
+abs_srcdir	src/public/Makefile	/^abs_srcdir = \/home\/zhoumin\/luho\/project\/dvr\/src\/public$/;"	m
+abs_top_builddir	Makefile	/^abs_top_builddir = \/home\/zhoumin\/luho\/project\/dvr$/;"	m
+abs_top_builddir	src/Makefile	/^abs_top_builddir = \/home\/zhoumin\/luho\/project\/dvr$/;"	m
+abs_top_builddir	src/cores/Makefile	/^abs_top_builddir = \/home\/zhoumin\/luho\/project\/dvr$/;"	m
+abs_top_builddir	src/cores/test/Makefile	/^abs_top_builddir = \/home\/zhoumin\/luho\/project\/dvr$/;"	m
+abs_top_builddir	src/public/Makefile	/^abs_top_builddir = \/home\/zhoumin\/luho\/project\/dvr$/;"	m
+abs_top_srcdir	Makefile	/^abs_top_srcdir = \/home\/zhoumin\/luho\/project\/dvr$/;"	m
+abs_top_srcdir	src/Makefile	/^abs_top_srcdir = \/home\/zhoumin\/luho\/project\/dvr$/;"	m
+abs_top_srcdir	src/cores/Makefile	/^abs_top_srcdir = \/home\/zhoumin\/luho\/project\/dvr$/;"	m
+abs_top_srcdir	src/cores/test/Makefile	/^abs_top_srcdir = \/home\/zhoumin\/luho\/project\/dvr$/;"	m
+abs_top_srcdir	src/public/Makefile	/^abs_top_srcdir = \/home\/zhoumin\/luho\/project\/dvr$/;"	m
+ac_ct_CC	Makefile	/^ac_ct_CC = $/;"	m
+ac_ct_CC	src/Makefile	/^ac_ct_CC = $/;"	m
+ac_ct_CC	src/cores/Makefile	/^ac_ct_CC = $/;"	m
+ac_ct_CC	src/cores/test/Makefile	/^ac_ct_CC = $/;"	m
+ac_ct_CC	src/public/Makefile	/^ac_ct_CC = $/;"	m
+adc_ch_power_ctrl	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned adc_ch_power_ctrl:1;$/;"	m	struct:__anon22::__anon23
+adc_pga_step_ctrl	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned adc_pga_step_ctrl:2;$/;"	m	struct:__anon22::__anon23
+addr	driver/adv7441/adv7441.h	/^    unsigned char addr;$/;"	m	struct:hiadv7400_w_reg
+adi7400_cvbs_data	driver/adv7441/adv7441_def.h	/^REGTABLE adi7400_cvbs_data[]=$/;"	v
+adi7400_svideo_data	driver/adv7441/adv7441_def.h	/^REGTABLE adi7400_svideo_data[]=$/;"	v
+adi7401_YPbPr1080i50_data	driver/adv7441/adv7441_def.h	/^REGTABLE adi7401_YPbPr1080i50_data[] = $/;"	v
+adi7401_YPbPr1080i60_data	driver/adv7441/adv7441_def.h	/^REGTABLE adi7401_YPbPr1080i60_data[] = $/;"	v
+adi7401_YPbPr480P_data	driver/adv7441/adv7441_def.h	/^REGTABLE adi7401_YPbPr480P_data[] = $/;"	v
+adi7401_YPbPr480i_data	driver/adv7441/adv7441_def.h	/^REGTABLE adi7401_YPbPr480i_data[] = $/;"	v
+adi7401_YPbPr576P_data	driver/adv7441/adv7441_def.h	/^REGTABLE adi7401_YPbPr576P_data[] = $/;"	v
+adi7401_YPbPr576i_data	driver/adv7441/adv7441_def.h	/^REGTABLE adi7401_YPbPr576i_data[] = $/;"	v
+adi7401_YPbPr720P_data	driver/adv7441/adv7441_def.h	/^REGTABLE adi7401_YPbPr720P_data[] = $/;"	v
+adi7401_initial_data	driver/adv7441/adv7441_def.h	/^REGTABLE adi7401_initial_data[] = $/;"	v
+adv7400_cvbs_mode	driver/adv7441/adv7441.c	/^unsigned char adv7400_cvbs_mode[]=$/;"	v
+adv7400_w_reg	driver/adv7441/adv7441.h	/^}adv7400_w_reg;$/;"	t	typeref:struct:hiadv7400_w_reg
+adv7400_ycbcr_mode	driver/adv7441/adv7441.c	/^MODEDETECTTB adv7400_ycbcr_mode[]=$/;"	v
+adv7441_1080I_60HZ	driver/adv7441/adv7441.c	/^int adv7441_1080I_60HZ(void)$/;"	f
+adv7441_720P_60HZ	driver/adv7441/adv7441.c	/^int adv7441_720P_60HZ(void)$/;"	f
+adv7441_I2C_ADDR_MAP	driver/adv7441/adv7441_def.h	8;"	d
+adv7441_close	driver/adv7441/adv7441.c	/^int adv7441_close(struct inode * inode, struct file * file)$/;"	f
+adv7441_dev	driver/adv7441/adv7441.c	/^static struct miscdevice adv7441_dev = $/;"	v	typeref:struct:miscdevice	file:
+adv7441_device_init	driver/adv7441/adv7441.c	/^int adv7441_device_init(void)$/;"	f
+adv7441_exit	driver/adv7441/adv7441.c	/^module_exit(adv7441_exit);$/;"	v
+adv7441_exit	driver/adv7441/adv7441.c	/^static void __exit adv7441_exit(void)$/;"	f	file:
+adv7441_fops	driver/adv7441/adv7441.c	/^static struct file_operations adv7441_fops = $/;"	v	typeref:struct:file_operations	file:
+adv7441_init	driver/adv7441/adv7441.c	/^module_init(adv7441_init);$/;"	v
+adv7441_init	driver/adv7441/adv7441.c	/^static int __init adv7441_init(void)$/;"	f	file:
+adv7441_ioctl	driver/adv7441/adv7441.c	/^int adv7441_ioctl(struct inode *inode, $/;"	f
+adv7441_open	driver/adv7441/adv7441.c	/^int adv7441_open(struct inode * inode, struct file * file)$/;"	f
+adv7441_set_video_format	driver/adv7441/adv7441.c	/^int adv7441_set_video_format(ADV7441_VIDEO_FORMAT_E enFormat)$/;"	f
+am__CONFIG_DISTCLEAN_FILES	Makefile	/^am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \\$/;"	m
+am__aclocal_m4_deps	Makefile	/^am__aclocal_m4_deps = $(top_srcdir)\/configure.in$/;"	m
+am__aclocal_m4_deps	src/Makefile	/^am__aclocal_m4_deps = $(top_srcdir)\/configure.in$/;"	m
+am__aclocal_m4_deps	src/cores/Makefile	/^am__aclocal_m4_deps = $(top_srcdir)\/configure.in$/;"	m
+am__aclocal_m4_deps	src/cores/test/Makefile	/^am__aclocal_m4_deps = $(top_srcdir)\/configure.in$/;"	m
+am__aclocal_m4_deps	src/public/Makefile	/^am__aclocal_m4_deps = $(top_srcdir)\/configure.in$/;"	m
+am__cd	Makefile	/^am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd$/;"	m
+am__cd	src/Makefile	/^am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd$/;"	m
+am__cd	src/cores/Makefile	/^am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd$/;"	m
+am__cd	src/cores/test/Makefile	/^am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd$/;"	m
+am__cd	src/public/Makefile	/^am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd$/;"	m
+am__configure_deps	Makefile	/^am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \\$/;"	m
+am__configure_deps	src/Makefile	/^am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \\$/;"	m
+am__configure_deps	src/cores/Makefile	/^am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \\$/;"	m
+am__configure_deps	src/cores/test/Makefile	/^am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \\$/;"	m
+am__configure_deps	src/public/Makefile	/^am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \\$/;"	m
+am__depfiles_maybe	src/Makefile	/^am__depfiles_maybe = depfiles$/;"	m
+am__depfiles_maybe	src/cores/Makefile	/^am__depfiles_maybe = depfiles$/;"	m
+am__depfiles_maybe	src/cores/test/Makefile	/^am__depfiles_maybe = depfiles$/;"	m
+am__depfiles_maybe	src/public/Makefile	/^am__depfiles_maybe = depfiles$/;"	m
+am__include	Makefile	/^am__include = include$/;"	m
+am__include	src/Makefile	/^am__include = include$/;"	m
+am__include	src/cores/Makefile	/^am__include = include$/;"	m
+am__include	src/cores/test/Makefile	/^am__include = include$/;"	m
+am__include	src/public/Makefile	/^am__include = include$/;"	m
+am__leading_dot	Makefile	/^am__leading_dot = .$/;"	m
+am__leading_dot	src/Makefile	/^am__leading_dot = .$/;"	m
+am__leading_dot	src/cores/Makefile	/^am__leading_dot = .$/;"	m
+am__leading_dot	src/cores/test/Makefile	/^am__leading_dot = .$/;"	m
+am__leading_dot	src/public/Makefile	/^am__leading_dot = .$/;"	m
+am__quote	Makefile	/^am__quote = $/;"	m
+am__quote	src/Makefile	/^am__quote = $/;"	m
+am__quote	src/cores/Makefile	/^am__quote = $/;"	m
+am__quote	src/cores/test/Makefile	/^am__quote = $/;"	m
+am__quote	src/public/Makefile	/^am__quote = $/;"	m
+am__remove_distdir	Makefile	/^am__remove_distdir = \\$/;"	m
+am__tar	Makefile	/^am__tar = ${AMTAR} chof - "$$tardir"$/;"	m
+am__tar	src/Makefile	/^am__tar = ${AMTAR} chof - "$$tardir"$/;"	m
+am__tar	src/cores/Makefile	/^am__tar = ${AMTAR} chof - "$$tardir"$/;"	m
+am__tar	src/cores/test/Makefile	/^am__tar = ${AMTAR} chof - "$$tardir"$/;"	m
+am__tar	src/public/Makefile	/^am__tar = ${AMTAR} chof - "$$tardir"$/;"	m
+am__untar	Makefile	/^am__untar = ${AMTAR} xf -$/;"	m
+am__untar	src/Makefile	/^am__untar = ${AMTAR} xf -$/;"	m
+am__untar	src/cores/Makefile	/^am__untar = ${AMTAR} xf -$/;"	m
+am__untar	src/cores/test/Makefile	/^am__untar = ${AMTAR} xf -$/;"	m
+am__untar	src/public/Makefile	/^am__untar = ${AMTAR} xf -$/;"	m
+am_array_list_test_OBJECTS	src/cores/test/Makefile	/^am_array_list_test_OBJECTS = array_list_test.$(OBJEXT)$/;"	m
+am_clocks_rtc_test_OBJECTS	src/cores/test/Makefile	/^am_clocks_rtc_test_OBJECTS = clocks_rtc_test.$(OBJEXT)$/;"	m
+am_dvr_OBJECTS	src/Makefile	/^am_dvr_OBJECTS = dvr.$(OBJEXT)$/;"	m
+am_libcores_a_OBJECTS	src/cores/Makefile	/^am_libcores_a_OBJECTS = array_list.$(OBJEXT) clocks.$(OBJEXT) \\$/;"	m
+am_libpublic_a_OBJECTS	src/public/Makefile	/^am_libpublic_a_OBJECTS = public_function.$(OBJEXT)$/;"	m
+arrary_list_get_data_by_id	src/cores/array_list.c	/^void *arrary_list_get_data_by_id(ArrayList *thiz, int id)$/;"	f
+array_list	src/cores/clocks.c	/^	ArrayList *array_list;$/;"	m	struct:_ClocksInfo	file:
+array_list_add	src/cores/array_list.c	/^Ret array_list_add(ArrayList *thiz, void *data)$/;"	f
+array_list_create	src/cores/array_list.c	/^ArrayList *array_list_create()$/;"	f
+array_list_destroy	src/cores/array_list.c	/^void array_list_destroy(ArrayList *thiz)$/;"	f
+array_list_get_id_by_data	src/cores/array_list.c	/^int array_list_get_id_by_data(ArrayList *thiz, void *data, int data_size)$/;"	f
+array_list_get_size	src/cores/array_list.c	/^int array_list_get_size(ArrayList *thiz)$/;"	f
+array_list_number	src/cores/array_list.c	/^	int array_list_number; $/;"	m	struct:_ArrayList	file:
+array_list_remove	src/cores/array_list.c	/^Ret array_list_remove(ArrayList *thiz, void *data, int data_size)$/;"	f
+array_list_test_DEPENDENCIES	src/cores/test/Makefile	/^array_list_test_DEPENDENCIES = $(LIB_FLAG)$/;"	m
+array_list_test_LDADD	src/cores/test/Makefile	/^array_list_test_LDADD = $(LIB_FLAG)$/;"	m
+array_list_test_OBJECTS	src/cores/test/Makefile	/^array_list_test_OBJECTS = $(am_array_list_test_OBJECTS)$/;"	m
+array_list_test_SOURCES	src/cores/test/Makefile	/^array_list_test_SOURCES = array_list_test.c $/;"	m
+as_func_failure	configure	/^as_func_failure () {$/;"	f
+as_func_ret_failure	configure	/^as_func_ret_failure () {$/;"	f
+as_func_ret_success	configure	/^as_func_ret_success () {$/;"	f
+as_func_success	configure	/^as_func_success () {$/;"	f
+atoul	driver/gpio-i2c/strfunc.c	/^static int atoul(char *str,unsigned int * pulValue)$/;"	f	file:
+atoulx	driver/gpio-i2c/strfunc.c	/^int  atoulx(char *str,unsigned int * pulValue)$/;"	f
+audio_in_out	driver/tlv320aic31/tlv320aic31.h	/^    unsigned int audio_in_out:2;$/;"	m	struct:__anon15
+b8	driver/tlv320aic31/tlv320aic31_def.h	/^    unsigned char b8;$/;"	m	union:__anon16
+b8	driver/tlv320aic31/tlv320aic31_def.h	/^    unsigned char b8;$/;"	m	union:__anon18
+b8	driver/tlv320aic31/tlv320aic31_def.h	/^    unsigned char b8;$/;"	m	union:__anon20
+b8	driver/tlv320aic31/tlv320aic31_def.h	/^    unsigned char b8;$/;"	m	union:__anon22
+b8	driver/tlv320aic31/tlv320aic31_def.h	/^    unsigned char b8;$/;"	m	union:__anon24
+b8	driver/tlv320aic31/tlv320aic31_def.h	/^    unsigned char b8;$/;"	m	union:__anon26
+b8	driver/tlv320aic31/tlv320aic31_def.h	/^    unsigned char b8;$/;"	m	union:__anon28
+b8	driver/tlv320aic31/tlv320aic31_def.h	/^    unsigned char b8;$/;"	m	union:__anon30
+b8	driver/tlv320aic31/tlv320aic31_def.h	/^    unsigned char b8;$/;"	m	union:__anon32
+baud	driver/hal/devhal.h	/^	HI_S32  baud;$/;"	m	struct:__anon6
+bindir	Makefile	/^bindir = ${exec_prefix}\/bin$/;"	m
+bindir	src/Makefile	/^bindir = ${exec_prefix}\/bin$/;"	m
+bindir	src/cores/Makefile	/^bindir = ${exec_prefix}\/bin$/;"	m
+bindir	src/cores/test/Makefile	/^bindir = ${exec_prefix}\/bin$/;"	m
+bindir	src/public/Makefile	/^bindir = ${exec_prefix}\/bin$/;"	m
+bit	driver/tlv320aic31/tlv320aic31_def.h	/^    }bit;$/;"	m	union:__anon16	typeref:struct:__anon16::__anon17
+bit	driver/tlv320aic31/tlv320aic31_def.h	/^    }bit;$/;"	m	union:__anon18	typeref:struct:__anon18::__anon19
+bit	driver/tlv320aic31/tlv320aic31_def.h	/^    }bit;$/;"	m	union:__anon20	typeref:struct:__anon20::__anon21
+bit	driver/tlv320aic31/tlv320aic31_def.h	/^    }bit;$/;"	m	union:__anon22	typeref:struct:__anon22::__anon23
+bit	driver/tlv320aic31/tlv320aic31_def.h	/^    }bit;$/;"	m	union:__anon24	typeref:struct:__anon24::__anon25
+bit	driver/tlv320aic31/tlv320aic31_def.h	/^    }bit;$/;"	m	union:__anon26	typeref:struct:__anon26::__anon27
+bit	driver/tlv320aic31/tlv320aic31_def.h	/^    }bit;$/;"	m	union:__anon28	typeref:struct:__anon28::__anon29
+bit	driver/tlv320aic31/tlv320aic31_def.h	/^    }bit;$/;"	m	union:__anon30	typeref:struct:__anon30::__anon31
+bit	driver/tlv320aic31/tlv320aic31_def.h	/^    }bit;$/;"	m	union:__anon32	typeref:struct:__anon32::__anon33
+bit_clock_dic_ctrl	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char bit_clock_dic_ctrl:1;$/;"	m	struct:__anon16::__anon17
+bit_work_dri_ctrl	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char bit_work_dri_ctrl:1;$/;"	m	struct:__anon16::__anon17
+bitnumber	driver/gpio/hi_gpio.h	/^	unsigned int  bitnumber;$/;"	m	struct:__anon11
+bl	driver/adv7441/adv7441.h	/^	unsigned short bl;$/;"	m	struct:_tagModeDetectTb
+brightness	driver/TW28xx/tw2865.h	/^	unsigned char brightness;$/;"	m	struct:_tw2865_image_adjust
+brightness	driver/tw2865-16cif/tw2865.h	/^	unsigned char brightness;$/;"	m	struct:_tw2865_image_adjust
+brightness	driver/tw2865-8cif/tw2865.h	/^	unsigned char brightness;$/;"	m	struct:_tw2865_image_adjust
+buf	driver/hiir/hiir.c	/^    irkey_info_s buf[HI_IR_MAX_BUF + 1];$/;"	m	struct:__anon1	file:
+buf_len	driver/hiir/hiir.c	/^    unsigned int buf_len;$/;"	m	struct:__anon1	file:
+build_alias	Makefile	/^build_alias = $/;"	m
+build_alias	src/Makefile	/^build_alias = $/;"	m
+build_alias	src/cores/Makefile	/^build_alias = $/;"	m
+build_alias	src/cores/test/Makefile	/^build_alias = $/;"	m
+build_alias	src/public/Makefile	/^build_alias = $/;"	m
+builddir	Makefile	/^builddir = .$/;"	m
+builddir	src/Makefile	/^builddir = .$/;"	m
+builddir	src/cores/Makefile	/^builddir = .$/;"	m
+builddir	src/cores/test/Makefile	/^builddir = .$/;"	m
+builddir	src/public/Makefile	/^builddir = .$/;"	m
+ch	driver/TW28xx/tw2865.h	/^    unsigned int ch;$/;"	m	struct:_tw2865_video_loss
+ch	driver/tw2865-16cif/tw2865.h	/^    unsigned int ch;$/;"	m	struct:_tw2865_video_loss
+ch	driver/tw2865-8cif/tw2865.h	/^    unsigned int ch;$/;"	m	struct:_tw2865_video_loss
+channel	driver/TW28xx/tw2865.h	/^	unsigned char channel;          \/*[0, 15]*\/$/;"	m	struct:_tw2865_audio_output
+channel	driver/tw2865-16cif/tw2865.h	/^	unsigned char channel;          \/*[0, 15]*\/$/;"	m	struct:_tw2865_audio_output
+channel	driver/tw2865-8cif/tw2865.h	/^	unsigned char channel;          \/*[0, 15]*\/$/;"	m	struct:_tw2865_audio_output
+chip	driver/TW28xx/tw2865.h	/^    unsigned char chip;$/;"	m	struct:_tw2865_image_adjust
+chip	driver/TW28xx/tw2865.h	/^    unsigned int chip;$/;"	m	struct:_ttw2865_audio_da_volume
+chip	driver/TW28xx/tw2865.h	/^    unsigned int chip;$/;"	m	struct:_tw2865_audio_da_mute
+chip	driver/TW28xx/tw2865.h	/^    unsigned int chip;$/;"	m	struct:_tw2865_audio_playback
+chip	driver/TW28xx/tw2865.h	/^    unsigned int chip;$/;"	m	struct:_tw2865_video_loss
+chip	driver/TW28xx/tw2865.h	/^    unsigned int chip;$/;"	m	struct:_tw2865_video_norm
+chip	driver/TW28xx/tw2865.h	/^    unsigned int chip;$/;"	m	struct:_tw2865_work_mode
+chip	driver/tw2865-16cif/tw2865.h	/^    unsigned char chip;$/;"	m	struct:_tw2865_image_adjust
+chip	driver/tw2865-16cif/tw2865.h	/^    unsigned int chip;$/;"	m	struct:_ttw2865_audio_da_volume
+chip	driver/tw2865-16cif/tw2865.h	/^    unsigned int chip;$/;"	m	struct:_tw2865_audio_da_mute
+chip	driver/tw2865-16cif/tw2865.h	/^    unsigned int chip;$/;"	m	struct:_tw2865_audio_playback
+chip	driver/tw2865-16cif/tw2865.h	/^    unsigned int chip;$/;"	m	struct:_tw2865_video_loss
+chip	driver/tw2865-16cif/tw2865.h	/^    unsigned int chip;$/;"	m	struct:_tw2865_video_norm
+chip	driver/tw2865-16cif/tw2865.h	/^    unsigned int chip;$/;"	m	struct:_tw2865_work_mode
+chip	driver/tw2865-8cif/tw2865.h	/^    unsigned char chip;$/;"	m	struct:_tw2865_image_adjust
+chip	driver/tw2865-8cif/tw2865.h	/^    unsigned int chip;$/;"	m	struct:_ttw2865_audio_da_volume
+chip	driver/tw2865-8cif/tw2865.h	/^    unsigned int chip;$/;"	m	struct:_tw2865_audio_da_mute
+chip	driver/tw2865-8cif/tw2865.h	/^    unsigned int chip;$/;"	m	struct:_tw2865_audio_playback
+chip	driver/tw2865-8cif/tw2865.h	/^    unsigned int chip;$/;"	m	struct:_tw2865_video_loss
+chip	driver/tw2865-8cif/tw2865.h	/^    unsigned int chip;$/;"	m	struct:_tw2865_video_norm
+chip	driver/tw2865-8cif/tw2865.h	/^    unsigned int chip;$/;"	m	struct:_tw2865_work_mode
+chip_count	driver/tlv320aic31/tlv320aic31.c	/^static int chip_count = 1;$/;"	v	file:
+chip_num	driver/tlv320aic31/tlv320aic31.h	/^    unsigned int chip_num:3;$/;"	m	struct:__anon15
+chn	driver/TW28xx/tw2865.h	/^    unsigned char chn;$/;"	m	struct:_tw2865_image_adjust
+chn	driver/TW28xx/tw2865.h	/^    unsigned int chn;$/;"	m	struct:_tw2865_audio_playback
+chn	driver/tw2865-16cif/tw2865.h	/^    unsigned char chn;$/;"	m	struct:_tw2865_image_adjust
+chn	driver/tw2865-16cif/tw2865.h	/^    unsigned int chn;$/;"	m	struct:_tw2865_audio_playback
+chn	driver/tw2865-8cif/tw2865.h	/^    unsigned char chn;$/;"	m	struct:_tw2865_image_adjust
+chn	driver/tw2865-8cif/tw2865.h	/^    unsigned int chn;$/;"	m	struct:_tw2865_audio_playback
+clocks_add_observer	src/cores/clocks.c	/^Ret clocks_add_observer(Clocks *thiz, Observer *observer)$/;"	f
+clocks_destory	src/cores/clocks.c	/^void clocks_destory(Clocks *thiz)$/;"	f
+clocks_get_time	src/cores/clocks.h	/^static inline Ret clocks_get_time(Clocks *thiz, Datetime *date_time)$/;"	f
+clocks_init	src/cores/clocks.c	/^void clocks_init(Clocks *thiz)$/;"	f
+clocks_remove_observer	src/cores/clocks.c	/^Ret clocks_remove_observer(Clocks *thiz, Observer *observer)$/;"	f
+clocks_rtc_create	src/cores/clocks_rtc.c	/^Clocks *clocks_rtc_create(char *rtc_dev_name)$/;"	f
+clocks_rtc_destroy	src/cores/clocks_rtc.c	/^static void clocks_rtc_destroy(Clocks *thiz)$/;"	f	file:
+clocks_rtc_get_time	src/cores/clocks_rtc.c	/^static Ret clocks_rtc_get_time(Clocks *thiz, Datetime *date_time)$/;"	f	file:
+clocks_rtc_run	src/cores/clocks_rtc.c	/^static void clocks_rtc_run(Clocks *thiz)$/;"	f	file:
+clocks_rtc_set_time	src/cores/clocks_rtc.c	/^static Ret clocks_rtc_set_time(Clocks *thiz, Datetime *date_time)$/;"	f	file:
+clocks_rtc_test_DEPENDENCIES	src/cores/test/Makefile	/^clocks_rtc_test_DEPENDENCIES = $(LIB_FLAG)$/;"	m
+clocks_rtc_test_LDADD	src/cores/test/Makefile	/^clocks_rtc_test_LDADD = $(LIB_FLAG)$/;"	m
+clocks_rtc_test_OBJECTS	src/cores/test/Makefile	/^clocks_rtc_test_OBJECTS = $(am_clocks_rtc_test_OBJECTS)$/;"	m
+clocks_rtc_test_SOURCES	src/cores/test/Makefile	/^clocks_rtc_test_SOURCES = clocks_rtc_test.c$/;"	m
+clocks_rtc_time_thread	src/cores/clocks_rtc.c	/^static void *clocks_rtc_time_thread(void *para)$/;"	f	file:
+clocks_set_time	src/cores/clocks.h	/^static inline Ret clocks_set_time(Clocks *thiz, Datetime *date_time)$/;"	f
+cnt0_b_max	driver/hiir/hiir.h	/^    unsigned short int cnt0_b_max;$/;"	m	struct:__anon2
+cnt0_b_min	driver/hiir/hiir.h	/^    unsigned short int cnt0_b_min;$/;"	m	struct:__anon2
+cnt1_b_max	driver/hiir/hiir.h	/^    unsigned short int cnt1_b_max;$/;"	m	struct:__anon2
+cnt1_b_min	driver/hiir/hiir.h	/^    unsigned short int cnt1_b_min;$/;"	m	struct:__anon2
+code_len	driver/hiir/hiir.h	/^    unsigned short int code_len;$/;"	m	struct:__anon2
+codetype	driver/hiir/hiir.h	/^    unsigned short int codetype;$/;"	m	struct:__anon2
+contrast	driver/TW28xx/tw2865.h	/^	unsigned char contrast;$/;"	m	struct:_tw2865_image_adjust
+contrast	driver/tw2865-16cif/tw2865.h	/^	unsigned char contrast;$/;"	m	struct:_tw2865_image_adjust
+contrast	driver/tw2865-8cif/tw2865.h	/^	unsigned char contrast;$/;"	m	struct:_tw2865_image_adjust
+create_normal_thread	src/public/public_function.c	/^Ret create_normal_thread(ThreadFunction function, void *para, pthread_t *pid)$/;"	f
+ctrl_mode	driver/tlv320aic31/tlv320aic31.h	/^    unsigned int ctrl_mode:1;$/;"	m	struct:__anon15
+cur_margin	driver/wtdg/hi_wdt.c	/^static int cur_margin = HIDOG_TIMER_MARGIN;$/;"	v	file:
+dac_path	driver/tlv320aic31/tlv320aic31.h	/^    unsigned int dac_path:2;$/;"	m	struct:__anon15
+data	src/cores/array_list.c	/^	void *data;$/;"	m	struct:_List	file:
+data_length	driver/tlv320aic31/tlv320aic31.h	/^    unsigned int data_length:2;$/;"	m	struct:__anon15
+data_length	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char data_length:2;  $/;"	m	struct:__anon24::__anon25
+data_reg_base	driver/gpio/hi_gpio.c	/^unsigned int data_reg_base=0;$/;"	v
+databits	driver/hal/devhal.h	/^	HI_U8 	databits;$/;"	m	struct:__anon6
+datadir	Makefile	/^datadir = ${datarootdir}$/;"	m
+datadir	src/Makefile	/^datadir = ${datarootdir}$/;"	m
+datadir	src/cores/Makefile	/^datadir = ${datarootdir}$/;"	m
+datadir	src/cores/test/Makefile	/^datadir = ${datarootdir}$/;"	m
+datadir	src/public/Makefile	/^datadir = ${datarootdir}$/;"	m
+datarootdir	Makefile	/^datarootdir = ${prefix}\/share$/;"	m
+datarootdir	src/Makefile	/^datarootdir = ${prefix}\/share$/;"	m
+datarootdir	src/cores/Makefile	/^datarootdir = ${prefix}\/share$/;"	m
+datarootdir	src/cores/test/Makefile	/^datarootdir = ${prefix}\/share$/;"	m
+datarootdir	src/public/Makefile	/^datarootdir = ${prefix}\/share$/;"	m
+date	driver/hal/devhal.h	/^    HI_U32  date;$/;"	m	struct:__anon5
+date	driver/rtc/rtc_ds1339.h	/^    unsigned int  date;$/;"	m	struct:__anon10
+day	src/public/public_typedef.h	/^    int day;$/;"	m	struct:_Datetime
+dc_install_base	Makefile	/^	dc_install_base=`$(am__cd) $(distdir)\/_inst && pwd | sed -e 's,^[^:\\\\\/]:[\\\\\/],\/,'` \\$/;"	m
+default_margin	driver/wtdg/hi_wdt.c	/^static int default_margin = HIDOG_TIMER_MARGIN;	\/* in seconds *\/$/;"	v	file:
+depcomp	src/Makefile	/^depcomp = $(SHELL) $(top_srcdir)\/depcomp$/;"	m
+depcomp	src/cores/Makefile	/^depcomp = $(SHELL) $(top_srcdir)\/depcomp$/;"	m
+depcomp	src/cores/test/Makefile	/^depcomp = $(SHELL) $(top_srcdir)\/depcomp$/;"	m
+depcomp	src/public/Makefile	/^depcomp = $(SHELL) $(top_srcdir)\/depcomp$/;"	m
+destroy	src/cores/clocks.h	/^	ClocksDestroyFunc destroy;$/;"	m	struct:_Clocks
+destroy	src/cores/observer.h	/^	ObserverDestroyFunc destroy;$/;"	m	struct:_Observer
+dev_parm	driver/hiir/hiir.c	/^    hiir_dev_param dev_parm;$/;"	m	struct:__anon1	file:
+distcleancheck_listfiles	Makefile	/^distcleancheck_listfiles = find . -type f -print$/;"	m
+distdir	Makefile	/^distdir = $(PACKAGE)-$(VERSION)$/;"	m
+distuninstallcheck_listfiles	Makefile	/^distuninstallcheck_listfiles = find . -type f -print$/;"	m
+docdir	Makefile	/^docdir = ${datarootdir}\/doc\/${PACKAGE_TARNAME}$/;"	m
+docdir	src/Makefile	/^docdir = ${datarootdir}\/doc\/${PACKAGE_TARNAME}$/;"	m
+docdir	src/cores/Makefile	/^docdir = ${datarootdir}\/doc\/${PACKAGE_TARNAME}$/;"	m
+docdir	src/cores/test/Makefile	/^docdir = ${datarootdir}\/doc\/${PACKAGE_TARNAME}$/;"	m
+docdir	src/public/Makefile	/^docdir = ${datarootdir}\/doc\/${PACKAGE_TARNAME}$/;"	m
+driver_open	driver/wtdg/hi_wdt.c	/^static unsigned long driver_open = 0, orphan_timer = 0;$/;"	v	file:
+drv_74hc165-y	driver/74HC165/Makefile	/^drv_74hc165-y := 74hc165.o$/;"	m
+dvidir	Makefile	/^dvidir = ${docdir}$/;"	m
+dvidir	src/Makefile	/^dvidir = ${docdir}$/;"	m
+dvidir	src/cores/Makefile	/^dvidir = ${docdir}$/;"	m
+dvidir	src/cores/test/Makefile	/^dvidir = ${docdir}$/;"	m
+dvidir	src/public/Makefile	/^dvidir = ${docdir}$/;"	m
+dvr_LDADD	src/Makefile	/^dvr_LDADD = $(LDADD)$/;"	m
+dvr_OBJECTS	src/Makefile	/^dvr_OBJECTS = $(am_dvr_OBJECTS)$/;"	m
+dvr_SOURCES	src/Makefile	/^dvr_SOURCES = dvr.c$/;"	m
+enable_keyup	driver/hiir/hiir.c	/^    unsigned int enable_keyup;$/;"	m	struct:__anon1	file:
+enable_repeatkey	driver/front_board/hi_key_gpio_driver.c	/^unsigned int enable_repeatkey=0;$/;"	v
+enable_repkey	driver/hiir/hiir.c	/^    unsigned int enable_repkey;$/;"	m	struct:__anon1	file:
+exec_prefix	Makefile	/^exec_prefix = ${prefix}$/;"	m
+exec_prefix	src/Makefile	/^exec_prefix = ${prefix}$/;"	m
+exec_prefix	src/cores/Makefile	/^exec_prefix = ${prefix}$/;"	m
+exec_prefix	src/cores/test/Makefile	/^exec_prefix = ${prefix}$/;"	m
+exec_prefix	src/public/Makefile	/^exec_prefix = ${prefix}$/;"	m
+expect_close	driver/wtdg/hi_wdt.c	/^static char expect_close = 0;$/;"	v	file:
+fd_rtc	src/cores/clocks_rtc.c	/^	int fd_rtc;	$/;"	m	struct:_PrivInfo	file:
+firmware_version	driver/wtdg/watchdog.h	/^	__u32 firmware_version;	\/* Firmware version of the card *\/$/;"	m	struct:watchdog_info
+frequence	driver/hiir/hiir.h	/^    unsigned short int frequence;$/;"	m	struct:__anon2
+g_PtzLock	driver/hal/devhal.c	/^pthread_mutex_t g_PtzLock;$/;"	v
+g_S32AlarmOutfd	driver/hal/devhal.c	/^HI_S32 g_S32AlarmOutfd = -1;  \/\/add by guixing 091117$/;"	v
+g_S32Buzzerfd	driver/hal/devhal.c	/^HI_S32 g_S32Buzzerfd = -1;  \/\/add by guixing 091117$/;"	v
+g_S32Hddledfd	driver/hal/devhal.c	/^HI_S32 g_S32Hddledfd = -1;  \/\/Ziven@100426 for Hdd_Led$/;"	v
+g_S32Irfd	driver/hal/devhal.c	/^HI_S32 g_S32Irfd = -1;$/;"	v
+g_S32KeyFd	driver/hal/devhal.c	/^HI_S32 g_S32KeyFd = -1; \/\/Ziven@100224 for keyboard$/;"	v
+g_S32Ptzfd	driver/hal/devhal.c	/^HI_S32 g_S32Ptzfd = -1;  \/\/add by guixing 091116$/;"	v
+g_dbg_flag	driver/hiir/hiir.c	/^static int g_dbg_flag = 0;$/;"	v	file:
+g_release	driver/hiir/hiir.c	/^static int g_release = 0;$/;"	v	file:
+g_repkey_enable	driver/hal/devhal.c	/^static int g_repkey_enable =0;$/;"	v	file:
+g_s32AlarmInFd	driver/hal/devhal.c	/^HI_S32 g_s32AlarmInFd = -1;$/;"	v
+g_s32AudioAdFd	driver/hal/devhal.c	/^HI_S32 g_s32AudioAdFd = -1;$/;"	v
+g_s32AudioDaFd	driver/hal/devhal.c	/^HI_S32 g_s32AudioDaFd = -1;$/;"	v
+g_s32RtcFd	driver/hal/devhal.c	/^HI_S32 g_s32RtcFd = -1;$/;"	v
+g_s32VideoAdFd	driver/hal/devhal.c	/^HI_S32 g_s32VideoAdFd = -1;$/;"	v
+g_s32VideoDaFd	driver/hal/devhal.c	/^HI_S32 g_s32VideoDaFd = -1;$/;"	v
+g_s32WdtFd	driver/hal/devhal.c	/^HI_S32 g_s32WdtFd = -1;$/;"	v
+g_timer	driver/74HC165/74hc165.c	/^static struct timer_list g_timer;$/;"	v	typeref:struct:timer_list	file:
+g_timer	driver/74ls165/74ls165.c	/^static struct timer_list g_timer;$/;"	v	typeref:struct:timer_list	file:
+g_timer	driver/74ls165/74ls165_o.c	/^static struct timer_list g_timer;$/;"	v	typeref:struct:timer_list	file:
+g_u8ProtocolChn	driver/hal/devhal.c	/^HI_U8 g_u8ProtocolChn[MAX_CHN_NUM][MAX_PROT_CHAR_SIZE];$/;"	v
+g_u8ProtocolNum	driver/hal/devhal.c	/^HI_U8 g_u8ProtocolNum[MAX_PROTOCOL_NUM][MAX_PROT_CHAR_SIZE];$/;"	v
+g_value_buf	driver/74HC165/74hc165.c	/^VALUE_BUF_S g_value_buf;$/;"	v
+g_value_buf	driver/74ls165/74ls165.c	/^VALUE_BUF_S g_value_buf;$/;"	v
+g_value_buf	driver/74ls165/74ls165_o.c	/^VALUE_BUF_S g_value_buf;$/;"	v
+g_vlevel	driver/74HC165/74hc165.c	/^unsigned int g_vlevel = 0;$/;"	v
+g_vlevel	driver/74ls165/74ls165.c	/^unsigned int g_vlevel = 0;$/;"	v
+g_vlevel	driver/74ls165/74ls165_o.c	/^unsigned int g_vlevel = 0;$/;"	v
+get_time	src/cores/clocks.h	/^	ClocksGetTimeFunc get_time;$/;"	m	struct:_Clocks
+gpio_0_base_addr_virtual	driver/gpio/hi_gpio.c	/^unsigned int gpio_0_base_addr_virtual=0;$/;"	v
+gpio_1_base_addr_virtual	driver/gpio/hi_gpio.c	/^unsigned int gpio_1_base_addr_virtual=0;$/;"	v
+gpio_2_base_addr_virtual	driver/gpio/hi_gpio.c	/^unsigned int gpio_2_base_addr_virtual=0;$/;"	v
+gpio_3_base_addr_virtual	driver/gpio/hi_gpio.c	/^unsigned int gpio_3_base_addr_virtual=0;$/;"	v
+gpio_4_base_addr_virtual	driver/gpio/hi_gpio.c	/^unsigned int gpio_4_base_addr_virtual=0;$/;"	v
+gpio_5_base_addr_virtual	driver/gpio/hi_gpio.c	/^unsigned int gpio_5_base_addr_virtual=0;$/;"	v
+gpio_6_base_addr_virtual	driver/gpio/hi_gpio.c	/^unsigned int gpio_6_base_addr_virtual=0;$/;"	v
+gpio_7_base_addr_virtual	driver/gpio/hi_gpio.c	/^unsigned int gpio_7_base_addr_virtual=0;$/;"	v
+gpio_calculate_data_groupbase	driver/gpio/hi_gpio.c	/^static void gpio_calculate_data_groupbase(unsigned int groupnum, unsigned int bitnum)$/;"	f	file:
+gpio_config	driver/front_board/hi_key_gpio_driver.c	/^static void gpio_config(void) {$/;"	f	file:
+gpio_dev	driver/gpio/hi_gpio.c	/^static struct miscdevice gpio_dev = {$/;"	v	typeref:struct:miscdevice	file:
+gpio_dir_set_bit	driver/74HC165/74hc165.c	/^static void gpio_dir_set_bit(unsigned char bGpioPathNum, unsigned char bBitx, unsigned char bDirBit)$/;"	f	file:
+gpio_dir_set_bit	driver/74ls165/74ls165.c	/^static void gpio_dir_set_bit(unsigned char bGpioPathNum, unsigned char bBitx, unsigned char bDirBit)$/;"	f	file:
+gpio_dir_set_bit	driver/74ls165/74ls165_o.c	/^static void gpio_dir_set_bit(unsigned char bGpioPathNum, unsigned char bBitx, unsigned char bDirBit)$/;"	f	file:
+gpio_dir_set_bit	driver/front_board/hi_key_gpio_driver.c	/^static void gpio_dir_set_bit(unsigned int  iBAddr, unsigned char bBitx, unsigned char bDirBit)$/;"	f	file:
+gpio_fops	driver/gpio/hi_gpio.c	/^static struct file_operations gpio_fops = {$/;"	v	typeref:struct:file_operations	file:
+gpio_groupbit_info	driver/gpio/hi_gpio.h	/^}gpio_groupbit_info;$/;"	t	typeref:struct:__anon11
+gpio_i2c0_read	driver/adv7441/adv7441.c	47;"	d	file:
+gpio_i2c0_write	driver/adv7441/adv7441.c	48;"	d	file:
+gpio_i2c_exit	driver/gpio-i2c/gpio_i2c.c	/^module_exit(gpio_i2c_exit);$/;"	v
+gpio_i2c_exit	driver/gpio-i2c/gpio_i2c.c	/^static void __exit gpio_i2c_exit(void)$/;"	f	file:
+gpio_i2c_init	driver/gpio-i2c/gpio_i2c.c	/^module_init(gpio_i2c_init);$/;"	v
+gpio_i2c_init	driver/gpio-i2c/gpio_i2c.c	/^static int __init gpio_i2c_init(void)$/;"	f	file:
+gpio_i2c_read	driver/gpio-i2c/gpio_i2c.c	/^EXPORT_SYMBOL(gpio_i2c_read);$/;"	v
+gpio_i2c_read	driver/gpio-i2c/gpio_i2c.c	/^unsigned char gpio_i2c_read(unsigned char devaddress, unsigned char address)$/;"	f
+gpio_i2c_write	driver/gpio-i2c/gpio_i2c.c	/^EXPORT_SYMBOL(gpio_i2c_write);$/;"	v
+gpio_i2c_write	driver/gpio-i2c/gpio_i2c.c	/^void gpio_i2c_write(unsigned char devaddress, unsigned char address, unsigned char data)$/;"	f
+gpio_ioctl	driver/front_board/hi_key_gpio_driver.c	/^static int gpio_ioctl(struct inode *inode, struct file *filp, unsigned int cmd, unsigned long arg)$/;"	f	file:
+gpio_ioctl	driver/gpio/hi_gpio.c	/^static int gpio_ioctl(struct inode *inode, struct file *filp, unsigned int cmd, unsigned long arg)$/;"	f	file:
+gpio_open	driver/front_board/hi_key_gpio_driver.c	/^static int gpio_open(struct inode *inode, struct file *filp)$/;"	f	file:
+gpio_open	driver/gpio/hi_gpio.c	/^static int gpio_open(struct inode *inode, struct file *filp)$/;"	f	file:
+gpio_read_bit	driver/74HC165/74hc165.c	/^static unsigned char gpio_read_bit(unsigned char bGpioPathNum ,unsigned char bBitx)$/;"	f	file:
+gpio_read_bit	driver/74ls165/74ls165.c	/^static unsigned char gpio_read_bit(unsigned char bGpioPathNum ,unsigned char bBitx)$/;"	f	file:
+gpio_read_bit	driver/74ls165/74ls165_o.c	/^static unsigned char gpio_read_bit(unsigned char bGpioPathNum ,unsigned char bBitx)$/;"	f	file:
+gpio_read_bit	driver/front_board/hi_key_gpio_driver.c	/^static unsigned char gpio_read_bit(unsigned int iBAddr ,unsigned char bBitx)$/;"	f	file:
+gpio_release	driver/front_board/hi_key_gpio_driver.c	/^static int gpio_release(struct inode *inode, struct file *filp)$/;"	f	file:
+gpio_release	driver/gpio/hi_gpio.c	/^static int gpio_release(struct inode *inode, struct file *filp)$/;"	f	file:
+gpio_scankey_handler	driver/front_board/hi_key_gpio_driver.c	/^static irqreturn_t  gpio_scankey_handler(int irq, void *dev_id)$/;"	f	file:
+gpio_write_bit	driver/74HC165/74hc165.c	/^static void gpio_write_bit(unsigned char bGpioPathNum ,unsigned char bBitx ,unsigned char bBitValue)$/;"	f	file:
+gpio_write_bit	driver/74ls165/74ls165.c	/^static void gpio_write_bit(unsigned char bGpioPathNum ,unsigned char bBitx ,unsigned char bBitValue)$/;"	f	file:
+gpio_write_bit	driver/74ls165/74ls165_o.c	/^static void gpio_write_bit(unsigned char bGpioPathNum ,unsigned char bBitx ,unsigned char bBitValue)$/;"	f	file:
+gpio_write_bit	driver/front_board/hi_key_gpio_driver.c	/^static void gpio_write_bit(unsigned int iBAddr ,unsigned char bBitx ,unsigned char bBitValue)$/;"	f	file:
+gpioi2c_close	driver/gpio-i2c/gpio_i2c.c	/^int gpioi2c_close(struct inode * inode, struct file * file)$/;"	f
+gpioi2c_dev	driver/gpio-i2c/gpio_i2c.c	/^static struct miscdevice gpioi2c_dev = {$/;"	v	typeref:struct:miscdevice	file:
+gpioi2c_fops	driver/gpio-i2c/gpio_i2c.c	/^static struct file_operations gpioi2c_fops = {$/;"	v	typeref:struct:file_operations	file:
+gpioi2c_ioctl	driver/gpio-i2c/gpio_i2c.c	/^int gpioi2c_ioctl(struct inode *inode, struct file *file, unsigned int cmd, unsigned long arg)$/;"	f
+gpioi2c_open	driver/gpio-i2c/gpio_i2c.c	/^int gpioi2c_open(struct inode * inode, struct file * file)$/;"	f
+groupbase	driver/gpio/hi_gpio.c	/^unsigned int groupbase=-1;$/;"	v
+groupnumber	driver/gpio/hi_gpio.h	/^	unsigned int  groupnumber;$/;"	m	struct:__anon11
+guistatetable_t	driver/hal/keyvaluetable.h	/^}guistatetable_t;$/;"	t	typeref:enum:_guistatetable_
+head	driver/front_board/hi_key_gpio_driver.c	/^unsigned int head=0;$/;"	v
+head	driver/hiir/hiir.c	/^    unsigned int head;$/;"	m	struct:__anon1	file:
+header	src/cores/array_list.c	/^	List *header;$/;"	m	struct:_ArrayList	file:
+hi_gpio_exit	driver/front_board/hi_key_gpio_driver.c	/^module_exit(hi_gpio_exit);$/;"	v
+hi_gpio_exit	driver/front_board/hi_key_gpio_driver.c	/^static void __exit hi_gpio_exit(void)$/;"	f	file:
+hi_gpio_exit	driver/gpio/hi_gpio.c	/^module_exit(hi_gpio_exit);$/;"	v
+hi_gpio_exit	driver/gpio/hi_gpio.c	/^static void __exit hi_gpio_exit(void)$/;"	f	file:
+hi_gpio_init	driver/front_board/hi_key_gpio_driver.c	/^module_init(hi_gpio_init);$/;"	v
+hi_gpio_init	driver/front_board/hi_key_gpio_driver.c	/^static int __init hi_gpio_init(void)$/;"	f	file:
+hi_gpio_init	driver/gpio/hi_gpio.c	/^module_init(hi_gpio_init);$/;"	v
+hi_gpio_init	driver/gpio/hi_gpio.c	/^static int __init hi_gpio_init(void)$/;"	f	file:
+hiadv7400_w_reg	driver/adv7441/adv7441.h	/^typedef struct hiadv7400_w_reg$/;"	s
+hidog_dbg	driver/wtdg/hi_wdt.c	65;"	d	file:
+hidog_deamon	driver/wtdg/hi_wdt.c	/^static int hidog_deamon(void *data)$/;"	f	file:
+hidog_exit	driver/wtdg/hi_wdt.c	/^static void __exit hidog_exit(void)$/;"	f	file:
+hidog_feed	driver/wtdg/hi_wdt.c	/^static inline void hidog_feed(void)$/;"	f	file:
+hidog_fops	driver/wtdg/hi_wdt.c	/^static struct file_operations hidog_fops = {$/;"	v	typeref:struct:file_operations	file:
+hidog_init	driver/wtdg/hi_wdt.c	/^static int __init hidog_init(void)$/;"	f	file:
+hidog_ioctl	driver/wtdg/hi_wdt.c	/^static int hidog_ioctl(struct inode *inode, struct file *file,$/;"	f	file:
+hidog_keepalive	driver/wtdg/hi_wdt.c	/^static int hidog_keepalive(void)$/;"	f	file:
+hidog_miscdev	driver/wtdg/hi_wdt.c	/^static struct miscdevice hidog_miscdev = {$/;"	v	typeref:struct:miscdevice	file:
+hidog_notifier	driver/wtdg/hi_wdt.c	/^static struct notifier_block hidog_notifier = {$/;"	v	typeref:struct:notifier_block	file:
+hidog_notifier_sys	driver/wtdg/hi_wdt.c	/^static int hidog_notifier_sys(struct notifier_block *this, unsigned long code,$/;"	f	file:
+hidog_open	driver/wtdg/hi_wdt.c	/^static int hidog_open(struct inode *inode, struct file *file)$/;"	f	file:
+hidog_release	driver/wtdg/hi_wdt.c	/^static int hidog_release(struct inode *inode, struct file *file)$/;"	f	file:
+hidog_set_heartbeat	driver/wtdg/hi_wdt.c	/^static int hidog_set_heartbeat(int t)$/;"	f	file:
+hidog_set_timeout	driver/wtdg/hi_wdt.c	/^static inline void hidog_set_timeout(unsigned int nr)$/;"	f	file:
+hidog_start	driver/wtdg/hi_wdt.c	/^static inline void hidog_start(void)$/;"	f	file:
+hidog_state	driver/wtdg/hi_wdt.c	/^volatile static unsigned int hidog_state = 0;$/;"	v	file:
+hidog_stop	driver/wtdg/hi_wdt.c	/^static inline void hidog_stop(void)$/;"	f	file:
+hidog_write	driver/wtdg/hi_wdt.c	/^static ssize_t hidog_write(struct file *file, const char __user *data, size_t len, loff_t *ppos)$/;"	f	file:
+hiir_config	driver/hiir/hiir.c	/^static void hiir_config(void)$/;"	f	file:
+hiir_dbg	driver/hiir/hiir.c	73;"	d	file:
+hiir_dev	driver/hiir/hiir.c	/^static hiir_dev_struct hiir_dev;$/;"	v	file:
+hiir_dev_param	driver/hiir/hiir.h	/^}hiir_dev_param;$/;"	t	typeref:struct:__anon2
+hiir_dev_struct	driver/hiir/hiir.c	/^}hiir_dev_struct;$/;"	t	typeref:struct:__anon1	file:
+hiir_exit	driver/hiir/hiir.c	/^module_exit(hiir_exit);$/;"	v
+hiir_exit	driver/hiir/hiir.c	/^static void __exit hiir_exit(void)$/;"	f	file:
+hiir_fops	driver/hiir/hiir.c	/^static struct file_operations hiir_fops =$/;"	v	typeref:struct:file_operations	file:
+hiir_init	driver/hiir/hiir.c	/^module_init(hiir_init);$/;"	v
+hiir_init	driver/hiir/hiir.c	/^static int __init hiir_init(void)$/;"	f	file:
+hiir_interrupt	driver/hiir/hiir.c	/^static irqreturn_t hiir_interrupt(int irq, void *dev_id)$/;"	f	file:
+hiir_ioctl	driver/hiir/hiir.c	/^static int hiir_ioctl(struct inode *inode, struct file *filp, unsigned int cmd, unsigned long arg)$/;"	f	file:
+hiir_miscdev	driver/hiir/hiir.c	/^static struct miscdevice hiir_miscdev =$/;"	v	typeref:struct:miscdevice	file:
+hiir_open	driver/hiir/hiir.c	/^static int hiir_open(struct inode *inode, struct file *filp)$/;"	f	file:
+hiir_read	driver/hiir/hiir.c	/^static ssize_t hiir_read(struct file *filp, char __user *buf, size_t count, loff_t *f_pos)$/;"	f	file:
+hiir_release	driver/hiir/hiir.c	/^static int hiir_release(struct inode *inode, struct file *filp)$/;"	f	file:
+hiir_s_available	driver/hiir/hiir.c	/^static atomic_t hiir_s_available = ATOMIC_INIT(1);$/;"	v	file:
+hiir_select	driver/hiir/hiir.c	/^static unsigned int hiir_select(struct file *filp, struct poll_table_struct *wait)$/;"	f	file:
+hiir_show_reg	driver/hiir/hiir.c	80;"	d	file:
+hiir_write	driver/hiir/hiir.c	/^static int hiir_write(struct file *filp, const char __user *buf, size_t count, loff_t *f_pos)$/;"	f	file:
+hiwdt_readl	driver/wtdg/hi_wdt.c	60;"	d	file:
+hiwdt_writel	driver/wtdg/hi_wdt.c	61;"	d	file:
+host_alias	Makefile	/^host_alias = arm-hismall-linux$/;"	m
+host_alias	src/Makefile	/^host_alias = arm-hismall-linux$/;"	m
+host_alias	src/cores/Makefile	/^host_alias = arm-hismall-linux$/;"	m
+host_alias	src/cores/test/Makefile	/^host_alias = arm-hismall-linux$/;"	m
+host_alias	src/public/Makefile	/^host_alias = arm-hismall-linux$/;"	m
+hour	driver/hal/devhal.h	/^    HI_U32  hour;$/;"	m	struct:__anon5
+hour	driver/rtc/rtc_ds1339.h	/^    unsigned int  hour;$/;"	m	struct:__anon10
+hour	src/public/public_typedef.h	/^    int hour;$/;"	m	struct:_Datetime
+htmldir	Makefile	/^htmldir = ${docdir}$/;"	m
+htmldir	src/Makefile	/^htmldir = ${docdir}$/;"	m
+htmldir	src/cores/Makefile	/^htmldir = ${docdir}$/;"	m
+htmldir	src/cores/test/Makefile	/^htmldir = ${docdir}$/;"	m
+htmldir	src/public/Makefile	/^htmldir = ${docdir}$/;"	m
+hue	driver/TW28xx/tw2865.h	/^	unsigned char hue;$/;"	m	struct:_tw2865_image_adjust
+hue	driver/tw2865-16cif/tw2865.h	/^	unsigned char hue;$/;"	m	struct:_tw2865_image_adjust
+hue	driver/tw2865-8cif/tw2865.h	/^	unsigned char hue;$/;"	m	struct:_tw2865_image_adjust
+i2c_clr	driver/gpio-i2c/gpio_i2c.c	/^static void i2c_clr(unsigned char whichline)$/;"	f	file:
+i2c_data_read	driver/gpio-i2c/gpio_i2c.c	/^static unsigned char i2c_data_read(void)$/;"	f	file:
+i2c_receive_ack	driver/gpio-i2c/gpio_i2c.c	/^static int i2c_receive_ack(void)$/;"	f	file:
+i2c_receive_byte	driver/gpio-i2c/gpio_i2c.c	/^static unsigned char i2c_receive_byte(void)$/;"	f	file:
+i2c_send_byte	driver/gpio-i2c/gpio_i2c.c	/^static void i2c_send_byte(unsigned char c)$/;"	f	file:
+i2c_set	driver/gpio-i2c/gpio_i2c.c	/^static void  i2c_set(unsigned char whichline)$/;"	f	file:
+i2c_start_bit	driver/gpio-i2c/gpio_i2c.c	/^static void i2c_start_bit(void)$/;"	f	file:
+i2c_stop_bit	driver/gpio-i2c/gpio_i2c.c	/^static void i2c_stop_bit(void)$/;"	f	file:
+ident	driver/wtdg/hi_wdt.c	/^static struct watchdog_info ident = {$/;"	v	typeref:struct:watchdog_info	file:
+identity	driver/wtdg/watchdog.h	/^	__u8  identity[32];	\/* Identity of the board *\/$/;"	m	struct:watchdog_info
+if_mute	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char if_mute:1;$/;"	m	struct:__anon26::__anon27
+if_mute_route	driver/tlv320aic31/tlv320aic31.h	/^    unsigned int if_mute_route:1;$/;"	m	struct:__anon15
+if_mute_route	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char if_mute_route:1;$/;"	m	struct:__anon18::__anon19
+if_powerup	driver/tlv320aic31/tlv320aic31.h	/^    unsigned int if_powerup:1;$/;"	m	struct:__anon15
+in1_adc_input_level	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char in1_adc_input_level:4;$/;"	m	struct:__anon22::__anon23
+in2l_adc_input_level_sample	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char in2l_adc_input_level_sample:4;$/;"	m	struct:__anon20::__anon21
+in2r_adc_input_level_sample	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char in2r_adc_input_level_sample:4;$/;"	m	struct:__anon20::__anon21
+includedir	Makefile	/^includedir = ${prefix}\/include$/;"	m
+includedir	src/Makefile	/^includedir = ${prefix}\/include$/;"	m
+includedir	src/cores/Makefile	/^includedir = ${prefix}\/include$/;"	m
+includedir	src/cores/test/Makefile	/^includedir = ${prefix}\/include$/;"	m
+includedir	src/public/Makefile	/^includedir = ${prefix}\/include$/;"	m
+infodir	Makefile	/^infodir = ${datarootdir}\/info$/;"	m
+infodir	src/Makefile	/^infodir = ${datarootdir}\/info$/;"	m
+infodir	src/cores/Makefile	/^infodir = ${datarootdir}\/info$/;"	m
+infodir	src/cores/test/Makefile	/^infodir = ${datarootdir}\/info$/;"	m
+infodir	src/public/Makefile	/^infodir = ${datarootdir}\/info$/;"	m
+input_level	driver/tlv320aic31/tlv320aic31.h	/^    unsigned int input_level:7;$/;"	m	struct:__anon15
+input_vol_level_ctrl	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char input_vol_level_ctrl:7;$/;"	m	struct:__anon18::__anon19
+install_sh	Makefile	/^install_sh = $(SHELL) \/home\/zhoumin\/luho\/project\/dvr\/install-sh$/;"	m
+install_sh	src/Makefile	/^install_sh = $(SHELL) \/home\/zhoumin\/luho\/project\/dvr\/install-sh$/;"	m
+install_sh	src/cores/Makefile	/^install_sh = $(SHELL) \/home\/zhoumin\/luho\/project\/dvr\/install-sh$/;"	m
+install_sh	src/cores/test/Makefile	/^install_sh = $(SHELL) \/home\/zhoumin\/luho\/project\/dvr\/install-sh$/;"	m
+install_sh	src/public/Makefile	/^install_sh = $(SHELL) \/home\/zhoumin\/luho\/project\/dvr\/install-sh$/;"	m
+install_sh_DATA	Makefile	/^install_sh_DATA = $(install_sh) -c -m 644$/;"	m
+install_sh_DATA	src/Makefile	/^install_sh_DATA = $(install_sh) -c -m 644$/;"	m
+install_sh_DATA	src/cores/Makefile	/^install_sh_DATA = $(install_sh) -c -m 644$/;"	m
+install_sh_DATA	src/cores/test/Makefile	/^install_sh_DATA = $(install_sh) -c -m 644$/;"	m
+install_sh_DATA	src/public/Makefile	/^install_sh_DATA = $(install_sh) -c -m 644$/;"	m
+install_sh_PROGRAM	Makefile	/^install_sh_PROGRAM = $(install_sh) -c$/;"	m
+install_sh_PROGRAM	src/Makefile	/^install_sh_PROGRAM = $(install_sh) -c$/;"	m
+install_sh_PROGRAM	src/cores/Makefile	/^install_sh_PROGRAM = $(install_sh) -c$/;"	m
+install_sh_PROGRAM	src/cores/test/Makefile	/^install_sh_PROGRAM = $(install_sh) -c$/;"	m
+install_sh_PROGRAM	src/public/Makefile	/^install_sh_PROGRAM = $(install_sh) -c$/;"	m
+install_sh_SCRIPT	Makefile	/^install_sh_SCRIPT = $(install_sh) -c$/;"	m
+install_sh_SCRIPT	src/Makefile	/^install_sh_SCRIPT = $(install_sh) -c$/;"	m
+install_sh_SCRIPT	src/cores/Makefile	/^install_sh_SCRIPT = $(install_sh) -c$/;"	m
+install_sh_SCRIPT	src/cores/test/Makefile	/^install_sh_SCRIPT = $(install_sh) -c$/;"	m
+install_sh_SCRIPT	src/public/Makefile	/^install_sh_SCRIPT = $(install_sh) -c$/;"	m
+irkey_datah	driver/hiir/hiir.h	/^    unsigned long irkey_datah;$/;"	m	struct:__anon3
+irkey_datal	driver/hiir/hiir.h	/^    unsigned long irkey_datal;$/;"	m	struct:__anon3
+irkey_info_s	driver/hiir/hiir.h	/^}irkey_info_s;$/;"	t	typeref:struct:__anon3
+irkey_state_code	driver/hiir/hiir.h	/^    unsigned long irkey_state_code;$/;"	m	struct:__anon3
+irkey_wait	driver/hiir/hiir.c	/^    wait_queue_head_t irkey_wait;$/;"	m	struct:__anon1	file:
+is_lost	driver/TW28xx/tw2865.h	/^    unsigned int is_lost;$/;"	m	struct:_tw2865_video_loss
+is_lost	driver/tw2865-16cif/tw2865.h	/^    unsigned int is_lost;$/;"	m	struct:_tw2865_video_loss
+is_lost	driver/tw2865-8cif/tw2865.h	/^    unsigned int is_lost;$/;"	m	struct:_tw2865_video_loss
+item_sel	driver/TW28xx/tw2865.h	/^	unsigned long item_sel;\/* use such as "TW2865_SET_HUE|TW2865_SET_CONTRAST" *\/$/;"	m	struct:_tw2865_image_adjust
+item_sel	driver/tw2865-16cif/tw2865.h	/^	unsigned long item_sel;\/* use such as "TW2865_SET_HUE|TW2865_SET_CONTRAST" *\/$/;"	m	struct:_tw2865_image_adjust
+item_sel	driver/tw2865-8cif/tw2865.h	/^	unsigned long item_sel;\/* use such as "TW2865_SET_HUE|TW2865_SET_CONTRAST" *\/$/;"	m	struct:_tw2865_image_adjust
+judge_date	driver/rtc/rtc_ds1339.c	/^int judge_date(int month, int date)$/;"	f
+key_driver-y	driver/74ls165/Makefile	/^key_driver-y := 74ls165_gpio_driver.o$/;"	m
+key_gpio_dev	driver/74HC165/74hc165.c	/^static struct miscdevice key_gpio_dev = {$/;"	v	typeref:struct:miscdevice	file:
+key_gpio_dev	driver/74ls165/74ls165.c	/^static struct miscdevice key_gpio_dev = {$/;"	v	typeref:struct:miscdevice	file:
+key_gpio_dev	driver/74ls165/74ls165_o.c	/^static struct miscdevice key_gpio_dev = {$/;"	v	typeref:struct:miscdevice	file:
+key_gpio_dev	driver/front_board/hi_key_gpio_driver.c	/^static struct miscdevice key_gpio_dev = {$/;"	v	typeref:struct:miscdevice	file:
+key_gpio_fops	driver/front_board/hi_key_gpio_driver.c	/^static struct file_operations key_gpio_fops = {$/;"	v	typeref:struct:file_operations	file:
+key_has_release1	driver/front_board/hi_key_gpio_driver.c	/^unsigned int key_has_release1=1;$/;"	v
+key_has_release2	driver/front_board/hi_key_gpio_driver.c	/^unsigned int key_has_release2=1;$/;"	v
+key_value	driver/front_board/hi_key_gpio_driver.c	/^unsigned char  key_value[256];$/;"	v
+keyvaluetable_t	driver/hal/keyvaluetable.h	/^}keyvaluetable_t;$/;"	t	typeref:enum:_keyvaluetable_
+leade_max	driver/hiir/hiir.h	/^    unsigned short int leade_max;$/;"	m	struct:__anon2
+leade_min	driver/hiir/hiir.h	/^    unsigned short int leade_min;$/;"	m	struct:__anon2
+leads_max	driver/hiir/hiir.h	/^    unsigned short int leads_max;$/;"	m	struct:__anon2
+leads_min	driver/hiir/hiir.h	/^    unsigned short int leads_min;$/;"	m	struct:__anon2
+left_dac_datapath_ctrl	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char left_dac_datapath_ctrl:2;$/;"	m	struct:__anon28::__anon29
+left_dac_power_ctrl	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char left_dac_power_ctrl:1;$/;"	m	struct:__anon30::__anon31
+left_dac_swi_ctrl	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char left_dac_swi_ctrl:2;$/;"	m	struct:__anon32::__anon33
+libcores_a_AR	src/cores/Makefile	/^libcores_a_AR = $(AR) $(ARFLAGS)$/;"	m
+libcores_a_LIBADD	src/cores/Makefile	/^libcores_a_LIBADD =$/;"	m
+libcores_a_OBJECTS	src/cores/Makefile	/^libcores_a_OBJECTS = $(am_libcores_a_OBJECTS)$/;"	m
+libcores_a_SOURCES	src/cores/Makefile	/^libcores_a_SOURCES = array_list.c clocks.c clocks_rtc.c$/;"	m
+libdir	Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
+libdir	src/Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
+libdir	src/cores/Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
+libdir	src/cores/test/Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
+libdir	src/public/Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
+libexecdir	Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
+libexecdir	src/Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
+libexecdir	src/cores/Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
+libexecdir	src/cores/test/Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
+libexecdir	src/public/Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
+libpublic_a_AR	src/public/Makefile	/^libpublic_a_AR = $(AR) $(ARFLAGS)$/;"	m
+libpublic_a_LIBADD	src/public/Makefile	/^libpublic_a_LIBADD =$/;"	m
+libpublic_a_OBJECTS	src/public/Makefile	/^libpublic_a_OBJECTS = $(am_libpublic_a_OBJECTS)$/;"	m
+libpublic_a_SOURCES	src/public/Makefile	/^libpublic_a_SOURCES = public_function.c$/;"	m
+list	Makefile	/^	list='$(DIST_SUBDIRS)'; for subdir in $$list; do \\$/;"	m
+list	src/Makefile	/^	list='$(DIST_SUBDIRS)'; for subdir in $$list; do \\$/;"	m
+list	src/cores/Makefile	/^	list='$(DIST_SUBDIRS)'; for subdir in $$list; do \\$/;"	m
+list_node_create	src/cores/array_list.c	/^static List *list_node_create(void *data)$/;"	f	file:
+localedir	Makefile	/^localedir = ${datarootdir}\/locale$/;"	m
+localedir	src/Makefile	/^localedir = ${datarootdir}\/locale$/;"	m
+localedir	src/cores/Makefile	/^localedir = ${datarootdir}\/locale$/;"	m
+localedir	src/cores/test/Makefile	/^localedir = ${datarootdir}\/locale$/;"	m
+localedir	src/public/Makefile	/^localedir = ${datarootdir}\/locale$/;"	m
+localstatedir	Makefile	/^localstatedir = ${prefix}\/var$/;"	m
+localstatedir	src/Makefile	/^localstatedir = ${prefix}\/var$/;"	m
+localstatedir	src/cores/Makefile	/^localstatedir = ${prefix}\/var$/;"	m
+localstatedir	src/cores/test/Makefile	/^localstatedir = ${prefix}\/var$/;"	m
+localstatedir	src/public/Makefile	/^localstatedir = ${prefix}\/var$/;"	m
+main	driver/front_board/hi_key_gpio_api_test.c	/^int main(void)$/;"	f
+main	driver/gpio-i2c/i2c_read.c	/^int main(int argc , char* argv[])$/;"	f
+main	driver/gpio-i2c/i2c_write.c	/^int main(int argc , char* argv[])$/;"	f
+main	src/cores/test/array_list_test.c	/^int main(int argc , char *argv[])$/;"	f
+main	src/cores/test/clocks_rtc_test.c	/^int main(int argc, char *argv[])$/;"	f
+main	src/dvr.c	/^int main(int argc, char *argv[])$/;"	f
+main	src/public/public_function_test.c	/^int main(int argc ,char *argv[])$/;"	f
+mandir	Makefile	/^mandir = ${datarootdir}\/man$/;"	m
+mandir	src/Makefile	/^mandir = ${datarootdir}\/man$/;"	m
+mandir	src/cores/Makefile	/^mandir = ${datarootdir}\/man$/;"	m
+mandir	src/cores/test/Makefile	/^mandir = ${datarootdir}\/man$/;"	m
+mandir	src/public/Makefile	/^mandir = ${datarootdir}\/man$/;"	m
+minute	driver/hal/devhal.h	/^    HI_U32  minute;$/;"	m	struct:__anon5
+minute	driver/rtc/rtc_ds1339.h	/^    unsigned int  minute;$/;"	m	struct:__anon10
+minute	src/public/public_typedef.h	/^    int minute;$/;"	m	struct:_Datetime
+mkdir_p	Makefile	/^mkdir_p = \/bin\/mkdir -p$/;"	m
+mkdir_p	src/Makefile	/^mkdir_p = \/bin\/mkdir -p$/;"	m
+mkdir_p	src/cores/Makefile	/^mkdir_p = \/bin\/mkdir -p$/;"	m
+mkdir_p	src/cores/test/Makefile	/^mkdir_p = \/bin\/mkdir -p$/;"	m
+mkdir_p	src/public/Makefile	/^mkdir_p = \/bin\/mkdir -p$/;"	m
+mkinstalldirs	Makefile	/^mkinstalldirs = $(install_sh) -d$/;"	m
+mkinstalldirs	src/Makefile	/^mkinstalldirs = $(install_sh) -d$/;"	m
+mkinstalldirs	src/cores/Makefile	/^mkinstalldirs = $(install_sh) -d$/;"	m
+mkinstalldirs	src/cores/test/Makefile	/^mkinstalldirs = $(install_sh) -d$/;"	m
+mkinstalldirs	src/public/Makefile	/^mkinstalldirs = $(install_sh) -d$/;"	m
+mode	driver/TW28xx/tw2865.h	/^    unsigned int mode;$/;"	m	struct:_tw2865_video_norm
+mode	driver/TW28xx/tw2865.h	/^    unsigned int mode;$/;"	m	struct:_tw2865_work_mode
+mode	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char mode:1;$/;"	m	struct:__anon22::__anon23
+mode	driver/tw2865-16cif/tw2865.h	/^    unsigned int mode;$/;"	m	struct:_tw2865_video_norm
+mode	driver/tw2865-16cif/tw2865.h	/^    unsigned int mode;$/;"	m	struct:_tw2865_work_mode
+mode	driver/tw2865-8cif/tw2865.h	/^    unsigned int mode;$/;"	m	struct:_tw2865_video_norm
+mode	driver/tw2865-8cif/tw2865.h	/^    unsigned int mode;$/;"	m	struct:_tw2865_work_mode
+module_start_notify	driver/74HC165/start.sh	/^module_start_notify()$/;"	f
+module_start_notify	driver/TW28xx/start.sh	/^module_start_notify()$/;"	f
+module_start_notify	driver/adv7441/start.sh	/^module_start_notify()$/;"	f
+module_start_notify	driver/gpio-i2c/start.sh	/^module_start_notify()$/;"	f
+module_start_notify	driver/gpio/start.sh	/^module_start_notify()$/;"	f
+module_start_notify	driver/hal/start.sh	/^module_start_notify()$/;"	f
+module_start_notify	driver/hiir/start.sh	/^module_start_notify()$/;"	f
+module_start_notify	driver/mt9d131/start.sh	/^module_start_notify()$/;"	f
+module_start_notify	driver/rtc/start.sh	/^module_start_notify()$/;"	f
+module_start_notify	driver/tlv320aic31/start.sh	/^module_start_notify()$/;"	f
+module_start_notify	driver/tw2865-16cif/start.sh	/^module_start_notify()$/;"	f
+module_start_notify	driver/tw2865-8cif/start.sh	/^module_start_notify()$/;"	f
+module_start_notify	driver/wtdg/start.sh	/^module_start_notify()$/;"	f
+month	driver/hal/devhal.h	/^    HI_U32  month;$/;"	m	struct:__anon5
+month	driver/rtc/rtc_ds1339.h	/^    unsigned int  month;$/;"	m	struct:__anon10
+month	src/public/public_typedef.h	/^    int month;$/;"	m	struct:_Datetime
+mt9d131_close	driver/mt9d131/mt9d131.c	/^int mt9d131_close(struct inode * inode, struct file * file)$/;"	f
+mt9d131_default_init	driver/mt9d131/mt9d131.c	/^static void mt9d131_default_init(void)$/;"	f	file:
+mt9d131_dev	driver/mt9d131/mt9d131.c	/^static struct miscdevice mt9d131_dev = {$/;"	v	typeref:struct:miscdevice	file:
+mt9d131_device_init	driver/mt9d131/mt9d131.c	/^static int mt9d131_device_init(void)$/;"	f	file:
+mt9d131_exit	driver/mt9d131/mt9d131.c	/^module_exit(mt9d131_exit);$/;"	v
+mt9d131_exit	driver/mt9d131/mt9d131.c	/^static void __exit mt9d131_exit(void)$/;"	f	file:
+mt9d131_fops	driver/mt9d131/mt9d131.c	/^static struct file_operations mt9d131_fops = {$/;"	v	typeref:struct:file_operations	file:
+mt9d131_init	driver/mt9d131/mt9d131.c	/^module_init(mt9d131_init);$/;"	v
+mt9d131_init	driver/mt9d131/mt9d131.c	/^static int __init mt9d131_init(void)$/;"	f	file:
+mt9d131_ioctl	driver/mt9d131/mt9d131.c	/^int mt9d131_ioctl(struct inode *inode, struct file *file, unsigned int cmd, unsigned long arg)$/;"	f
+mt9d131_open	driver/mt9d131/mt9d131.c	/^int mt9d131_open(struct inode * inode, struct file * file)$/;"	f
+mt9d131_uxga_init	driver/mt9d131/mt9d131.c	/^static void mt9d131_uxga_init(void)$/;"	f	file:
+mt9d131_vga_init	driver/mt9d131/mt9d131.c	/^static void mt9d131_vga_init(void)$/;"	f	file:
+next	src/cores/array_list.c	/^	List *next;$/;"	m	struct:_List	file:
+nodeamon	driver/wtdg/hi_wdt.c	/^static int nodeamon = 0;$/;"	v	file:
+noinst_LIBRARIES	src/cores/Makefile	/^noinst_LIBRARIES = libcores.a$/;"	m
+noinst_LIBRARIES	src/public/Makefile	/^noinst_LIBRARIES = libpublic.a$/;"	m
+noinst_PROGRAMS	src/Makefile	/^noinst_PROGRAMS = dvr$(EXEEXT)$/;"	m
+noinst_PROGRAMS	src/cores/test/Makefile	/^noinst_PROGRAMS = array_list_test$(EXEEXT) clocks_rtc_test$(EXEEXT)$/;"	m
+noinst_PROGRAMS	src/public/Makefile	/^noinst_PROGRAMS = public_function_test$(EXEEXT)$/;"	m
+norm	driver/TW28xx/tw2865.c	/^static int norm = TW2865_PAL;$/;"	v	file:
+norm	driver/tw2865-16cif/tw2865.c	/^static int norm = TW2865_PAL;$/;"	v	file:
+norm	driver/tw2865-8cif/tw2865.c	/^static int norm = TW2865_PAL;$/;"	v	file:
+nowayout	driver/wtdg/hi_wdt.c	/^static int nowayout = WATCHDOG_NOWAYOUT;$/;"	v	file:
+obj-m	driver/TW28xx/Makefile	/^obj-m := tw2865.o$/;"	m
+obj-m	driver/adv7441/Makefile	/^obj-m := adv_7441.o$/;"	m
+obj-m	driver/front_board/Makefile	/^obj-m := key_driver.o$/;"	m
+obj-m	driver/gpio-i2c/Makefile	/^obj-m := gpioi2c.o$/;"	m
+obj-m	driver/gpio/Makefile	/^obj-m := higpio.o$/;"	m
+obj-m	driver/hiir/Makefile	/^obj-m := hi_ir.o$/;"	m
+obj-m	driver/mt9d131/Makefile	/^obj-m := mt_9d131.o$/;"	m
+obj-m	driver/rtc/Makefile	/^obj-m := rtc_ds1339.o$/;"	m
+obj-m	driver/tlv320aic31/Makefile	/^obj-m := tlv_320aic31.o$/;"	m
+obj-m	driver/tw2865-16cif/Makefile	/^obj-m := tw2865.o$/;"	m
+obj-m	driver/tw2865-8cif/Makefile	/^obj-m := tw2865.o$/;"	m
+obj-m	driver/wtdg/Makefile	/^obj-m := hiwdt.o$/;"	m
+oldincludedir	Makefile	/^oldincludedir = \/usr\/include$/;"	m
+oldincludedir	src/Makefile	/^oldincludedir = \/usr\/include$/;"	m
+oldincludedir	src/cores/Makefile	/^oldincludedir = \/usr\/include$/;"	m
+oldincludedir	src/cores/test/Makefile	/^oldincludedir = \/usr\/include$/;"	m
+oldincludedir	src/public/Makefile	/^oldincludedir = \/usr\/include$/;"	m
+open_cnt	driver/tlv320aic31/tlv320aic31.c	/^static unsigned int  open_cnt = 0;	$/;"	v	file:
+options	driver/wtdg/hi_wdt.c	/^static int options = WDIOS_ENABLECARD;$/;"	v	file:
+options	driver/wtdg/watchdog.h	/^	__u32 options;		\/* Options the card\/driver supports *\/$/;"	m	struct:watchdog_info
+orphan_timer	driver/wtdg/hi_wdt.c	/^static unsigned long driver_open = 0, orphan_timer = 0;$/;"	v	file:
+out_mode	driver/mt9d131/mt9d131.c	/^static int out_mode = 0;$/;"	v	file:
+output_level	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char output_level:4;$/;"	m	struct:__anon26::__anon27
+parity	driver/hal/devhal.h	/^	HI_U8 	parity;$/;"	m	struct:__anon6
+pdfdir	Makefile	/^pdfdir = ${docdir}$/;"	m
+pdfdir	src/Makefile	/^pdfdir = ${docdir}$/;"	m
+pdfdir	src/cores/Makefile	/^pdfdir = ${docdir}$/;"	m
+pdfdir	src/cores/test/Makefile	/^pdfdir = ${docdir}$/;"	m
+pdfdir	src/public/Makefile	/^pdfdir = ${docdir}$/;"	m
+pid_hidog_deamon	driver/wtdg/hi_wdt.c	/^static pid_t pid_hidog_deamon = -1;$/;"	v	file:
+pkgdatadir	Makefile	/^pkgdatadir = $(datadir)\/dvr$/;"	m
+pkgdatadir	src/Makefile	/^pkgdatadir = $(datadir)\/dvr$/;"	m
+pkgdatadir	src/cores/Makefile	/^pkgdatadir = $(datadir)\/dvr$/;"	m
+pkgdatadir	src/cores/test/Makefile	/^pkgdatadir = $(datadir)\/dvr$/;"	m
+pkgdatadir	src/public/Makefile	/^pkgdatadir = $(datadir)\/dvr$/;"	m
+pkgincludedir	Makefile	/^pkgincludedir = $(includedir)\/dvr$/;"	m
+pkgincludedir	src/Makefile	/^pkgincludedir = $(includedir)\/dvr$/;"	m
+pkgincludedir	src/cores/Makefile	/^pkgincludedir = $(includedir)\/dvr$/;"	m
+pkgincludedir	src/cores/test/Makefile	/^pkgincludedir = $(includedir)\/dvr$/;"	m
+pkgincludedir	src/public/Makefile	/^pkgincludedir = $(includedir)\/dvr$/;"	m
+pkglibdir	Makefile	/^pkglibdir = $(libdir)\/dvr$/;"	m
+pkglibdir	src/Makefile	/^pkglibdir = $(libdir)\/dvr$/;"	m
+pkglibdir	src/cores/Makefile	/^pkglibdir = $(libdir)\/dvr$/;"	m
+pkglibdir	src/cores/test/Makefile	/^pkglibdir = $(libdir)\/dvr$/;"	m
+pkglibdir	src/public/Makefile	/^pkglibdir = $(libdir)\/dvr$/;"	m
+power_down_ctrl	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char power_down_ctrl:1;$/;"	m	struct:__anon26::__anon27
+power_status	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char power_status:1;$/;"	m	struct:__anon26::__anon27
+powerfreq	driver/mt9d131/mt9d131.c	/^static int powerfreq = DC_VAL_50HZ;$/;"	v	file:
+prefix	Makefile	/^prefix = \/usr\/local$/;"	m
+prefix	src/Makefile	/^prefix = \/usr\/local$/;"	m
+prefix	src/cores/Makefile	/^prefix = \/usr\/local$/;"	m
+prefix	src/cores/test/Makefile	/^prefix = \/usr\/local$/;"	m
+prefix	src/public/Makefile	/^prefix = \/usr\/local$/;"	m
+priv	src/cores/clocks.h	/^	ClocksInfo *priv;$/;"	m	struct:_Clocks
+priv	src/cores/observer.h	/^	char priv[0];	$/;"	m	struct:_Observer
+priv_subclass	src/cores/clocks.h	/^	void *priv_subclass[0];$/;"	m	struct:_Clocks
+program_transform_name	Makefile	/^program_transform_name = s,x,x,$/;"	m
+program_transform_name	src/Makefile	/^program_transform_name = s,x,x,$/;"	m
+program_transform_name	src/cores/Makefile	/^program_transform_name = s,x,x,$/;"	m
+program_transform_name	src/cores/test/Makefile	/^program_transform_name = s,x,x,$/;"	m
+program_transform_name	src/public/Makefile	/^program_transform_name = s,x,x,$/;"	m
+prototypes	configure	/^   function prototypes and stuff, but not '\\xHH' hex character constants.$/;"	f
+psdir	Makefile	/^psdir = ${docdir}$/;"	m
+psdir	src/Makefile	/^psdir = ${docdir}$/;"	m
+psdir	src/cores/Makefile	/^psdir = ${docdir}$/;"	m
+psdir	src/cores/test/Makefile	/^psdir = ${docdir}$/;"	m
+psdir	src/public/Makefile	/^psdir = ${docdir}$/;"	m
+ptzcmdtable_t	driver/hal/devhal.c	/^}ptzcmdtable_t;$/;"	t	typeref:enum:_ptzcmdtable_	file:
+ptzprotocol_t	driver/hal/devhal.c	/^}ptzprotocol_t;$/;"	t	typeref:enum:_ptzprotocol_	file:
+ptzserialconfig_t	driver/hal/devhal.h	/^}ptzserialconfig_t;$/;"	t	typeref:struct:__anon6
+public_function_test_DEPENDENCIES	src/public/Makefile	/^public_function_test_DEPENDENCIES = .\/libpublic.a$/;"	m
+public_function_test_LDADD	src/public/Makefile	/^public_function_test_LDADD = .\/libpublic.a$/;"	m
+public_function_test_LDFLAGS	src/public/Makefile	/^public_function_test_LDFLAGS = -lpthread$/;"	m
+public_function_test_LINK	src/public/Makefile	/^public_function_test_LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) \\$/;"	m
+public_function_test_OBJECTS	src/public/Makefile	/^public_function_test_OBJECTS = public_function_test.$(OBJEXT)$/;"	m
+public_function_test_SOURCES	src/public/Makefile	/^public_function_test_SOURCES = public_function_test.c$/;"	m
+rate	driver/wtdg/hi_wdt.c	/^static unsigned long rate = 3*MHZ;$/;"	v	file:
+read	driver/74HC165/74hc165.c	/^	unsigned int read;$/;"	m	struct:__anon14	file:
+read	driver/74ls165/74ls165.c	/^	unsigned int read;$/;"	m	struct:__anon12	file:
+read	driver/74ls165/74ls165_o.c	/^	unsigned int read;$/;"	m	struct:__anon13	file:
+read_wait	driver/74HC165/74hc165.c	/^static	wait_queue_head_t	read_wait;$/;"	v	file:
+read_wait	driver/74ls165/74ls165.c	/^static	wait_queue_head_t	read_wait;$/;"	v	file:
+repkey_checkflag	driver/hiir/hiir.c	/^    unsigned int repkey_checkflag;$/;"	m	struct:__anon1	file:
+repkey_delaytime	driver/hiir/hiir.c	/^    unsigned int repkey_delaytime;$/;"	m	struct:__anon1	file:
+repkey_timeout	driver/front_board/hi_key_gpio_driver.c	/^unsigned int repkey_timeout=0;$/;"	v
+repkey_timeout_handler	driver/hiir/hiir.c	/^static void repkey_timeout_handler(unsigned long data)$/;"	f	file:
+reserve	driver/TW28xx/tw2865.h	/^	unsigned char reserve[6];$/;"	m	struct:_tw2865_audio_output
+reserve	driver/tw2865-16cif/tw2865.h	/^	unsigned char reserve[6];$/;"	m	struct:_tw2865_audio_output
+reserve	driver/tw2865-8cif/tw2865.h	/^	unsigned char reserve[6];$/;"	m	struct:_tw2865_audio_output
+reserved	driver/tlv320aic31/tlv320aic31.h	/^    unsigned int reserved :6;$/;"	m	struct:__anon15
+reserved	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char reserved:4;$/;"	m	struct:__anon24::__anon25
+reserved	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char reserved:4;$/;"	m	struct:__anon32::__anon33
+reserved	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char reserved:6;$/;"	m	struct:__anon30::__anon31
+reserved1	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char reserved1:1;$/;"	m	struct:__anon16::__anon17
+reserved1	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char reserved1:1;$/;"	m	struct:__anon28::__anon29
+reserved2	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char reserved2 :4;$/;"	m	struct:__anon16::__anon17
+reserved2	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char reserved2:3;$/;"	m	struct:__anon28::__anon29
+return_if_failed	src/public/public_typedef.h	23;"	d
+return_val_if_failed	src/public/public_typedef.h	19;"	d
+right_dac_datapath_ctrl	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char right_dac_datapath_ctrl:2;$/;"	m	struct:__anon28::__anon29
+right_dac_power_ctrl	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char right_dac_power_ctrl:1;$/;"	m	struct:__anon30::__anon31
+right_dac_swi_ctrl	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char right_dac_swi_ctrl:2;$/;"	m	struct:__anon32::__anon33
+rtc-ds1339-y	driver/rtc/Makefile	/^rtc-ds1339-y := rtc_ds1339.o$/;"	m
+rtc_dev	driver/rtc/rtc_ds1339.c	/^static struct miscdevice rtc_dev=$/;"	v	typeref:struct:miscdevice	file:
+rtc_exit	driver/rtc/rtc_ds1339.c	/^module_exit(rtc_exit);$/;"	v
+rtc_exit	driver/rtc/rtc_ds1339.c	/^static void __exit rtc_exit(void)$/;"	f	file:
+rtc_fops	driver/rtc/rtc_ds1339.c	/^static struct file_operations rtc_fops = $/;"	v	typeref:struct:file_operations	file:
+rtc_get	driver/rtc/rtc_ds1339.c	/^int  rtc_get(rtc_time_t *pcompositetime)$/;"	f
+rtc_init	driver/rtc/rtc_ds1339.c	/^module_init(rtc_init);$/;"	v
+rtc_init	driver/rtc/rtc_ds1339.c	/^static int __init rtc_init(void)$/;"	f	file:
+rtc_ioctl	driver/rtc/rtc_ds1339.c	/^static int rtc_ioctl(struct inode *inode, struct file *file,$/;"	f	file:
+rtc_lock	driver/rtc/rtc_ds1339.c	/^spinlock_t  rtc_lock;$/;"	v
+rtc_open	driver/rtc/rtc_ds1339.c	/^static int rtc_open(struct inode *inode, struct file *file)$/;"	f	file:
+rtc_open	src/cores/clocks_rtc.c	/^static int rtc_open(char *rtc_dev_name)$/;"	f	file:
+rtc_read_proc	driver/rtc/rtc_ds1339.c	/^	static int rtc_read_proc(char *page, char **start, off_t off,$/;"	f	file:
+rtc_release	driver/rtc/rtc_ds1339.c	/^static int rtc_release(struct inode *inode, struct file *file)$/;"	f	file:
+rtc_set	driver/rtc/rtc_ds1339.c	/^int  rtc_set(rtc_time_t compositetime)$/;"	f
+rtc_status	driver/rtc/rtc_ds1339.c	/^static unsigned long 	rtc_status = 0;$/;"	v	file:
+rtc_time	src/cores/clocks_rtc.c	/^	rtc_time_t rtc_time;$/;"	m	struct:_PrivInfo	file:
+rtc_time_t	driver/rtc/rtc_ds1339.h	/^} rtc_time_t;$/;"	t	typeref:struct:__anon10
+s_s32WdtEnable	driver/hal/devhal.c	/^static HI_S32 s_s32WdtEnable = 0;$/;"	v	file:
+sample	driver/tlv320aic31/tlv320aic31.h	/^    unsigned int sample:4;$/;"	m	struct:__anon15
+saturation	driver/TW28xx/tw2865.h	/^	unsigned char saturation;$/;"	m	struct:_tw2865_image_adjust
+saturation	driver/tw2865-16cif/tw2865.h	/^	unsigned char saturation;$/;"	m	struct:_tw2865_image_adjust
+saturation	driver/tw2865-8cif/tw2865.h	/^	unsigned char saturation;$/;"	m	struct:_tw2865_image_adjust
+sbindir	Makefile	/^sbindir = ${exec_prefix}\/sbin$/;"	m
+sbindir	src/Makefile	/^sbindir = ${exec_prefix}\/sbin$/;"	m
+sbindir	src/cores/Makefile	/^sbindir = ${exec_prefix}\/sbin$/;"	m
+sbindir	src/cores/test/Makefile	/^sbindir = ${exec_prefix}\/sbin$/;"	m
+sbindir	src/public/Makefile	/^sbindir = ${exec_prefix}\/sbin$/;"	m
+scf1	driver/adv7441/adv7441.h	/^	unsigned short scf1;$/;"	m	struct:_tagModeDetectTb
+scf2	driver/adv7441/adv7441.h	/^	unsigned short scf2;$/;"	m	struct:_tagModeDetectTb
+second	driver/hal/devhal.h	/^    HI_U32  second;$/;"	m	struct:__anon5
+second	driver/rtc/rtc_ds1339.h	/^    unsigned int  second;$/;"	m	struct:__anon10
+second	src/public/public_typedef.h	/^    int second;$/;"	m	struct:_Datetime
+serial_control	driver/adv7441/adv7441.h	35;"	d
+serial_playback_control	driver/adv7441/adv7441.h	36;"	d
+set_time	src/cores/clocks.h	/^	ClocksSetTimeFunc set_time;$/;"	m	struct:_Clocks
+sharedstatedir	Makefile	/^sharedstatedir = ${prefix}\/com$/;"	m
+sharedstatedir	src/Makefile	/^sharedstatedir = ${prefix}\/com$/;"	m
+sharedstatedir	src/cores/Makefile	/^sharedstatedir = ${prefix}\/com$/;"	m
+sharedstatedir	src/cores/test/Makefile	/^sharedstatedir = ${prefix}\/com$/;"	m
+sharedstatedir	src/public/Makefile	/^sharedstatedir = ${prefix}\/com$/;"	m
+sleade_max	driver/hiir/hiir.h	/^    unsigned short int sleade_max;$/;"	m	struct:__anon2
+sleade_min	driver/hiir/hiir.h	/^    unsigned short int sleade_min;$/;"	m	struct:__anon2
+soft_reset	driver/tlv320aic31/tlv320aic31.c	/^void soft_reset(unsigned int chip_num)$/;"	f
+srcdir	Makefile	/^srcdir = .$/;"	m
+srcdir	src/Makefile	/^srcdir = .$/;"	m
+srcdir	src/cores/Makefile	/^srcdir = .$/;"	m
+srcdir	src/cores/test/Makefile	/^srcdir = .$/;"	m
+srcdir	src/public/Makefile	/^srcdir = .$/;"	m
+static_dev_param	driver/hiir/hiir_codedef.c	/^static hiir_dev_param static_dev_param[] = $/;"	v	file:
+stopbits	driver/hal/devhal.h	/^	HI_U8 	stopbits;$/;"	m	struct:__anon6
+subdir	Makefile	/^subdir = .$/;"	m
+subdir	src/Makefile	/^subdir = src$/;"	m
+subdir	src/cores/Makefile	/^subdir = src\/cores$/;"	m
+subdir	src/cores/test/Makefile	/^subdir = src\/cores\/test$/;"	m
+subdir	src/public/Makefile	/^subdir = src\/public$/;"	m
+sys_reg_value	driver/74HC165/74hc165.c	/^unsigned int sys_reg_value=0;$/;"	v
+sys_reg_value	driver/74ls165/74ls165.c	/^unsigned int sys_reg_value=0;$/;"	v
+sys_reg_value	driver/74ls165/74ls165_o.c	/^unsigned int sys_reg_value=0;$/;"	v
+sysconfdir	Makefile	/^sysconfdir = ${prefix}\/etc$/;"	m
+sysconfdir	src/Makefile	/^sysconfdir = ${prefix}\/etc$/;"	m
+sysconfdir	src/cores/Makefile	/^sysconfdir = ${prefix}\/etc$/;"	m
+sysconfdir	src/cores/test/Makefile	/^sysconfdir = ${prefix}\/etc$/;"	m
+sysconfdir	src/public/Makefile	/^sysconfdir = ${prefix}\/etc$/;"	m
+tail	driver/front_board/hi_key_gpio_driver.c	/^unsigned int tail=0;$/;"	v
+tail	driver/hiir/hiir.c	/^    unsigned int tail;$/;"	m	struct:__anon1	file:
+tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | GZIP=$(GZIP_ENV) gzip -c >$(distdir).tar.gz$/;"	m
+tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | bzip2 -9 -c >$(distdir).tar.bz2$/;"	m
+tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | compress -c >$(distdir).tar.Z$/;"	m
+tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | lzma -9 -c >$(distdir).tar.lzma$/;"	m
+target_alias	Makefile	/^target_alias = $/;"	m
+target_alias	src/Makefile	/^target_alias = $/;"	m
+target_alias	src/cores/Makefile	/^target_alias = $/;"	m
+target_alias	src/cores/test/Makefile	/^target_alias = $/;"	m
+target_alias	src/public/Makefile	/^target_alias = $/;"	m
+tbl_ntsc_tw2865_8KHz	driver/TW28xx/tw2865_def.h	/^unsigned char tbl_ntsc_tw2865_8KHz[] = {  $/;"	v
+tbl_ntsc_tw2865_8KHz	driver/tw2865-16cif/tw2865_def.h	/^unsigned char tbl_ntsc_tw2865_8KHz[] = {  $/;"	v
+tbl_ntsc_tw2865_8KHz	driver/tw2865-8cif/tw2865_def.h	/^unsigned char tbl_ntsc_tw2865_8KHz[] = {  $/;"	v
+tbl_ntsc_tw2865_common	driver/TW28xx/tw2865_def.h	/^unsigned char tbl_ntsc_tw2865_common[] = {  $/;"	v
+tbl_ntsc_tw2865_common	driver/tw2865-16cif/tw2865_def.h	/^unsigned char tbl_ntsc_tw2865_common[] = {  $/;"	v
+tbl_ntsc_tw2865_common	driver/tw2865-8cif/tw2865_def.h	/^unsigned char tbl_ntsc_tw2865_common[] = {  $/;"	v
+tbl_pal_tw2865_8KHz	driver/TW28xx/tw2865_def.h	/^unsigned char tbl_pal_tw2865_8KHz[] = {  $/;"	v
+tbl_pal_tw2865_8KHz	driver/tw2865-16cif/tw2865_def.h	/^unsigned char tbl_pal_tw2865_8KHz[] = {  $/;"	v
+tbl_pal_tw2865_8KHz	driver/tw2865-8cif/tw2865_def.h	/^unsigned char tbl_pal_tw2865_8KHz[] = {  $/;"	v
+tbl_pal_tw2865_common	driver/TW28xx/tw2865_def.h	/^unsigned char tbl_pal_tw2865_common[] = {$/;"	v
+tbl_pal_tw2865_common	driver/tw2865-16cif/tw2865_def.h	/^unsigned char tbl_pal_tw2865_common[] = {$/;"	v
+tbl_pal_tw2865_common	driver/tw2865-8cif/tw2865_def.h	/^unsigned char tbl_pal_tw2865_common[] = {$/;"	v
+test_thread	src/public/public_function_test.c	/^void test_thread()$/;"	f
+thread_test	src/public/public_function_test.c	/^void *thread_test(void *para)$/;"	f
+time_acculte1	driver/front_board/hi_key_gpio_driver.c	/^unsigned int time_acculte1=0;$/;"	v
+time_acculte2	driver/front_board/hi_key_gpio_driver.c	/^unsigned int time_acculte2=0;$/;"	v
+time_delay_us	driver/gpio-i2c/gpio_i2c.c	/^void time_delay_us(unsigned int usec)$/;"	f
+timer_reg_value	driver/74HC165/74hc165.c	/^unsigned int timer_reg_value=0;$/;"	v
+timer_reg_value	driver/74ls165/74ls165.c	/^unsigned int timer_reg_value=0;$/;"	v
+timer_reg_value	driver/74ls165/74ls165_o.c	/^unsigned int timer_reg_value=0;$/;"	v
+timer_reg_value	driver/front_board/hi_key_gpio_driver.c	/^unsigned int timer_reg_value=0;$/;"	v
+tlv320aic31_close	driver/tlv320aic31/tlv320aic31.c	/^static int tlv320aic31_close(struct inode *inode ,struct file *file)$/;"	f	file:
+tlv320aic31_dev	driver/tlv320aic31/tlv320aic31.c	/^static struct miscdevice tlv320aic31_dev = {$/;"	v	typeref:struct:miscdevice	file:
+tlv320aic31_device_init	driver/tlv320aic31/tlv320aic31.c	/^static int tlv320aic31_device_init(unsigned int num)$/;"	f	file:
+tlv320aic31_exit	driver/tlv320aic31/tlv320aic31.c	/^module_exit(tlv320aic31_exit);$/;"	v
+tlv320aic31_exit	driver/tlv320aic31/tlv320aic31.c	/^static void __exit tlv320aic31_exit(void)$/;"	f	file:
+tlv320aic31_fops	driver/tlv320aic31/tlv320aic31.c	/^static struct file_operations tlv320aic31_fops = {$/;"	v	typeref:struct:file_operations	file:
+tlv320aic31_init	driver/tlv320aic31/tlv320aic31.c	/^module_init(tlv320aic31_init);$/;"	v
+tlv320aic31_init	driver/tlv320aic31/tlv320aic31.c	/^static int __init tlv320aic31_init(void)$/;"	f	file:
+tlv320aic31_ioctl	driver/tlv320aic31/tlv320aic31.c	/^static int tlv320aic31_ioctl(struct inode *inode, struct file *file, unsigned int cmd, unsigned long arg)$/;"	f	file:
+tlv320aic31_open	driver/tlv320aic31/tlv320aic31.c	/^static int tlv320aic31_open(struct inode * inode, struct file * file)$/;"	f	file:
+tlv320aic31_read	driver/tlv320aic31/tlv320aic31.c	/^int tlv320aic31_read(unsigned char chip_addr,unsigned char reg_addr)$/;"	f
+tlv320aic31_reg_demp	driver/tlv320aic31/tlv320aic31.c	/^void tlv320aic31_reg_demp(unsigned int reg_num)$/;"	f
+tlv320aic31_write	driver/tlv320aic31/tlv320aic31.c	/^void tlv320aic31_write(unsigned char chip_addr,unsigned char reg_addr,unsigned char value)$/;"	f
+top_builddir	Makefile	/^top_builddir = .$/;"	m
+top_builddir	src/Makefile	/^top_builddir = ..$/;"	m
+top_builddir	src/cores/Makefile	/^top_builddir = ..\/..$/;"	m
+top_builddir	src/cores/test/Makefile	/^top_builddir = ..\/..\/..$/;"	m
+top_builddir	src/public/Makefile	/^top_builddir = ..\/..$/;"	m
+top_distdir	Makefile	/^top_distdir = $(distdir)$/;"	m
+top_srcdir	Makefile	/^top_srcdir = .$/;"	m
+top_srcdir	src/Makefile	/^top_srcdir = ..$/;"	m
+top_srcdir	src/cores/Makefile	/^top_srcdir = ..\/..$/;"	m
+top_srcdir	src/cores/test/Makefile	/^top_srcdir = ..\/..\/..$/;"	m
+top_srcdir	src/public/Makefile	/^top_srcdir = ..\/..$/;"	m
+trans_mode	driver/tlv320aic31/tlv320aic31.h	/^    unsigned int trans_mode:2;$/;"	m	struct:__anon15
+transfer_mode	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char transfer_mode:2;                      $/;"	m	struct:__anon24::__anon25
+transform	Makefile	/^transform = $(program_transform_name)$/;"	m
+transform	src/Makefile	/^transform = $(program_transform_name)$/;"	m
+transform	src/cores/Makefile	/^transform = $(program_transform_name)$/;"	m
+transform	src/cores/test/Makefile	/^transform = $(program_transform_name)$/;"	m
+transform	src/public/Makefile	/^transform = $(program_transform_name)$/;"	m
+tw2865_audio_cascade	driver/TW28xx/tw2865.c	/^static void tw2865_audio_cascade(void)$/;"	f	file:
+tw2865_audio_cascade	driver/tw2865-16cif/tw2865.c	/^static void tw2865_audio_cascade(void)$/;"	f	file:
+tw2865_audio_cascade	driver/tw2865-8cif/tw2865.c	/^static void tw2865_audio_cascade(void)$/;"	f	file:
+tw2865_audio_da_mute	driver/TW28xx/tw2865.h	/^} tw2865_audio_da_mute;$/;"	t	typeref:struct:_tw2865_audio_da_mute
+tw2865_audio_da_mute	driver/tw2865-16cif/tw2865.h	/^} tw2865_audio_da_mute;$/;"	t	typeref:struct:_tw2865_audio_da_mute
+tw2865_audio_da_mute	driver/tw2865-8cif/tw2865.h	/^} tw2865_audio_da_mute;$/;"	t	typeref:struct:_tw2865_audio_da_mute
+tw2865_audio_da_volume	driver/TW28xx/tw2865.h	/^} tw2865_audio_da_volume;$/;"	t	typeref:struct:_ttw2865_audio_da_volume
+tw2865_audio_da_volume	driver/tw2865-16cif/tw2865.h	/^} tw2865_audio_da_volume;$/;"	t	typeref:struct:_ttw2865_audio_da_volume
+tw2865_audio_da_volume	driver/tw2865-8cif/tw2865.h	/^} tw2865_audio_da_volume;$/;"	t	typeref:struct:_ttw2865_audio_da_volume
+tw2865_audio_init	driver/TW28xx/tw2865.c	/^static void tw2865_audio_init(unsigned char chip_addr)$/;"	f	file:
+tw2865_audio_init	driver/tw2865-16cif/tw2865.c	/^static void tw2865_audio_init(unsigned char chip_addr)$/;"	f	file:
+tw2865_audio_init	driver/tw2865-8cif/tw2865.c	/^static void tw2865_audio_init(unsigned char chip_addr)$/;"	f	file:
+tw2865_audio_output	driver/TW28xx/tw2865.h	/^} tw2865_audio_output;$/;"	t	typeref:struct:_tw2865_audio_output
+tw2865_audio_output	driver/tw2865-16cif/tw2865.h	/^} tw2865_audio_output;$/;"	t	typeref:struct:_tw2865_audio_output
+tw2865_audio_output	driver/tw2865-8cif/tw2865.h	/^} tw2865_audio_output;$/;"	t	typeref:struct:_tw2865_audio_output
+tw2865_audio_playback	driver/TW28xx/tw2865.h	/^} tw2865_audio_playback;$/;"	t	typeref:struct:_tw2865_audio_playback
+tw2865_audio_playback	driver/tw2865-16cif/tw2865.h	/^} tw2865_audio_playback;$/;"	t	typeref:struct:_tw2865_audio_playback
+tw2865_audio_playback	driver/tw2865-8cif/tw2865.h	/^} tw2865_audio_playback;$/;"	t	typeref:struct:_tw2865_audio_playback
+tw2865_audio_samplerate	driver/TW28xx/tw2865.h	/^} tw2865_audio_samplerate;$/;"	t	typeref:enum:_tw2865_audio_samplerate
+tw2865_audio_samplerate	driver/tw2865-16cif/tw2865.h	/^} tw2865_audio_samplerate;$/;"	t	typeref:enum:_tw2865_audio_samplerate
+tw2865_audio_samplerate	driver/tw2865-8cif/tw2865.h	/^} tw2865_audio_samplerate;$/;"	t	typeref:enum:_tw2865_audio_samplerate
+tw2865_byte_read	driver/TW28xx/tw2865.c	/^static unsigned char tw2865_byte_read(unsigned char chip_addr, unsigned char addr)$/;"	f	file:
+tw2865_byte_read	driver/tw2865-16cif/tw2865.c	/^static unsigned char tw2865_byte_read(unsigned char chip_addr, unsigned char addr)$/;"	f	file:
+tw2865_byte_read	driver/tw2865-8cif/tw2865.c	/^static unsigned char tw2865_byte_read(unsigned char chip_addr, unsigned char addr)$/;"	f	file:
+tw2865_byte_write	driver/TW28xx/tw2865.c	/^static unsigned char tw2865_byte_write(unsigned char chip_addr,$/;"	f	file:
+tw2865_byte_write	driver/tw2865-16cif/tw2865.c	/^static unsigned char tw2865_byte_write(unsigned char chip_addr,$/;"	f	file:
+tw2865_byte_write	driver/tw2865-8cif/tw2865.c	/^static unsigned char tw2865_byte_write(unsigned char chip_addr,$/;"	f	file:
+tw2865_close	driver/TW28xx/tw2865.c	/^int tw2865_close(struct inode * inode, struct file * file)$/;"	f
+tw2865_close	driver/tw2865-16cif/tw2865.c	/^int tw2865_close(struct inode * inode, struct file * file)$/;"	f
+tw2865_close	driver/tw2865-8cif/tw2865.c	/^int tw2865_close(struct inode * inode, struct file * file)$/;"	f
+tw2865_comm_init	driver/TW28xx/tw2865.c	/^static void tw2865_comm_init(unsigned char addr)$/;"	f	file:
+tw2865_comm_init	driver/tw2865-16cif/tw2865.c	/^static void tw2865_comm_init(unsigned char addr)$/;"	f	file:
+tw2865_comm_init	driver/tw2865-8cif/tw2865.c	/^static void tw2865_comm_init(unsigned char addr)$/;"	f	file:
+tw2865_dev	driver/TW28xx/tw2865.c	/^static struct miscdevice tw2865_dev = {$/;"	v	typeref:struct:miscdevice	file:
+tw2865_dev	driver/tw2865-16cif/tw2865.c	/^static struct miscdevice tw2865_dev = {$/;"	v	typeref:struct:miscdevice	file:
+tw2865_dev	driver/tw2865-8cif/tw2865.c	/^static struct miscdevice tw2865_dev = {$/;"	v	typeref:struct:miscdevice	file:
+tw2865_fops	driver/TW28xx/tw2865.c	/^static struct file_operations tw2865_fops = {$/;"	v	typeref:struct:file_operations	file:
+tw2865_fops	driver/tw2865-16cif/tw2865.c	/^static struct file_operations tw2865_fops = {$/;"	v	typeref:struct:file_operations	file:
+tw2865_fops	driver/tw2865-8cif/tw2865.c	/^static struct file_operations tw2865_fops = {$/;"	v	typeref:struct:file_operations	file:
+tw2865_i2c_addr	driver/TW28xx/tw2865.c	/^unsigned char tw2865_i2c_addr[] = {TW2865A_I2C_ADDR, TW2865C_I2C_ADDR}; \/\/{0x50,0x52}$/;"	v
+tw2865_i2c_addr	driver/tw2865-16cif/tw2865.c	/^unsigned char tw2865_i2c_addr[] = { $/;"	v
+tw2865_i2c_addr	driver/tw2865-8cif/tw2865.c	/^unsigned char tw2865_i2c_addr[] = {TW2865A_I2C_ADDR, TW2865C_I2C_ADDR}; \/\/{0x50,0x52}$/;"	v
+tw2865_image_adjust	driver/TW28xx/tw2865.h	/^} tw2865_image_adjust;$/;"	t	typeref:struct:_tw2865_image_adjust
+tw2865_image_adjust	driver/tw2865-16cif/tw2865.h	/^} tw2865_image_adjust;$/;"	t	typeref:struct:_tw2865_image_adjust
+tw2865_image_adjust	driver/tw2865-8cif/tw2865.h	/^} tw2865_image_adjust;$/;"	t	typeref:struct:_tw2865_image_adjust
+tw2865_ioctl	driver/TW28xx/tw2865.c	/^int tw2865_ioctl(struct inode *inode, struct file *file, unsigned int cmd, unsigned long arg)$/;"	f
+tw2865_ioctl	driver/tw2865-16cif/tw2865.c	/^int tw2865_ioctl(struct inode *inode, struct file *file, unsigned int cmd, unsigned long arg)$/;"	f
+tw2865_ioctl	driver/tw2865-8cif/tw2865.c	/^int tw2865_ioctl(struct inode *inode, struct file *file, unsigned int cmd, unsigned long arg)$/;"	f
+tw2865_module_exit	driver/TW28xx/tw2865.c	/^module_exit(tw2865_module_exit);$/;"	v
+tw2865_module_exit	driver/TW28xx/tw2865.c	/^static void __exit tw2865_module_exit(void)$/;"	f	file:
+tw2865_module_exit	driver/tw2865-16cif/tw2865.c	/^module_exit(tw2865_module_exit);$/;"	v
+tw2865_module_exit	driver/tw2865-16cif/tw2865.c	/^static void __exit tw2865_module_exit(void)$/;"	f	file:
+tw2865_module_exit	driver/tw2865-8cif/tw2865.c	/^module_exit(tw2865_module_exit);$/;"	v
+tw2865_module_exit	driver/tw2865-8cif/tw2865.c	/^static void __exit tw2865_module_exit(void)$/;"	f	file:
+tw2865_module_init	driver/TW28xx/tw2865.c	/^module_init(tw2865_module_init);$/;"	v
+tw2865_module_init	driver/TW28xx/tw2865.c	/^static int __init tw2865_module_init(void)$/;"	f	file:
+tw2865_module_init	driver/tw2865-16cif/tw2865.c	/^module_init(tw2865_module_init);$/;"	v
+tw2865_module_init	driver/tw2865-16cif/tw2865.c	/^static int __init tw2865_module_init(void)$/;"	f	file:
+tw2865_module_init	driver/tw2865-8cif/tw2865.c	/^module_init(tw2865_module_init);$/;"	v
+tw2865_module_init	driver/tw2865-8cif/tw2865.c	/^static int __init tw2865_module_init(void)$/;"	f	file:
+tw2865_open	driver/TW28xx/tw2865.c	/^int tw2865_open(struct inode * inode, struct file * file)$/;"	f
+tw2865_open	driver/tw2865-16cif/tw2865.c	/^int tw2865_open(struct inode * inode, struct file * file)$/;"	f
+tw2865_open	driver/tw2865-8cif/tw2865.c	/^int tw2865_open(struct inode * inode, struct file * file)$/;"	f
+tw2865_set_audio_samplerate	driver/TW28xx/tw2865.c	/^static int tw2865_set_audio_samplerate(tw2865_audio_samplerate samplerate)$/;"	f	file:
+tw2865_set_audio_samplerate	driver/tw2865-16cif/tw2865.c	/^static int tw2865_set_audio_samplerate(tw2865_audio_samplerate samplerate)$/;"	f	file:
+tw2865_set_audio_samplerate	driver/tw2865-8cif/tw2865.c	/^static int tw2865_set_audio_samplerate(tw2865_audio_samplerate samplerate)$/;"	f	file:
+tw2865_set_video_norm	driver/TW28xx/tw2865.c	/^static int tw2865_set_video_norm(unsigned char addr, unsigned char mode)$/;"	f	file:
+tw2865_set_video_norm	driver/tw2865-16cif/tw2865.c	/^static int tw2865_set_video_norm(unsigned char addr, unsigned char mode)$/;"	f	file:
+tw2865_set_video_norm	driver/tw2865-8cif/tw2865.c	/^static int tw2865_set_video_norm(unsigned char addr, unsigned char mode)$/;"	f	file:
+tw2865_set_work_mode_2d1	driver/TW28xx/tw2865.c	/^static int tw2865_set_work_mode_2d1(unsigned chip_addr)$/;"	f	file:
+tw2865_set_work_mode_2d1	driver/tw2865-16cif/tw2865.c	/^static int tw2865_set_work_mode_2d1(unsigned chip_addr)$/;"	f	file:
+tw2865_set_work_mode_2d1	driver/tw2865-8cif/tw2865.c	/^static int tw2865_set_work_mode_2d1(unsigned chip_addr)$/;"	f	file:
+tw2865_set_work_mode_4d1	driver/TW28xx/tw2865.c	/^static int tw2865_set_work_mode_4d1(unsigned chip_addr)$/;"	f	file:
+tw2865_set_work_mode_4d1	driver/tw2865-16cif/tw2865.c	/^static int tw2865_set_work_mode_4d1(unsigned chip_addr)$/;"	f	file:
+tw2865_set_work_mode_4d1	driver/tw2865-8cif/tw2865.c	/^static int tw2865_set_work_mode_4d1(unsigned chip_addr)$/;"	f	file:
+tw2865_video_init	driver/TW28xx/tw2865.c	/^static void tw2865_video_init(unsigned char addr, unsigned char mode)$/;"	f	file:
+tw2865_video_init	driver/tw2865-16cif/tw2865.c	/^static void tw2865_video_init(unsigned char addr, unsigned char mode)$/;"	f	file:
+tw2865_video_init	driver/tw2865-8cif/tw2865.c	/^static void tw2865_video_init(unsigned char addr, unsigned char mode)$/;"	f	file:
+tw2865_video_loss	driver/TW28xx/tw2865.h	/^} tw2865_video_loss;$/;"	t	typeref:struct:_tw2865_video_loss
+tw2865_video_loss	driver/tw2865-16cif/tw2865.h	/^} tw2865_video_loss;$/;"	t	typeref:struct:_tw2865_video_loss
+tw2865_video_loss	driver/tw2865-8cif/tw2865.h	/^} tw2865_video_loss;$/;"	t	typeref:struct:_tw2865_video_loss
+tw2865_video_norm	driver/TW28xx/tw2865.h	/^} tw2865_video_norm;$/;"	t	typeref:struct:_tw2865_video_norm
+tw2865_video_norm	driver/tw2865-16cif/tw2865.h	/^} tw2865_video_norm;$/;"	t	typeref:struct:_tw2865_video_norm
+tw2865_video_norm	driver/tw2865-8cif/tw2865.h	/^} tw2865_video_norm;$/;"	t	typeref:struct:_tw2865_video_norm
+tw2865_work_mode	driver/TW28xx/tw2865.h	/^} tw2865_work_mode;$/;"	t	typeref:struct:_tw2865_work_mode
+tw2865_work_mode	driver/tw2865-16cif/tw2865.h	/^} tw2865_work_mode;$/;"	t	typeref:struct:_tw2865_work_mode
+tw2865_work_mode	driver/tw2865-8cif/tw2865.h	/^} tw2865_work_mode;$/;"	t	typeref:struct:_tw2865_work_mode
+tw2865_write_table	driver/TW28xx/tw2865.c	/^static void tw2865_write_table(unsigned char chip_addr,$/;"	f	file:
+tw2865_write_table	driver/tw2865-16cif/tw2865.c	/^static void tw2865_write_table(unsigned char chip_addr,$/;"	f	file:
+tw2865_write_table	driver/tw2865-8cif/tw2865.c	/^static void tw2865_write_table(unsigned char chip_addr,$/;"	f	file:
+ucAddr	driver/adv7441/adv7441.h	/^	unsigned char ucAddr;$/;"	m	struct:_tagRegTable
+ucAnglogtMode	driver/adv7441/adv7441.h	/^	unsigned char ucAnglogtMode;$/;"	m	struct:_tagControl
+ucBright	driver/adv7441/adv7441.h	/^	unsigned char ucBright;$/;"	m	struct:_tagControl
+ucContrast	driver/adv7441/adv7441.h	/^	unsigned char ucContrast;$/;"	m	struct:_tagControl
+ucDigitalMode	driver/adv7441/adv7441.h	/^	unsigned char ucDigitalMode;	$/;"	m	struct:_tagControl
+ucMode	driver/adv7441/adv7441.h	/^	unsigned char ucMode;$/;"	m	struct:_tagModeDetectTb
+ucModeDetectDelay	driver/adv7441/adv7441.h	/^	unsigned char ucModeDetectDelay;$/;"	m	struct:_tagInputModeDetect
+ucSource	driver/adv7441/adv7441.h	/^	unsigned	char ucSource;$/;"	m	struct:_tagControl
+ucSourceModifyDelay	driver/adv7441/adv7441.h	/^	unsigned char ucSourceModifyDelay;$/;"	m	struct:_tagInputModeDetect
+ucValue	driver/adv7441/adv7441.h	/^	unsigned char ucValue;$/;"	m	struct:_tagRegTable
+update	src/cores/observer.h	/^	ObserverUpdateFunc update;$/;"	m	struct:_Observer
+value	driver/74HC165/74hc165.c	/^	unsigned char  value[MAX_BUF_NUM];$/;"	m	struct:__anon14	file:
+value	driver/74ls165/74ls165.c	/^	unsigned char  value[MAX_BUF_NUM];$/;"	m	struct:__anon12	file:
+value	driver/74ls165/74ls165_o.c	/^	unsigned char  value[MAX_BUF_NUM];$/;"	m	struct:__anon13	file:
+value	driver/adv7441/adv7441.h	/^    unsigned char value;$/;"	m	struct:hiadv7400_w_reg
+value	driver/gpio/hi_gpio.h	/^	unsigned int  value;$/;"	m	struct:__anon11
+vol_ctrl_status	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char vol_ctrl_status:1;$/;"	m	struct:__anon26::__anon27
+volume	driver/TW28xx/tw2865.h	/^    unsigned int volume;$/;"	m	struct:_ttw2865_audio_da_volume
+volume	driver/tw2865-16cif/tw2865.h	/^    unsigned int volume;$/;"	m	struct:_ttw2865_audio_da_volume
+volume	driver/tw2865-8cif/tw2865.h	/^    unsigned int volume;$/;"	m	struct:_ttw2865_audio_da_volume
+watchdog_exit	driver/wtdg/hi_wdt.c	/^module_exit(watchdog_exit);$/;"	v
+watchdog_exit	driver/wtdg/hi_wdt.c	/^static void __exit watchdog_exit(void)$/;"	f	file:
+watchdog_info	driver/wtdg/watchdog.h	/^struct watchdog_info {$/;"	s
+watchdog_init	driver/wtdg/hi_wdt.c	/^module_init(watchdog_init);$/;"	v
+watchdog_init	driver/wtdg/hi_wdt.c	/^static int __init watchdog_init(void)$/;"	f	file:
+week	src/public/public_typedef.h	/^    Week week;$/;"	m	struct:_Datetime
+weekday	driver/hal/devhal.h	/^    HI_U32  weekday;$/;"	m	struct:__anon5
+weekday	driver/rtc/rtc_ds1339.h	/^    unsigned int  weekday;$/;"	m	struct:__anon10
+work_clock_dic_ctrl	driver/tlv320aic31/tlv320aic31_def.h	/^        unsigned char work_clock_dic_ctrl:1;$/;"	m	struct:__anon16::__anon17
+write	driver/74HC165/74hc165.c	/^	unsigned int write;$/;"	m	struct:__anon14	file:
+write	driver/74ls165/74ls165.c	/^	unsigned int write;$/;"	m	struct:__anon12	file:
+write	driver/74ls165/74ls165_o.c	/^	unsigned int write;$/;"	m	struct:__anon13	file:
+year	driver/hal/devhal.h	/^    HI_U32  year;$/;"	m	struct:__anon5
+year	driver/rtc/rtc_ds1339.h	/^    unsigned int  year;$/;"	m	struct:__anon10
+year	src/public/public_typedef.h	/^	int year;$/;"	m	struct:_Datetime

@@ -1,0 +1,28 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ(2.61)
+AC_INIT(dvr, 0.1, dcdcmin@gmail.com)
+AC_CONFIG_SRCDIR([src/dvr.c])
+AC_CONFIG_HEADER([config.h])
+AM_INIT_AUTOMAKE(dvr,1.0)
+
+
+# Checks for programs.
+AC_PROG_CC
+
+# Checks for libraries.
+AC_PROG_RANLIB
+
+# Checks for header files.
+
+# Checks for typedefs, structures, and compiler characteristics.
+
+# Checks for library functions.
+
+AC_OUTPUT([Makefile
+	src/Makefile
+	src/cores/Makefile
+	src/cores/test/Makefile
+	src/public/Makefile
+	])
