@@ -1,0 +1,309 @@
+#include <linux/module.h>
+#include <linux/config.h>
+#include <linux/errno.h>
+#include <linux/miscdevice.h>
+#include <linux/fcntl.h>
+#include <linux/slab.h>
+#include <linux/init.h>
+#include <linux/delay.h>
+#include <linux/proc_fs.h>
+#include <linux/workqueue.h>
+#include <linux/timer.h>
+#include <asm/uaccess.h>
+#include <asm/system.h>
+#include <asm/io.h>
+#include <linux/kcom.h>
+
+#define KEY_IOC_SET_ENABLE_REPKEY     0x01
+#define KEY_IOC_SET_REPKEY_TIMEOUT    0x02
+#define KEY_IOC_GET_KEYVALUE          0x03
+
+#define SYS_CONTROL_REG  0x101e0000
+#define TIMER_GROUP2_REG    0x101e3000
+#define TIMER_GROUP2_IRQ_NUM    5
+#define TIMER_LOAD_OFFSET (timer_reg_value+ 0)
+#define TIMER_VALUE_OFFSET  (timer_reg_value+ 4)
+#define TIMER_CONTROL_OFFSET  (timer_reg_value+ 8)
+#define TIMER_INTCLR_OFFSET (timer_reg_value+ 0xc) 
+#define TIMER_RIS_OFFSET  (timer_reg_value+ 0x10)
+#define TIMER_MIS_OFFSET  (timer_reg_value+ 0x14)
+#define TIMER_BGLOAD_OFFSET  (timer_reg_value+ 0x18)
+
+
+//前提，gpio复用关系已经搞定；
+#define  SHAKE_PROOF_TIME 5 //单位ms
+#define  TIMER_EXPIRES_TIME 30 //单位ms
+#define  REPEAT_KEY_TIMEOUT 300 //单位ms
+#define  GPIO_1_BASE_ADDR  0x101e5000
+#define  GPIO_DIR_OFFSET   (GPIO_1_BASE_ADDR_VIRTUAL+0x400)
+#define  GPIO_1_INTR_MASK  (GPIO_1_BASE_ADDR_VIRTUAL+0x410)
+#define  GPIO_1_READ_DATA   (GPIO_1_BASE_ADDR_VIRTUAL+0x1e0)
+#define  GPIO_1_WRITE_DATA  (GPIO_1_BASE_ADDR_VIRTUAL+0x204)
+#define WRITE_REG(Addr, Value) ((*(volatile unsigned int *)(Addr)) = (Value))
+#define READ_REG(Addr)         (*(volatile unsigned int *)(Addr))
+
+unsigned char  key_value[256];
+unsigned int head=0;
+unsigned int tail=0;
+unsigned int time_acculte1=0;
+unsigned int enable_repeatkey=0;
+unsigned int  key_has_release1=1;
+
+unsigned int  key_has_release2=1;
+unsigned int time_acculte2=0;
+unsigned int repkey_timeout=0;
+unsigned int GPIO_1_BASE_ADDR_VIRTUAL=0;
+
+unsigned int timer_reg_value=0;
+unsigned int sys_reg_value=0;
+
+
+static irqreturn_t  gpio_scankey_handler(int irq, void *dev_id, struct pt_regs *regs)
+{
+    unsigned int  reg_tmp=0;
+    WRITE_REG(TIMER_INTCLR_OFFSET,0x1);
+    //printk("jiffies:%x\n",jiffies);
+    //enable 1-7,to select the first chip
+
+#if 1
+
+    WRITE_REG(GPIO_1_WRITE_DATA,0xfe);
+    mdelay(1);
+    reg_tmp=READ_REG(GPIO_1_READ_DATA);
+
+
+    if((reg_tmp &0x78)==0x78) 
+    {
+	key_has_release2=1;
+	time_acculte2=0;
+    }	
+    else
+    {
+	mdelay(SHAKE_PROOF_TIME);
+	reg_tmp=READ_REG(GPIO_1_READ_DATA);
+	if((reg_tmp &0x78)!=0x78) 
+	{
+	    reg_tmp = reg_tmp>>3;
+	    reg_tmp |= 0x8;
+ 
+#if 1
+	    if((key_has_release2==1) ||(time_acculte2>=repkey_timeout))
+	    {
+		key_value[tail]=reg_tmp;          	
+		tail++;
+		if(tail >200)
+		{
+		    if((tail-head)<255)
+		    {
+			memcpy(&key_value[0],&key_value[head],(tail-head));
+			tail=tail-head;
+			head=0;
+			printk("tail:%d head: %d !\n",tail,head);
+		    }
+		    else
+		    {
+			memcpy(&key_value[0],&key_value[1],254);
+			tail=254;
+			head=0;
+		    }
+		}
+
+	    }
+#endif
+	    key_has_release2=0;
+
+	    if((enable_repeatkey!=0)&&(time_acculte2>repkey_timeout))
+	    {
+              time_acculte2=0;
+	    }
+	    time_acculte2+=2*TIMER_EXPIRES_TIME;
+	}
+    }
+
+#endif
+
+    WRITE_REG(GPIO_1_WRITE_DATA,0x7f);
+    mdelay(1);
+    reg_tmp=READ_REG(GPIO_1_READ_DATA);
+
+    if((reg_tmp &0x78)==0x78) 
+    {
+	key_has_release1=1;
+	time_acculte1=0;
+    }	
+    else
+    {
+	mdelay(SHAKE_PROOF_TIME);
+	reg_tmp=READ_REG(GPIO_1_READ_DATA);
+	if((reg_tmp &0x78)!=0x78) 
+	{
+	    reg_tmp = reg_tmp>>3;
+	    reg_tmp &= 0xf7;
+
+	    if((key_has_release1==1) ||(time_acculte1>=repkey_timeout))
+	    {
+		key_value[tail]=reg_tmp;          	
+		tail++;
+
+		if(tail >200)
+		{
+		    if((tail-head)<255)
+		    {
+			printk("tail:%d head: %d !\n",tail,head);
+			memcpy(&key_value[0],&key_value[head],(tail-head));
+			tail=tail-head;
+			head=0;
+		    }
+		    else
+		    {
+			memcpy(&key_value[0],&key_value[1],254);
+			tail=254;
+			head=0;
+		    }
+		}
+	    }
+
+	    key_has_release1=0;
+	    if((enable_repeatkey!=0)&&(time_acculte1>repkey_timeout))
+	    {
+              time_acculte1=0;
+	    }
+	    time_acculte1+=2*TIMER_EXPIRES_TIME;
+
+	}
+    }
+    
+
+    WRITE_REG(GPIO_1_WRITE_DATA,0xff);
+    return IRQ_HANDLED;
+}
+
+
+static int gpio_open(struct inode *inode, struct file *filp)
+{
+    return 0;		
+}
+
+static int gpio_release(struct inode *inode, struct file *filp)
+{
+    return 0;	
+}
+
+
+static int gpio_ioctl(struct inode *inode, struct file *filp, unsigned int cmd, unsigned long arg)
+{
+
+    unsigned char tmp=0xff;
+    switch(cmd)
+    {
+	case KEY_IOC_SET_ENABLE_REPKEY:
+	    enable_repeatkey=(unsigned int)arg;
+	    break;
+	case KEY_IOC_SET_REPKEY_TIMEOUT:
+	    if(enable_repeatkey==0)
+	    {
+		printk("enable repkey not enabled!\n");
+		return -1;
+	    }	
+	    repkey_timeout=(unsigned int)arg;
+	    break;
+	case KEY_IOC_GET_KEYVALUE:
+	    if(head==tail)
+	    {
+		    copy_to_user((void __user *)arg, &tmp, sizeof(unsigned char));
+	    }
+	    else
+	    {
+		copy_to_user((void __user *)arg, &key_value[head], sizeof(unsigned char));
+		head++;
+	    }
+	    break; 
+	default:
+	    return -1;           
+    }
+
+    return 0;
+
+}
+
+
+static struct file_operations key_gpio_fops = {
+owner:THIS_MODULE,
+      open:gpio_open,
+      ioctl:gpio_ioctl,
+      release:gpio_release,
+};
+
+static struct miscdevice key_gpio_dev = {
+    MISC_DYNAMIC_MINOR,
+    "hi_key_gpio",
+    &key_gpio_fops,
+};
+
+
+
+//gpio的复用关系要放在uboot下面；
+static int __init hi_gpio_init(void)
+{
+    unsigned char reg_tmp=0;
+    unsigned char reg_timer=0;
+    signed int  ret=0;
+
+    GPIO_1_BASE_ADDR_VIRTUAL=(unsigned int)IO_ADDRESS(GPIO_1_BASE_ADDR);
+    timer_reg_value=(unsigned int )IO_ADDRESS(TIMER_GROUP2_REG);
+    sys_reg_value=(unsigned int )IO_ADDRESS(SYS_CONTROL_REG);
+
+    reg_tmp=(unsigned char)READ_REG(GPIO_DIR_OFFSET);
+    reg_tmp &= 0x87;
+    reg_tmp |= 0x81;
+    WRITE_REG(GPIO_DIR_OFFSET,reg_tmp);
+    WRITE_REG(GPIO_1_INTR_MASK,0);   
+
+
+    // set the ref clock, and set timer value
+    reg_timer=READ_REG(sys_reg_value);
+    reg_timer &=0xfff7ffff;
+    //WRITE_REG(sys_reg_value,reg_timer);
+    WRITE_REG(sys_reg_value,0x110127);
+
+    WRITE_REG(TIMER_LOAD_OFFSET,2*144000*TIMER_EXPIRES_TIME);
+    WRITE_REG(TIMER_INTCLR_OFFSET,0x1);
+    WRITE_REG(TIMER_CONTROL_OFFSET,0xe2);
+    
+    ret=request_irq(TIMER_GROUP2_IRQ_NUM,&gpio_scankey_handler,SA_INTERRUPT,"timer 2 interrupt",0);
+    if(ret)
+    {
+	printk("timer2 irq request failed!\n");
+	return -1;
+    }
+
+    // 注册设备；
+    ret = misc_register(&key_gpio_dev);
+    if (ret)
+    {
+	printk(KERN_ERR "register misc dev for key gpio fail!\n");
+	free_irq(TIMER_GROUP2_IRQ_NUM, 0);
+	return ret;
+    }
+
+    memset(key_value,0xff,256);
+    return 0;     
+}
+
+
+static void __exit hi_gpio_exit(void)
+{
+    misc_deregister(&key_gpio_dev);
+    free_irq(TIMER_GROUP2_IRQ_NUM, 0);
+}
+
+module_init(hi_gpio_init);
+module_exit(hi_gpio_exit);
+
+MODULE_AUTHOR("Digital Media Team ,Hisilicon crop ");
+MODULE_LICENSE("GPL");
+MODULE_DESCRIPTION("Real Time Clock interface for HI3511");
+
+
+
+

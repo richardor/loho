@@ -1,0 +1,123 @@
+clocks_rtc.o clocks_rtc.o: clocks_rtc.c \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/stdio.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/features.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/uClibc_config.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/sys/cdefs.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../lib/gcc/arm-hisi-linux/3.4.3/include/stddef.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/types.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/kernel_types.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/pthreadtypes.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/sched.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/uClibc_stdio.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/wchar.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/wchar.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../lib/gcc/arm-hisi-linux/3.4.3/include/stdarg.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/stdio_lim.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/stdlib.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/sys/types.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/time.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/endian.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/endian.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/sys/select.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/select.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/sigset.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/time.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/sys/sysmacros.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/alloca.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/sys/stat.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/stat.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/fcntl.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/fcntl.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/unistd.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/posix_opt.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/confname.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/getopt.h \
+  clocks_rtc.h clocks.h ../../src/public/public_typedef.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/assert.h \
+  /opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/string.h \
+  observer.h ../../src/public/public_function.h \
+  ../../src/public/public_typedef.h ../../driver/rtc/rtc_ds1339.h
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/stdio.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/features.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/uClibc_config.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/sys/cdefs.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../lib/gcc/arm-hisi-linux/3.4.3/include/stddef.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/types.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/kernel_types.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/pthreadtypes.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/sched.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/uClibc_stdio.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/wchar.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/wchar.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../lib/gcc/arm-hisi-linux/3.4.3/include/stdarg.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/stdio_lim.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/stdlib.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/sys/types.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/time.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/endian.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/endian.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/sys/select.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/select.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/sigset.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/time.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/sys/sysmacros.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/alloca.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/sys/stat.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/stat.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/fcntl.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/fcntl.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/unistd.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/posix_opt.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/confname.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/bits/getopt.h:
+
+clocks_rtc.h:
+
+clocks.h:
+
+../../src/public/public_typedef.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/assert.h:
+
+/opt/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin/../../gcc-3.4.3-uClibc-0.9.28//usr/include/string.h:
+
+observer.h:
+
+../../src/public/public_function.h:
+
+../../src/public/public_typedef.h:
+
+../../driver/rtc/rtc_ds1339.h:
