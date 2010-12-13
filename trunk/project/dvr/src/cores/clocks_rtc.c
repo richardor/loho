@@ -4,6 +4,7 @@
 #include<sys/stat.h>
 #include<fcntl.h>
 #include<unistd.h>
+#include<string.h>
 #include"clocks_rtc.h"
 #include"public_typedef.h"
 #include"public_function.h"
@@ -48,6 +49,8 @@ static int rtc_open(char *rtc_dev_name)
 														date_time->second = rtc_time.second;\
 														date_time->week = (Week)rtc_time.weekday;\
 														}
+
+
 
 
 
@@ -110,7 +113,10 @@ static void *clocks_rtc_time_thread(void *para)
 	Clocks *thiz = (Clocks *)para;
 	rtc_time_t rtc_time_current;
 	int ret;
+	Datetime date_time = {0};
+	Datetime *p_date_time = &date_time;
 
+	DECL_PRIV0(thiz, priv0);
 	while(1)
 	{
 		/*read time*/
@@ -118,10 +124,15 @@ static void *clocks_rtc_time_thread(void *para)
 		ret = ioctl(priv0->fd_rtc, RTC_TIME_GET, &rtc_time_current);		
 		if(ret < 0)
 		{
-			printf("Get rtc time Failed!\n", ret);
+			printf("Get rtc time Failed! ret(%d)\n", ret);
 			goto OUT;
 		}
-		
+		if(rtc_time_current.second != priv0->rtc_time.second)
+		{
+			RtcTimeConversionDateTime(rtc_time_current, p_date_time)
+			memcpy(&(priv0->rtc_time), &rtc_time_current, sizeof(rtc_time_t));		
+		}			
+		public_msleep(30);
 	}
 
 OUT:
@@ -134,8 +145,8 @@ static void clocks_rtc_run(Clocks *thiz)
 
 	/*create a thread to get rtc time*/
 	
-	create_normal_thread(clocks_rtc_time_thread, (void *)thiz, NULL);	
-
+	create_normal_thread(clocks_rtc_time_thread, (void *)thiz, NULL);
+	
 	return;
 }
 
