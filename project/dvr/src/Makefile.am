@@ -1,4 +1,4 @@
-SUBDIRS=. cores public
+SUBDIRS=. cores public net
 noinst_PROGRAMS=dvr
 
 dvr_SOURCES=dvr.c

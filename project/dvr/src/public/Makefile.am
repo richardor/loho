@@ -1,5 +1,5 @@
 noinst_LIBRARIES=libpublic.a
-libpublic_a_SOURCES=public_function.c
+libpublic_a_SOURCES=public_function.c public_function.h
 
 noinst_PROGRAMS=public_function_test
 public_function_test_LDADD=./libpublic.a

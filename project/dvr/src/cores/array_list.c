@@ -111,7 +111,6 @@ int array_list_get_id_by_data(ArrayList *thiz, void *data, int data_size)
 		++i;
 		if((p->data) && (memcmp(p->data, data, data_size) == 0))
 		{
-			printf("fun(%s) 2222222222222 i(%d)\n", __func__, i);
 			return i;
 		}
 		p = p->next;
@@ -121,7 +120,7 @@ int array_list_get_id_by_data(ArrayList *thiz, void *data, int data_size)
 	return -1;
 }
 
-void *arrary_list_get_data_by_id(ArrayList *thiz, int id)
+void *array_list_get_data_by_id(ArrayList *thiz, int id)
 {
 	return_val_if_failed(thiz&&(id>=0), NULL);
 	

@@ -18,14 +18,14 @@ struct _Observer
 	char priv[0];	
 };
 
-static inline Ret Observer_update(Observer *thiz, void *data)
+static inline Ret observer_update(Observer *thiz, void *data)
 {
-	return_var_if_failed(thiz != NULL && data != NULL,RET_INVALID_PARAMETER);	
+	return_val_if_failed(thiz != NULL && data != NULL,RET_INVALID_PARAMETER);	
 
 	return thiz->update(thiz, data);
 }
 
-static inline void Observer_destroy(Observer *thiz)
+static inline void observer_destroy(Observer *thiz)
 {
 	return_if_failed((thiz!= NULL) && thiz->destroy);
 
