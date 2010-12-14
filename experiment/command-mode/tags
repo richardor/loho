@@ -1,0 +1,44 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+Command	command.h	/^typedef struct _Command Command;$/;"	t	typeref:struct:_Command
+CommandDestroyFunction	command.h	/^typedef void (*CommandDestroyFunction)(Command *command);$/;"	t
+CommandExecuteFunction	command.h	/^typedef int (*CommandExecuteFunction)(Command *command);$/;"	t
+Light	light.h	/^typedef struct _Light Light;$/;"	t	typeref:struct:_Light
+MAX_SLOT_NUM	remote_control.c	14;"	d	file:
+PrivInfo	lightoff_command.c	/^}PrivInfo;$/;"	t	typeref:struct:_PrivInfo	file:
+RemoteControl	remote_control.h	/^typedef struct _RemoteControl RemoteControl;$/;"	t	typeref:struct:_RemoteControl
+_Command	command.h	/^struct _Command $/;"	s
+_Light	light.c	/^struct _Light$/;"	s	file:
+_PrivInfo	lightoff_command.c	/^typedef struct _PrivInfo{$/;"	s	file:
+_RemoteControl	remote_control.c	/^struct _RemoteControl$/;"	s	file:
+__COMMAND_H__	command.h	2;"	d
+__LIGHTOFF_COMMAND_H__	lightoff_command.h	2;"	d
+__LIGHT_H__	light.h	2;"	d
+__REMOTE_CONTROL_H__	remote_control.h	2;"	d
+command_destroy	command.h	/^static inline void  command_destroy(Command *thiz)$/;"	f
+command_execute	command.h	/^static inline int command_execute(Command *thiz)$/;"	f
+destroy	command.h	/^	CommandDestroyFunction destroy;$/;"	m	struct:_Command
+execute	command.h	/^	CommandExecuteFunction execute;$/;"	m	struct:_Command
+light	lightoff_command.c	/^	Light *light;$/;"	m	struct:_PrivInfo	file:
+light_create	light.c	/^Light *light_create(char *light_name)$/;"	f
+light_destroy	light.c	/^void  *light_destroy(Light *thiz)$/;"	f
+light_name	light.c	/^	char *light_name;$/;"	m	struct:_Light	file:
+light_off	light.c	/^int light_off(Light *thiz)$/;"	f
+light_on	light.c	/^int light_on(Light *thiz)$/;"	f
+lightoff_command_create	lightoff_command.c	/^Command *lightoff_command_create(Light *light)$/;"	f
+lightoff_command_destroy	lightoff_command.c	/^static void lightoff_command_destroy(Command *thiz)$/;"	f	file:
+lightoff_command_execute	lightoff_command.c	/^static int lightoff_command_execute(Command *thiz)$/;"	f	file:
+main	command_mode_test.c	/^int main(int argc , char *argv[])$/;"	f
+off_command	remote_control.c	/^	Command *off_command;$/;"	m	struct:_RemoteControl	file:
+on_command	remote_control.c	/^	Command *on_command;$/;"	m	struct:_RemoteControl	file:
+priv0	command.h	/^	char *priv0;$/;"	m	struct:_Command
+remote_control_create	remote_control.c	/^RemoteControl *remote_control_create(int slot_num)$/;"	f
+remote_control_destroy	remote_control.c	/^void *remote_control_destroy(RemoteControl *thiz)$/;"	f
+remote_control_off_button_press	remote_control.c	/^void remote_control_off_button_press(RemoteControl *thiz, int slot)$/;"	f
+remote_control_on_button_press	remote_control.c	/^void remote_control_on_button_press(RemoteControl *thiz, int slst)$/;"	f
+remote_control_set_command	remote_control.c	/^void remote_control_set_command(RemoteControl *thiz, int slot, Command *on_command, Command *off_command)$/;"	f
+slot_num	remote_control.c	/^	int slot_num;$/;"	m	struct:_RemoteControl	file:
