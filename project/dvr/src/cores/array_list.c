@@ -75,14 +75,13 @@ Ret array_list_remove(ArrayList *thiz, void *data, int data_size)
 	{
 		if((p->data) && (memcmp(p->data, data, data_size) == 0))
 		{
-			prev->next = p->next;
-			if(p->data)
+			if( p == thiz->header)
 			{
-				COMM_FREE(p->data);
-			}	
-			if( p != thiz->header)
+				p = NULL;
+			}
+			else
 			{
-				COMM_FREE(p);
+				prev->next = p->next;
 			}
 			thiz->array_list_number--;
 			return RET_OK;

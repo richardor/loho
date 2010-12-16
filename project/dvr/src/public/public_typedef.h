@@ -73,9 +73,20 @@ typedef struct _Datetime{
     Week week;
 }Datetime;
 
+typedef enum _LogLevel
+{
+	LOG_LEVEL_V = 0,
+	LOG_LEVEL_D = 1,
+	LOG_LEVEL_E = 2,
+	LOG_LEVEL_NR,
+}LogLevel;
 
-
-
+typedef enum _LogSaveMode
+{
+	LOG_MODE_PRINT = 0, 
+	LOG_MODE_FILE = 1,
+	LOG_MODE_NR,
+}LogSaveMode;
 
 
 

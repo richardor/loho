@@ -73,17 +73,19 @@ void clocks_destory(Clocks *thiz)
 {
 	return_if_failed(thiz != NULL);
 
-	if(thiz->destroy)	
-	{
-		thiz->destroy(thiz);	
-	}
 	if(thiz->priv)
 	{
 		if(thiz->priv->array_list)
 		{
 			array_list_destroy(thiz->priv->array_list);
 		}	
-	}	
+	}
+
+	if(thiz->destroy)	
+	{
+		thiz->destroy(thiz);	
+	}
+	
 	COMM_ZFREE(thiz, sizeof(Clocks));
 
 	return;

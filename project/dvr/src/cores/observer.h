@@ -15,7 +15,7 @@ struct _Observer
 {
 	ObserverUpdateFunc update;
 	ObserverDestroyFunc destroy;
-	char priv[0];	
+	void *priv[0];	
 };
 
 static inline Ret observer_update(Observer *thiz, void *data)
