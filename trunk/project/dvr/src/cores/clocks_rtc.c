@@ -131,6 +131,7 @@ static void *clocks_rtc_time_thread(void *para)
 		{
 			RtcTimeConversionDateTime(rtc_time_current, p_date_time)
 			memcpy(&(priv0->rtc_time), &rtc_time_current, sizeof(rtc_time_t));		
+			clocks_new_second_observers_update(thiz, p_date_time);
 		}			
 		public_msleep(30);
 	}
@@ -144,7 +145,6 @@ static void clocks_rtc_run(Clocks *thiz)
 	return_if_failed(thiz != NULL);
 
 	/*create a thread to get rtc time*/
-	
 	create_normal_thread(clocks_rtc_time_thread, (void *)thiz, NULL);
 	
 	return;
@@ -180,6 +180,5 @@ Clocks *clocks_rtc_create(char *rtc_dev_name)
 	
 	return clocks;
 }
-
 
 
