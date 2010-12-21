@@ -66,6 +66,14 @@
 
 
 
+	   ifconfig eth0 192.168.0.104;mount -t nfs -o nolock 192.168.0.139:/home/zhoumin /home
+	   export QTDIR=/home/zhoumin/usr/qt/hismall
+	   export PATH=$QTDIR/bin:$PATH
+           export TSLIB_CONSOLEDEVICE=none
+	   export LD_LIBRARY_PATH=$T_ROOT/lib:$QTDIR/lib
+
+
+
 	   
 
 
