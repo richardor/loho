@@ -44,7 +44,7 @@
 	  3.3 创建hismall软链接 到/mnt/usr/qt/hismall
 	      ln -s /mnt/usr/qt/hismall /home/zhoumin/usr/qt/hismall
 	  3.4 设定qt程序运行的环境变量
-		export QTDIR=/home/chl/temp/qt/Trolltech/qtHisi
+		export QTDIR=/home/zhoumin/usr/qt/hismall
 		export PATH=$QTDIR/bin:$PATH
 		export TSLIB_CONSOLEDEVICE=none
 		export LD_LIBRARY_PATH=$T_ROOT/lib:$QTDIR/lib
