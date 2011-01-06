@@ -1,0 +1,33 @@
+    前面已成功在hismall芯片上移植qt-embedded成功，不过运行的都是自带的demo和example 
+下面添加一个hello world例子，并编绎移植到开发板上。
+    1 
+     #cd /home/zhoumin/open-source/qt-embedded-linux-opensource-src-4.5.3/examples
+     #mkdir helloworld
+     #touch main.cpp
+     程序源代码如下所示，很简单，显示一个最基本的按钮。
+     #include<QApplication>
+     #include<QPushButton>
+
+     int main(int argc, char *argv[])
+     {
+	QApplication app(argc, argv);
+	QPushButton hello("Hello world");
+	hello.show();
+	return app.exec();
+     }
+   
+   2  生成makefile,编绎生成程序。
+   qt程序的makefile,我们将用到一个工具--qmake,qmake可以很方便的生成makefile(手工写makefile是一个很麻烦的过程，特别是当头文件和库文件较多时)
+   该工具位于/home/zhoumin/open-source/qt-embedded-linux-opensource-src-4.5.3/bin 目录下。 
+   2.1生成pro文件
+   #../bin/qmake -project
+   2.2 生成makefile 文件
+   #../bin/qmake
+   2.3 编绎 最终将生成可在开发板上运行的程序。
+   #make 
+
+
+
+
+
+
