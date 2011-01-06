@@ -1,0 +1,116 @@
+基于海思3515芯片移植qt-embedded
+	一直对qt都有着比较复杂感情，刚工作那会，工作之外，学了那么一会qt开发,也就是实现了一个hello world外加几个按钮。最近，基于个人需要， 想要移植一下qt-embeded于海思的3515芯片上。
+最终移植成功，特记录此文档，希望对有缘阅此文档的读者和朋友，有所帮助吧。
+	1 
+	  1.1 下载qt-embedded-linux-opensource-src-4.5.3.tar.gz源码
+	  下载地址 http://get.qt.nokia.com/qt/source/qt-embedded-linux-opensource-src-4.5.3.tar.gz
+		
+	  1.2 解压文件
+	  下载的压缩文件位于/home/zhoumin/open-source/目录下， 
+	  #cd /home/zhoumin/open-source						//进入源码包所在的目录
+	  #tar -xvzf qt-embedded-linux-opensource-src-4.5.3.tar.gz		//解压源码在当前的目录。
+		
+	  解压成功，最后会生成qt-embedded-linux-opensource-src-4.5.3目录。
+
+	2 编绎源码
+	  2.1 指定编绎器类型
+	  #cd qt-embedded-linux-opensource-src-4.5.3
+	  #vim mkspecs/qws/linux-arm-g++/qmake.conf
+	  把所有的arm-linux-**改为arm-hismall-linux-**
+		
+	  2.2 配置configure 
+	  指定编绎哪些模块，哪些模块不编绎。
+	  ./configure \
+		--prefix=/home/zhoumin/usr/qt/hismall\
+ 		-no-pch \
+		-xplatform \
+		qws/linux-arm-g++ \
+		-arch arm \
+		-embedded arm \
+		-no-freetype \
+		-qt-mouse-pc \
+		-fast \
+		-no-largefile \
+		-no-accessibility \
+		-no-stl \
+		-no-qt3support \
+		-no-xmlpatterns \
+		-no-phonon \
+		-no-svg \
+		-no-webkit \
+		-no-scripttools \
+		-no-mmx \
+		-no-3dnow \
+		-no-sse \
+		-no-sse2 \
+		-no-openssl \
+		-no-nis \
+		-no-cups \
+		-no-iconv \
+		-no-pch \
+		-no-dbus	  
+	  注: --prefix=/home/zhoumin/usr/qt/hismall 指定qt的库文件，demo程序等的安装目录为/home/zhoumin/usr/qt/hismall
+
+
+	  2.3 指定编绎时不编绎浏览器， 屏蔽webkit和browser，
+	  vim examples/examples.pro，屏蔽以下行（行首添加#）
+	  contains(QT_CONFIG, webkit): SUBDIRS += webkit
+
+	  vim demos/demos.pro，屏蔽以下两行（行首添加#）
+	  contains(QT_CONFIG, webkit):contains(QT_CONFIG, svg):SUBDIRS += demos_browser
+	  demos_browser.subdir = browser
+
+
+          2.4 gmake & gmake install
+
+	  最终会在/home/zhoumin/usr/qt/hismall下看到如下目录。 
+	   bin demos examples include lib mkspecs plugins
+
+       3 开发板nfs运行qt程序。
+	  3.1 开发板mount 服务器下的/home/zhoumin 目录到 开发板的 /mnt 目录下。
+	      mount -t nfs -o nolock 192.168.*。*:/home/zhoumin /mnt
+	  3.2 开发板创建目录/home/zhoumin/usr/qt/ 该目录与编绎时指定的安装路径相同(--prefix=/home/zhoumin/usr/qt/hismall)
+	      mkdir -p /home/zhoumin/usr/qt/		//注：没有hismall
+	  3.3 创建hismall软链接 到/mnt/usr/qt/hismall
+	      ln -s /mnt/usr/qt/hismall /home/zhoumin/usr/qt/hismall
+	  3.4 设定qt程序运行的环境变量
+		export QTDIR=/home/zhoumin/usr/qt/hismall
+		export PATH=$QTDIR/bin:$PATH
+		export TSLIB_CONSOLEDEVICE=none
+		export LD_LIBRARY_PATH=$T_ROOT/lib:$QTDIR/lib
+
+	4 运行qt程序
+	  4.1 运行qt demo 程序前应先打开framebuffer设备文件,可以先运行海思提供的framebuffer演示demo程序。
+	   ./api_sample_hifb &
+	   我们的目的是打开framebuffer设备文件 ，自行写个小程序也行。 
+
+	  4.2 运行qt程序。
+	   #cd /home/zhoumin/usr/qt/hismall/demos/affine 
+	   #./affine -qws
+
+	   注：什么是QWS Client和QWS Server?
+	   QT Embedded也是一种C/S结构，需要有一个QT application做QWS Server，程序启动时带有-qws参数的就是QWS Server，不带这个参数就是QWS Client。
+	   因此任何一个基于QT的application都可以做QWS Server。当然QWS Server一定先于QWS Client启动，否则QWS Client将启动失败。在实际应用中，
+	   会指定某个特殊的application做QWS Server，这个application一般还会管理一些其它的系统资源。 
+
+
+
+
+	   
+
+
+
+
+	  
+         
+         
+	 
+
+ 
+
+
+
+	   
+
+
+	  

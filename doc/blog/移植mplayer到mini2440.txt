@@ -1,0 +1,43 @@
+ 主机Linux系统：fedora 11
+
+主机GCC编译器：gcc 版本 4.4.0
+开发板：mini2440
+arm-linux-gcc交叉编译器：arm- linux-gcc-4.3.2  (一定得是4.3.2的,我用4.1.2时行不通)
+下载： MPlayer-1.0rc2.tar.bz2
+输入： tar jxvf MPlayer-1.0rc2.tar.bz2
+输入：cd MPlayer-1.0rc2
+输入：./configure --host-cc=gcc --cc=arm-linux-gcc --target=arm  --enable-static --disable-win32dll --disable-dvdread --disable-dvdread-internal --disable-dvdnav --disable-libdvdcss-internal --enable-fbdev --disable-mencoder --disable-live --disable-mp3lib --enable-mad --enable-libavcodec_a --language=zh_CN --disable-live 2>&1 | tee logfile
+输入：make
+
+其中会遇到两个.s编译不过去。
+armv4l/dsputil_arm_s.o armv4l/dsputil_arm_s.S
+armv4l/dsputil_arm_s.S: Assembler messages:
+armv4l/dsputil_arm_s.S:79: Error: selected processor does not support `pld [r1]'
+................................
+............................
+armv4l/dsputil_arm_s.S:466: Error: selected processor does not support `pld [r1]'
+
+make[1]: *** [armv4l/dsputil_arm_s.o] Error 1
+make[1]: Leaving directory `/root/MPlayer-1.0rc2/libavcodec'
+make: *** [libavcodec/libavcodec.a] 错误 2
+
+错误原因是pld指令只在armv5te以上版本有效,在2440(armv4l)无效
+
+预读取PLD指令
+功能：cache预读取（PLD,PreLoad），使用PLD指示存储系统从后面几条指令所指定的存储器地址读取，存储系统可使用这种方法加速以后的存储器访问。
+
+
+修改MPlayer-1.0rc2/libmpeg2/motion_comp_arm_s.S和MPlayer-1.0rc2 /libavcodec/armv4l/dsputil_arm_s.S这两个
+报错文件，在前面添加上：
+#ifndef HAVE_PLD
+.macro pld reg
+.endm
+#endif
+
+然后再make
+得到mplayer，下载到mini2440开发板/usr/bin目录
+在开发板执行
+mplayer test.avi -framedrop -quiet -vf rotate=1,scale=240:320
+成功啦！这次终于有声音了！MP3也能播哦
+
+但仍存在问题,播放AVI文件时有图像和声音,但播放RM或是RMVB文件时只有声音没有图像,可能是在安装mplayer之前要先安装相应的解码库,这个问题有待解决.
