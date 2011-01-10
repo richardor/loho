@@ -1,0 +1,34 @@
+将QT编译成库文件
+
+系统开发(嵌入式linux) 2007-08-30 08:52:39 阅读101 评论0   字号：大中小 订阅
+
+将QT编译成库文件最主要是写个.pro文件，下面给出其样例文件：qtserial.pro
+
+singleprocess:singleprocess=true
+TEMPLATE = lib
+CONFIG  = qt warn_on release
+HEADERS  = posix_qtserialport.h \
+    qtserialbase.h
+SOURCES  = posix_qtserialport.cpp \
+    qtserialbase.cpp
+   
+TARGET      = qtserial
+DESTDIR      = ./lib
+
+VERSION         = 1.0.0
+   
+INTERFACES =
+
+对此文件应该不用解释了吧，哦对了，注意一点，在然后在此目录下建立一个lib目录以备放置生成后的库文件
+
+接下来用命令tmake -o Makefile qtserial.pro生成所需的Makefile文件，make，你就可以在lib目录下生成：
+
+libqtserial.so,libqtserial.so.1;libqtserial.so.1.0;libqtserial.so.1.0.0
+
+然后把此几个文件拷贝到$QTEDIR/lib目录下，把头文件：posix_qtserialport.h，qtserialbase.h拷贝到
+
+$QTEDIR/include目录下，当然也可以你自己指定的目录，
+
+最后是测试程序，你在测试程序中就可以像使用一般的库文件那样使用了，对了，当然，在makefile中的LIBS变量上加-lqtserial;
+
+eg:LIBS = $(SUBLIBS) -L$(QTDIR)/lib -lm -lqte -lqtserial
