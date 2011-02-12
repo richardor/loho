@@ -69,12 +69,8 @@
        3 开发板nfs运行qt程序。
 	  3.1 开发板mount 服务器下的/home/zhoumin 目录到 开发板的 /mnt 目录下。
 	      mount -t nfs -o nolock 192.168.*。*:/home/zhoumin /mnt
-	  3.2 开发板创建目录/home/zhoumin/usr/qt/ 该目录与编绎时指定的安装路径相同(--prefix=/home/zhoumin/usr/qt/hismall)
-	      mkdir -p /home/zhoumin/usr/qt/		//注：没有hismall
-	  3.3 创建hismall软链接 到/mnt/usr/qt/hismall
-	      ln -s /mnt/usr/qt/hismall /home/zhoumin/usr/qt/hismall
-	  3.4 设定qt程序运行的环境变量
-		export QTDIR=/home/zhoumin/usr/qt/hismall
+	  3.2设定qt程序运行的环境变量
+		export QTDIR=/mnt/open-source/qt-embedded-linux-opensource-src-4.5.3
 		export PATH=$QTDIR/bin:$PATH
 		export TSLIB_CONSOLEDEVICE=none
 		export LD_LIBRARY_PATH=$T_ROOT/lib:$QTDIR/lib
@@ -85,10 +81,8 @@
 	   我们的目的是打开framebuffer设备文件 ，自行写个小程序也行。 
 
 	  4.2 运行qt程序。
-	   #cd /home/zhoumin/usr/qt/hismall/demos/affine 
+	   #cd /mnt/open-source/qt-embedded-linux-opensource-src-4.5.3/demos/affine 
 	   #./affine -qws
-
-
 
 	   注：什么是QWS Client和QWS Server?
 	   QT Embedded也是一种C/S结构，需要有一个QT application做QWS Server，程序启动时带有-qws参数的就是QWS Server，不带这个参数就是QWS Client。
@@ -98,6 +92,12 @@
 
 
 
+
+
+export QTDIR=/mnt/open-source/qt-embedded-linux-opensource-src-4.5.3
+export PATH=$QTDIR/bin:$PATH
+export TSLIB_CONSOLEDEVICE=none
+export LD_LIBRARY_PATH=$T_ROOT/lib:$QTDIR/lib
 	   
 
 
