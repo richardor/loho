@@ -1,0 +1,8 @@
+linux下的udp测试代码
+
+接收、发送：
+         udp_server.c
+         udp_client.c
+
+编译：
+         gcc -o 可执行文件名 源文件名
