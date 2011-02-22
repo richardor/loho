@@ -1,0 +1,34 @@
+:set nocscopeverbose
+set nu!
+syntax enable
+syntax on
+colorscheme darkblue
+set tabstop=4 
+""""""""""""""""""""""""""""""
+" winManager setting
+"""""""""""""""""""""""""""""
+let g:winManagerWindowLayout = "BufExplorer,FileExplorer|TagList"
+let g:winManagerWidth = 30
+let g:defaultExplorer = 0
+nmap <C-W><C-F> :FirstExplorerWindow<cr>
+nmap <C-W><C-B> :BottomExplorerWindow<cr>
+nmap <silent> <leader>wm :WMToggle<cr>
+""""""""""""""""""""""""""""""
+"
+""""""""""""""""""""""""""""""
+let g:miniBufExplMapCTabSwitchBufs = 1
+
+""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""
+let g:miniBufExplMapWindowNavArrows = 1
+""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""
+let g:winManagerWindowLayout='FileExplorer|TagList'
+nmap wm :WMToggle<cr>
+""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""
+filetype plugin indent on
+set completeopt=longest,menu
+"""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""
+nnoremap <silent> <F3> :Grep<CR>
