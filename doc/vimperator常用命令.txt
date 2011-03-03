@@ -1,0 +1,105 @@
+
+:  进入命令行模式
+:h  或F1        帮助，这是最好的参考
+h,j,k,l  移动 左,下,上,右
+H,L   切换tab
+o  打开url或搜索
+t  在新tab中打开url或搜索
+/  在当前页搜索
+d   关闭当前tab
+u  恢复刚关闭的tab
+r  刷新
+h,j,k,l  移动 左,下,上,右
+Ctrl+n  下个tab
+Ctrl+p  上个tab
+zi   页面广大
+zo   页面缩小
+zz   恢复页面默认大小
+ZQ     退出FireFox,不保存打开的tab
+ZZ   保存tab并退出
+Ctrl+q  忽略Vimp快捷键
+Ctrl+v  跳到下个键
+q   宏录制
+@   播放宏
+n   查找下一个
+N   查找前一个
+*   查找选中的文字(向后)
+#   查找选中文字(向前)
+i   进入插入模式
+Ctrl+c  停止载入
+0   定位到网页左边
+$   定位到网页右边
+gg   定位到网页顶端
+G   定位到网页底部
+Ctrl+d  向下滚半屏
+Ctrl+u  向上滚半屏
+Ctrl+b  向下滚整屏
+Ctrl+f  向上滚整屏
+]f   焦点放到下个框架
+[f   焦点放到上个框架
+]]   找"next"链接
+[[   找"prev"链接
+gf   查看源代码
+gF   用外部软件查看源代码
+gi   焦点到上个输入框
+p          粘贴
+r   刷新
+R   跳过缓存重新载入
+Y   复制选择的文字
+Ctrl+g  显示当前tab名称
+g Ctrl+g 显示详细tab信息
+a   收藏当前tab(有对话框)
+A   收藏当前tab(直接收藏)
+B    看所有tab信息
+D   关闭当前页,并定位到左tab
+gt   转到下个tab
+gT   转到上个tab
+m    标记当前位置
+`   跳到标记的位置
+f   打开链接
+F   在新窗口打开链接
+y   复制当前tab的url
+~   打开用户目录
+gh   打开主页
+gH   在新tab中打开主页
+gU   转到网站根处Ctrl+o  后退
+Ctrl+i  前进:set go+=mT     显示菜单栏和导航栏
+:set go-=mT     隐藏菜单栏和导航栏:dialog 再按Tab键,会出现各种Firefox设置选项,以下举几例
+:dialog searchengines   设置搜索引擎
+:dialog addons          扩展,主题设置
+:dialog bookmarks       书签管理:pref    Firefox的选项
+:!cmd    运行Windows的cmd各种命令常见问题：
+0.如何临时取消Vimp的作用?
+ 快捷键 Ctrl+z  回到Vimp按 ESC
+1.如何选中文字并复制
+先按i键，再定位到要复制文字前或后，再按v键，再hjkl等进行定位，文字就会被选中，选好后再按y键就会复制了。
+2.如果页面很长，如何在一个页面中定位
+先ma 则会标记当前位置，当要返回标记过的位置时，则按`a (命令中的a可换成其他字母）
+3.由于Ctrl+C 变成停止载入功能,用不习惯,怎么改回来
+ 可以在_Vimperatorrc 中加入以下几行
+ :noremap    
+:cnoremap  
+:inoremap  
+noremap是键盘映射,将映射成,与map不同的是它可以防止循环映射,因为被映射键中出现映射键,用map会出现死循环,导致浏览器死掉.
+cnoremap是Control模式(即输入命令模式)下的映射
+inoremap是插入模式下的映射
+4.如何让Greader/Gmail等本身具有键盘命令的应用不受到影响呢,加下一行就行了
+autocmd LocationChange .* js modes.passAllKeys = /.*(mail.google.com|www.google.com/reader).*/.test(buffer.URL)我的_vimperatorrc" Mappings
+noremap j 5j
+noremap k 5k
+noremap  
+noremap  
+noremap  
+noremap  
+cnoremap  
+cnoremap  
+cnoremap  
+inoremap  
+inoremap  
+inoremap  
+inoremap  
+inoremap  
+" PassThrough gmail and greader
+autocmd LocationChange .* js modes.passAllKeys = /.*(mail.google.com|www.google.com/reader).*/.test(buffer.URL)
+set titlestring=Mozilla Firefox
+source! ~/_vimperatorrc.local
