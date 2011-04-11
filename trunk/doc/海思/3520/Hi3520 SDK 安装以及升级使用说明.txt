@@ -1,0 +1,416 @@
+Hi3520 SDK 安装以及升级使用说明
+
+序 
+1、先明确文中的几个概念。
+   主片： 多片级联应用中，指PCI主片。
+   从片： 多片级联应用中，指PCI从片。
+   主arm：指双核中的arm11。
+   从arm：指双核中的arm9。
+2、第六章 FAQ，新增如何调整主从arm MMZ和os内存，实现16D1编码 or 16D1解码。
+3、2009-12-15，精简内存，减少了从arm os内存，调整了16-bit mmz分配。
+
+第一章 Hi3520 SDK V1.x.x.x 版本升级操作说明
+   如果您是首次安装本SDK，请直接参看第2章。
+    
+第二章 首次安装SDK
+1、Hi3520 SDK包位置
+    在"Hi3520 DMS V100R001C01/software/board/"目录下，您可以看到一个 Hi3520_SDK_V1.x.x.x.tgz 的文件，
+该文件就是Hi3520的软件开发包。
+
+2、解压缩SDK包
+    在linux服务器上（或者一台装有linux的PC上，主流的linux发行版本均可以），使用命令：tar -zxf Hi3520_SDK_V1.x.x.x.tgz ，
+解压缩该文件，可以得到一个Hi3520_SDK_V1.x.x.x目录。
+
+3、在linux服务器上安装交叉编译器
+    1) 进入tools/toolchains，运行chmod +x cross.install，然后运行./cross.install即可，注意，需要有sudo权限或者root权限
+    2) 执行source /etc/profile， 安装交叉编译器的脚本配置的环境变量就可以生效了，或者请重新登陆也可。
+
+4、展开SDK包的其他内容（注意！这一步不可以省略）
+    返回SDK目录，运行./sdk.unpack将会展开SDK包打包压缩存放的其他内容，请按照提示完成操作。这步操作可能需要几分钟。
+如果您需要通过WINDOWS中转拷贝SDK包，请先运行./sdk.cleanup，收起SDK包的内容，拷贝到新的目录后再展开。
+
+5、SDK目录介绍
+Hi3520_SDK_VX.X.X.X 目录结构如下：
+    |-- pub
+    |   |-- images                  # 可供FLASH烧写的映像文件，如内核、jffs2文件系统
+    |   |-- include                 # 公共头文件（该目录已废弃）
+    |   |-- kbuild-FULL_REL         # 主ARM内核头文件，内核模块使用该目录来进行编译
+    |   | `-- include               # 主ARM应用程序需要的头文件
+    |   |-- kbuild-FULL_REL_SLAVE   # 从ARM内核头文件，内核模块使用该目录来进行编译
+    |   | `-- include               # 从ARM应用程序需要的头文件
+    |   |-- lib                     # 应用程序需要的库文件
+    |   |-- resource                # 构成rootfs的各种组件，一般不需要关心
+    |   |-- standee                 # 各模块的原始安装文件，如需要mmz.ko就可以在这里找到，同时也包含组件所需的调试信息
+    |   `-- tarball                 # SDK各模块的打包备份文件
+    |
+    |-- extdrv                      # 板级外围驱动源码
+    |-- rootfs-FULL_REL             # 主ARM的根文件系统
+    |-- rootfs-SLV_FULL_REL         # 从ARM的根文件系统
+    |-- scripts                     # 存放相关脚本的目录
+    |-- sdk.cleanup                 # SDK清理脚本
+    |-- sdk.unpack                  # SDK展开脚本
+    |-- source                      # 放置所有源代码的目录
+    |   |-- app                     # 应用程序类源代码
+    |   |-- drv                     # 驱动类源代码
+    |   |-- lib                     # Lib类源代码
+    |   `-- os                      # OS相关源代码，如内核
+    |-- tools                       # 工具类
+    |    |-- bin                    # 可执行程序，如mkfs.cramfs
+    |    `-- toolchains             # 交叉工具链，展开SDK时已自动安装
+    |                               
+    |-- mpp                         # 媒体处理平台发布的头文件、库以及内核模块，适用于单核
+    |   |-- component               # 组件源代码
+    |   |-- include                 # 对外头文件，包括FB,TDE
+    |   |-- ko                      # 单ARM使用的内核模块，包括FB,TDE
+    |   |-- lib                     # 单ARM使用的release版本库以及音频库
+    |   `-- sample                  # sample代码，进入各个子目录，可以直接编译运行
+    |                               
+    |-- mpp_master                  # 媒体处理平台发布的头文件、库以及内核模块，适用于双核主ARM
+    |   |-- component               # 组件源代码
+    |   |-- include                 # 对外头文件，包括FB,TDE
+    |   |-- ko                      # 主ARM使用的内核模块，包括FB,TDE
+    |   |-- lib                     # 主ARM使用的release版本库以及音频库
+    |   `-- sample                  # sample代码，进入各个子目录，可以直接编译运行
+    |                               
+    `-- mpp_slave                   # 媒体处理平台发布的头文件、库以及内核模块，适用于双核从ARM
+        |-- component               # 组件源代码 
+        |-- include                 # 对外头文件，包括FB,TDE
+        |-- ko                      # 从ARM使用的内核模块，包括FB,TDE
+        |-- lib                     # 从ARM使用的release版本库以及音频库
+        `-- sample                  # sample代码，进入各个子目录，可以直接编译运行
+
+第三章、安装、升级Hi3520DEMO板开发开发环境
+    # 如果您使用的Hi3520的DEMO板，可以按照以下步骤安装u-boot，内核以及文件系统，以下步骤均使用网络来更新。
+    # 通常，您拿到的单板中已经有u-boot，如果没有的话，就需要使用仿真器进行烧写。
+    # 具体操作步骤，请参见 DMS\software\Doc下的《Hi3520 Linux 开发环境用户指南》和 DMS\application notes\下的《Hi3520 U-boot移植应用 Application Notes》。
+    # 以下操作假设您的单板已经有了u-boot。
+
+1、配置tftp服务器
+    # 可以使用任意的tftp服务器，将pub/images下的文件拷贝到tftp服务器的目录下。
+    
+2、更新u-boot的环境变量
+    # 单板上电后，敲Ctrl-C，进入u-boot。先设置好serverip（即tftp服务器的ip）、ipaddr（单板ip）和ethaddr（单板的MAC地址）。
+    setenv serverip xx.xx.xx.xx
+    setenv ipaddr xx.xx.xx.xx 
+    setenv ethaddr xx:xx:xx:xx:xx:xx
+    setenv netmask xx.xx.xx.xx
+    setenv gatewayip xx.xx.xx.xx
+    ping serverip，确保网络畅通。
+    # 具体的使用方法请参见《Hi3520 Linux 开发环境用户指南》。
+    
+3、烧写并设置主u-boot
+    (1)烧写
+    protect off 0x80000000 +0x80000
+    erase 0x80000000 +0x80000
+    tftp 0x80000000 u-boot-hi3520v100_200M.bin;
+    protect on 0x80000000 +0x80000
+    
+    (2)设置
+    # 在u-boot下设置启动参数：（主ARM操作系统分配72MB的内存，并使用jffs2的文件系统，文件系统的大小为16MB）
+    set bootargs mem=72M console=ttyAMA0,115200 root=1f01 rootfstype=jffs2 mtdparts=physmap-flash.0:14M(boot),16M(rootfs) pcimod=host pciclksel=1
+    setenv bootcmd 'bootm 0x80100000'
+    saveenv
+    
+4、烧写并设置从boot
+    (1)烧写
+    erase 0x80300000 +0x80000;
+    tftp 0x80300000 u-boot-hi3520v100_slave_200M.img;  
+    
+    (2)设置
+    set slave_bootargs mem=15M console=ttyAMA0,115200;
+    saveenv
+    
+5、烧写主内核和文件系统
+    erase 0x80100000 +0x200000;
+    tftp 0x80100000 kernel-hi3520v100_full_release.img;
+    erase 0x80E00000 +0x1000000;
+    tftp 0x80E00000 rootfs-FULL_REL-Flash.jffs2;
+    
+6、烧写从内核和文件系统(到flash)及启动
+    (1)烧写
+    erase 0x80400000 +0x200000
+    tftp 0x80400000 kernel-hi3520v100_full_release_slave.img
+    erase 0x80600000 +0x800000
+    tftp 0x80600000 rootfs-SLV_FULL_REL.cramfs.initrd.img    
+    
+    (2)手动启动从arm
+    # 在主boot下输入：
+    slavestart
+   
+    (3)设置从ARM自动启动
+    # 在主boot下输入:
+    set slave_kernel_addr 0x80400000
+    set slave_initrd_addr 0x80600000
+    set slave_autostart 1
+    saveenv
+
+7、启动新系统
+    # 重启单板即可，第一次进入系统时，挂载文件系统的速度可能比较慢，请耐心等待。
+    
+8、使用新系统
+    # 切记，不可随意在Linux下复位单板或断电，因为这样可能会损坏文件系统，导致文件丢失、损坏以致系统无法启动！
+    # 每次重启单板请使用reboot；同理，单板断电时请先运行halt，待到挂死后再断电，这样可以有效地保护FLASH文件系统，也可以避免不必要的麻烦。
+
+第四章、使用SDK和DEMO板进行开发
+1、开启Linux下的网络
+    # 执行命令加载网络驱动：
+    modprobe h2gether;
+
+    # 设置网络
+    ifconfig eth0 hw ether xx:xx:xx:xx:xx:xx;
+    ifconfig eth0 xx.xx.xx.xx netmask xx.xx.xx.xx;
+    route add default gw xx.xx.xx.xx
+    # 然后ping一下其他机器，如无意外，网络将能正常工作。
+    
+    # 如果收包性能不足，目前确认通过增加协议栈缓存即可，可以按如下操作来调整收包缓存默认值和最大值
+    echo "1048576" /proc/sys/net/core/rmem_default;
+    echo "2048576" /proc/sys/net/core/rmem_max;
+    
+    # 在内存紧张的情况下，如果再进行繁重的网络访问，有可能会报出缺页异常。此时通过限制系统将内存用于文件系统cache的数值，
+    # 可以提高网络突发情况下的处理能力。可以使用下面的命令将min_free_kbytes设置为2MB，提高网络突发情况下的可用内存数量
+    echo 2000 > /proc/sys/vm/min_free_kbytes
+    
+2、使用NFS
+    # 在开发阶段，推荐使用NFS作为开发环境。您开发的代码都可以放在NFS服务器上，通过NFS可以直接在DEMO板上访问到NFS服务器。
+    # 执行命令加载NFS驱动：
+    modprobe nfs
+    # 然后挂载NFS文件系统：
+    mount -t nfs -o nolock,rsize=1024 xx.xx.xx.xx:/your-nfs-path /mnt
+    # 然后就可以在/mnt目录下看到你服务器上的文件了，当然，如果你挂载的NFS目录就是SDK下面的rootfs，那么你可以：
+    chroot /mnt
+    # 然后就可以在新的根目录下工作了。
+
+3、开启telnet服务
+    # 网络正常后，运行命令 telnetd& 就可以启动单板telnet服务，然后才能telnet到单板。
+
+4、使用硬盘FAT32
+    # 按以下顺序依次插入ko文件，由于部分模块已经编入内核了，以下可能有部分命令冗余:
+    modprobe nls_base
+    modprobe nls_cp437
+    modprobe fat
+    modprobe vfat
+    modprobe msdos
+    modprobe nls_iso8859-1
+    modprobe nls_ascii
+    modprobe scsi_mod
+    modprobe sd_mod
+    modprobe libata
+    modprobe sata_sil
+    # 注意: 调试时，如果对部分驱动有改动，重新生成了新模块，则无法通过modprobe方式插入，需使用insmod插入新模块。
+
+    modprobe as-iosched                     # 增加IO调度算法，还有loop、cfq_iosched、deadline-iosched选择
+    echo "anticipatory" > /sys/block/<devicename>/queue/scheduler   # 使能as-iosched算法，<devicename>是在/dev/<devicename>，如hda
+
+    # 然后挂载FAT32文件系统：
+    mount -t vfat /dev/sda1 /mnt
+    
+    # 然后就可以在/mnt目录下看到文件了
+    # 其他驱动的使用请参考文档《驱动模块使用指南.txt》
+
+    #! 当然，你也可以把以上操作都放到脚本里面，并让它在linux启动的时候自动执行。
+    #! OK，到这里，所有的环境都已经准备好了，你可以开始媒体业务体验之旅了。
+
+5、运行MPP业务
+    # 进入mpp ko目录，加载KO
+    cd mpp_master/ko
+    ./load_master
+    
+    # (确保sample已编译)进入各sample目录下，执行即可。例：
+    cd mpp_master/sample/vio
+    ./sample_vio 1
+    
+第五章 地址空间分配与使用
+1、RAM 内存管理
+    # DEMO板上共有两块DDR内存：
+    # DDRA 256M，对应物理地址从0xC0000000 到 0xCFFFFFFF;
+    # DDRB 128M，对应物理地址从0xE0000000 到 0xE7FFFFFF。
+    
+    # 这些内存，一部分由操作系统管理，称之为os内存；另一部分则需根据业务进行灵活分配，称之为mmz内存。
+    # 为此，SDK提供了一个内核模块mmz，来管理mmz内存。用户可以在插入mmz模块时，指定其管理的内存，例如：
+    #   modprobe mmz mmz=anonymous,0,0xC2000000,32M:ddr16,0,0xE5800000,8M anony=1
+    # 表示mmz管理两块内存。
+    # 第一块内存名字为anonymous，起始地址为 0xC2000000，大小为32M。
+    # 第二块内存名字为ddr16，起始地址为 0xE5800000，大小为8M。
+
+2、DEMO板RAM内存分配
+    # DEMO板的内存分配如下图所示：
+    
+    图1 DDRA内存分配 (主从mmz)
+    -----|-------|  0xC0000000   # Reserved memory. You can use it all for your convience.
+    1M   |rsv    | 
+    -----|-------|  0xC0100000   # Name:window. Usage: pci communication. If you have no pci, you can use for your convience.
+    7M   |window |           
+    -----|-------|  0xC0800000   # Name:anonymous. Usage: Frame Buffer.
+    24M  |master |              
+         |mmz    |
+    -----|-------|  0xC2000000   # Name:anonymous. Usage: Video Buffer.
+    224M |slave  |
+         |mmz    |
+    -----|-------|  0xD0000000   # End of 32-bit ddr.
+
+    图2 DDRB内存分配(主ARM OS + 从ARM OS + 主从mmz)
+    -----|-------|  0xE0000000   # slave file system. Note: image of slave file system must small than 5M.
+    15M  |slave  |             
+         |os     |
+    -----|-------|  0xE0F00000   # Name:ddr16. Usage: arm11 alloc for vdec stream buffer, dcc msg buf, etc.
+    15M  |master |
+         |mmz    |
+    -----|-------|  0xE1E00000   # Name:ipcm. Usage: communication memory between two arm.
+    2M   |IPCM   |
+         |memory |
+    -----|-------|  0xE2000000   # master os memory.
+    72M  |master |
+         |os     |
+    -----|-------|  0xE6800000   # Name:ddr16. Usage: arm9 alloc for venc stream buffer, channel context, etc.
+    24M  |slave  |
+         |mmz    |
+    -----|-------|  0xE8000000   # End of 16-bit ddr
+           
+    # 主mmz加载在脚本 mpp_master/ko/load_master 中自动执行，无需用户操作。
+    # 从mmz加载在脚本 mpp_slave/ko/run_slave 中自动执行，无需用户操作。
+
+3、flash地址空间
+    
+    图3 flash空间分配
+    -----|-------|  0x80000000
+    1M   |master |
+         |boot   |
+    -----|-------|  0x80100000
+    2M   |master |
+         |kernel |
+    -----|-------|  0x80300000
+    1M   |slave  |
+         |boot   |
+    -----|-------|  0x80400000
+    2M   |slave  |
+         |kernel |
+    -----|-------|  0x80600000 
+    8M   |slave  |
+         |fs     |  
+    -----|-------|  0x80E00000
+    16M  |master |
+         |fs     |
+    -----|-------|
+    
+    # Flash 擦除需根据分区情况进行
+    uboot:  erase 0x80000000 +0x80000      # 必须从0x80000000开始擦除，建议擦除大小0x80000, 这样原来保存的环境变量可不被擦除，避免重新设置。
+    kernel: erase 0x80100000 +0x200000     # 必须擦除足够的空间，以写入kernel image文件
+    rootfs: erase 0x80E00000 +0x1000000    # 必须从分区2起始地址开始擦除，必须擦除分区2全部内容。
+
+    # flash的空间分配，要通过bootargs告诉主kernel
+    set bootargs ......(此处省略):14M(boot),16M(rootfs)  
+    14M(boot) 表示分区1，14M，存放 主boot(1M)，主kernel(2M)，从boot(1M)，从kernel(2M) 和 从fs(8M)。
+    16M(rootfs) 表示分区2，16M，存放 主fs(16M)。
+    
+    # 你可以根据实际从armfs、主armfs的大小，自行调整bootargs，并erase相应空间。以两个例子说明。
+    从fs大小 主fs起始地址 主fs大小 erase从fs                     erase主fs                     bootargs               
+    10M      0x81000000   16M      erase 0x80600000 +0xa000000   erase 0x81000000 +0x10000000  :16M(boot),16M(rootfs) 
+    12M      0x81200000   20M      erase 0x80600000 +0xc000000   erase 0x81200000 +0x10400000  :18M(boot),20M(rootfs) 
+        
+第六章 FAQ
+Q1: 如何制作从arm文件系统img文件?
+A1:  # 如下执行:
+    cd rootfs-SLV_FULL_REL; 
+    ./mknod_console;   # 必须执行该操作
+    cp mkimg.rootfs ../; 
+    cd .. ; 
+    ./mkimg.rootfs rootfs-SLV_FULL_REL ./ rootfs-SLV_FULL_REL cramfs-initrd-img;
+    rm mkimg.rootfs;
+    生成的文件名为: rootfs-SLV_FULL_REL.cramfs.initrd.img
+
+    mkimg脚本解释：
+    ./mkimg.rootfs rootfs-SLV_FULL_REL ./ rootfs-SLV_FULL_REL  cramfs-initrd-img;
+                       (1)             (2)         (3)               (4)
+    (1)要制作的文件系统名  
+    (2)img文件保存路径  
+    (3)生成的img文件名
+    (4)使用哪种文件系统
+
+Q2: 什么时候，需要制作从arm文件系统img文件?
+A2:  一般情况下，从arm是不需要您操作它的。
+    只有当你希望在从arm运行自己的业务，或修改从arm MMZ时，才需要修改从arm文件系统，并重新制作img文件。
+    
+    1、将你的从arm业务程序放到从arm文件系统中。
+    2、修改从arm自动启动脚本。使你的从arm业务程序能自动执行。
+       rootfs-SLV_FULL_REL/etc/init.d/S20Cfgslave
+    3、修改从armmmz配置脚本。注意，请仅修改 mmz 加载参数，其他不变。
+       rootfs-SLV_FULL_REL/root/mpp_slave/ko/run_slave 
+    4、重新制作从arm文件系统img文件。
+    5、将img文件烧写到flash中，请依照第三章介绍的烧写从arm文件系统的方法。
+    
+Q3: 更改从arm业务后，每次都烧写flash，太麻烦，有没有更好的办法?
+A3: 当然有。
+   烧写从kernel和filesystem(到内存)及启动  ----------- 快速调试从ARM的技巧
+   (1) 烧写
+   tftp 0xE0300000 kernel-hi3520v100_full_release_slave.img
+   tftp 0xE0A00000 rootfs-SLV_FULL_REL.cramfs.initrd.img
+   
+   (2) 启动从arm
+   # 在主boot下输入：
+   slavestart 0xE0300000 0xE0A00000
+   
+   (3) 自动启动从arm
+   #取消自动从FLASH中启动
+   setenv slave_autostart
+   # 在主boot中配置bootcmd，可每次重启单板时自动从TFTP服务器下载并启动从kernel和rootfs
+   setenv bootcmd 'tftp 0xE0300000 kernel-hi3520v100_full_release_slave.img;tftp 0xE0A00000 rootfs-SLV_FULL_REL.cramfs.initrd.img;slavestart 0xE0300000 0xE0A00000;bootm 0x80100000'
+
+Q4: 如何调整内存分配？
+A4: 目前SDK提供了参考内存分配，详见第五章第2节中内存分配图。
+    你可以调整它，但一定要小心。  
+    *** 请谨记一个原则：内存分配不能重叠。***
+
+   +-----+----------+-----------------------------------------------------------------------------------------+
+   |序号 | 内存     | 修改示例及说明                                                                          |
+   +-----+----------+-----------------------------------------------------------------------------------------+
+   |(1)  |主arm os  | 修改前 set bootargs mem=56M ...               主arm os 管理 56M 内存                    |                                           | 
+   |     |          | 修改后 set bootargs mem=72M ...               主arm os 管理 72M 内存                    |                                           |        
+   +-----+----------+-----------------------------------------------------------------------------------------+
+   |(2)  |从arm os  | 修改前 set slave_bootargs mem=32M ...         从arm os 管理 32M 内存                    |
+   |     |          | 修改后 set slave_bootargs mem=24M ...         从arm os 管理 24M 内存                    | 
+   +-----+----------+-----------------------------------------------------------------------------------------+
+   |(3)  |主arm mmz | mpp_master/ko/load_master                     <-- 修改该文件                            |
+   |     |          | modprobe mmz=anonymous,0,0xC2000000,32M       主arm mmz管理 32M 内存                    | 
+   +-----+----------+-----------------------------------------------------------------------------------------+
+   |(4)  |从arm mmz | rootfs-SLV_FULL_REL/root/mpp_slave/run_slave  <-- 修改该文件，然后重新制作从片文件系统  |
+   |     |          | modprobe mmz=anonymous,0,0xC4000000,192M      从arm mmz管理 192M 内存                   | 
+   +-----+----------+-----------------------------------------------------------------------------------------+
+
+Q5: 如何运行 16D1 编解码业务
+    请选择合适的配置，如下：
+    1、编码码流Buffer设置为 宽*高
+    2、解码码流Buffer设置为 宽*高
+    3、调整公共VB配置，建议：
+            Block size   Block count  note
+        D1  704*576*3/2  16*5         无
+        CIF 352*288*3/2  16*5         如果编码CIF小码流，则需配置。
+
+Q6: 如何制作从arm u-boot image文件
+A6: u-bootimage 制作 与 从arm 文件系统一样，只是入口地址不同，如下：
+    mkimage -A arm -T ramdisk -C none -a 0xe1000000 -e 0xe1000000 -d u-boot-hi3520v100_slave_200M.bin u-boot-hi3520v100_slave_200M.img
+
+第七章 单核使用
+以上内容，讲的是如何在双核上运行mpp业务。本章重点介绍如何在单核上运行mpp业务。
+1、mpp业务目录说明
+   # 发布包根目录下，有三个mpp相关目录。
+   mpp       ：单核的工作目录。在单核上运行mpp业务时，使用此目录。
+   mpp_master：双核的主arm工作目录。在双核上运行mpp业务时，使用此目录。
+   mpp_slave ：双核的从arm工作目录。目前不需关注。
+
+2、在单核上运行mpp业务的过程
+   # 此处将单双核操作过程放在一起，便于用户比较。
+   +-----+---------------------+------------------------+---------------------------------+
+   |序号 |      操作过程       |      单核              |       双核                      |
+   +-----+---------------------+------------------------+---------------------------------+
+   |(1)  | 烧写FLASH与单板启动 |                  单 双 核 一 致                          |
+   +-----+---------------------+------------------------+---------------------------------+
+   |(2)  | 加载ko              | 加载mpp/ko/下的ko      | 加载mpp_master/ko/下的ko        |
+   +-----+---------------------+------------------------+---------------------------------+
+   |(3)  | mpi 接口使用        |                  单 双 核 一 致                          |
+   +-----+---------------------+------------------------+---------------------------------+
+   |(4)  | 应用程序编译        | 使用mpp/lib/下的库文件 | 使用mpp_master/lib/下的库文件   |
+   +-----+--------------------------------------------------------------------------------+
+   
+   # 从上表可以看出，单双核操作过程很相似。
+   # 用户只需注意操作过程(2)、(4)的区别即可。特别提醒，(4)一定不能出错，否则会造成奇怪的问题。
+
