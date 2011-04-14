@@ -1,0 +1,48 @@
+
+
+
+
+http://makai.blog.51cto.com/2205493/479470
+
+
+
+./configure --prefix=/home/zhoumin/usr/libmad
+
+make ;make install
+
+
+
+
+
+a52dec(http://liba52.sourceforge.net/)
+./configure --prefix=/home/zhoumin/usr/a52dec
+
+
+
+fribidi
+./configure --prefix=/home/zhoumin/usr/fribidi
+
+
+
+
+
+/root/soft/fribidi/lib/pkgconfig
+
+
+export PKG_CONFIG_PATH="/usr/lib/pkgconfig;/usr/local/lib/pkgconfig;/home/zhoumin/usr/ffmpeg/lib/pkgconfig;/home/zhoumin/usr/fribidi/lib/pkgconfig;/home/zhoumin/usr/qt4/lib/pkgconfig" 
+
+
+
+export PKG_CONFIG_PATH="/home/zhoumin/usr/qt4/lib/pkgconfig"
+
+./configure --enable-run-as-root --prefix=/home/extend/install/vlc --with-mad=/home/zhoumin/usr/libmad/ --with-a52=/home/zhoumin/usr/a52dec/ --with-ffmpeg=/home/zhoumin/usr/ffmpeg --disable-fribidi 
+
+./configure --enable-run-as-root --prefix=/home/zhoumin/usr/vlc --with-mad=/home/zhoumin/usr/libmad/ --with-a52=/home/zhoumin/usr/a52dec/ --with-ffmpeg=/home/zhoumin/usr/ffmpeg --disable-avcodec --disable-postproc --disable-fribidi 
+
+
+
+#!/bin/bash
+
+export PKG_CONFIG_PATH="/home/zhoumin/usr/qt4/lib/pkgconfig"
+
+./configure --enable-run-as-root --prefix=/home/extend/install/vlc-simple --disable-avcodec --disable-postproc --disable-a52 --disable-fribidi 
