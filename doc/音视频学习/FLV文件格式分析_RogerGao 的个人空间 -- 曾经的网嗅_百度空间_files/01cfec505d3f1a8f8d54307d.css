@@ -1,0 +1,288 @@
+/*uBeto开发.请勿翻版及再次编辑.*/
+
+body{background:#28313A url(http://hiphotos.baidu.com/ubeto/pic/item/7a990e2251dbdc709822ede9.jpeg) repeat-x}
+
+#header{width:900px;height:168px;background:url(http://hiphotos.baidu.com/ubeto/pic/item/53cad853c2b93e2c0cf3e398.jpeg) no-repeat center bottom}
+#header div.lc{}
+#header div.rc{}
+#header div.tit{top:16px;left:14px;line-height:50px;font-size:48px;font-family:Impact,微软雅黑,黑体}
+#header div.tit a.titlink{color:#28313A;text-decoration:none}
+#header div.tit a.titlink:visited{color:#28313A;text-decoration:none}
+#header div.tit a.titlink:hover{color:#28313A;text-decoration:underline}
+#header div.desc{top:64px;left:14px;color:#28313A;font-size:14px}
+#tabline{display:none}
+#tab{top:128px;left:2px}
+#tab a.on,#tab a.on:link,#tab a.on:visited{padding:11px 30px 9px 30px;line-height:20px;color:#FFFFFF;font-size:14px;background:url(http://hiphotos.baidu.com/ubeto/pic/item/b1f9ff44595fce04cefca333.jpeg) no-repeat bottom center}
+#tab span{display:none}
+#tab a:link{padding:10px 30px 10px 30px;color:#FFFFFF;text-decoration:none;font-size:14px}
+#tab a:visited{padding:10px 30px 10px 30px;color:#FFFFFF;text-decoration:none;font-size:14px}
+#tab a:hover{padding:10px 30px 10px 30px;color:#FFFFFF;text-decoration:none;font-size:14px}
+#tab2{}
+#tab2 span{}
+#tab2 a{}
+#tab2 a:link{}
+#tab2 a:visited{}
+
+#main{width:900px!important}
+.stage{width:900px!important;background:#FFFFFF}
+.stage a{color:#0066CC;text-decoration:none}
+.stage a:visited{color:#0066CC;text-decoration:none}
+.stage a:hover{color:#114477;text-decoration:underline}
+
+#layout td.c3t2{width:10px}
+#layout td.c3t3{padding-left:10px;border-left:1px dashed #CCCCCC}
+#layout td.c2t2{width:10px}
+#layout td.c2t3{padding-left:10px;border-left:1px dashed #CCCCCC}
+#layout td.c3t4{width:10px}
+#layout td.c3t5{padding-left:10px;border-left:1px dashed #CCCCCC}
+
+#comm_info{color:#333333;font-family:Arial;text-align:left}
+#comm_info a{}
+
+#page{height:30px;font-size:14px;font-family:Arial;text-align:center}
+#page span{padding:3px;font-size:14px;font-weight:bold}
+#page a.pc{font-size:14px;font-weight:bold}
+#page a.pc:visited{}
+#page a.pi{padding:3px;font-size:14px}
+#page a.pi:visited{}
+
+.mod{margin-bottom:10px}
+.modhandle{cursor:move}
+.modth{height:24px}
+.modhead{padding:4px 4px 0 4px}
+.modopt{padding:4px 4px 0 0}
+.modtit{color:#666666;font-size:14px;font-weight:bold}a.modtit{color:#666666}a.modtit:visited{color:#666666}
+.modtitlink{color:#666666;font-size:12px;font-weight:bold}a.modtitlink{color:#666666;text-decoration:none}a.modtitlink:visited{color:#666666}a.modtitlink:hover{color:#666666}
+.modact{}
+.modbox{padding:10px 10px 0 10px;background:#FFFFFF}
+.modbox div.line{line-height:3px}
+.modtl{}
+.modtc{}
+.modtr{}
+.modbl{}
+.modbc{border-bottom:1px dashed #CCCCCC}
+.modbr{}
+.modlabel{font-size:14px;font-weight:bold}
+
+#m_blog div.tit{font-size:16px;font-weight:bold}
+#m_blog div.tit a{color:#333333;font-size:16px;font-weight:bold}
+#m_blog div.tit a:visited{color:#333333}
+#m_blog div.tit a:hover{color:#0066CC;text-decoration:none}
+#m_blog div.date{margin:0px 0 8px 0;color:#777777}
+#m_blog div.cnt{color:#333333;line-height:20px;font-size:12px}
+#m_blog div.cnt div{font-size:14px}
+#m_blog div.more{}
+#m_blog div.more a{font-size:12px}
+#m_blog div.more a:visited{}
+#m_blog div.opt{color:#777777;font-size:12px}
+#m_blog div.opt a{font-size:12px}
+#m_blog div.opt a:visited{}
+#m_blog div.line{margin-top:17px;line-height:17px;border-top:1px dashed #CCCCCC}
+#m_blog div.none{padding:100px 0 100px 0;color:#3333333;font-size:12px}
+
+#m_pro a{}
+#m_pro a:visited{}
+#m_pro div.image{text-align:center}
+#m_pro div.act{margin-top:10px}
+#m_pro div.user{margin-top:10px;color:#333333;font-size:12px;font-weight:bold}
+#m_pro div.desc{color:#333333;font-size:12px}
+#m_pro div.line{margin-top:17px;line-height:17px;border-top:1px dashed #FFF}
+#m_pro td{color:#333333;line-height:24px;font-size:14px}
+#m_pro .photo{background:#FFF;border:1px solid #FFF}
+#m_pro .photo td{font-size:12px}
+#m_pro .photo .image{padding:20px 0 10px 0}
+#m_pro .photo .line{width:90%;line-height:0;border-top:1px dashed #FFF;font-size:1px}
+#m_pro .ref{margin-top:10px;border:1px solid #FFF}
+#m_pro .ref .tit{padding-left:10px;background:#EEE;border-bottom:1px solid #DDD}
+#m_pro .ref .cnt{padding:10px;background:#FFF}
+#m_pro .basic td{color:#666;font-size:14px}
+#m_pro .basic .tit{font-weight:bold}
+#m_pro .basic a:hover{padding:1px;background:#FFF;color:#FFF;text-decoration:none}
+#m_pro .basic a.nlk:hover{padding:0px;background-color:#FFF;text-decoration:underline}
+#m_pro .pline{margin-left:5px;margin-top:10px;line-height:10px;border-top:1px dashed #FFF}
+#m_pro .pitem{margin-left:5px;line-height:22px;font-size:14px}
+#m_pro .pitem .tit{color:#666}
+#m_pro .pitem a:hover{padding:1px;background:#FFF;color:#FFF;text-decoration:none}
+
+#m_album div.image{text-align:center}
+#m_album div.page{font-size:12px;text-align:center}
+#m_album div.page a{font-size:12px}
+#m_album div.page a:visited{}
+#m_album .phpage{margin-top:10px;padding-bottom:5px;text-align:center}
+
+#m_links div.item{color:#333333;font-size:12px}
+#m_links div.item a{font-size:12px}
+#m_links div.item a:visited{}
+
+#m_mylink1 div.item{color:#333333;font-size:12px}
+#m_mylink1 div.item a{font-size:12px}
+#m_mylink1 div.item a:visited{}
+
+#m_mylink2 div.item{color:#333333;font-size:12px}
+#m_mylink2 div.item a{font-size:12px}
+#m_mylink2 div.item a:visited{}
+
+#m_mylink3 div.item{color:#333333;font-size:12px}
+#m_mylink3 div.item a{font-size:12px}
+#m_mylink3 div.item a:visited{}
+
+#m_mylink4 div.item{color:#333333;font-size:12px}
+#m_mylink4 div.item a{font-size:12px}
+#m_mylink4 div.item a:visited{}
+
+#m_artclg div.item{color:#333333;font-size:12px}
+#m_artclg div.item a{font-size:12px}
+#m_artclg div.item a:visited{}
+
+#m_comment div.item{color:#333333;font-size:12px}
+#m_comment div.item a{font-size:12px}
+#m_comment div.item a:visited{}
+#m_comment div.item a.cnt{color:#333333;font-size:12px;text-decoration:none}
+#m_comment div.item a.cnt:visited{color:#333333;text-decoration:none}
+#m_comment div.item a.cnt:hover{color:#333333;text-decoration:none}
+
+#m_albumlist div.note{color:#333333;font-size:14px}
+#m_albumlist div.desc{margin-bottom:12px;padding:3px 10px 3px 10px;line-height:22px;background-color:#FFFFFF;font-size:14px}
+#m_albumlist div.none{padding:100px 0 100px 0;color:#333333;font-size:14px}
+#m_albumlist div.tit{margin:6px 0 7px 0;color:#333333;font-size:14px}
+#m_albumlist div.tit a{font-size:14px}
+#m_albumlist div.tit a:visited{}
+#m_albumlist span.count{color:#777777;font-size:12px;font-weight:bold}
+#m_albumlist span.size{color:#777777;font-size:12px;font-family:Arial}
+#m_albumlist a.act{font-size:12px}
+#m_albumlist a.act:visited{}
+#m_albumlist a.page{font-size:14px}
+#m_albumlist a.page:visited{}
+#m_albumlist td.image{padding:5px;border:1px solid #FFF;background:#FFFFFF}
+#m_albumlist .phbox{margin-top:15px;margin-left:15px}
+#m_albumlist .phbox .phpage{color:#636363;font-size:14px}
+#m_albumlist .phbox .phinfo{margin:6px 0 2px 0;color:#777777;font-size:12px}
+#m_albumlist .phbox .phimg{margin-bottom:10px}
+
+#in_comment{width:710px}
+#in_comment div.tit{margin-bottom:12px;color:#333333;font-size:16px;font-weight:bold}
+#in_comment div.user{margin-bottom:6px;color:#333333;font-size:12px}
+#in_comment div.user a{font-size:12px}
+#in_comment div.user a:visited{}
+#in_comment div.user span.date{color:#7777777;font-size:12px}
+#in_comment div.desc{color:#333333;font-size:12px}
+
+#m_track{color:#333333;font-size:12px}
+#m_track a{font-size:12px}
+#m_track a:visited{}
+
+#in_send div.tit{margin:10px 0 10px 0;color:#333333;font-size:12px;font-weight:bold}
+
+#m_search {}
+#m_search input.text{}
+#m_search input.radio{}
+#m_search input.submit{}
+
+#in_msg{width:710px}
+#in_msg div.tit{margin-bottom:12px;color:#333333;font-size:12px;font-weight:bold}
+#in_msg .item td.index{width:40px;font-weight:bold}
+#in_msg .item div.user{width:150px;color:#333333}
+#in_msg .item div.user a{font-size:12px}
+#in_msg .item div.user a:visited{}
+#in_msg .item div.user img{margin-bottom:5px}
+#in_msg .item td.cnt a{color:#333333;font-size:12px}
+#in_msg .item td.cnt a:visited{color:#333333}
+#in_msg .item td.cnt a:hover{color:#333333;text-decoration:none}
+#in_msg span.date{color:#333333;font-size:12px}
+#in_msg div.desc{margin-top:5px;color:#333333;font-size:12px}
+
+#m_cang div.item{color:#333333;font-size:12px}
+#m_cang div.item a{font-size:12px;text-decoration:none}
+#m_cang div.item a:visited{}
+
+#in_reader{width:710px}
+#in_reader div.tit{margin-bottom:12px;color:#333333;font-size:16px;font-weight:bold}
+#in_reader td.user{margin-bottom:6px;color:#333333;font-size:12px}
+#in_reader td.user a{font-size:12px}
+#in_reader td.user a:visited{}
+
+#m_rss div.item{color:#333333; font-size:12px}
+#m_rss div.item table{}
+#m_rss div.item a{font-size:12px}
+#m_rss div.item a:visited{}
+#m_rss div.item div.dt{margin-bottom:5px;margin-top:5px;font-weight:bold}
+
+#in_nav{color:#666666;font-size:12px}
+#in_nav a{font-size:12px}
+#in_nav a:visited{}
+
+#mod_info{} 
+#m_info{color:#333333} 
+#m_info table{} 
+#m_info td{color:#333333}  
+#m_info td a{} 
+#m_info td.tit{color:#333333} 
+#m_info #schoolDiv{color:#333333} 
+#m_info #schoolDiv a{} 
+#m_info #hostDetail{color:#333333}
+#m_info #contact_info{color:#333333}
+
+#mod_hobby{} 
+#m_hobby{color:#333333} 
+#m_hobby span.title{color:#333333} 
+#m_hobby span.colon{color:#333333}
+#m_hobby a{} 
+
+#mod_aboutme{} 
+#m_aboutme{color:#333333} 
+#m_aboutme div.cnt{color:#333333}
+#m_aboutme div.cnt a{}
+#m_aboutme div.cnt img{}
+#m_aboutme div.cnt a img{}
+#m_aboutme div.cnt embed{}
+#m_aboutme div.cnt p{}
+.com/css/pic/item/08015a73e49e45068601b036.jpg) no-repeat center center;padding-left:10px}/*下一月箭头(正常)*/
+div#cals .cal_yr .cal_pre_ovr{font-size:8px;background:url(http://imgsrc.baidu.com/css/pic/item/af0897019c2cd62c7aec2c7c.jpg) no-repeat center center;padding-left:10px;cursor:pointer}/*上一月箭头(鼠标悬停)*/
+div#cals .cal_yr .cal_nxt_ovr{font-size:8px;background:url(http://imgsrc.baidu.com/css/pic/item/78697a3f9780cae07c1e717c.jpg) no-repeat center center;padding-left:10px;cursor:pointer}/*下一月箭头(鼠标悬停)*/
+
+div#cals tr{}
+div#cals td{text-align:center;font-family:Arial;font-size:12px;padding:3px;line-height:14px;white-space:nowrap}/*日期*/
+div#cals .today{padding:2px;border:1px solid #3483D4;background:#EEFBFB;font-weight:bold;color:#140f0b}/*今日*/
+div#cals .cal_week td{font-weight:bold;font-size:12px;font-family:Tahoma;color:#140f0b}/*周*/
+div#cals .cal_date{color:#000000}/*普通日期*/
+div#cals .cal_sa{color:#140f0b}/*周六标题样式*/
+div#cals .cal_su{color:#140f0b}/*周日标题样式*/
+div#cals .not_come{color:#333}/*今日之后的日期*/
+div#cals .cal_before,#cals .cal_after{visibility:hidden}/*除当前月之外的日期*/
+div#cals *.cal_active{color:#3483D4;text-decoration:underline;font-weight:bold;}/*有更新的日期效果*/
+div#cals *.cal_select{padding:2px;border:1px solid #82BEC9;background-color:#F6FCFD;color:#140f0b;text-decoration:underline} /*有更新的日期鼠标移上效果*/
+div#cals .yr_normal,#cals .mth_normal{border:1px solid #FFF;line-height:14px;}/*年,月选择器普通状态*/
+div#cals .yr_sel,#cals .mth_sel{border:1px solid #ffad42;background:#ffec93;padding:0;line-height:14px;cursor:pointer}/* 年,月选择器鼠标移上状态*/
+div#cals .cal_roll{border:1px solid #ff9000;background:#fef3c1;position:absolute;display:none;font-size:12px; font-family:Arial;line-height:18px}/*年月选择列表*/
+div#cals .cal_roll .normal{background:none;}/*年月选择列表选择项目普通状态*/
+div#cals .cal_roll .msover{background:#EAF5D0;cursor:pointer;}/*年月选择列表选择项目鼠标移上效果*/
+div#cals .cal_pp_cnt{padding:3px;margin-right:20px;font-size:12px;font-family:Arial;white-space:nowrap;border:1px solid #82BEC9;background:url(http://imgsrc.baidu.com/css/pic/item/49f03eefbdd5c9cdcf1b3e7c.jpg);color:#140f0b;}/*有更新的日期的tip提示层*/
+
+/*相关文章*/
+#in_related_doc{margin-bottom:6px;color:#f9eeb0;font-size:12px}
+/* "相关文章:" 标题的样式*/
+#in_related_doc div.tit{margin-bottom:12px;color:#f9eeb0;font-size:14px;font-weight:bold}
+/* 链接的字号和颜色 */
+#m_friblog div.item a,#m_friblog div.item a:visited,#m_track a,#m_track a:visited,#in_related_doc a,#in_related_doc a:visited{color:#f9eeb0;font-size:12px}
+#m_friblog div.item a:hover,#m_track a:hover,#in_related_doc a:hover{color:#130e09;font-size:12px}
+
+#mod_event{color:#666;}
+/* My Rss */
+#m_rss a,#m_rss a:visited{color:#e0954c;font-size:12px}
+#m_rss a:hover{color:#fbbe82;font-size:12px}
+
+#mod_event{background:transparent;}
+#m_event .content a:link,#m_event .content a:visited,#m_event_mine a:link,#m_event_mine a:visited,#m_event_friends a{color:#f9eeb0;}
+#m_event .content{color:#666;}
+#m_event .time{color:#666;} /* 时间那一列的样式 */
+/*#m_event .alter{background-image:url(http://imgsrc.baidu.com/css/pic/item/5d3f1a8f5f47faccf11f367c.jpg);border:1px solid #0a0a02;} /* 交替行的样式,设置背景色等等 */ 
+
+/* Col Common */
+#m_links div.item,#m_mylink1 div.item,#m_mylink2 div.item,#m_mylink3 div.item,#m_mylink4 div.item,#m_artclg div.item{font-size:12px;color:#e0954c;}
+#m_links div.line,#m_mylink1 div.line,#m_mylink2 div.line,#m_mylink3 div.line,#m_mylink4 div.line,#m_artclg div.line{margin-top:5px;line-height:8px;border-top:1px dashed #11110a;}
+
+/* Hover */
+#m_friend div.user a,#m_friend div.user a:visited,#m_links div.item a,#m_links div.item a:visited,#m_useronline .frd .frd_list a,#m_useronline .frd .frd_list a:visited,#m_blog div.more a,#m_blog div.more a:visited,#m_blog div.opt a,#m_blog div.opt a:visited,#m_pro .basic a,#m_pro .basic a:visited,#m_album div.page a,#m_album div.page a:visited,#m_links div.item a:visited,#m_mylink1 div.item a,#m_mylink1 div.item a:visited,#m_mylink2 div.item a,#m_mylink2 div.item a:visited,#m_mylink3 div.item a:visited,#m_mylink4 div.item a,#m_mylink4 div.item a:visited,#m_artclg div.item a,#m_artclg div.item a:visited,#m_filed div.item a,#m_filed div.item a:visited,#m_comment div.item a,#m_comment div.item a:visited,#in_comment div.user a,#in_comment div.user a:visited,#m_track a,#m_track a:visited,#m_albumlist div.tit a,#m_albumlist div.tit a:visited,#m_friend div.user a,#m_friend div.user a:visited,#m_setting a,#m_setting a:visited,#m_sysinfo a,#m_sysinfo a:visited{}
+#m_friend div.user a:hover,#m_links div.item a:hover,#m_useronline .frd .frd_list a:hover,#m_blog div.more a:hover,#m_blog div.opt a:hover,#m_pro .basic a:hover,#m_album div.page a:hover,#m_links div.item a:hover,#m_mylink1 div.item a:hover,#m_mylink2 div.item a:hover,#m_mylink3 div.item a:hover,#m_mylink4 div.item a:hover,#m_artclg div.item a:hover,#m_filed div.item a:hover,#m_comment div.item a:hover,#in_comment div.user a:hover,#m_track a:hover,#m_albumlist div.tit a:hover,#m_friend div.user a:hover,#m_setting a:hover,#m_sysinfo a:hover{}
+
+#m_blog div.tit a:hover{display:block;color:#bede4f;border:1px solid #bede4f;}

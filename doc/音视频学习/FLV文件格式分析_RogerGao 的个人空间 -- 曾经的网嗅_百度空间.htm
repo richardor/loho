@@ -1,0 +1,2304 @@
+
+<!-- saved from url=(0071)http://hi.baidu.com/gaoxiansong/blog/item/b03d2d0789f65d72020881c0.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间      </title>
+
+<style type="text/css">
+    .error{color:#FF0000;font-size:12px}
+    .shareUser,.shareLastEditor{line-height:20px;color:#666666;text-align:left}
+    .shareLastEditor{margin:5px 0 8px;}
+</style>
+
+<script type="text/javascript">
+    var g_pageTimerStart=new Date().getTime();
+</script>
+
+<script type="text/javascript" src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/global.js"></script>
+<script type="text/javascript" src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/libs.js"></script>
+<script type="text/javascript" src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/tangram-1.1.0.js"></script>
+
+
+<script type="text/javascript">
+var Session = {
+    isLogin:  true,
+    isHost: "",
+    userName: "gaosongxian",   
+    userPortrait:'abdd67616f736f6e677869616e9805',
+    spaceURL: "/gaoxiansong",
+    spBasicURL:"gaoxiansong",
+    spBasicURLEnc:"gaoxiansong",
+    visitorName:    "tanyan2034",
+    visitorPortrait:'9d6374616e79616e323033342c02',
+    isActive: '1',   
+    visitorURL: "/tanyan2034",        // 
+    pageURL: "http://hi.baidu.com/gaoxiansong/blog/item/b03d2d0789f65d72020881c0%2Ehtml",    
+    refer: "",
+    spToken: '981e31abcfba039e33e940db5fd5d660', 
+    spFriendDomain: 'http://frd.baidu.com',
+    spSpaceDomain: 'http://hi.baidu.com',
+    spPortraitDomain: '',
+    spSpaceStaticDomain: 'http://hi.baidu.com' 
+
+    ,isDrag:  false  
+    ,isProfile:  false   
+    };
+</script>
+
+<script type="text/javascript" src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/brwstat"></script><link type="text/css" rel="stylesheet" href="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/ucard.css"><script type="text/javascript" src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/ucard.js"></script><script type="text/javascript" src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/check_baiduhi.js"></script><script type="text/javascript" src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/msg_dataGetmsgCount" defer="defer"></script></head>
+
+<body><iframe frameborder="0" name="_BdPopupLayer_cylcx6-njbz6ddbw62a-s6hcza" style="position:absolute; z-index:65001; display:none;" scrolling="no" id="_BdPopupLayer_cylcx6-njbz6ddbw62a-s6hcza"></iframe><iframe frameborder="0" name="_BdPopupLayer_ttdlb6-7cybqpma9gdg-c8iyr8" style="position:absolute; z-index:65001; display:none;" scrolling="no" id="_BdPopupLayer_ttdlb6-7cybqpma9gdg-c8iyr8"></iframe><link href="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/bdeditor.css" type="text/css" rel="Stylesheet">
+
+<center>
+
+<script type="text/javascript">
+/*<![CDATA[*/
+if(top.location != self.location){
+	top.location = self.location;
+}
+var myref = encodeURIComponent("http://hi.baidu.com/gaoxiansong/blog/item/b03d2d0789f65d72020881c0%2Ehtml");
+/*]]>*/
+</script>
+<link rel="stylesheet" type="text/css" href="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/mods.css">
+
+<link rel="stylesheet" type="text/css" href="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/01cfec505d3f1a8f8d54307d.css">
+
+<link rel="stylesheet" type="text/css" href="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/space.css">
+
+<div class="userbar">
+    <div id="nav">
+        <a class="logo" href="http://hi.baidu.com/index.htm"><img src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/logo.gif" border="0" alt="图片"></a>
+
+
+
+
+    
+        <ul class="topmenu">
+            
+            <li><a href="http://hi.baidu.com/tanyan2034/ihome">个人中心</a></li>
+            <li class="vline"></li>
+            <li><a href="http://hi.baidu.com/tanyan2034/home">我的主页</a></li>
+            <li class="vline"></li>
+            <li><a href="http://hi.baidu.com/tanyan2034/ihome/frdme">好友</a></li>
+            <li class="vline"></li>
+            <li id="topMsgLi" class="mod-message-tip"><a class="" href="http://hi.baidu.com/gaoxiansong/blog/item/msg/index" id="topMsgTab">消息</a>				<a id="msgInbox" href="http://hi.baidu.com/gaoxiansong/blog/item/b03d2d0789f65d72020881c0.html#"><img src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/email_s.gif"></a><div style="display: none; z-index: 99999; position: fixed; left: 669px; top: 0px; " id="_58081303973342516_entity">				<div class="msglist" id="_58081303973342516_content">					<div id="topMsgMail" class="icon3"><nobr>站内消息 ：<span class="t_ccc">无新消息提醒</span></nobr></div>					<div id="topMsgAct" class="icon1"><nobr>互动请求 ：<span class="t_ccc">无新消息提醒</span></nobr></div>					<div id="topMsgSys" class="icon4"><nobr>系统通知 ：<span class="t_red">7</span>条新</nobr></div>					<div id="topMsgPlayBtn" class="sound" title="关闭新消息提示音">&nbsp;</div>					<div id="topMsgCloseBtn" class="close" title="关闭">&nbsp;</div>				</div>			<iframe id="ml_iframe_68501303973342518" style="position: absolute; z-index: 99998; opacity: 0; " width="230" height="85"></iframe></div></li>
+                    
+        </ul>
+		<dl class="manage"> 
+			<dd id="tary_space_name">tanyan2034</dd><dt>|</dt>
+			
+				<dd><a href="http://hi.baidu.com/tanyan2034/modify/spmodules/0">装扮</a>	</dd><dt>|</dt>
+				<dd><a href="http://hi.baidu.com/tanyan2034/ihome/basicconfig">设置</a></dd><dt>|</dt>
+			   
+			<dd><a href="https://passport.baidu.com/?logout&bdstoken=981e31abcfba039e33e940db5fd5d660&u=">退出</a></dd>
+        </dl>
+
+    </div>
+</div>
+
+ <script type="text/javascript" src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/base.js"></script>
+ <link rel="stylesheet" type="text/css" href="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/base.css">
+
+
+	
+    
+  
+
+<script type="text/javascript">
+	
+(function(){
+
+
+	function initMessage(){
+		Space.msgConfig={
+			staticDomain:'http://hi.bdimg.com'
+			,portraitDomain:'http://tx.bdimg.com'
+			,appsDomain:'http://apps.hi.baidu.com'
+			,domain:'http://hi.baidu.com'
+			,userPortrait:"9d6374616e79616e323033342c02"
+			,userName:"tanyan2034"
+			,spToken:"981e31abcfba039e33e940db5fd5d660"
+		};
+
+		var job = new Space.Libs.Jobs();
+		job.add("message_tip");
+	    job.start();
+	}
+	
+    if(window.addEventListener){
+        window.addEventListener('load', initMessage, false );
+    }else if(window.attachEvent){
+        window.attachEvent('onload', initMessage);
+    }
+})();
+
+</script>
+  
+
+
+
+<!-- 顶部气泡操作 -->
+<script type="text/javascript">
+/*<![CDATA[*/
+/*var close_tip = (function(){
+        var tip, tip_is_closed = false;
+        var is_tracker_attached = false;
+        function showTip(){
+        if(tip_is_closed){
+        BdEvent.removeEvent(window, "resize", showTip);
+        return false;
+        }
+        if(!is_tracker_attached){
+        BdUtil.hi_tracker("tip", "m_promotion_tip");
+        is_tracker_attached = true;
+        }
+        var hi_index = document.getElementById('hi_index'),
+        left_offset = 0;
+        tip = tip || document.getElementById('tip');
+        do{
+        left_offset += hi_index.offsetLeft;
+        }while(hi_index = hi_index.offsetParent);
+
+        tip.style.left = (left_offset - 160 )+ "px";
+        tip.style.top = '15px';
+        tip.style.display = 'block';
+        }
+        BdEvent.addEvent(window, "load", showTip);
+        BdEvent.addEvent(window, "resize", showTip);
+
+
+
+        return function(e){
+            // console.log(e);
+            var e = window.event || e;
+
+            // e.returnValue = false;
+            e.cancelBubble = true;
+            if(e.stopPropagation)
+                e.stopPropagation();
+
+            set_cookie_4_bdtip(1, String(parseInt("1281931486") + 10));
+            tip.style.display = 'none';
+            tip_is_closed = true;
+        }
+})();*/
+
+
+function set_cookie_4_bdtip(index/* start from one */, value){
+	var bdtip = document.cookie.match(/(^| )BDTIP=([^;]*)(;|$)/);
+	if(!bdtip){
+		bdtip=new Array(index);
+		for(var i=0,n=bdtip.length;i<n;i++)
+		{
+			if(bdtip[i]=="" || bdtip[i]==null)  bdtip[i]=0;
+			if(i == index - 1){
+				bdtip[i] = value;
+			}
+		}
+	}else{
+	bdtip = bdtip[2].split('-');
+	if(index > bdtip.length)  bdtip.length= index;
+	for(var i = 0, j = bdtip.length; i < j; i ++){
+		if(bdtip[i]=="" || bdtip[i]==null) bdtip[i]=0;
+		if(i == index - 1){
+			bdtip[i] = value;
+		}
+	}
+	}
+	bdtip = bdtip.join('-');
+	document.cookie = "BDTIP=" + bdtip+ ";expires=Wed, 28-Nov-37 01:45:46 GMT;path=/;";
+}
+
+/*]]>*/
+</script>
+
+<!-- <div id="tip" style="display:none;">
+    <img src="http://img.baidu.com/hi/img/mfu/arrow.gif" id="arrow"/>
+    <div id="container">
+        <div class="header"></div>
+        <div class="wrapper">
+            <img src="http://img.baidu.com/hi/img/mfu/close.gif" class="close" onclick="close_tip(event)"/>
+            <div class="main">
+                <div class="title">欢乐暑期，玩游戏送大礼！</div>
+                <div class="content">众多精品游戏火爆上线~<br>神秘礼品派发中，先抢先得！</div>
+                <div class="more-action">
+                    
+                    &nbsp;<a href="http://act.hi.baidu.com/appsummer10" target="_blank" onclick="close_tip(event)">赶快来抢！</a>&nbsp;
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div id="main" align="left">
+
+<!--[if IE]>
+<script>
+var objmain = document.getElementById("main");
+function updatesize(){ var bodyw = window.document.body.offsetWidth; if(bodyw <= 790) objmain.style.width="772px"; else if(bodyw >= 1016) objmain.style.width="996px"; else objmain.style.width="100%"; }
+updatesize(); window.onresize = updatesize;
+</script>
+<![endif]-->
+
+	<div id="header">
+
+	<div class="lc"><div class="rc"></div></div>
+<div class="tit"><a href="http://hi.baidu.com/gaoxiansong/home" class="titlink" title="gaosongxian的空间 http://hi.baidu.com/gaoxiansong">RogerGao 的个人空间 -- 曾经的网嗅</a></div>
+<div class="desc">搜集类的资料部份来自网络或稍作修改，欢迎光临交流！网嗅：http://www.netsill.com</div>
+<div id="tabline">&nbsp;</div>
+
+	<div id="tab"><a href="http://hi.baidu.com/gaoxiansong/home">主页</a><a href="http://hi.baidu.com/gaoxiansong/blog" class="on">博客</a><a href="http://hi.baidu.com/gaoxiansong/album">相册</a><span>|</span><a href="http://hi.baidu.com/gaoxiansong/profile">个人档案</a>
+
+	<span>|</span><a href="http://hi.baidu.com/gaoxiansong/friends">好友</a>
+
+
+<span>|</span><a href="http://tieba.baidu.com/i/sys/jump?un=gaosongxian&fr=spacebar" onclick="BdUtil.ns_trackerLink(&#39;m_20110330_spacebar&#39;,&#39;&#39;)" target="_blank">i贴吧</a>
+
+
+	</div>
+
+</div>
+
+
+
+<div class="stage">
+
+<div class="stagepad">
+
+<div style="width:100%">
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="modth">
+
+	<tbody><tr><td class="modtl" width="7">&nbsp;</td>
+
+	<td class="modtc" nowrap=""><div class="modhead"><span class="modtit">查看文章</span></div></td>
+
+	<td class="modtc" nowrap="" align="right"></td>
+
+	<td class="modtr" width="7">&nbsp;</td>
+
+	</tr></tbody></table>
+
+
+
+<div id="m_blog" class="modbox" style="overflow-x:hidden;">
+
+<div class="tit">
+
+FLV文件格式分析</div>
+
+<div class="date">2009-07-15  01:41</div>
+
+
+
+
+<table style="table-layout:fixed;width:100%"><tbody><tr><td><div id="blog_text" class="cnt"><p>FLV是一个二进制文件，由文件头（FLV header）和很多tag组成。tag又可以分成三类:audio,video,script，分别代表音频流，视频流，脚本流（关键字或者文件信息之类）。</p>
+<p><strong>FLV Header</strong></p>
+<p>一般比较简单，包括文件类型之类的全局信息，如图：</p>
+<p><a target="_blank" href="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/a69ae70ebe4a33caaa645774.jpg"><img class="blogimg" border="0" small="0" src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/a69ae70ebe4a33caaa645774.jpg"></a></p>
+<p>
+<table border="1">
+    <tbody>
+        <tr>
+            <td>文件类型</td>
+            <td>3bytes</td>
+            <td>总是FLV（0x46 0x4C 0x56），否则...</td>
+        </tr>
+        <tr>
+            <td>版本</td>
+            <td>1byte</td>
+            <td>一般是0x01，表示FLV version 1</td>
+        </tr>
+        <tr>
+            <td>流信息</td>
+            <td>1byte</td>
+            <td>倒数第一bit是1表示有视频，倒数第三bit是1表示有音频，其他都应该是0（有些软件如flvtool2可能造成倒数第四bit是1，不过也没发现有什么不对）</td>
+        </tr>
+        <tr>
+            <td>header长度</td>
+            <td>4bytes</td>
+            <td>整个文件头的长度，一般是9（3+1+1+4），有时候后面还有些别的信息，就不是9了</td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p><strong>FLV Body</strong></p>
+<p>FLV body就是由很多tag组成的。</p>
+<p>FLV文件里面帧的实体就是tag了。每个tag都可以分为两部分，第一部分包含是tag 类型信息，长度固定为15字节，如图：</p>
+<div forimg="1"><img class="blogimg" border="0" small="0" src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/c527f01abde3303e8718bf75.jpg"></div>
+<p> </p>
+<div forimg="1">第二部分为tag data，也就是flv的数据(有音频，视频，脚本等三类数据)，根据不同的tag类型就有不同的数据区，数据区的长度由第一部分的数据区长度字段定义，如图：</div>
+<p><img class="blogimg" border="0" small="0" src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/5dbec4d73ecd560806088b75.jpg"></p>
+<p>
+<table style="width: 613px; height: 256px" border="1">
+    <tbody>
+        <tr>
+            <td>previoustagsize</td>
+            <td>4bytes</td>
+            <td>前一个tag的长度，第一个tag就是0</td>
+        </tr>
+        <tr>
+            <td>tag类型</td>
+            <td>1byte</td>
+            <td>
+            <p>三类：</p>
+            <ul>
+                <li>8 -- 音频tag</li>
+                <li>9 -- 视频tag</li>
+                <li>18 -- 脚本tag</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>数据区长度</td>
+            <td>3bytes</td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td>时间戳</td>
+            <td>3bytes</td>
+            <td>单位毫秒，如果是脚本tag就是0</td>
+        </tr>
+        <tr>
+            <td>扩展时间戳</td>
+            <td>1byte</td>
+            <td>作为时间戳的高位</td>
+        </tr>
+        <tr>
+            <td>streamsID</td>
+            <td>3bytes</td>
+            <td>总是0（不知道干啥用）</td>
+        </tr>
+        <tr>
+            <td>数据区</td>
+            <td> </td>
+            <td> </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>接下来就是下一个tag的内容，其开始的四个字节定义了上个tag的总长度，注意上个tag的总长度中不包括上个tag之前的4个描述再上一个tag的长度的4个字节，如图：</p>
+<div forimg="1"><img class="blogimg" border="0" small="0" src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/3124318a8dda7135c9fc7a4d.jpg"></div>
+<div forimg="1"> </div>
+<p>接下来说一下文件尾，在文件尾的最后有四个字节是定义最后一个tag的长度的，如图：</p>
+<p><img class="blogimg" border="0" small="0" src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/6d16d4dccef065135882dd77.jpg"></p>
+<p>这里我门可以算一下，是00 00 00 DD是221，最后一个tag的长度是221，如图：</p>
+<p><img class="blogimg" border="0" small="0" src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/8a3c0837d51be6faa2cc2b77.jpg"></p>
+<p> </p>
+<p> </p>
+<p><strong>下面是不同类型的tag数据区的内容体</strong></p>
+<p><strong>Audio tag 数据区</strong></p>
+<p>
+<table style="width: 619px; height: 475px" border="1">
+    <tbody>
+        <tr>
+            <td>audio信息</td>
+            <td>1byte</td>
+            <td>
+            <p>前四位bits表示音频格式:</p>
+            <ul>
+                <li>0 -- 未压缩</li>
+                <li>1 -- ADPCM</li>
+                <li>2 -- MP3</li>
+                <li>5 -- Nellymoser 8kHz momo</li>
+                <li>6 -- Nellymoser</li>
+            </ul>
+            <p>下面两位bits表示samplerate:</p>
+            <ul>
+                <li>0 -- 5.5kHz</li>
+                <li>1 -- 11kHz</li>
+                <li>2 -- 22kHz</li>
+                <li>3 -- 44kHz</li>
+            </ul>
+            <p>下面一位bit表示每个采样的长度：</p>
+            <ul>
+                <li>0 -- snd8Bit</li>
+                <li>1 -- snd16Bit</li>
+            </ul>
+            <p>下面一位bit表示类型：</p>
+            <ul>
+                <li>0 -- sndMomo</li>
+                <li>1 -- sndStereo</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>audio数据区</td>
+            <td>不定</td>
+            <td> </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p> </p>
+<p><strong>video tag 数据区</strong></p>
+<p>
+<table style="width: 615px; height: 280px" border="1">
+    <tbody>
+        <tr>
+            <td>video信息</td>
+            <td>1byte</td>
+            <td>
+            <p>前四位bits表示类型：</p>
+            <ul>
+                <li>1 -- keyframe</li>
+                <li>2 -- inner frame</li>
+                <li>3 -- disposable inner frame (H.263 only)</li>
+            </ul>
+            <p>后四位bits表示编码器id：</p>
+            <ul>
+                <li>2 -- Seronson H.263</li>
+                <li>3 -- Screen video</li>
+                <li>4 -- On2 VP6</li>
+                <li>5 -- On2 VP6 without channel</li>
+                <li>6 -- Screen video version 2</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>video数据区</td>
+            <td>不定</td>
+            <td> </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p> </p>
+<p><strong>script tag 数据区</strong></p>
+<p>略n字...</p>
+<p>下面是自己写的一段根据上面对FLV文件结构的分析读取FLV播放时间的Delphi代码：</p>
+<p><br>
+{$R *.dfm}<br>
+procedure TForm1.Button1Click(Sender: TObject);<br>
+begin<br>
+  OpenDialog1.Execute;<br>
+  Edit1.Text:=OpenDialog1.FileName;<br>
+end;</p>
+<p>procedure TForm1.Button2Click(Sender: TObject);<br>
+var<br>
+&nbsp;&nbsp;&nbsp;  iFileHandle:&nbsp;&nbsp;  Integer;<br>
+&nbsp;&nbsp;&nbsp;  iFileLength:&nbsp;&nbsp;  Integer;<br>
+&nbsp;&nbsp;&nbsp;  iBytesRead:&nbsp;&nbsp;  Integer;<br>
+&nbsp;&nbsp;&nbsp;  Buffer:&nbsp;&nbsp;  array&nbsp;&nbsp;  of&nbsp;&nbsp;  Byte;<br>
+&nbsp;&nbsp;&nbsp;  i:&nbsp;&nbsp;  Integer;<br>
+&nbsp;&nbsp;&nbsp;  str1,str2:String;<br>
+&nbsp;&nbsp;&nbsp;  tminute,tSecond,tMillisecond,tmptime:Integer;<br>
+begin<br>
+&nbsp;&nbsp;&nbsp;  if Edit1.Text = '' then<br>
+&nbsp;&nbsp;&nbsp;  begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  ShowMessage('请选择文件！');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  exit;<br>
+&nbsp;&nbsp;&nbsp;  end;<br>
+&nbsp;&nbsp;&nbsp;  iFileHandle&nbsp;&nbsp;  :=&nbsp;&nbsp;  FileOpen( Edit1.Text ,&nbsp;&nbsp;  fmOpenRead);<br>
+&nbsp;&nbsp;&nbsp;  iFileLength&nbsp;&nbsp;  :=&nbsp;&nbsp;  FileSeek(iFileHandle,&nbsp;&nbsp;  0,&nbsp;&nbsp;  2);<br>
+&nbsp;&nbsp;&nbsp;  FileSeek(iFileHandle,&nbsp;&nbsp;  0,&nbsp;&nbsp;  0);<br>
+&nbsp;&nbsp;&nbsp;  SetLength(Buffer,&nbsp;&nbsp;  iFileLength);<br>
+&nbsp;&nbsp;&nbsp;  iBytesRead&nbsp;&nbsp;  :=&nbsp;&nbsp;  FileRead(iFileHandle,&nbsp;&nbsp;  Buffer[0],&nbsp;&nbsp;  iFileLength);<br>
+&nbsp;&nbsp;&nbsp;  FileClose(iFileHandle);<br>
+&nbsp;&nbsp;&nbsp;  str1&nbsp;&nbsp;  :=&nbsp;&nbsp;  '';<br>
+&nbsp;&nbsp;&nbsp;  for&nbsp;&nbsp;  i&nbsp;&nbsp;  :=  iBytesRead&nbsp;&nbsp;  -&nbsp;&nbsp;  4&nbsp;&nbsp;  to&nbsp;&nbsp;  iBytesRead&nbsp;&nbsp;  -&nbsp;&nbsp;  1&nbsp;&nbsp;  do<br>
+&nbsp;&nbsp;&nbsp;  begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  str1&nbsp;&nbsp;  :=&nbsp;&nbsp;  str1&nbsp;&nbsp;  +&nbsp;&nbsp;  IntToHex(Buffer[i],2);<br>
+&nbsp;&nbsp;&nbsp;  end;<br>
+&nbsp;&nbsp;&nbsp;  str2&nbsp;&nbsp;  :=&nbsp;&nbsp;  '';<br>
+&nbsp;&nbsp;&nbsp;  for&nbsp;&nbsp;  i&nbsp;&nbsp;  :=  iBytesRead&nbsp;&nbsp;  -&nbsp;&nbsp;  StrToInt('$'+str1)  to&nbsp;&nbsp;  iBytesRead&nbsp;&nbsp;  -&nbsp;&nbsp;  (StrToInt('$'+str1)-2)&nbsp;&nbsp;  do<br>
+&nbsp;&nbsp;&nbsp;  begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  str2&nbsp;&nbsp;  :=&nbsp;&nbsp;  str2&nbsp;&nbsp;  +&nbsp;&nbsp;  IntToHex(Buffer[i],2);<br>
+&nbsp;&nbsp;&nbsp;  end;<br>
+&nbsp;&nbsp;&nbsp;  tMillisecond:=strtoint('$'+str2);<br>
+&nbsp;&nbsp;&nbsp;  tminute:=(tMillisecond div 1000) div 60;<br>
+&nbsp;&nbsp;&nbsp;  tSecond:=(tMillisecond div 1000) mod 60;<br>
+&nbsp;&nbsp;&nbsp;  tmptime:=tMillisecond mod 1000;<br>
+&nbsp;&nbsp;&nbsp;  Label2.Caption:=IntToStr(tminute)+'分'+IntToStr(tSecond)+'秒';<br>
+&nbsp;&nbsp;&nbsp;  Buffer&nbsp;&nbsp;  :=&nbsp;&nbsp;  nil;<br>
+end;</p>
+<p> </p></div></td></tr></tbody></table>
+
+<br>
+
+<div class="opt">
+
+<a href="http://hi.baidu.com/gaoxiansong/blog/category/%B1%E0%B3%CC%D7%CA%C1%CFdelphi" title="查看该分类中所有文章">类别：编程资料delphi</a>
+
+| <a href="http://hi.baidu.com/gaoxiansong/blog/item/b03d2d0789f65d72020881c0.html#" onclick="addToShare(); return false;" target="_blank"><img src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/share_btn.gif" border="0" align="absbottom"></a>
+
+
+
+
+	
+
+	| <a title="将此文章添加到百度搜藏" href="http://cang.baidu.com/do/add" onclick="return addToFavor();" target="_blank">添加到搜藏</a>
+
+	
+    | <a title="将此文章分享到i贴吧" href="http://hi.baidu.com/gaoxiansong/blog/item/b03d2d0789f65d72020881c0.html#" onclick="addToiTieba(); return false;" target="_blank">分享到i贴吧</a>
+
+	| 浏览(<span id="result">5703</span>)
+
+	| <a href="http://hi.baidu.com/gaoxiansong/blog/item/b03d2d0789f65d72020881c0.html#send">评论</a>&nbsp;(2)
+
+
+
+<script language="javascript">
+
+/*<![CDATA[*/
+
+var pre = [true,'灰鸽子键盘记录源码分析', '灰鸽子键盘记录源码分析','/gaoxiansong/blog/item/5364b0dfac43c95d95ee3768.html'];
+
+var post = [true,'破解无线路由密码总结','破解无线路由密码总结', '/gaoxiansong/blog/item/9ee5b40216e2d2e508fa93ca.html'];
+
+if(pre[0] || post[0]){
+
+	document.write('<div style="height:5px;line-height:5px;">&nbsp;</div><div id="in_nav">');
+
+	if(pre[0]){
+
+		document.write('上一篇：<a href="' + pre[3] + '" title="' + pre[1] + '">' +  pre[2] + '</a>&nbsp;&nbsp;&nbsp;&nbsp;');
+
+	}
+
+	if(post[0]){
+
+		document.write('下一篇：<a href="' + post[3] + '" title="' + post[1] + '">' +  post[2] + '</a>');
+
+	}
+
+	document.write('</div>');
+
+}
+
+/*]]>*/
+
+</script><div style="height:5px;line-height:5px;">&nbsp;</div><div id="in_nav">上一篇：<a href="http://hi.baidu.com/gaoxiansong/blog/item/5364b0dfac43c95d95ee3768.html" title="灰鸽子键盘记录源码分析">灰鸽子键盘记录源码分析</a>&nbsp;&nbsp;&nbsp;&nbsp;下一篇：<a href="http://hi.baidu.com/gaoxiansong/blog/item/9ee5b40216e2d2e508fa93ca.html" title="破解无线路由密码总结">破解无线路由密码总结</a></div>
+
+
+
+</div>
+
+ 
+<div class="line">&nbsp;</div>
+<div id="share_user_list"></div>
+
+
+<div class="line">&nbsp;</div>
+
+
+
+
+
+
+
+    
+<style type="text/css">
+
+/*<![CDATA[*/
+
+#in_related_doc a { text-decoration:none; }
+
+/*]]>*/
+
+</style>
+
+<div id="in_related_tmp"></div>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="in_reader">
+    <div class="tit">最近读者：</div>
+
+</div>
+
+
+
+
+
+<div class="line">&nbsp;</div>
+
+
+
+
+
+
+
+
+
+
+<div id="in_comment">
+
+    <a name="comment"></a>
+
+    <div class="tit">网友评论：</div>
+
+    <span id="userCommentList"></span>    
+
+    <div id="page"></div>
+
+</div>
+
+<form action="http://hi.baidu.com/gaoxiansong/commit" id="blogCmtSubmitForm" name="blogCmtSubmitForm" method="post">
+    <input type="hidden" name="bdstoken" value="981e31abcfba039e33e940db5fd5d660">
+    <input type="hidden" name="ct" value="8">
+    <input type="hidden" name="cm" value="2">
+    <input type="hidden" name="spBlogID" value="b03d2d0789f65d72020881c0">
+    <input type="hidden" name="spBlogCmtID" value="">
+    <input type="hidden" name="spRefURL" value="">
+</form>
+
+
+
+
+
+
+<div id="in_send">
+
+<a name="send"></a>
+
+<form name="form1" id="popFormSubmit" action="http://hi.baidu.com/gaoxiansong/commit" method="post" onsubmit="return checkcmtform()">
+
+<input type="hidden" name="bdstoken" value="981e31abcfba039e33e940db5fd5d660">
+
+<input type="hidden" name="ct" value="8">
+
+<input type="hidden" name="cm" value="1">
+
+<input type="hidden" name="spBlogID" value="b03d2d0789f65d72020881c0">
+
+<input type="hidden" name="spRefURL" id="spRefURL" value="http://hi.baidu.com/gaoxiansong/blog/item/b03d2d0789f65d72020881c0.html">
+
+<script>
+
+    document.getElementById("spRefURL").value = window.location.href;
+
+</script>
+
+<div class="tit">发表评论：</div>
+
+<table width="620" border="0" cellspacing="5" cellpadding="0">
+
+<tbody><tr>
+
+
+
+<td class="f14">姓　名：</td>
+
+<td>tanyan2034
+
+<input type="text" name="spBlogCmtor" id="spBlogCmtor" style="display:none;" maxlength="50" value="tanyan2034"><div style="display:none" id="nmerror">*姓名最长为50字节</div>
+
+</td>
+
+
+
+<input type="hidden" name="spBlogCmtURL" id="spBlogCmtURL" style="width:360px" maxlength="128" onchange="checkeandu(&quot;spBlogCmtURL&quot;)" value="http://hi.baidu.com/tanyan2034">
+
+
+
+
+
+
+
+
+
+</tr>
+
+
+
+<tr id="2_err" style="display:none">
+
+<td>&nbsp;</td>
+
+<td><div class="error" id="2_err_con"></div></td>
+
+</tr>
+
+
+
+<tr>
+
+<td valign="top" class="f14" id="reTitle">内　容：</td>
+
+<td>
+            <div id="bdeditor_container_3f8vad-bb7j8e50p5k1-r9gnly">            <table width="100%" height="155px" cellpadding="0" cellspacing="0" border="0">                <tbody><tr>                    <td id="editor_toolbar_3f8vad-bb7j8e50p5k1-r9gnly" class="ToolbarContainer"><div class="ToolbarStrip"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td nowrap="nowrap"><div class="ToolbarItem" title="插入表情" id="ToolbarItem_4lm955-gp7i1eta41ry-oeecs4" onclick="_Instance[&#39;4lm955-gp7i1eta41ry-oeecs4&#39;].clickHandler(this)" onmouseup="_Instance[&#39;4lm955-gp7i1eta41ry-oeecs4&#39;].mouseUpHandler(this)" onmousedown="_Instance[&#39;4lm955-gp7i1eta41ry-oeecs4&#39;].mouseDownHandler(this)" onmouseout="_Instance[&#39;4lm955-gp7i1eta41ry-oeecs4&#39;].mouseOutHandler(this)" onmouseover="_Instance[&#39;4lm955-gp7i1eta41ry-oeecs4&#39;].mouseOverHandler(this)"><div class="img Smiley" alt="插入表情"><font style="font-size:12px">插入表情</font></div></div></td></tr></tbody></table></div></td>                </tr>                <tr>                    <td id="editor_area_3f8vad-bb7j8e50p5k1-r9gnly" class="EditorContainer"><iframe width="100%" height="155px" frameborder="0" src="javascript:void(0)"></iframe></td>                </tr>            </tbody></table>        </div>    <textarea name="spBlogCmtText" id="spBlogCmtText" style="width: 520px; height: 155px; display: none; " tabindex="3" onfocus="hidErr(3);"></textarea>
+</td>
+
+</tr>
+
+<tr id="3_err" style="display:none">
+
+<td>&nbsp;</td>
+
+<td><div class="error" id="3_err_con"></div></td>
+
+</tr>
+
+
+<tr id="share_blog">
+    <td></td>
+    <td valign="top"><input type="checkbox" id="shareBlog" autocomplete="off" style="vertical-align:text-bottom; margin-bottom:2px; margin-bottom:-2px\9;"><label for="shareBlog">同时将此文章分享给好友</label><input type="hidden" id="shareBlogEchoback" name="echoback"></td>
+</tr>
+
+
+
+<tr id="vercode">
+
+<td valign="top" class="f14">验证码：</td>
+
+<td valign="top"><input type="hidden" name="spVcode" value="">
+
+<input type="text" onfocus="f_focus()" id="spVerifyKey" name="spVerifyKey" size="6" maxlength="4" autocomplete="off" tabindex="4"> 请点击后输入四位验证码，字母不区分大小写<br>
+
+
+
+<div id="yanzheng" style="display:none">
+
+<img id="verifypic" width="120" height="40"><wbr><a onfocus="this.blur();" href="http://hi.baidu.com/gaoxiansong/blog/item/b03d2d0789f65d72020881c0.html#" onclick="return newverifypic();" title="看不清左边的字符">看不清?</a>
+
+</div>
+
+</td>
+
+</tr>
+
+
+
+
+
+<tr>
+
+<td valign="top" class="f14">&nbsp;</td>
+
+<td valign="top" class="f14"><input id="btn_ok" name="btn_ok" type="submit" autocomplete="off" value="发表评论" tabindex="5">&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://hi.baidu.com/gaoxiansong/blog/item/b03d2d0789f65d72020881c0.html#" id="cancleReLink" onclick="canclereply(); return false;" style="display:none; font-size:12px;color:#666;">取消回复</a></td>
+
+</tr>
+
+</tbody></table>
+
+</form>
+
+</div>
+
+
+
+
+
+
+
+
+
+<br>
+
+</div>
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="8">
+
+<tbody><tr><td class="modbl" width="7">&nbsp;</td>
+
+<td class="modbc">&nbsp;</td>
+
+<td class="modbr" width="7">&nbsp;</td>
+
+</tr></tbody></table>
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+<br><center><div id="ft">&#169;2011 Baidu</div></center>
+
+
+</center>
+
+<ul id="blogCmtContentList" style="display:none;">
+
+ <li id="blogCmtContent_1">怎么样才能知道FLV文件中封装的视频文件是H.264的还是MPEG4的？
+<br>在哪里有标志位吗？
+<br>期待楼主的分析</li>
+
+ <li id="blogCmtContent_2">请问楼主用什么工具分析并截图的？</li>
+
+</ul>
+
+<!--inc_getmsgnum.html-->
+
+<iframe id="submitiframe" name="submitiframe" src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/blank.htm" style="display:none;"></iframe>
+
+
+<script type="text/javascript" src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/detailpage.js"></script>
+<script type="text/javascript">
+    //*****there is some function。
+    function checkMail(s)
+
+    {
+
+        var pattern=/\w+@\w+\.[a-z]+/;
+
+        if(pattern.test(s))
+
+        {
+
+           return true;
+
+        }
+
+        else
+
+       {
+
+          return false;
+
+       }
+
+    }
+
+
+
+
+
+    function checkeandu(eanduid)
+
+    {
+
+        var eanduvalue=baidu.G(eanduid).value;
+
+        var len=baidu.string.getByteLength(eanduvalue);
+
+        if(len>128)
+
+        {
+
+            showErr(2,"您输入的网址或邮箱太长，请保持在128字节以内。");
+
+            return false;
+
+        }
+
+        else
+
+        {
+
+             return true;
+
+        }
+
+
+
+    }
+
+
+
+
+
+    function checkname(strid)
+
+    {
+
+        var ele=baidu.G(strid);
+
+        var len=baidu.string.getByteLength(ele.value);
+
+        if(len>49)
+
+        {
+
+            showErr(1,"您输入的姓名太长，请保持在49字节以内。");
+
+            return false;
+
+        }
+
+        else
+
+        {
+
+            if(len==0)
+
+            {
+
+                baidu.G(strid).value="匿名网友";
+
+            }
+
+             return true;
+
+        }
+
+
+
+    }
+
+
+
+    function checktext(textid)
+
+    {
+
+            var tempStr='';
+
+            var isLightFont=false;
+
+            if(editor&&textid=="spBlogCmtText"){
+
+                tempStr=editor.getHtml();
+                
+                /*
+                //火星文处理，能不碰它就别碰它
+                tempStr=tempStr.replace(/<span style="filter:glow\(color=#([0-9a-z]{3,6}),strength=2\);height:0px;color:#([0-9a-z]{3,6})">/ig,'');
+
+                tempStr=tempStr.replace(/<\/span>/ig,'');
+                */
+
+                baidu.G("spBlogCmtText").value=tempStr;
+
+                isLightFont=!(tempStr==editor.getHtml());
+
+            }
+
+
+            var str=baidu.string.trim(baidu.G(textid).value);
+            baidu.G(textid).value=str;
+
+            
+
+            len=str.length;
+
+            if(len==0 || ((/^[\s,　]+$/gi).test(str)) )
+
+            {
+
+                showErr(3,"您必须输入评论内容，请检查。");
+
+                return false;
+
+            }
+
+            else
+
+            {
+
+                    var maxLength=isLightFont?916:1000;
+
+                    if(len > maxLength)
+
+                    {
+
+                        showErr(3,"您输入的评论内容太长，请保持在500字以内。");
+
+                        return false;
+
+                    }
+
+                    if(editor&&textid=="spBlogCmtText"){
+
+                        baidu.G("spBlogCmtText").value=editor.getHtml();
+
+                        baidu.G(textid).value=str;
+
+                    }
+
+
+
+                return true;
+
+            }
+
+    }
+
+
+
+    function showErr(index,str)
+
+    {
+
+        baidu.G(index+"_err").style.display="";
+
+        baidu.G(index+"_err_con").innerHTML=str;
+
+    }
+
+    function hidErr(index)
+
+    {
+
+        baidu.G(index+"_err").style.display="none";
+
+        baidu.G(index+"_err_con").innerHTML="";
+
+    }
+
+
+
+    function alertPop(tit,con)
+
+    {
+
+        var pop=new Popup({ contentType:4,isReloadOnClose:false,width:340,height:80});
+
+        pop.setContent("title",tit);
+
+        pop.setContent("alertCon",con);
+
+        pop.build();
+
+        pop.show();
+
+    }
+
+
+
+    function cmtfull()
+
+    {
+
+        var cnum=2;
+
+        if(cnum>=50000)
+
+        {
+
+            alertPop("发表评论","单篇日志评论数最多为50000条.");
+
+            return false;
+
+        }
+
+        else
+
+        {
+
+            return true;
+
+        }
+
+    }
+
+
+	function showCmtSuccess(){
+		ShareBlog.showCmtShareResult(0);
+	}
+
+
+    function checkcmtform()
+
+    {
+
+        if(checkname("spBlogCmtor")&&checkeandu("spBlogCmtURL")&&checktext("spBlogCmtText")&&cmtfull())
+
+        {
+            if(baidu.g("shareBlog").checked && !ShareBlog.isHostReply){
+                baidu.g("shareBlogEchoback").value = "shareblog"; 
+                ShareBlog.submit(Session.spToken);
+            }else{
+                baidu.g("shareBlogEchoback").value = "";
+            }
+            submitForm();
+
+            return true;
+
+        }
+
+        else
+
+        {
+
+            return false;
+
+        }
+
+    }
+
+
+
+    var g_pop=null;
+
+    function submitForm()
+
+    {
+
+        g_pop=new Popup({ contentType:1,isReloadOnClose:false,width:340,height:80});
+
+        g_pop.setContent("title","添加评论");
+
+        g_pop.setContent("contentUrl","");
+
+        g_pop.setContent("someDisabledBtn","btn_ok");
+
+        g_pop.build();
+
+        G("popFormSubmit").target=g_pop.iframeIdName;
+
+        g_pop.show();
+
+    }
+
+
+
+    function g_close_pop()
+
+    {
+
+        g_pop.close();
+
+    }
+
+
+
+    function formatonlinpic()
+
+    {
+
+        var picobj=document.getElementsByName("onlinepic");
+
+        var picnum=picobj.length;
+
+
+
+        for(var i=0;i<picnum;i++)
+
+        {
+
+            if(picobj[i].width>200)
+
+            {
+
+                picobj[i].width=200;
+
+            }
+
+            if(picobj[i].height>200)
+
+            {
+
+                picobj[i].height=200;
+
+            }
+
+        }
+
+        try{baidu.G("btn_ok").disabled = "";}catch(e){}
+
+    }
+
+
+
+    function addToFavor(){
+
+        var blogTitle='FLV文件格式分析'.replace(/&#39;/g,'\'');
+
+        window.open('http://cang.baidu.com/do/add?it='+encodeURIComponent(blogTitle+'_百度空间')+'&iu='+encodeURIComponent(location.href)+'&fr=sp#nw=1','_s','scrollbars=no,width=600,height=450,right=75,top=20,status=no,resizable=yes');
+
+        return false;
+
+    }
+
+    function addToiTieba(){
+        var blogTitle='FLV文件格式分析'.replace(/&#39;/g,'\'');
+        window.open('http://tieba.baidu.com/i/sys/share?link='+encodeURIComponent('http://hi.baidu.com/gaoxiansong/blog/item/b03d2d0789f65d72020881c0.html')+'&type=text&title='+encodeURIComponent(blogTitle)+'&content=');
+    }
+
+    function addToShare(){
+        window.open('http://apps.hi.baidu.com/share/?url='+encodeURIComponent('http://hi.baidu.com/gaoxiansong/blog/item/b03d2d0789f65d72020881c0.html'));
+    }
+
+
+    /* some functions for cmt-reply */
+    var g_cmtorInfo = [];
+    function goCmtReply(cmtPorID){
+        //如果是主人的话，回复别人的评论，是不需要显示分享的
+        
+
+        cmtreply(g_cmtorInfo[cmtPorID],cmtPorID);
+    }
+    function cmtreply(cmtName,cmtPorID)
+
+    {
+
+        cmtName=cmtName.replace(/<|>/g,"");
+
+        window.location.hash="#send";
+
+        var cmtForm=document.form1;
+
+        cmtForm.cm.value="3";
+
+        if(!cmtForm.spReferTarget)
+
+        {
+
+            var ipt=document.createElement("input");
+
+            ipt.type="hidden";
+
+            ipt.name="spReferTarget";
+
+            ipt.value=cmtPorID;
+
+            cmtForm.appendChild(ipt);
+
+        }else cmtForm.spReferTarget.value=cmtPorID;
+
+
+
+
+
+         //G("reTitle").innerHTML="回复"+cmtName+"：";
+
+         G("cancleReLink").style.display="";
+
+         cmtForm.btn_ok.value="回复评论";
+
+
+
+
+
+         try{
+
+            editor.window.focus();
+
+            editor.window.document.body.innerHTML="回复"+cmtName+"：";
+
+
+
+            var w = editor.window;
+
+            if(w.getSelection){
+
+                var d = w.document;
+
+                var s = w.getSelection();
+
+                var r = d.createRange();
+
+                r.setStartAfter(d.body.firstChild);
+
+                r.setEndAfter(d.body.lastChild);
+
+                s.removeAllRanges();
+
+                s.addRange(r);
+
+            }
+
+        }catch(e){
+
+                try{
+
+                    cmtForm.getElementsByTagName("textarea")[0].focus();
+
+                    cmtForm.getElementsByTagName("textarea")[0].value="回复"+cmtName+"：";
+
+                }catch(e){}
+
+        }
+
+    }
+
+
+
+    function canclereply()
+
+    {
+        //主人可以分享自己的文章
+        ShareBlog.cancelReply();
+
+        var cmtForm=document.form1;
+
+        cmtForm.cm.value="1";
+
+        try{cmtForm.removeChild(cmtForm.spReferTarget);}catch(e){}
+
+        /*
+
+        try{
+
+                var cmt=cmtForm.getElementsByTagName("textarea")[0]
+
+                cmt.value="";
+
+                cmt.focus();
+
+        }catch(e){}
+
+        */
+
+
+
+        try{
+
+                var ed=editor.window.document.body;
+
+                ed.innerHTML="";
+
+                editor.window.focus();
+
+            }catch(e){
+
+                var cmt=cmtForm.getElementsByTagName("textarea")[0];
+
+                cmt.value="";
+
+                cmt.focus();
+
+        }
+
+
+
+        G("cancleReLink").style.display="none";
+
+        cmtForm.btn_ok.value="发表评论";
+
+    }
+
+
+
+    function gotoreply()
+
+    {//to checking whether reply cmt
+
+        if( window.location.hash.indexOf("&re=1")<0) return;
+
+        var cmtID=window.location.hash.split("&")[0].replace("#","");
+
+        var cmtlinks=document.getElementsByTagName("a");
+
+        for(var i=0,n=cmtlinks.length;i<n;i++)
+
+        {
+
+            if(cmtlinks[i].name==cmtID){ var rename=cmtlinks[i].getAttribute("rename");  repid=cmtlinks[i].getAttribute("repid"); break;}
+
+        }
+
+        if(typeof(rename)!="undefined"){
+
+            cmtreply(rename, repid);
+
+        }
+
+    }
+
+    
+    
+    function f_focus(){
+        getVcode();
+    }
+    function getVcode(){
+        var url="http://hi.baidu.com/sys/file/getvcode?echoback=getVcodeDone&t="+(new Date().getTime());
+        BdAjax.loadJS(url)
+    }
+
+    function getVcodeDone(vcode){
+        document.form1.spVcode.value=vcode;
+        var imgsrc="http://hiup.baidu.com/cgi-bin/genimg?"+vcode;
+        G('verifypic').src=imgsrc;
+        G('yanzheng').style.display="block";
+    }
+    function newverifypic(){
+        getVcode();
+        return false;
+    }
+
+    function blogdel(str)
+
+    {
+
+        var pop=new Popup({ contentType:3,isReloadOnClose:false,width:340,height:80});
+
+        pop.setContent("title","删除文章");
+
+        pop.setContent("confirmCon","您确定要彻底删除这篇文章及其所有评论吗？");
+
+        pop.setContent("callBack",delCallback);
+
+        pop.setContent("parameter",{fid:str,popup:pop});
+
+        pop.build();
+
+        pop.show();
+
+        return false;
+
+    }
+
+    
+    function delCallback(para)
+
+    {
+        if(!para["popup"])return;
+
+        var o_pop=para["popup"];
+
+        o_pop.config.contentType=1;
+
+        o_pop.setContent("contentUrl","");
+
+        o_pop.reBuild();
+
+        G(para["fid"]).target=o_pop.iframeIdName;
+        eval("document.draft"+para["fid"]).submit();
+
+        eval("document."+para["fid"]).submit();
+
+    }
+
+
+
+    var _Space = _Space || {};
+    
+    /********这里的东西，是用来生成评论列表的**********/
+    _Space.commentOperate = (function(){
+        
+        function getCmtTpl(){
+            
+            var cmtStrTpl = [];
+                        
+            cmtStrTpl.push('<a name="#{cmtid}" rename="#{cmtuser}" repid="#{cmtportrait}"></a>');
+            cmtStrTpl.push('<table width="100%" border="0" cellspacing="0" cellpadding="0" class="item" style="table-layout:fixed;word-wrap:break-word;overflow:hidden;"><tr>');
+            cmtStrTpl.push('<td valign="top" class="index" width="5%">#{cmtindex}</td>');
+            cmtStrTpl.push('<td align="center" valign="top" width="10%">');
+            cmtStrTpl.push('<div class="user" style="overflow:hidden;">#{cmtuserhead}</div>');
+            cmtStrTpl.push('</td><td class="cnt" style="padding-left:20px;">');
+            cmtStrTpl.push('<span class="date">#{cmttime} #{mobileup} #{cmtreplay} #{cmtdel}</span>');
+            cmtStrTpl.push('<div class="desc" style="overflow:hidden;word-break:normal;"  name="cmtcontent">#{cmtcontent}</div></td>');
+            cmtStrTpl.push('</tr></table>');
+            cmtStrTpl.push('<div class="line">&nbsp;</div>');
+
+            return cmtStrTpl.join('');
+        }
+
+        function getUserPortrait(type,cmtid,cmtname,cmturl,portraitId){
+            var html1="";
+
+        	if(type==1){
+
+			    html1="<a href='"+cmturl+"' target='_blank' class='ucard' pid="+portraitId+"><img  border='0' src='http://tx.bdimg.com/sys/portraitn/item/"+portraitId+".jpg'><br>"+cmtname+"</a>";
+
+            }else{
+
+                if(cmtname=="" || cmtname=="匿名网友"){
+
+                    if(cmturl==""){
+
+                        html1="<a>匿名网友</a>";
+
+                    }else{
+
+                        html1="<a href='"+cmturl+"' target='_blank' class='ucard' pid="+portraitId+">"+cmtname+"</a>";
+
+                    }
+
+                }else{
+
+                    if(cmturl==""){
+
+                        html1="<div class='f14' style='display:inline'>网友:<a>"+cmtname+"</a></div>";
+
+                    }else{
+
+                        html1="<div class='f14' style='display:inline'>网友:<a href='"+cmturl+"' target='_blank' title='"+cmturl+"'>"+cmtname+"</a></div>";
+
+                    }
+
+                }
+
+            }
+
+            return html1;
+        }
+
+        function renderCmt(cmtdata){
+            var tpl = getCmtTpl();
+
+            var mobileup=cmtdata.isMobileUp? '<a  href="http://hi.baidu.com/hi/cms/article/help_phone/index.html" target="_blank" style="text-decoration:none;">来自手机<img src="http://img.baidu.com/hi/img/mobile.gif" align="absmiddle" border="0" /></a>' : '';
+
+            var cmtreplay =(cmtdata.isCanReply && cmtdata.isCmtAllow)? ( cmtdata.isAnonymity ? ' | <a href="#" onclick="BdUtil.relogin();return false;">回复</a>' : ' | <a href="#" onclick="goCmtReply(\'#{cmtportrait}\');return false;">回复</a>') : '';
+
+            var cmtdel = Session.isHost ? ' | <a href="#" onClick="_Space.commentOperate.deleteCmt(\'#{cmtid}\'); return false;">删除</a> | <a href="#" onclick="userSpam.tipBlogCmt(this, \'#{cmtuser}\' ,\'#{cmtid}\', \'#{blogid}\') ; return false;">举报</a>' : '';
+
+            var cmtuserhead = getUserPortrait(cmtdata.userType,"#{cmtid}","#{cmtuser}","#{cmturl}","#{cmtportrait}");
+
+            mobileup = baidu.string.format(mobileup, cmtdata);
+            cmtreplay = baidu.string.format(cmtreplay, cmtdata);
+            cmtdel = baidu.string.format(cmtdel, cmtdata);
+            cmtuserhead = baidu.string.format(cmtuserhead, cmtdata);
+
+            cmtdata.mobileup = mobileup;
+            cmtdata.cmtreplay = cmtreplay;
+            cmtdata.cmtdel = cmtdel;
+            cmtdata.cmtuserhead = cmtuserhead;
+
+
+            return baidu.string.format(tpl, cmtdata);
+        }
+
+        
+        function deleteCmt(cid){
+            var pop=new Popup({ contentType:3,isReloadOnClose:false,width:340,height:80});
+
+            pop.setContent("title","删除评论");
+
+            pop.setContent("confirmCon","您确定要彻底删除这条评论吗？");
+
+            pop.setContent("callBack", function(){
+            
+                var o_pop=pop;
+                var _F = baidu.G('blogCmtSubmitForm');
+                _F.spBlogCmtID.value=cid;
+                _F.spRefURL.value = window.location.href;
+
+                o_pop.config.contentType=1;
+
+                o_pop.setContent("contentUrl","");
+
+                o_pop.reBuild();
+
+                _F.target=o_pop.iframeIdName;
+
+                _F.submit();
+            });
+
+            pop.build();
+
+            pop.show();
+
+            return false;
+        }
+    
+
+        function showCmtList(){
+            var cmtDataList = getCmtDataList();
+            var cmtList = [];
+
+            baidu.each(cmtDataList, function(item, index){
+                cmtList.push( renderCmt(item) );
+            });
+
+            baidu.G('userCommentList').innerHTML = cmtList.join('');
+
+            filterCmtContent('userCommentList');
+        }
+
+        function getCmtDataList(){
+            var cmtDataList=[];
+
+            
+    
+            g_cmtorInfo["186d6d6574656f72323532300f01"] = "meteor2520"; //评论用户列表。 因为xss，所以改成了现在这个搓样子。
+            
+            cmtDataList.push({
+                cmtid : "be929a32fbb7534fad4b5f01",
+                cmtuser : "meteor2520",
+                cmturl : "http://hi.baidu.com/meteor2520",
+                cmtportrait : "186d6d6574656f72323532300f01",
+                cmttime : "2009-11-28  17:41",
+                // spBlogCmtTextList。 但是因为不能编码，所以就先到html里吧。。
+                cmtcontent : baidu.G('blogCmtContent_1').innerHTML,  
+                cmtindex : "1",
+                isMobileUp :  false ,
+                isCanReply :  true ,
+                isCmtAllow :  true ,
+                isisAnonymity :  false ,
+                userType :  1 ,
+                blogid : "b03d2d0789f65d72020881c0"
+            });
+
+            
+    
+            g_cmtorInfo["d27e67756f6461626f31393633630d"] = "guodabo1963"; //评论用户列表。 因为xss，所以改成了现在这个搓样子。
+            
+            cmtDataList.push({
+                cmtid : "c9cfa5ccc7de6d5f0fb345f9",
+                cmtuser : "guodabo1963",
+                cmturl : "http://hi.baidu.com/guodabo1963",
+                cmtportrait : "d27e67756f6461626f31393633630d",
+                cmttime : "2011-01-26  10:55",
+                // spBlogCmtTextList。 但是因为不能编码，所以就先到html里吧。。
+                cmtcontent : baidu.G('blogCmtContent_2').innerHTML,  
+                cmtindex : "2",
+                isMobileUp :  false ,
+                isCanReply :  true ,
+                isCmtAllow :  true ,
+                isisAnonymity :  false ,
+                userType :  1 ,
+                blogid : "b03d2d0789f65d72020881c0"
+            });
+
+            
+
+            return cmtDataList;
+        }
+        
+        
+        function filterCmtContent(n){
+
+            if(!baidu.browser.ie){
+
+                var defaultfilter1='<span style="filter:glow(color=#000000,strength=2);height:0px;color:#000000">';
+
+                var defaultfilter2='<span style="height: 0px; color: rgb(0, 0, 0);">';
+
+                var commentDiv=document.getElementById(n);
+
+                var divs=commentDiv.getElementsByTagName('div');
+
+                var d,tmp;
+
+                for( var i=0,len=divs.length;i<len;i++){
+
+                    d=divs[i];
+
+                    if(d.getAttribute('name')=='cmtcontent'){
+
+                        tmp=d.innerHTML;
+
+                        tmp=tmp.replace(/<span style="filter:glow\(color=#([0-9a-z]{3,6}),strength=2\);height:0px;color:#([0-9a-z]{3,6})">/ig,defaultfilter1);
+
+                        tmp=tmp.replace('<span style="height: 0px; color: rgb(255, 255, 255);">',defaultfilter2);
+
+                        d.innerHTML=tmp;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        return {
+            showCmtList : showCmtList,
+            deleteCmt : deleteCmt
+        }
+        
+    })();
+    
+    /**********分享该文章的用户功能**********/
+    
+    _Space.BlogSharedUser=(function(){
+
+        function showList(obj){
+            var count = obj.count || 0,i=0,html=[],len=obj.list.length,item;
+            if(count && len){
+                html[html.length] = '<div class="tit" style="margin-bottom:12px;">已有'+count+'人分享了这篇文章：</div>';
+                html[html.length] = '<table width="100%"><tbody><tr>'
+                for(;i<len;i++){
+                    item=obj.list[i];
+                    html[html.length] = '<td width="10%" valign="bottom" align="center" class="user"><a class="ucard" target="_blank" pid="'+item.portrait+'" href="http://hi.baidu.com/sys/checkuser/'+item.uname+'/3"><img border="0" src="http://tx.bdimg.com/sys/portraitn/item/'+item.portrait+'.jpg" style="display:block"><div style="width:75px;overflow:hidden;height:18px;">'+item.uname+'</div><a href="http://apps.hi.baidu.com/share/user/'+item.portrait+'" target="_blank">Ta的分享</a></a></td>';
+                }
+                html[html.length] = '<td width="100%"></td></tr></tbody></table>';
+                G('share_user_list') && (G('share_user_list').innerHTML = html.join(''));
+                SP.mycard.bind('share_user_list'); 
+            }
+        }
+
+        function getData(){
+            var url = "http://apps.hi.baidu.com/share/getsourceshare?url=http://hi.baidu.com"+encodeURIComponent("/gaoxiansong")+"/blog/item/b03d2d0789f65d72020881c0.html&callback=_Space.BlogSharedUser.showList&asyn=1&r="+Math.random();
+            BdAjax.loadJS(url);
+        }
+
+        return {
+            getData : getData,
+            showList : showList
+        }
+    })();
+    
+
+    
+    /*********相关文章的显示函数********/
+    _Space.RelatedDoc=(function(){
+
+        function HI_MOD_IN_RELATED_DOC_CALLBACK(arg){
+
+            if(arg.length <= 1) return false;
+
+            var hasMore = arg[0];
+
+            var D=function(A,B){A[A.length]=B;}
+
+            if(arg.length % 2 == 0) D(arg, ["","","",""]);
+
+
+
+            var html = ['<div id="in_related_doc" onclick="relative_Click()"><div class="tit">相关文章：</div>'];
+
+            D(html, '<table cellpadding="0" cellspacing="3" border="0">');
+
+            for(var i = 1, j = arg.length; i < j; i += 2){
+
+                D(html, '<tr>');
+
+                D(html, '<td width="15px"><a style="font-size:25px" >&#8226;</a></td><td><a href="http://hi.baidu.com/' + arg[i][3] + '/blog/item/' + arg[i][2] + '.html" target="_blank" title="' + arg[i][0] + '">' + arg[i][1] + '</a>');
+
+                D(html, new Array(10).join('\u3000'));
+
+                D(html, '</td>');
+
+                if(arg[i + 1][0] != "")
+
+                    D(html, '<td width="15px"><a style="font-size:25px" >&#8226;</a></td><td><a href="http://hi.baidu.com/' + arg[i + 1][3] + '/blog/item/' + arg[i + 1][2] + '.html" target="_blank" title="' + arg[i + 1][0] + '">' + arg[i + 1][1] + '</a></td>');
+
+                else
+
+                    D(html, '<td>&nbsp;</td><td>&nbsp;</td>');
+
+                D(html, '</tr>');
+
+            }
+
+            if(hasMore) D(html, '<tr><td colspan="4"><a target="_blank" href="/sys/search?pageno=1&type=7&sort=1&word=FLV%CE%C4%BC%FE%B8%F1%CA%BD%B7%D6%CE%F6&item=b03d2d0789f65d72020881c0">更多&gt;&gt;</a></td></tr>');
+
+            D(html, '</table></div><div class="line">&nbsp;</div>');
+
+
+
+            var div = document.getElementById('in_related_tmp');
+
+            if(div){
+
+                div.innerHTML = html.join('');
+
+                while(div.firstChild){
+
+                    div.parentNode.insertBefore(div.firstChild, div);
+
+                }
+
+                div.parentNode.removeChild(div);
+
+            }
+
+
+        }
+
+        window.HI_MOD_IN_RELATED_DOC_CALLBACK = HI_MOD_IN_RELATED_DOC_CALLBACK;
+
+        function show(){
+            if( baidu.G('in_related_tmp') )
+            baidu.sio.callByServer("/sys/search?type=8&word=FLV%CE%C4%BC%FE%B8%F1%CA%BD%B7%D6%CE%F6&item=b03d2d0789f65d72020881c0");
+        }
+
+        return {
+            show : show
+        }
+
+    })();
+    
+
+    /*********最近读者*********/
+    _Space.latestReader=(function(){
+        var g_read=[
+
+        
+
+        ["tanyan2034","9d6374616e79616e323033342c02","tanyan2034"],
+
+        
+
+        ["%B7%E7%C7%E5%D1%EF%D1%EF%C7%E5%B7%E7","50c3b7e7c7e5d1efd1efc7e5b7e70f01","风清扬扬清风"],
+
+        
+
+        ["1987hasit","39b33139383768617369743b00","1987hasit"],
+
+        
+
+        ["nasi","5ab75350495f6e617369bd00","SPI_nasi"],
+
+        
+
+        ["hnwyllmm","c3f9686e77796c6c6d6dbb05","hnwyllmm"],
+
+        
+
+        ["wo%5Fcai%5Fshi%5Fllh4","27ac6c6c68348b03","llh4"],
+
+        
+
+        ["zcpdown","716e7a6370646f776ef50e","zcpdown"],
+
+        
+
+        ["r%5Fsoul","41b9736f756c5f77700f00","soul_wp"],
+
+        
+
+        {}
+
+        ];
+
+        g_read.length=g_read.length-1;
+
+
+
+        var _rh1="";
+
+        var _rh2="";
+
+
+
+        function show(){
+
+            _rh1 += '<table width="100%" ><tr>';
+
+            _rh2+='<tr>';
+
+            if(!Session.isLogin){
+
+                _rh1+='<td align="center" width="10%" ><img border="0" width="55" height="55" src="http://img.baidu.com/hi/img/portraitn.jpg"></td>';
+
+                _rh2+='<td>&nbsp;</td>';
+
+                if(g_read.length>0){
+
+                    _rh1+='<td align="left" width="12%">';
+
+                }else{
+
+                    _rh1+='<td align="left" width="100%">';
+
+                }
+
+                _rh1+='<a href="https://passport.baidu.com/?login&tpl=sp&tpl_reg=sp&u='+myref+'" target="_self" onclick="BdUtil.relogin(); return false;">登录</a>后，您就出现在这里。</td>';
+
+                _rh2+='<td>&nbsp;</td>'
+
+            }
+
+            if(g_read.length==0){
+
+                if(Session.isLogin){
+
+                    _rh1+='<td align=left width="100%">最近还没有登录用户看过这篇文章……</td>';
+
+                    _rh2+='<td>&nbsp;</td>';
+
+                }
+
+            }else{
+
+                for(i=0,len=g_read.length;i<len;i++){
+
+                    _rh1+='<td align="center" valign="bottom" width="10%" class="user"><a href="/'+g_read[i][0]+'" target="_blank" class="ucard" pid="'+g_read[i][1]+'"><img border="0" src="http://tx.bdimg.com/sys/portraitn/item/'+g_read[i][1]+'.jpg"></a></td>';
+
+                    _rh2+='<td align="center" valign="top" class="user"><a href="/'+g_read[i][0]+'" target="_blank" class="ucard" pid="'+g_read[i][1]+'">'+g_read[i][2]+'</a></td>';
+
+                }
+
+            }
+
+            _rh1+='<td width="100%"></td></tr>';
+
+            _rh2+='<td></td></tr></table>';
+
+
+            baidu.dom.insertHTML("in_reader", "beforeEnd", _rh1+_rh2);
+
+        }
+
+        return {
+            show : show
+        }
+    })();
+    
+
+    /*********页面完成后执行的一些东西，比较乱，小心轻放**********/
+    _Space.pageDone = (function(){
+        
+        function initBlogTextForFCK(){
+            //fck init music
+            if(window.Node){Node.prototype.replaceNode=function(Node){this.parentNode.replaceChild(Node,this);}}
+            var imgBox=document.getElementsByName('musicName');
+            var isAutoPlay=true;
+            for(var i=0,n=imgBox.length;i<n;i++){
+                var img=imgBox[i];
+                if(img.getAttribute('rel')){
+                    var musicSrc=img.getAttribute('rel');
+                    var musicDiv = document.createElement("SPAN");
+                    var tmp=musicSrc.substr (musicSrc.indexOf('#')+1, 1);
+                    var tmpAutoPlay=(tmp=='1');
+                    if(isAutoPlay&&tmpAutoPlay){
+                        isAutoPlay=false;
+                        tmpAutoPlay=true;
+                    }else{
+                        tmpAutoPlay=false;
+                    }
+                    var shtml=creatbgmusic(musicSrc.substr(0,musicSrc.indexOf('#')).replace(/[\s><()'"]+/g,''),1,true,false,tmpAutoPlay,tmpAutoPlay,'FckMusicHelper');
+                    shtml=shtml.replace('width=100%','width=200').replace('width="100%"','width=200 height=45');			img.replaceNode(musicDiv);
+                    musicDiv.innerHTML=shtml;
+                    i--;n--;
+                }
+            }
+                //fck init vote
+            !function(){
+                var vote = document.getElementsByName('FCK_VOTE');
+                for(var i=0,len=vote.length,item,rel=0,cdiv;i<len;i++){
+                    item = vote[0];
+                    rel = item.getAttribute('rel')|0;
+                    if(rel){
+                        cdiv = document.createElement('span');
+                        item.parentNode.replaceChild(cdiv,item);
+                        baidu.swf.create({
+                            "id": "VOTE_FLASH_"+i,
+                            "width" : "585",
+                            "height": "100",
+                            "ver"   : "9.0.0",
+                            "wmode" : document.all ? "opaque" : "window",
+                            "allowscriptaccess" : "always",
+                            "url"   : "http://hi.bdimg.com/apps/appvote/spaceVote.swf?vote_id="+rel
+                        },cdiv)
+
+                    }
+                }
+            }()
+            //document.getElementById('blog_text').style.display='';
+        }
+        
+        function resizeBlogImg(){
+
+            if(document.getElementById("m_blog"))
+
+            {
+
+                var imgarray = document.getElementById("m_blog").getElementsByTagName('img');
+
+                var imgw = document.getElementById("m_blog").offsetWidth;
+
+                imgw =imgw-40;
+
+	            var imgs = []
+                for(var i=0; i<imgarray.length; i++){
+                    if(imgarray[i].className=="blogimg" && imgarray[i].width>=imgw) {
+                        imgs[i]=new Image();
+                        (function(_imgarray,_imgs,_i){
+                            _imgs[_i].onload=function(){
+                                var h=imgw/_imgs[_i].width*_imgs[_i].height;
+                                _imgarray[_i].height = h;
+                                _imgarray[_i].style.height=h+'px';
+                            };
+                        })(imgarray,imgs,i);
+                        imgs[i].src=imgarray[i].src;
+                        imgarray[i].width=imgw;
+                        imgarray[i].style.width=imgw+'px';
+                    }
+                }
+            }
+        }
+
+        function fixURLCopyBug(){
+        
+            // Fix ff bugs
+
+            var blog_text = document.getElementById('blog_text');
+            /**
+
+            blog_text.innerHTML = blog_text.innerHTML.replace(/href\s*=\s*("|')?(\.\.\/\.\.\/)/gi,"href=$1../$2");
+            */
+            /*modify by poker, to fix the flashalbum's static domain*/
+            var _blog_trans = blog_text.innerHTML.replace(/href\s*=\s*("|')?(\.\.\/\.\.\/)/gi,"href=$1../$2");
+            _blog_trans = _blog_trans.replace(/http:\/\/hi\.baidu\.com\/static\/album\/album\.swf/g,"http://hi.bdimg.com/static/album/album.swf");
+            blog_text.innerHTML = _blog_trans;
+        }
+
+        function getPVData(){
+
+            var hstr="";
+
+            baidu.sio.callByServer("/gaoxiansong/brwstat?key1=1&key2=cd9888ee8a3c0837acafd50a_b03d2d0789f65d72020881c0_");   
+        } 
+
+        function setpv(allnum)
+
+        {
+
+            var num = allnum.split('_');
+
+            baidu.G("result").innerHTML=num[0];
+
+        }
+
+        window.setpv = setpv;
+        
+        function initCmtEditor(){ //初始化浏览编辑器
+            var editor=null;
+
+            try{
+
+                editor=new BdEditor("spBlogCmtText",{width:"100%",height:"155px"});
+
+                editor.onfocus = function(){hidErr(3);}
+
+                editor.render();
+
+                //如果用户没有登陆，焦点进入编辑器，弹出登录框
+				
+
+            }catch(e){
+
+                var spBlogCmtText = document.getElementById("spBlogCmtText");
+                if(!spBlogCmtText ) return false;
+
+                var p = spBlogCmtText.previousSibling;
+
+                while(p && p.nodeType != 1) p = p.previousSibling;
+
+                if(p && /bdeditor_container/.test(p.id)){
+
+                    p.parentNode.removeChild(p);
+
+                }
+
+                spBlogCmtText.style.display = '';
+
+                editor=null;
+
+            }
+
+            
+
+            window.editor = editor;
+        }
+
+        function ok(){
+            getPVData();
+            resizeBlogImg();
+            fixURLCopyBug();
+            initBlogTextForFCK();
+            initCmtEditor();
+
+            gotoreply(); /* external fun*/
+        }
+
+        return {
+            ok : ok
+        }
+    })();
+	
+	function relative_Click(){
+		BdUtil.ns_trackerLink('m_20110329_relative_article','')
+	}
+    /********分段加载处理对象，实验性功能*********/
+    _Space.SectionLoad = (function(){
+
+        var loaded = false;
+
+        var sectioinList = [];
+
+        function complete(item){
+            item.isComplete = true;
+        }
+
+        function add(mod, loadCallback){
+
+            var mod = baidu.G(mod);
+            
+            sectioinList.push({"mod": mod, "callback":loadCallback});
+        }
+
+        function startLoad(item){
+            item['callback']();
+            complete(item);
+        }
+
+        function checkStat(){
+            if(sectioinList.length <= 0) return;
+
+            var pageTop2bottom=getPageTop2bottom();
+            
+            baidu.each(sectioinList, function(item, index){
+
+                if(! item.isComplete){
+                    if(getOffsetTop(item.mod)-100 <= pageTop2bottom)
+                        startLoad(item);
+                }
+            });
+        }
+
+        function getOffsetTop(mod){
+            return baidu.dom.getPosition(mod).top;
+        }
+
+        function getPageTop2bottom(){
+            var dsh = baidu.page.getScrollTop();
+            var dch = baidu.page.getViewHeight();
+
+            return dsh + dch;
+        }
+
+        
+        baidu.on(window, 'resize', checkStat);
+        baidu.on(window, 'onload', checkStat);
+        baidu.on(window, 'scroll', checkStat);
+        
+        return {
+            "add" : add
+        } 
+    })();
+
+    /*******Start Working！*******/
+    var _pageEndTime=(new Date().getTime()) - g_pageTimerStart;
+
+    baidu.on(window, 'load', function(){
+        var _pageLoadTime=(new Date().getTime()) - g_pageTimerStart;
+
+        BdUtil.hi_trackerLink('m_20101109_blogloadtime', _pageLoadTime+'|'+_pageEndTime);
+    });
+
+    /**********Step2***********/
+    _Space.pageDone.ok();
+
+    baidu.G('share_user_list') && _Space.SectionLoad.add('share_user_list', _Space.BlogSharedUser.getData);
+    baidu.G('in_related_tmp') && _Space.SectionLoad.add('in_related_tmp', _Space.RelatedDoc.show);
+    baidu.G('in_reader') && _Space.SectionLoad.add('in_reader', _Space.latestReader.show);
+    baidu.G('in_comment') && _Space.SectionLoad.add('in_comment', _Space.commentOperate.showCmtList);
+</script>
+
+
+
+			
+
+
+<script type="text/javascript">
+/*<![CDATA[*/
+
+var SP = SP || {};
+if(!SP.mycard){
+    SP.mycard = new (function(){
+        var me = this;
+        var _cancleAction = Session.isDrag;  
+        var _list = [];
+        var _sourceLoaded = false;    
+        me.bind = function (_id){
+            if(_cancleAction){  //abort
+                return;
+            }
+            if(!_sourceLoaded){
+                _list.push(_id);
+            } else {
+                baidu.space.mycard.bind(_id);
+            }
+        }
+        me.init = function (_config){
+            _cancleAction = !!_config.cancle;
+        }
+        me.onSourceLoaded = function (){
+            _sourceLoaded = true;
+            baidu.space.mycard.init({portrait: Session.visitorPortrait});
+            for(var i=0,len=_list.length; i<len; i++){
+                baidu.space.mycard.bind(_list[i]);
+            }
+        }
+    })();
+    baidu.dom.ready(function(){
+        BdAjax.loadCSS('/ui/css/ucard/ucard.css?v=020507100.css');
+        BdAjax.loadJS('/ui/scripts/ucard/ucard.js?v=020507100.js');
+    });
+}
+SP.mycard.bind('m_blog');  
+/*]]>*/
+</script>
+
+
+	
+    
+<link rel="stylesheet" type="text/css" href="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/userset.css">
+<link rel="stylesheet" type="text/css" href="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/widget.css">
+
+<script type="text/javascript" src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/default_user_suit.js"></script>
+
+<script type="text/javascript">
+//页面状态变量
+var Session = Session || {
+    spaceURL: "/gaoxiansong",
+    pageURL: "http://hi.baidu.com/gaoxiansong/blog/item/b03d2d0789f65d72020881c0%2Ehtml",    //当前访问的url
+    isHost: "",         // 是否是空间主人
+    userName: "gaosongxian",   // 空间主人用户名
+    userNameEnc:    "gaosongxian", 
+    visitorName:    "tanyan2034",
+    visitorURL: "/tanyan2034",        // 
+    refer: "",
+    spBasicURL:"gaoxiansong",
+    spBasicURLEnc:"gaoxiansong"
+};
+</script>
+<script src="./FLV文件格式分析_RogerGao 的个人空间 -- 曾经的网嗅_百度空间_files/render.js" type="text/javascript"></script>
+<script type="text/javascript">
+baidu.dom.ready(function(){
+    if(typeof spBeautifyConfigData != 'undefined'){
+        var _installList = spBeautifyConfigData.list;
+    } else {
+        spBeautifyConfigData = {};
+        _installList = [];
+    }
+    spBeautifyConfigData.currentDate  = Math.round((new Date('2011/04/28')).getTime() / 1000);    
+    BeautifyWidget.init({timeStamp: spBeautifyConfigData.currentDate, env: 'sys'});
+    BeautifyWidget.render(_installList);
+	if(Space && Space.ActiveTip){
+		if(baidu.g("active_space")){
+			window.active_tip=new Space.ActiveTip("tary_space_name",function(){
+				active_tip.hidden();
+				//activeSpace("pop_tip");
+				if(BdUtil && BdUtil.ns_trackerLink){
+					BdUtil.ns_trackerLink('nm_20101018_activeBlank',''); 
+				}
+				window.open('http://hi.baidu.com/reg/preihome?pageDomain=pop_tip');
+			//	window.location.href="http://hi.baidu.com/reg/preihome?pageDomain=pop_tip";
+				setTimeout(function(){
+					window.location.reload();
+				},1000);
+				
+			
+			});
+		}
+		window.succTip=function(spaceUrl){
+			active_dia.close();
+			//var tiphtml="<div><div class='setBlackcon'>恭喜您，激活成功！欢迎入驻百度空间！</div><div class='setBlackpanel'><div class='blackConfirmbtn' onclick=\"goIhome('"+spaceUrl+"')\">确认</div></div></div>";
+			BdDialog.Alert("恭喜您，激活成功！欢迎入驻百度空间！");
+			baidu.g("dialogYES").onclick=function(){
+				window.location.reload();
+			};	
+		};
+	}
+	
+});
+</script>
+
+
+
+
+<div style="height: 2px;left: 3px;overflow: hidden;position: absolute;top: 2px;width: 1px;background:#000" id="ps_swfContainer"><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" id="ps_swf" width="1" height="1" align="middle"><param name="wmode" value="opaque"><param name="allowscriptaccess" value="always"><param name="movie" value="http://hi.bdimg.com/static/base/swf/soundTip.swf"><embed width="1" height="1" wmode="opaque" allowscriptaccess="always" allownetworking="all" align="middle" src="http://hi.bdimg.com/static/base/swf/soundTip.swf" name="ps_swf" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></object></div><div style="height: 1px;left: 1px;overflow: hidden;position: absolute;top: 1px;width: 1px;background:#000" id="sr_swfContainer"><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" id="sr_swf" width="1" height="1" align="middle"><param name="wmode" value="opaque"><param name="allowscriptaccess" value="always"><param name="movie" value="http://hi.bdimg.com/static/base/swf/LongPolling.swf?swfran=77511303973342530"><embed width="1" height="1" wmode="opaque" allowscriptaccess="always" allownetworking="all" align="middle" src="http://hi.bdimg.com/static/base/swf/LongPolling.swf?swfran=77511303973342530" name="sr_swf" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></object></div></body></html>
