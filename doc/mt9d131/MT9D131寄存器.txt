@@ -1,0 +1,45 @@
+
+[Register Log 07/26/11 13:10:53]
+VAR8= 2, 0x0006, 0x3C 	// AE_TARGET 亮度
+
+VAR8= 3, 0x0052, 0x80 	// AWB_SATURATION 饱和度
+
+REG= 1, 0x36, 0x1408 	// APERTURE_PARAMETERS 对比度
+REG= 1, 0x36, 0x0C08 	// APERTURE_PARAMETERS
+
+REG= 1, 0x97, 0x0008 	// OUTPUT_FORMAT_CONFIG 转黑白
+REG= 1, 0x97, 0x0000 	// OUTPUT_FORMAT_CONFIG 转彩色
+
+*********************************************************************
+1.亮度         Address     VAR(2, 0x0006)                      
+Bits                   Default         Name
+7:0                    0x3C            ae_target
+
+2. 色度 ：
+
+0x0064, 173   // AWB_KR_L       低色温时红色的比例
+0x0065, 150   // AWB_KG_L
+0x0066, 129   // AWB_KB_L
+0x0067, 151   // AWB_KR_R       高色温时红色的比例
+0x0068, 145   // AWB_KG_R
+0x0069, 135   // AWB_KB_Ry
+R G B表示3个颜色，L表示低色温控制寄存器，R表示高色温控制寄存器。
+ 
+3. 对比度
+对比度的寄存器Address  1, 0x36
+Bits                             Default         Name
+15:0                              0x1208         aperture_parameters
+7:0                              0x0008         0-7: knee     
+Ap_knee; threshold for aperture signal
+10:8                              0x0002         8-10: gain
+Ap_gain; gain for aperture signal
+13:11                            0x0002         11-13: exp
+Bit 0~7是锐度的一个门槛值，此值越小，则图像锐利化的效果越明显，默认值是08
+Gain 与 exp可以调节图像锐利度，组合效果如下：其中红色的数字代表组合以后的锐度值，此值越大锐利化越明显
+
+4．饱和度 
+Address  VAR(3, 0x0052)
+Bits                             Default         Name
+7:0                              0x80    awb_saturation
+128=100%
+http://www.rich-power.com.tw/sales_channel.php?define_wpglang=ZHS#Shenzhen
