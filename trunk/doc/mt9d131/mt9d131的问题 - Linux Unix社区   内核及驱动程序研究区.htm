@@ -1,0 +1,654 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta content="mt9d131 问题 Linux/Unix社区 内核及驱动程序研究区" name="Keywords"/>
+<meta content="初次接触监控行业 我想请问一下大家 MT9D131 亮度 色度 对比度 饱和度是如何调整 啊 查看资料好像没看到有调整这几个参数 另外查到资料上 IFP page1 有寄存器 0x97 好像可以输出单色图像 但是设置后 输出 还是 彩色 不知道什么原因啊" name="description"/>
+<title>mt9d131的问题 - Linux/Unix社区 / 内核及驱动程序研究区</title>
+<link href="http://c.csdn.net/bbs/t/5/t5.css" rel="stylesheet" type="text/css" />
+<link href="http://www.csdn.net/images/favicon.ico" rel="SHORTCUT ICON" />
+<script type="text/javascript">
+var tinfo = {
+	pdate: "2011-03-01 09:28:13"
+	,sid: "547703ca-7611-4f40-8aac-1a0000447845"
+	,tid: "580d6a4e-0edf-4f5d-9ba3-dc5374aaa552"
+	,ba: "Linux"
+	,sa: "Linux_Dirver"
+};
+</script>
+<script type="text/javascript" src="/u/t5/t5.js"></script>
+<script type="text/javascript" src="http://counter.csdn.net/a/js/AreaCounter.js"></script>
+</head>
+<body id="bbscsdn_wrap">
+
+<script src="http://csdnimg.cn/pubnav/js/pub_topnav.js" type="text/javascript"></script>
+<div class="tad">
+    <iframe id="Topic_Top" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" width="100%" height="0" src="/u/t5/include/ad1.asp?pdate=2011-03-01 09:28:13&ba=Linux&sa=Linux_Dirver"></iframe>
+</div>
+<div class="nav">
+    <a href="#">
+        <img class="logo" alt="" src="http://c.csdn.net/bbs/t/5/i/pic_logo.gif">
+    </a>
+    <ul class="searchpanel">
+        <li>
+            <input id="search_key" name="key" type="text" onkeyup="GoKeyDown(event);" onblur="if(!this.value)this.value='这里也许就有你要的答案... ';return true;" onfocus="if(this.value=='这里也许就有你要的答案... ')this.value='';return true;" value="这里也许就有你要的答案... " size="25">
+            <input class="btn" type="image" onclick="Search(event,'');return false;" src="http://c.csdn.net/bbs/t/5/i/search_btn.jpg">
+        </li>
+    </ul>
+</div>
+<input type="hidden" id="hf_cardUrl" value="http://forum.csdn.net/PointForum/UserCard.ashx?user=" />
+<style>
+.bbs_top_ad{clear:both; text-align:left; display:block; *display:inline-block; width:940px; margin:2px 0; padding:2px 9px; border:solid 1px #a9cbee; /* -moz-border-radius:8px; background:#d8d8d8; */ color:#000; list-style:none; font-size:12px; line-height:20px;}
+.bbs_top_ad:after{content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.bbs_top_ad a{color:#666; text-decoration:none;}
+.bbs_top_ad a:hover{text-decoration:underline;}
+.bbs_top_ad *{margin:0; padding:0; list-style:none;}
+.bbs_top_ad h3{width:330px; max-width:330px; height:20px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; font-size:14px; line-height:20px;}
+.bbs_top_ad h3:after{content:"...";}
+.bbs_top_ad h3 a{color:#000;}
+.bbs_top_ad .area_1 li,
+.bbs_top_ad .area_2 li{padding:0 0 0 9px; background:url(http://csdnimg.cn/www/images/point_1.gif) no-repeat left 8px;}
+.bbs_top_ad .area_1{float:left; width:350px; overflow:hidden; margin:0 10px 0 0; padding:4px 0; /*background:#f8f8f8;*/}
+.bbs_top_ad .area_2{position:relative; float:left; width:350px; overflow:hidden; margin:0 20px 0 0; padding:4px 0; /*background:#f8f8f8;*/}
+.bbs_top_ad .area_2 ul{height:80px; overflow:hidden;}
+.bbs_top_ad .area_2 #btn1{position:absolute; right:30px; bottom:10px; width:15px; height:15px; border:none; background:#5d5d5d; color:#fff; font-size:12px; line-height:15px; cursor:pointer;}
+.bbs_top_ad .area_2 #btn2{position:absolute; right:10px; bottom:10px; width:15px; height:15px; border:none; background:#5d5d5d; color:#fff; font-size:12px; line-height:15px; cursor:pointer;}
+.bbs_top_ad .area_3{float:left; width:210px; overflow:hidden; padding:4px 0 0 0;}
+.bbs_top_ad .area_3 a{color:#000;}
+.bbs_top_ad .area_3 dt{*margin:0 0 4px 0;}
+.bbs_top_ad .area_3 dd{width:193px; height:20px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; padding:0 0 0 17px; background:url(http://csdnimg.cn/www/images/point_huo.gif) no-repeat left 3px;}
+/* .bbs_top_ad .area_3 dd:after{content:"...";}*/
+</style>
+<script type="text/javascript" src="http://ag.csdn.net/js/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="http://ag.csdn.net/js/jquery.scroll.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#scrollDiv").Scroll({ line: 8, speed: 1, timer: 6000, left: "btn1", right: "btn2" });
+		jQuery.noConflict();
+    }); 
+</script>
+<script type="text/javascript" src="/u/t5/include/csdnnewad.ashx"></script>
+<div class="bbs_top_ad">
+	<div class="area_1">
+		<h3><script type="text/javascript">document.write(csdn_new_ads[0]);</script></h3>
+		<ul>
+		<script type="text/javascript">document.write(csdn_new_ads[2]);</script>
+		</ul>
+	</div>
+	<div class="area_2">
+		<h3><script type="text/javascript">document.write(csdn_new_ads[1]);</script></h3>
+		<div id="scrollDiv">
+			<script type="text/javascript" src="http://ag.csdn.net/common/ArticleGet.ashx"></script>
+		</div>
+		<button id="btn1"><<</button>
+		<button id="btn2">>></button>
+	</div>
+	<div class="area_3">
+		<dl>
+		<dt>
+			<script language='JavaScript' type='text/javascript' src='http://www.csdn.net/ggmm/csdn_ggmm.js'></script>
+			<script language='JavaScript' type='text/javascript'>show_ads_zone(429);</script>
+		</dt>
+		<script type="text/javascript">document.write(csdn_new_ads[3]);</script>
+		</dl>
+	</div>
+</div>
+<div class="loc">
+	<p>
+<!-- a href="http://wz.csdn.net/rxsg/index.aspx" target="_blank" onclick='LogClickCount(this,117);'><img src="http://c.csdn.net/bbs/t/5/i/rxsg.jpg" alt="热血三国" /></a -->
+
+		<a href="http://www.csdn.net/" target="_blank">CSDN</a>-<a href="http://community.csdn.net/" target="_blank">CSDN社区</a>-<a href="http://forum.csdn.net/BList/Linux/" target="_blank">Linux/Unix社区</a>-<a href="http://forum.csdn.net/SList/Linux_Dirver//" target="_blank">内核及驱动程序研究区</a>
+	</p>
+</div>
+
+<div class="fm">
+	<ul class="menu">
+	<li class="bt1"><a href="javascript:;" class="bt1">管理菜单<!--[if IE 7]><!--></a><!--<![endif]-->
+	<!--[if lte IE 6]><table><tr><td><![endif]-->
+		<ul>
+			<li><a id="a_head_recreate" href="http://forum.csdn.net/PointForum/BuildTopic.aspx?topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&return=">生成帖子</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Manage/Tops/InsertTop.aspx?topicUrl=http://topic.csdn.net/u/20110301/09/580d6a4e-0edf-4f5d-9ba3-dc5374aaa552.html&text=mt9d131%e7%9a%84%e9%97%ae%e9%a2%98&sectionID=547703ca-7611-4f40-8aac-1a0000447845',width:600,height:265,title:'置顶'});}catch(ex){}return false;">置顶</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Manage/SetPrime.aspx?forumid=547703ca-7611-4f40-8aac-1a0000447845&topicid=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&v=13',width:400,height:255,title:'推荐'});}catch(ex){}return false;">推荐</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Manage/SetNotPrime.aspx?topicid=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&forumid=547703ca-7611-4f40-8aac-1a0000447845&postDate=2011-03-01+09%3a28%3a13&v=13',width:400,height:255,title:'取消推荐'});}catch(ex){}return false;">取消推荐</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Manage/LockTopic.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&v=13',width:425,height:330,title:'锁定'});}catch(ex){}return false;">锁定</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Manage/UnlockTopic.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&v=13',width:425,height:330,title:'解锁'});}catch(ex){}return false;">解锁</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Manage/MoveTopic.aspx?fid=547703ca-7611-4f40-8aac-1a0000447845&tid=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&date=2011-03-01+09%3a28%3a13',width:580,height:270,title:'移动'});}catch(ex){}return false;">移动</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Manage/ModifyTopic.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&v=13',width:670,height:655,title:'编辑'});}catch(ex){}return false;">编辑</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Manage/DeleteTopic.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13',width:425,height:330,title:'删除'});}catch(ex){}return false;">删除</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Forum/TopicAddPoint.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&date=2011-03-01+09%3a28%3a13&v=13',width:420,height:300,title:'帖子加分'});}catch(ex){}return false;">帖子加分</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Manage/TitleStyle.aspx?topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&url=http://topic.csdn.net/u/20110301/09/580d6a4e-0edf-4f5d-9ba3-dc5374aaa552.html',width:670,height:307,title:'帖子高亮'});}catch(ex){}return false;">帖子高亮</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Manage/RemoveTitleStyle.aspx?topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&url=http://topic.csdn.net/u/20110301/09/580d6a4e-0edf-4f5d-9ba3-dc5374aaa552.html',width:670,height:255,title:'取消高亮'});}catch(ex){}return false;">取消高亮</a></li>
+		</ul>
+	 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li><a href="http://forum.csdn.net/PointForum/Manage/TopicManageView.aspx?forumID=547703ca-7611-4f40-8aac-1a0000447845&topicID=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&date=2011-03-01+09%3a28%3a13&v=13" class="bt2">结&nbsp;&nbsp;帖</a></li>
+	<li><a href="http://forum.csdn.net/PointForum/Forum/PostTopic.aspx?forumID=547703ca-7611-4f40-8aac-1a0000447845" target="_blank" class="bt3">发&nbsp;&nbsp;帖</a></li>
+	<li><a href="#r_achor" class="bt4" onclick="try{ReplyBoxFocus();return false}catch(ex){}">回&nbsp;&nbsp;复</a></li>
+	</ul>
+
+</div>
+<div class="tit">
+<h1><dfn><a href="javascript:;" onclick="try{addToWZ();}catch(ex){}return false;">收藏</a></dfn>
+<cite><select onchange="changeViewMode(this);"><option value="5">不显示删除回复</option><option value="0">显示所有回复</option><option value="1">显示星级回复</option><option value="3">显示得分回复</option></select></cite>
+<span class="prime" csdnid="prime"></span><span class="lock" csdnid="lock"></span>
+<a name="top"></a><span csdnid="titleStyle" style=""><!-- google_ad_section_start -->mt9d131的问题<!-- google_ad_section_end --></span><em>[问题点数:<span csdnid="point">100</span>分<span csdnid="check">，结帖人:silencewood</span>]</em></h1>
+</div>
+
+
+
+<table cellspacing="0" cellpadding="0" class="mframe">
+  <tr>
+	<td rowspan="2" class="lf"><div class="df">
+	<ul>
+		<li class="center"><a href="http://hi.csdn.net/silencewood" target="_blank" onclick='LogClickCount(this,111);'><img src="http://avatar.profile.csdn.net/A/E/F/2_silencewood.jpg" onmouseover="try{showUserCard(this,'silencewood')}catch(ex){};"/></a></li>
+		<li title="总技术分：252；总技术排名：65889"><dfn><a href="http://hi.csdn.net/silencewood" target="_blank" onclick='LogClickCount(this,111);'>silencewood</a></dfn></li>
+		<li title="总技术分：252；总技术排名：65889">(木头)</li>
+		<li class="honor"></li>
+		<li title="总技术分：252；总技术排名：65889">等　级：<img class="grade user1" alt="" src="http://c.csdn.net/bbs/t/5/i/blank.gif"/> </li>
+		<li>结帖率：<label onmouseover="showHint(this, '截至2011-06-15 09:00:15\n用户结帖率97.06%\n总发帖：34\n正常结帖：31\n未结帖：1\n')" onmouseout="hideHint(this)">97.06%</label></li>
+		<li></li>
+	</ul>
+	</div></td>
+	<td class="rw">
+		<div class="fbart"><em>楼主</em>发表于：2011-03-01 09:28:13</div>
+		<table cellspacing="0" cellpadding="0" class="mtxt">
+			<tr><td csdnid="body" id="body"><!-- google_ad_section_start --><div class="msgfont">初次接触监控行业<br />我想请问一下大家，MT9D131的 亮度  、色度  对比度 饱和度是如何调整的 啊 ？查看资料好像没看到有调整这几个参数的。<br /><br />另外查到资料上，IFP的 page1 有寄存器 0x97的 好像可以输出单色图像，但是设置后，输出的 还是 彩色 ，不知道什么原因啊？<br /><br /></div><!-- google_ad_section_end --><!--End_body//--></td></tr>
+			<tr><td csdnid="link"></td></tr>
+			<tr><td csdnid="modify"></td></tr>
+		</table>
+	</td>
+  </tr>
+  <tr>
+	<td class="rb">
+	<iframe id="tad2" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" width="100%" height="0" src="/u/t5/include/ad2.asp?pdate=2011-03-01 09:28:13&ba=Linux&sa=Linux_Dirver"></iframe>
+	<div class="fbarb">
+		<ul>
+		<li><a href="javascript:;" class="dr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateTopic.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&type=0&v=13');LogClickCount(this,113);}catch(ex){}return false;">对我有用</a>[<span csdnid="acount" title="该帖子被0个用户给予好评">0</span>]</li>
+		<li><a href="javascript:;" class="gr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateTopic.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&type=1&v=13');LogClickCount(this,114);}catch(ex){}return false;">丢个板砖</a>[<span csdnid="ucount" title="该帖子被0个用户给予差评">0</span>]</li>
+		<li><a href="javascript:;" class="gr" onclick="try{Quote(0);}catch(ex){};return false">引用</a></li>
+		<li><a href="javascript:;" class="dr" onclick="try{report(0);}catch(ex){}return false;">举报</a></li>
+		<li><a href="javascript:;" class="gr" onmousemove="try{showMenu(this,'http://forum.csdn.net/PointForum/Manage/ModifyTopic.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&v=13','http://forum.csdn.net/PointForum/Manage/DeleteTopic.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13');return false}catch(ex){}">管理</a></li>
+		<li><a href="#top" class="nob">TOP</a></li>
+		</ul>
+		回复次数：<span csdnid="rcount" title="该帖回复数为12">12</span><!-- | 
+		浏览次数：<span csdnid="vcount" title="该帖阅读数为76">76</span>-->
+	</div>
+	</td>
+	</tr>
+</table>	
+<div class="clear"></div>
+
+<iframe id="Iframe1" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" width="100%" height="0" src="/u/t5/include/ad3.asp?pdate=2011-03-01 09:28:13&ba=Linux&sa=Linux_Dirver"></iframe>
+
+<!-- google_ad_section_start(weight=ignore) -->
+
+<table csdnid="rt_71877642" cellspacing="0" cellpadding="0" class="mframe"><tr><td rowspan="2" class="lf"><div class="df">
+	<ul>
+		<li class="center"><a href="http://hi.csdn.net/yjpcn" target="_blank" onclick='LogClickCount(this,111);'><img src="http://avatar.profile.csdn.net/5/B/0/2_yjpcn.jpg" title="yjpcn用户自定义头像" alt="yjpcn用户头像" onmouseover="try{showUserCard(this,'yjpcn')}catch(ex){};" /></a></li>
+		<li title="截至2011-06-15 08:15:54，用户的总技术分为：339；截至2011-06-12日，用户的总技术分排名为：54135"><dfn><a href="http://hi.csdn.net/yjpcn" target="_blank" onclick='LogClickCount(this,111);'>yjpcn</a></dfn></li>
+		<li title="截至2011-06-15 08:15:54，用户的总技术分为：339；截至2011-06-12日，用户的总技术分排名为：54135">(chinayin)</li>
+		<li class="honor"></li>
+		<li title="截至2011-06-15 08:15:54，用户的总技术分为：339；截至2011-06-12日，用户的总技术分排名为：54135">等　级：<img alt="" src="/u/ui/images/blank.gif" class="grade user1" /></li>
+		<li></li>
+	</ul>
+</div></td><td class="rw">
+	<div class="fbart"><dfn>#1楼 得分：10</dfn>回复于：2011-03-01 15:49:25</div>
+<a name="r_71877642"></a>
+	<table cellspacing="0" cellpadding="0" class="mtxt"><tr><td csdnid="rbody_71877642" id="rbody_71877642">
+<div class="msgfont">这东西好像只有厂家的fae可以调，美光的sensor的寄存器很多，外面的人调不了，有些东西他们也不外漏，只有他们自己知道。</div>
+<!--End_rbody_71877642//--></td></tr>
+	<tr><td csdnid="rmodify_71877642"></td></tr></table>
+</td></tr><tr><td class="rb">
+	<div class="fbarb">
+	   <ul>
+		<li><a href="javascript:;" class="dr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71877642&type=0&v=13');LogClickCount(this,113);}catch(ex){}return false;">对我有用</a>[<span csdnid="racount_71877642" title="该回复被0个用户给予好评">0</span>]</li>
+		<li><a href="javascript:;" class="gr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71877642&type=1&v=13');LogClickCount(this,114);}catch(ex){}return false;">丢个板砖</a>[<span csdnid="rucount_71877642" title="该回复被0个用户给予差评">0</span>]</li>
+		<li><a href="javascript:;" class="gr" onclick="try{Quote(1);}catch(ex){};return false">引用</a></li>
+		<li><a href="javascript:;" class="dr" onclick="try{report(1);}catch(ex){}return false;">举报</a></li>
+		<li><a href="javascript:;" class="gr" onmousemove="try{showMenu(this,'http://forum.csdn.net/PointForum/Manage/ModifyReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71877642&postDate=2011-03-01+09%3a28%3a13&v=13','http://forum.csdn.net/PointForum/Manage/DeleteReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71877642&postDate=2011-03-01+09%3a28%3a13&v=13');return false}catch(ex){}">管理</a></li>
+		<li><a href="#top" class="nob">TOP</a></li>
+		</ul>
+		<div class="rt"></div>
+	</div>
+</td></tr></table>
+<div class="clear"></div>
+<table csdnid="rt_71884024" cellspacing="0" cellpadding="0" class="mframe"><tr><td rowspan="2" class="lf"><div class="df">
+	<ul>
+		<li class="center"><a href="http://hi.csdn.net/silencewood" target="_blank" onclick='LogClickCount(this,111);'><img src="http://avatar.profile.csdn.net/A/E/F/2_silencewood.jpg" title="silencewood用户自定义头像" alt="silencewood用户头像" onmouseover="try{showUserCard(this,'silencewood')}catch(ex){};" /></a></li>
+		<li title="截至2011-06-15 09:00:15，用户的总技术分为：252；截至2011-06-12日，用户的总技术分排名为：65889"><dfn><a href="http://hi.csdn.net/silencewood" target="_blank" onclick='LogClickCount(this,111);'>silencewood</a></dfn></li>
+		<li title="截至2011-06-15 09:00:15，用户的总技术分为：252；截至2011-06-12日，用户的总技术分排名为：65889">(木头)</li>
+		<li class="honor"></li>
+		<li title="截至2011-06-15 09:00:15，用户的总技术分为：252；截至2011-06-12日，用户的总技术分排名为：65889">等　级：<img alt="" src="/u/ui/images/blank.gif" class="grade user1" /></li>
+		<li></li>
+	</ul>
+</div></td><td class="rw">
+	<div class="fbart"><dfn>#2楼 得分：0</dfn>回复于：2011-03-01 20:44:22</div>
+<a name="r_71884024"></a>
+	<table cellspacing="0" cellpadding="0" class="mtxt"><tr><td csdnid="rbody_71884024" id="rbody_71884024">
+<div class="msgfont">呵呵，单色输出调好了<br />设置寄存器0x97:1[b3]为1就可以了<br />不过不知道是不是硬件的原因<br /><br />有时候出现，设置寄存器后马上去读寄存器发现是设置的值，而后在关闭设备文件时再次读寄存器会发现没设置过来，在此情况下，彩转黑失败<br /><br />若彩转黑成功，在关闭设备文件前读出寄存器，发现值是设置的值<br /><br />我觉得可能是硬件的原因导致寄存器设置失败而未成功彩转黑<br /><br />设置寄存器时，连续多次设置，则好了很多</div>
+<!--End_rbody_71884024//--></td></tr>
+	<tr><td csdnid="rmodify_71884024"></td></tr></table>
+</td></tr><tr><td class="rb">
+	<div class="fbarb">
+	   <ul>
+		<li><a href="javascript:;" class="dr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71884024&type=0&v=13');LogClickCount(this,113);}catch(ex){}return false;">对我有用</a>[<span csdnid="racount_71884024" title="该回复被0个用户给予好评">0</span>]</li>
+		<li><a href="javascript:;" class="gr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71884024&type=1&v=13');LogClickCount(this,114);}catch(ex){}return false;">丢个板砖</a>[<span csdnid="rucount_71884024" title="该回复被0个用户给予差评">0</span>]</li>
+		<li><a href="javascript:;" class="gr" onclick="try{Quote(2);}catch(ex){};return false">引用</a></li>
+		<li><a href="javascript:;" class="dr" onclick="try{report(2);}catch(ex){}return false;">举报</a></li>
+		<li><a href="javascript:;" class="gr" onmousemove="try{showMenu(this,'http://forum.csdn.net/PointForum/Manage/ModifyReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71884024&postDate=2011-03-01+09%3a28%3a13&v=13','http://forum.csdn.net/PointForum/Manage/DeleteReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71884024&postDate=2011-03-01+09%3a28%3a13&v=13');return false}catch(ex){}">管理</a></li>
+		<li><a href="#top" class="nob">TOP</a></li>
+		</ul>
+		<div class="rt"></div>
+	</div>
+</td></tr></table>
+<div class="clear"></div>
+<table csdnid="rt_71884525" cellspacing="0" cellpadding="0" class="mframe"><tr><td rowspan="2" class="lf"><div class="df">
+	<ul>
+		<li class="center"><a href="http://hi.csdn.net/jiazhen" target="_blank" onclick='LogClickCount(this,111);'><img src="http://avatar.profile.csdn.net/F/8/2/2_jiazhen.jpg" title="jiazhen用户自定义头像" alt="jiazhen用户头像" onmouseover="try{showUserCard(this,'jiazhen')}catch(ex){};" /></a></li>
+		<li title="截至2011-06-15 08:46:33，用户的总技术分为：3328；截至2011-06-12日，用户的总技术分排名为：8025"><dfn><a href="http://hi.csdn.net/jiazhen" target="_blank" onclick='LogClickCount(this,111);'>jiazhen</a></dfn></li>
+		<li title="截至2011-06-15 08:46:33，用户的总技术分为：3328；截至2011-06-12日，用户的总技术分排名为：8025">(chiachia)</li>
+		<li class="honor"></li>
+		<li title="截至2011-06-15 08:46:33，用户的总技术分为：3328；截至2011-06-12日，用户的总技术分排名为：8025">等　级：<img alt="" src="/u/ui/images/blank.gif" class="grade user5" /></li>
+		<li></li>
+	</ul>
+</div></td><td class="rw">
+	<div class="fbart"><dfn>#3楼 得分：10</dfn>回复于：2011-03-01 21:17:53</div>
+<a name="r_71884525"></a>
+	<table cellspacing="0" cellpadding="0" class="mtxt"><tr><td csdnid="rbody_71884525" id="rbody_71884525">
+<div class="msgfont">&quot;设置寄存器时，连续多次设置，则好了很多&quot;那可能是I2C通信有问题。</div>
+<!--End_rbody_71884525//--></td></tr>
+	<tr><td csdnid="rmodify_71884525"></td></tr></table>
+</td></tr><tr><td class="rb">
+	<div class="fbarb">
+	   <ul>
+		<li><a href="javascript:;" class="dr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71884525&type=0&v=13');LogClickCount(this,113);}catch(ex){}return false;">对我有用</a>[<span csdnid="racount_71884525" title="该回复被0个用户给予好评">0</span>]</li>
+		<li><a href="javascript:;" class="gr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71884525&type=1&v=13');LogClickCount(this,114);}catch(ex){}return false;">丢个板砖</a>[<span csdnid="rucount_71884525" title="该回复被0个用户给予差评">0</span>]</li>
+		<li><a href="javascript:;" class="gr" onclick="try{Quote(3);}catch(ex){};return false">引用</a></li>
+		<li><a href="javascript:;" class="dr" onclick="try{report(3);}catch(ex){}return false;">举报</a></li>
+		<li><a href="javascript:;" class="gr" onmousemove="try{showMenu(this,'http://forum.csdn.net/PointForum/Manage/ModifyReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71884525&postDate=2011-03-01+09%3a28%3a13&v=13','http://forum.csdn.net/PointForum/Manage/DeleteReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71884525&postDate=2011-03-01+09%3a28%3a13&v=13');return false}catch(ex){}">管理</a></li>
+		<li><a href="#top" class="nob">TOP</a></li>
+		</ul>
+		<div class="rt"></div>
+	</div>
+</td></tr></table>
+<div class="clear"></div>
+<table csdnid="rt_71885782" cellspacing="0" cellpadding="0" class="mframe"><tr><td rowspan="2" class="lf"><div class="df">
+	<ul>
+		<li class="center"><a href="http://hi.csdn.net/silencewood" target="_blank" onclick='LogClickCount(this,111);'><img src="http://avatar.profile.csdn.net/A/E/F/2_silencewood.jpg" title="silencewood用户自定义头像" alt="silencewood用户头像" onmouseover="try{showUserCard(this,'silencewood')}catch(ex){};" /></a></li>
+		<li title="截至2011-06-15 09:00:15，用户的总技术分为：252；截至2011-06-12日，用户的总技术分排名为：65889"><dfn><a href="http://hi.csdn.net/silencewood" target="_blank" onclick='LogClickCount(this,111);'>silencewood</a></dfn></li>
+		<li title="截至2011-06-15 09:00:15，用户的总技术分为：252；截至2011-06-12日，用户的总技术分排名为：65889">(木头)</li>
+		<li class="honor"></li>
+		<li title="截至2011-06-15 09:00:15，用户的总技术分为：252；截至2011-06-12日，用户的总技术分排名为：65889">等　级：<img alt="" src="/u/ui/images/blank.gif" class="grade user1" /></li>
+		<li></li>
+	</ul>
+</div></td><td class="rw">
+	<div class="fbart"><dfn>#4楼 得分：0</dfn>回复于：2011-03-01 22:41:42</div>
+<a name="r_71885782"></a>
+	<table cellspacing="0" cellpadding="0" class="mtxt"><tr><td csdnid="rbody_71885782" id="rbody_71885782">
+<div class="msgfont">似乎是这样的<br />但是，写了马上就读却又是正确的，又当如何解释呢？</div>
+<!--End_rbody_71885782//--></td></tr>
+	<tr><td csdnid="rmodify_71885782"></td></tr></table>
+</td></tr><tr><td class="rb">
+	<div class="fbarb">
+	   <ul>
+		<li><a href="javascript:;" class="dr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71885782&type=0&v=13');LogClickCount(this,113);}catch(ex){}return false;">对我有用</a>[<span csdnid="racount_71885782" title="该回复被0个用户给予好评">0</span>]</li>
+		<li><a href="javascript:;" class="gr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71885782&type=1&v=13');LogClickCount(this,114);}catch(ex){}return false;">丢个板砖</a>[<span csdnid="rucount_71885782" title="该回复被0个用户给予差评">0</span>]</li>
+		<li><a href="javascript:;" class="gr" onclick="try{Quote(4);}catch(ex){};return false">引用</a></li>
+		<li><a href="javascript:;" class="dr" onclick="try{report(4);}catch(ex){}return false;">举报</a></li>
+		<li><a href="javascript:;" class="gr" onmousemove="try{showMenu(this,'http://forum.csdn.net/PointForum/Manage/ModifyReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71885782&postDate=2011-03-01+09%3a28%3a13&v=13','http://forum.csdn.net/PointForum/Manage/DeleteReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71885782&postDate=2011-03-01+09%3a28%3a13&v=13');return false}catch(ex){}">管理</a></li>
+		<li><a href="#top" class="nob">TOP</a></li>
+		</ul>
+		<div class="rt"></div>
+	</div>
+</td></tr></table>
+<div class="clear"></div>
+<table csdnid="rt_71901952" cellspacing="0" cellpadding="0" class="mframe"><tr><td rowspan="2" class="lf"><div class="df">
+	<ul>
+		<li class="center"><a href="http://hi.csdn.net/silencewood" target="_blank" onclick='LogClickCount(this,111);'><img src="http://avatar.profile.csdn.net/A/E/F/2_silencewood.jpg" title="silencewood用户自定义头像" alt="silencewood用户头像" onmouseover="try{showUserCard(this,'silencewood')}catch(ex){};" /></a></li>
+		<li title="截至2011-06-15 09:00:15，用户的总技术分为：252；截至2011-06-12日，用户的总技术分排名为：65889"><dfn><a href="http://hi.csdn.net/silencewood" target="_blank" onclick='LogClickCount(this,111);'>silencewood</a></dfn></li>
+		<li title="截至2011-06-15 09:00:15，用户的总技术分为：252；截至2011-06-12日，用户的总技术分排名为：65889">(木头)</li>
+		<li class="honor"></li>
+		<li title="截至2011-06-15 09:00:15，用户的总技术分为：252；截至2011-06-12日，用户的总技术分排名为：65889">等　级：<img alt="" src="/u/ui/images/blank.gif" class="grade user1" /></li>
+		<li></li>
+	</ul>
+</div></td><td class="rw">
+	<div class="fbart"><dfn>#5楼 得分：0</dfn>回复于：2011-03-02 16:16:25</div>
+<a name="r_71901952"></a>
+	<table cellspacing="0" cellpadding="0" class="mtxt"><tr><td csdnid="rbody_71901952" id="rbody_71901952">
+<div class="msgfont">对比度搞定，<br />设置使用用户自定义gama表，然后根据一定的 算法更新gama表</div>
+<!--End_rbody_71901952//--></td></tr>
+	<tr><td csdnid="rmodify_71901952"></td></tr></table>
+</td></tr><tr><td class="rb">
+	<div class="fbarb">
+	   <ul>
+		<li><a href="javascript:;" class="dr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71901952&type=0&v=13');LogClickCount(this,113);}catch(ex){}return false;">对我有用</a>[<span csdnid="racount_71901952" title="该回复被0个用户给予好评">0</span>]</li>
+		<li><a href="javascript:;" class="gr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71901952&type=1&v=13');LogClickCount(this,114);}catch(ex){}return false;">丢个板砖</a>[<span csdnid="rucount_71901952" title="该回复被0个用户给予差评">0</span>]</li>
+		<li><a href="javascript:;" class="gr" onclick="try{Quote(5);}catch(ex){};return false">引用</a></li>
+		<li><a href="javascript:;" class="dr" onclick="try{report(5);}catch(ex){}return false;">举报</a></li>
+		<li><a href="javascript:;" class="gr" onmousemove="try{showMenu(this,'http://forum.csdn.net/PointForum/Manage/ModifyReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71901952&postDate=2011-03-01+09%3a28%3a13&v=13','http://forum.csdn.net/PointForum/Manage/DeleteReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71901952&postDate=2011-03-01+09%3a28%3a13&v=13');return false}catch(ex){}">管理</a></li>
+		<li><a href="#top" class="nob">TOP</a></li>
+		</ul>
+		<div class="rt"></div>
+	</div>
+</td></tr></table>
+<div class="clear"></div>
+<table csdnid="rt_71903682" cellspacing="0" cellpadding="0" class="mframe"><tr><td rowspan="2" class="lf"><div class="df">
+	<ul>
+		<li class="center"><a href="http://hi.csdn.net/shenzhensoft" target="_blank" onclick='LogClickCount(this,111);'><img src="http://avatar.profile.csdn.net/3/2/8/2_shenzhensoft.jpg" title="shenzhensoft用户自定义头像" alt="shenzhensoft用户头像" onmouseover="try{showUserCard(this,'shenzhensoft')}catch(ex){};" /></a></li>
+		<li title="截至2011-06-15 09:03:43，用户的总技术分为：123；截至2011-06-12日，用户的总技术分排名为：101683"><dfn><a href="http://hi.csdn.net/shenzhensoft" target="_blank" onclick='LogClickCount(this,111);'>shenzhensoft</a></dfn></li>
+		<li title="截至2011-06-15 09:03:43，用户的总技术分为：123；截至2011-06-12日，用户的总技术分排名为：101683">(porsche)</li>
+		<li class="honor"></li>
+		<li title="截至2011-06-15 09:03:43，用户的总技术分为：123；截至2011-06-12日，用户的总技术分排名为：101683">等　级：<img alt="" src="/u/ui/images/blank.gif" class="grade user1" /></li>
+		<li></li>
+	</ul>
+</div></td><td class="rw">
+	<div class="fbart"><dfn>#6楼 得分：20</dfn>回复于：2011-03-02 17:08:59</div>
+<a name="r_71903682"></a>
+	<table cellspacing="0" cellpadding="0" class="mtxt"><tr><td csdnid="rbody_71903682" id="rbody_71903682">
+<div class="msgfont">
+我也在调9D131，太郁闷了，目前只调出了<br />Saturation<br />0xF0, 0x00, 0x02<br />0xD2, 0x00, 0x%X<br /><br />另CMOS没有HUE<br /><br />我QQ：4719373，有空交流一下
+
+</div>
+<!--End_rbody_71903682//--></td></tr>
+	<tr><td csdnid="rmodify_71903682"></td></tr></table>
+</td></tr><tr><td class="rb">
+	<div class="fbarb">
+	   <ul>
+		<li><a href="javascript:;" class="dr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71903682&type=0&v=13');LogClickCount(this,113);}catch(ex){}return false;">对我有用</a>[<span csdnid="racount_71903682" title="该回复被0个用户给予好评">0</span>]</li>
+		<li><a href="javascript:;" class="gr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71903682&type=1&v=13');LogClickCount(this,114);}catch(ex){}return false;">丢个板砖</a>[<span csdnid="rucount_71903682" title="该回复被0个用户给予差评">0</span>]</li>
+		<li><a href="javascript:;" class="gr" onclick="try{Quote(6);}catch(ex){};return false">引用</a></li>
+		<li><a href="javascript:;" class="dr" onclick="try{report(6);}catch(ex){}return false;">举报</a></li>
+		<li><a href="javascript:;" class="gr" onmousemove="try{showMenu(this,'http://forum.csdn.net/PointForum/Manage/ModifyReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71903682&postDate=2011-03-01+09%3a28%3a13&v=13','http://forum.csdn.net/PointForum/Manage/DeleteReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71903682&postDate=2011-03-01+09%3a28%3a13&v=13');return false}catch(ex){}">管理</a></li>
+		<li><a href="#top" class="nob">TOP</a></li>
+		</ul>
+		<div class="rt"></div>
+	</div>
+</td></tr></table>
+<div class="clear"></div>
+<table csdnid="rt_71903838" cellspacing="0" cellpadding="0" class="mframe"><tr><td rowspan="2" class="lf"><div class="df">
+	<ul>
+		<li class="center"><a href="http://hi.csdn.net/steven_miao" target="_blank" onclick='LogClickCount(this,111);'><img src="http://avatar.profile.csdn.net/E/F/0/2_steven_miao.jpg" title="steven_miao用户自定义头像" alt="steven_miao用户头像" onmouseover="try{showUserCard(this,'steven_miao')}catch(ex){};" /></a></li>
+		<li title="截至2011-06-15 08:46:37，用户的总技术分为：937；截至2011-06-12日，用户的总技术分排名为：25817"><dfn><a href="http://hi.csdn.net/steven_miao" target="_blank" onclick='LogClickCount(this,111);'>steven_miao</a></dfn></li>
+		<li title="截至2011-06-15 08:46:37，用户的总技术分为：937；截至2011-06-12日，用户的总技术分排名为：25817">(steven_miao)</li>
+		<li class="honor"></li>
+		<li title="截至2011-06-15 08:46:37，用户的总技术分为：937；截至2011-06-12日，用户的总技术分排名为：25817">等　级：<img alt="" src="/u/ui/images/blank.gif" class="grade user3" /></li>
+		<li></li>
+	</ul>
+</div></td><td class="rw">
+	<div class="fbart"><dfn>#7楼 得分：10</dfn>回复于：2011-03-02 17:13:17</div>
+<a name="r_71903838"></a>
+	<table cellspacing="0" cellpadding="0" class="mtxt"><tr><td csdnid="rbody_71903838" id="rbody_71903838">
+<div class="msgfont">不知道LZ是采用什么来做的，V4L2还是直接映射。</div>
+<!--End_rbody_71903838//--></td></tr>
+	<tr><td csdnid="rmodify_71903838"></td></tr></table>
+</td></tr><tr><td class="rb">
+	<div class="fbarb">
+	   <ul>
+		<li><a href="javascript:;" class="dr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71903838&type=0&v=13');LogClickCount(this,113);}catch(ex){}return false;">对我有用</a>[<span csdnid="racount_71903838" title="该回复被0个用户给予好评">0</span>]</li>
+		<li><a href="javascript:;" class="gr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71903838&type=1&v=13');LogClickCount(this,114);}catch(ex){}return false;">丢个板砖</a>[<span csdnid="rucount_71903838" title="该回复被0个用户给予差评">0</span>]</li>
+		<li><a href="javascript:;" class="gr" onclick="try{Quote(7);}catch(ex){};return false">引用</a></li>
+		<li><a href="javascript:;" class="dr" onclick="try{report(7);}catch(ex){}return false;">举报</a></li>
+		<li><a href="javascript:;" class="gr" onmousemove="try{showMenu(this,'http://forum.csdn.net/PointForum/Manage/ModifyReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71903838&postDate=2011-03-01+09%3a28%3a13&v=13','http://forum.csdn.net/PointForum/Manage/DeleteReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71903838&postDate=2011-03-01+09%3a28%3a13&v=13');return false}catch(ex){}">管理</a></li>
+		<li><a href="#top" class="nob">TOP</a></li>
+		</ul>
+		<div class="rt"></div>
+	</div>
+</td></tr></table>
+<div class="clear"></div>
+<table csdnid="rt_71904475" cellspacing="0" cellpadding="0" class="mframe"><tr><td rowspan="2" class="lf"><div class="df">
+	<ul>
+		<li class="center"><a href="http://hi.csdn.net/shenzhensoft" target="_blank" onclick='LogClickCount(this,111);'><img src="http://avatar.profile.csdn.net/3/2/8/2_shenzhensoft.jpg" title="shenzhensoft用户自定义头像" alt="shenzhensoft用户头像" onmouseover="try{showUserCard(this,'shenzhensoft')}catch(ex){};" /></a></li>
+		<li title="截至2011-06-15 09:03:43，用户的总技术分为：123；截至2011-06-12日，用户的总技术分排名为：101683"><dfn><a href="http://hi.csdn.net/shenzhensoft" target="_blank" onclick='LogClickCount(this,111);'>shenzhensoft</a></dfn></li>
+		<li title="截至2011-06-15 09:03:43，用户的总技术分为：123；截至2011-06-12日，用户的总技术分排名为：101683">(porsche)</li>
+		<li class="honor"></li>
+		<li title="截至2011-06-15 09:03:43，用户的总技术分为：123；截至2011-06-12日，用户的总技术分排名为：101683">等　级：<img alt="" src="/u/ui/images/blank.gif" class="grade user1" /></li>
+		<li></li>
+	</ul>
+</div></td><td class="rw">
+	<div class="fbart"><dfn>#8楼 得分：0</dfn>回复于：2011-03-02 17:32:26</div>
+<a name="r_71904475"></a>
+	<table cellspacing="0" cellpadding="0" class="mtxt"><tr><td csdnid="rbody_71904475" id="rbody_71904475">
+<div class="msgfont">当然是调驱动罗</div>
+<!--End_rbody_71904475//--></td></tr>
+	<tr><td csdnid="rmodify_71904475"></td></tr></table>
+</td></tr><tr><td class="rb">
+	<div class="fbarb">
+	   <ul>
+		<li><a href="javascript:;" class="dr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71904475&type=0&v=13');LogClickCount(this,113);}catch(ex){}return false;">对我有用</a>[<span csdnid="racount_71904475" title="该回复被0个用户给予好评">0</span>]</li>
+		<li><a href="javascript:;" class="gr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71904475&type=1&v=13');LogClickCount(this,114);}catch(ex){}return false;">丢个板砖</a>[<span csdnid="rucount_71904475" title="该回复被0个用户给予差评">0</span>]</li>
+		<li><a href="javascript:;" class="gr" onclick="try{Quote(8);}catch(ex){};return false">引用</a></li>
+		<li><a href="javascript:;" class="dr" onclick="try{report(8);}catch(ex){}return false;">举报</a></li>
+		<li><a href="javascript:;" class="gr" onmousemove="try{showMenu(this,'http://forum.csdn.net/PointForum/Manage/ModifyReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71904475&postDate=2011-03-01+09%3a28%3a13&v=13','http://forum.csdn.net/PointForum/Manage/DeleteReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71904475&postDate=2011-03-01+09%3a28%3a13&v=13');return false}catch(ex){}">管理</a></li>
+		<li><a href="#top" class="nob">TOP</a></li>
+		</ul>
+		<div class="rt"></div>
+	</div>
+</td></tr></table>
+<div class="clear"></div>
+<table csdnid="rt_71904611" cellspacing="0" cellpadding="0" class="mframe"><tr><td rowspan="2" class="lf"><div class="df">
+	<ul>
+		<li class="center"><a href="http://hi.csdn.net/shenzhensoft" target="_blank" onclick='LogClickCount(this,111);'><img src="http://avatar.profile.csdn.net/3/2/8/2_shenzhensoft.jpg" title="shenzhensoft用户自定义头像" alt="shenzhensoft用户头像" onmouseover="try{showUserCard(this,'shenzhensoft')}catch(ex){};" /></a></li>
+		<li title="截至2011-06-15 09:03:43，用户的总技术分为：123；截至2011-06-12日，用户的总技术分排名为：101683"><dfn><a href="http://hi.csdn.net/shenzhensoft" target="_blank" onclick='LogClickCount(this,111);'>shenzhensoft</a></dfn></li>
+		<li title="截至2011-06-15 09:03:43，用户的总技术分为：123；截至2011-06-12日，用户的总技术分排名为：101683">(porsche)</li>
+		<li class="honor"></li>
+		<li title="截至2011-06-15 09:03:43，用户的总技术分为：123；截至2011-06-12日，用户的总技术分排名为：101683">等　级：<img alt="" src="/u/ui/images/blank.gif" class="grade user1" /></li>
+		<li></li>
+	</ul>
+</div></td><td class="rw">
+	<div class="fbart"><dfn>#9楼 得分：50</dfn>回复于：2011-03-02 17:37:52</div>
+<a name="r_71904611"></a>
+	<table cellspacing="0" cellpadding="0" class="mtxt"><tr><td csdnid="rbody_71904611" id="rbody_71904611">
+<div class="msgfont">
+silencewood<br /><br />能不能把你的gamma 表初始值给我一下，我这对比度调起来颜色灰常难看
+
+</div>
+<!--End_rbody_71904611//--></td></tr>
+	<tr><td csdnid="rmodify_71904611"></td></tr></table>
+</td></tr><tr><td class="rb">
+	<div class="fbarb">
+	   <ul>
+		<li><a href="javascript:;" class="dr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71904611&type=0&v=13');LogClickCount(this,113);}catch(ex){}return false;">对我有用</a>[<span csdnid="racount_71904611" title="该回复被0个用户给予好评">0</span>]</li>
+		<li><a href="javascript:;" class="gr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71904611&type=1&v=13');LogClickCount(this,114);}catch(ex){}return false;">丢个板砖</a>[<span csdnid="rucount_71904611" title="该回复被0个用户给予差评">0</span>]</li>
+		<li><a href="javascript:;" class="gr" onclick="try{Quote(9);}catch(ex){};return false">引用</a></li>
+		<li><a href="javascript:;" class="dr" onclick="try{report(9);}catch(ex){}return false;">举报</a></li>
+		<li><a href="javascript:;" class="gr" onmousemove="try{showMenu(this,'http://forum.csdn.net/PointForum/Manage/ModifyReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71904611&postDate=2011-03-01+09%3a28%3a13&v=13','http://forum.csdn.net/PointForum/Manage/DeleteReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71904611&postDate=2011-03-01+09%3a28%3a13&v=13');return false}catch(ex){}">管理</a></li>
+		<li><a href="#top" class="nob">TOP</a></li>
+		</ul>
+		<div class="rt"></div>
+	</div>
+</td></tr></table>
+<div class="clear"></div>
+<table csdnid="rt_71914081" cellspacing="0" cellpadding="0" class="mframe"><tr><td rowspan="2" class="lf"><div class="df">
+	<ul>
+		<li class="center"><a href="http://hi.csdn.net/silencewood" target="_blank" onclick='LogClickCount(this,111);'><img src="http://avatar.profile.csdn.net/A/E/F/2_silencewood.jpg" title="silencewood用户自定义头像" alt="silencewood用户头像" onmouseover="try{showUserCard(this,'silencewood')}catch(ex){};" /></a></li>
+		<li title="截至2011-06-15 09:00:15，用户的总技术分为：252；截至2011-06-12日，用户的总技术分排名为：65889"><dfn><a href="http://hi.csdn.net/silencewood" target="_blank" onclick='LogClickCount(this,111);'>silencewood</a></dfn></li>
+		<li title="截至2011-06-15 09:00:15，用户的总技术分为：252；截至2011-06-12日，用户的总技术分排名为：65889">(木头)</li>
+		<li class="honor"></li>
+		<li title="截至2011-06-15 09:00:15，用户的总技术分为：252；截至2011-06-12日，用户的总技术分排名为：65889">等　级：<img alt="" src="/u/ui/images/blank.gif" class="grade user1" /></li>
+		<li></li>
+	</ul>
+</div></td><td class="rw">
+	<div class="fbart"><dfn>#10楼 得分：0</dfn>回复于：2011-03-03 10:55:59</div>
+<a name="r_71914081"></a>
+	<table cellspacing="0" cellpadding="0" class="mtxt"><tr><td csdnid="rbody_71914081" id="rbody_71914081">
+<div class="msgfont"><div><fieldset><legend>引用 9 楼 shenzhensoft 的回复:</legend><br />silencewood<br /><br />能不能把你的gamma 表初始值给我一下，我这对比度调起来颜色灰常难看<br /></fieldset></div><br /><br />是这样的，目前我只是对比度的调整在驱动上调通了，gamma表应该有个算法来生成，算法的实现已经由算法组的人去处理了<br /><br /></div>
+<!--End_rbody_71914081//--></td></tr>
+	<tr><td csdnid="rmodify_71914081"></td></tr></table>
+</td></tr><tr><td class="rb">
+	<div class="fbarb">
+	   <ul>
+		<li><a href="javascript:;" class="dr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71914081&type=0&v=13');LogClickCount(this,113);}catch(ex){}return false;">对我有用</a>[<span csdnid="racount_71914081" title="该回复被0个用户给予好评">0</span>]</li>
+		<li><a href="javascript:;" class="gr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71914081&type=1&v=13');LogClickCount(this,114);}catch(ex){}return false;">丢个板砖</a>[<span csdnid="rucount_71914081" title="该回复被0个用户给予差评">0</span>]</li>
+		<li><a href="javascript:;" class="gr" onclick="try{Quote(10);}catch(ex){};return false">引用</a></li>
+		<li><a href="javascript:;" class="dr" onclick="try{report(10);}catch(ex){}return false;">举报</a></li>
+		<li><a href="javascript:;" class="gr" onmousemove="try{showMenu(this,'http://forum.csdn.net/PointForum/Manage/ModifyReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71914081&postDate=2011-03-01+09%3a28%3a13&v=13','http://forum.csdn.net/PointForum/Manage/DeleteReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71914081&postDate=2011-03-01+09%3a28%3a13&v=13');return false}catch(ex){}">管理</a></li>
+		<li><a href="#top" class="nob">TOP</a></li>
+		</ul>
+		<div class="rt"></div>
+	</div>
+</td></tr></table>
+<div class="clear"></div>
+<table csdnid="rt_71914248" cellspacing="0" cellpadding="0" class="mframe"><tr><td rowspan="2" class="lf"><div class="df">
+	<ul>
+		<li class="center"><a href="http://hi.csdn.net/silencewood" target="_blank" onclick='LogClickCount(this,111);'><img src="http://avatar.profile.csdn.net/A/E/F/2_silencewood.jpg" title="silencewood用户自定义头像" alt="silencewood用户头像" onmouseover="try{showUserCard(this,'silencewood')}catch(ex){};" /></a></li>
+		<li title="截至2011-06-15 09:00:15，用户的总技术分为：252；截至2011-06-12日，用户的总技术分排名为：65889"><dfn><a href="http://hi.csdn.net/silencewood" target="_blank" onclick='LogClickCount(this,111);'>silencewood</a></dfn></li>
+		<li title="截至2011-06-15 09:00:15，用户的总技术分为：252；截至2011-06-12日，用户的总技术分排名为：65889">(木头)</li>
+		<li class="honor"></li>
+		<li title="截至2011-06-15 09:00:15，用户的总技术分为：252；截至2011-06-12日，用户的总技术分排名为：65889">等　级：<img alt="" src="/u/ui/images/blank.gif" class="grade user1" /></li>
+		<li></li>
+	</ul>
+</div></td><td class="rw">
+	<div class="fbart"><dfn>#11楼 得分：0</dfn>回复于：2011-03-03 11:01:11</div>
+<a name="r_71914248"></a>
+	<table cellspacing="0" cellpadding="0" class="mtxt"><tr><td csdnid="rbody_71914248" id="rbody_71914248">
+<div class="msgfont">海思平台，没有采用V4L2<br /><div><fieldset><legend>引用 7 楼 steven_miao 的回复:</legend><br />不知道LZ是采用什么来做的，V4L2还是直接映射。<br /></fieldset></div></div>
+<!--End_rbody_71914248//--></td></tr>
+	<tr><td csdnid="rmodify_71914248"></td></tr></table>
+</td></tr><tr><td class="rb">
+	<div class="fbarb">
+	   <ul>
+		<li><a href="javascript:;" class="dr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71914248&type=0&v=13');LogClickCount(this,113);}catch(ex){}return false;">对我有用</a>[<span csdnid="racount_71914248" title="该回复被0个用户给予好评">0</span>]</li>
+		<li><a href="javascript:;" class="gr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71914248&type=1&v=13');LogClickCount(this,114);}catch(ex){}return false;">丢个板砖</a>[<span csdnid="rucount_71914248" title="该回复被0个用户给予差评">0</span>]</li>
+		<li><a href="javascript:;" class="gr" onclick="try{Quote(11);}catch(ex){};return false">引用</a></li>
+		<li><a href="javascript:;" class="dr" onclick="try{report(11);}catch(ex){}return false;">举报</a></li>
+		<li><a href="javascript:;" class="gr" onmousemove="try{showMenu(this,'http://forum.csdn.net/PointForum/Manage/ModifyReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71914248&postDate=2011-03-01+09%3a28%3a13&v=13','http://forum.csdn.net/PointForum/Manage/DeleteReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71914248&postDate=2011-03-01+09%3a28%3a13&v=13');return false}catch(ex){}">管理</a></li>
+		<li><a href="#top" class="nob">TOP</a></li>
+		</ul>
+		<div class="rt"></div>
+	</div>
+</td></tr></table>
+<div class="clear"></div>
+<table csdnid="rt_71919274" cellspacing="0" cellpadding="0" class="mframe"><tr><td rowspan="2" class="lf"><div class="df">
+	<ul>
+		<li class="center"><a href="http://hi.csdn.net/silencewood" target="_blank" onclick='LogClickCount(this,111);'><img src="http://avatar.profile.csdn.net/A/E/F/2_silencewood.jpg" title="silencewood用户自定义头像" alt="silencewood用户头像" onmouseover="try{showUserCard(this,'silencewood')}catch(ex){};" /></a></li>
+		<li title="截至2011-06-15 09:00:15，用户的总技术分为：252；截至2011-06-12日，用户的总技术分排名为：65889"><dfn><a href="http://hi.csdn.net/silencewood" target="_blank" onclick='LogClickCount(this,111);'>silencewood</a></dfn></li>
+		<li title="截至2011-06-15 09:00:15，用户的总技术分为：252；截至2011-06-12日，用户的总技术分排名为：65889">(木头)</li>
+		<li class="honor"></li>
+		<li title="截至2011-06-15 09:00:15，用户的总技术分为：252；截至2011-06-12日，用户的总技术分排名为：65889">等　级：<img alt="" src="/u/ui/images/blank.gif" class="grade user1" /></li>
+		<li></li>
+	</ul>
+</div></td><td class="rw">
+	<div class="fbart"><dfn>#12楼 得分：0</dfn>回复于：2011-03-03 13:44:02</div>
+<a name="r_71919274"></a>
+	<table cellspacing="0" cellpadding="0" class="mtxt"><tr><td csdnid="rbody_71919274" id="rbody_71919274">
+<div class="msgfont"><div><fieldset><legend>引用 6 楼 shenzhensoft 的回复:</legend><br />我也在调9D131，太郁闷了，目前只调出了<br />Saturation<br />0xF0, 0x00, 0x02<br />0xD2, 0x00, 0x%X<br /><br />另CMOS没有HUE<br /><br />我QQ：4719373，有空交流一下<br /></fieldset></div><br />按你的提示调节寄存器0xD2[2]:b2~b0可实现饱和度的调节</div>
+<!--End_rbody_71919274//--></td></tr>
+	<tr><td csdnid="rmodify_71919274"></td></tr></table>
+</td></tr><tr><td class="rb">
+	<div class="fbarb">
+	   <ul>
+		<li><a href="javascript:;" class="dr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71919274&type=0&v=13');LogClickCount(this,113);}catch(ex){}return false;">对我有用</a>[<span csdnid="racount_71919274" title="该回复被0个用户给予好评">0</span>]</li>
+		<li><a href="javascript:;" class="gr nob" onclick="try{Estimate(this,'http://forum.csdn.net/PointForum/Forum/EstimateReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&replyId=71919274&type=1&v=13');LogClickCount(this,114);}catch(ex){}return false;">丢个板砖</a>[<span csdnid="rucount_71919274" title="该回复被0个用户给予差评">0</span>]</li>
+		<li><a href="javascript:;" class="gr" onclick="try{Quote(12);}catch(ex){};return false">引用</a></li>
+		<li><a href="javascript:;" class="dr" onclick="try{report(12);}catch(ex){}return false;">举报</a></li>
+		<li><a href="javascript:;" class="gr" onmousemove="try{showMenu(this,'http://forum.csdn.net/PointForum/Manage/ModifyReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71919274&postDate=2011-03-01+09%3a28%3a13&v=13','http://forum.csdn.net/PointForum/Manage/DeleteReply.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&replyId=71919274&postDate=2011-03-01+09%3a28%3a13&v=13');return false}catch(ex){}">管理</a></li>
+		<li><a href="#top" class="nob">TOP</a></li>
+		</ul>
+		<div class="rt"></div>
+	</div>
+</td></tr></table>
+<div class="clear"></div>
+
+<!--append reply-->
+<!-- google_ad_section_end -->
+
+
+	<div class="fm">
+	    <ul class="menu">
+	    <li class="bt1"><a href="javascript:;" class="bt1">管理菜单<!--[if IE 7]><!--></a><!--<![endif]-->
+	    <!--[if lte IE 6]><table><tr><td><![endif]-->
+		<ul>
+			<li><a id="a_head_recreate" href="http://forum.csdn.net/PointForum/BuildTopic.aspx?topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&return=">生成帖子</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Manage/Tops/InsertTop.aspx?topicUrl=http://topic.csdn.net/u/20110301/09/580d6a4e-0edf-4f5d-9ba3-dc5374aaa552.html&text=mt9d131%e7%9a%84%e9%97%ae%e9%a2%98&sectionID=547703ca-7611-4f40-8aac-1a0000447845',width:600,height:265,title:'置顶'});}catch(ex){}return false;">置顶</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Manage/SetPrime.aspx?forumid=547703ca-7611-4f40-8aac-1a0000447845&topicid=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&v=13',width:400,height:255,title:'推荐'});}catch(ex){}return false;">推荐</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Manage/SetNotPrime.aspx?topicid=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&forumid=547703ca-7611-4f40-8aac-1a0000447845&postDate=2011-03-01+09%3a28%3a13&v=13',width:400,height:255,title:'取消推荐'});}catch(ex){}return false;">取消推荐</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Manage/LockTopic.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&v=13',width:425,height:330,title:'锁定'});}catch(ex){}return false;">锁定</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Manage/UnlockTopic.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&v=13',width:425,height:330,title:'解锁'});}catch(ex){}return false;">解锁</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Manage/MoveTopic.aspx?fid=547703ca-7611-4f40-8aac-1a0000447845&tid=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&date=2011-03-01+09%3a28%3a13',width:580,height:270,title:'移动'});}catch(ex){}return false;">移动</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Manage/ModifyTopic.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&v=13',width:670,height:655,title:'编辑'});}catch(ex){}return false;">编辑</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Manage/DeleteTopic.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13',width:425,height:330,title:'删除'});}catch(ex){}return false;">删除</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Forum/TopicAddPoint.aspx?forumId=547703ca-7611-4f40-8aac-1a0000447845&topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&date=2011-03-01+09%3a28%3a13&v=13',width:420,height:300,title:'帖子加分'});}catch(ex){}return false;">帖子加分</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Manage/TitleStyle.aspx?topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&url=http://topic.csdn.net/u/20110301/09/580d6a4e-0edf-4f5d-9ba3-dc5374aaa552.html',width:670,height:307,title:'帖子高亮'});}catch(ex){}return false;">帖子高亮</a></li>
+			<li><a href="javascript:;" onclick="try{showWindow({url:'http://forum.csdn.net/PointForum/Manage/RemoveTitleStyle.aspx?topicId=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&url=http://topic.csdn.net/u/20110301/09/580d6a4e-0edf-4f5d-9ba3-dc5374aaa552.html',width:670,height:255,title:'取消高亮'});}catch(ex){}return false;">取消高亮</a></li>
+		</ul>
+         <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+	    </li>
+		<li><a href="http://forum.csdn.net/PointForum/Manage/TopicManageView.aspx?forumID=547703ca-7611-4f40-8aac-1a0000447845&topicID=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&date=2011-03-01+09%3a28%3a13&v=13" class="bt2">结&nbsp;&nbsp;帖</a></li>
+		<li><a href="http://forum.csdn.net/PointForum/Forum/PostTopic.aspx?forumID=547703ca-7611-4f40-8aac-1a0000447845" target="_blank" class="bt3">发&nbsp;&nbsp;帖</a></li>
+		<li><a href="#r_achor" class="bt4" onclick="try{ReplyBoxFocus();return false}catch(ex){}">回&nbsp;&nbsp;复</a></li>
+	    </ul>
+	    
+	</div>
+	
+	<div class="sq"><dl>
+	<dt>相关问题</dt>
+	<dd><a href="http://topic.csdn.net/u/20110214/14/67e0c4ea-243e-4753-aed6-97ed00125437.html" onclick='LogClickCount(this,116);' target="_blank">MT9D131是否可以实现灰度图像输出- Linux/Unix社区/ 内核及驱动程序研究区</a></dd>
+</dl></div>
+
+<table class="comt" cellpadding="0" cellspacing="0"><tr><td style="width:200px;">
+<iframe id="Iframe1" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" width="200px" height="415px" src="/u/t5/include/ad4.asp?pdate=2011-03-01 09:28:13&ba=Linux&sa=Linux_Dirver"></iframe>
+</td><td >
+<iframe class="replyframe" id="replyframe" frameborder="0" scrolling="no" height="415px" width="100%" src="http://forum.csdn.net/PointForum/Forum/ReplyT.aspx?forumID=547703ca-7611-4f40-8aac-1a0000447845&topicID=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&postDate=2011-03-01+09%3a28%3a13&v=13&sa=Linux&ba=Linux_Dirver" csdnid="rframe"></iframe>
+</td></tr>
+</table>
+<script type="text/javascript">
+new Image().src="http://forum.csdn.net/Common/TopicRead.ashx?postDate=2011-03-01+09%3a28%3a13&topicID=580d6a4e-0edf-4f5d-9ba3-dc5374aaa552&"+(new Date().getTime().toString(36));
+
+new Image().src="http://forum.csdn.net/PointForum/SetLatestVisitedForum.ashx?sectionid=547703ca-7611-4f40-8aac-1a0000447845";
+</script>
+<script src="http://csdnimg.cn/pubfooter/js/publib_footer.js" type="text/javascript"></script>
+
+<img alt="" src="http://counter.csdn.net/pv.aspx?id=185" border="0" width="0" height="0" style="display: none" />
+<div><script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script></div>
+<div id="ad_left" style="position:absolute;width:120px;top:184px;left:10px;display:none;">
+<script type="text/javascript">
+	try {
+		var pdate = "" + parent.eval("tinfo.pdate");
+		if (pdate) {
+			pdate = new Date(pdate.replace(/-/g, "/"));
+			var today = new Date();
+			showad = (today.getTime() - pdate.getTime()) / 1000 / 60 / 60 / 24 > 30;
+		}
+	} catch (ex) { };
+
+	try {
+		var ad_left = "";
+		if (showad && screen.availWidth >= 1280) {
+			ad_left += '<' + 'script type=\"text/javascript\">';
+			ad_left += 'google_ad_client = "pub-1076724771190722";';
+			ad_left += 'google_ad_slot =\"5633584852\";';
+			ad_left += 'google_ad_width = 120;';
+			ad_left += 'google_ad_height = 600;';
+			ad_left += '</' + 'script>';
+			ad_left += '<' + 'script type=\"text/javascript\"';
+			ad_left += 'src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\">';
+			ad_left += '</' + 'script>';
+		}
+		document.write(ad_left);
+		document.getElementById("ad_left").style.display = "";
+	} catch (e) { }
+</script>
+</div>
+<div id="ad_right" style="position:absolute;width:120px;top:184px;right:10px;display:none;">
+<script type="text/javascript">
+	try {
+		var ad_right = "";
+		if (showad && screen.availWidth >= 1280) {
+			ad_right += '<' + 'script type=\"text/javascript\">';
+			ad_right += 'google_ad_client = "pub-1076724771190722";';
+			ad_right += 'google_ad_slot =\"9259923286\";';
+			ad_right += 'google_ad_width = 120;';
+			ad_right += 'google_ad_height = 600;';
+			ad_right += '</' + 'script>';
+			ad_right += '<' + 'script type=\"text/javascript\"';
+			ad_right += 'src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\">';
+			ad_right += '</' + 'script>';
+		}
+		document.write(ad_right);
+		document.getElementById("ad_right").style.display = "";
+	} catch (e) { }
+</script>
+</div>
+</body>
+</html>
